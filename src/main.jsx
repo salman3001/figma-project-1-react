@@ -10,9 +10,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <ThemeProvider theme={theme}>
-        <CssBaseline>
-          <App />
-        </CssBaseline>
+        <CssBaseline />
+        <App />
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>

@@ -1,17 +1,21 @@
 import {
   Avatar,
   Box,
+  Button,
   Divider,
   IconButton,
   Paper,
   Stack,
   Typography,
+  useTheme,
 } from "@mui/material";
 import LaundraLogo from "./LaundraLogo";
 import ProfileAvatar from "./ProfileAvatar";
 import SideMenuOption from "./SideMenuOption";
+import { AiOutlinePoweroff } from "react-icons/ai";
 
 const MyDrawer = (prop) => {
+  const theme = useTheme();
   return (
     <Box
       sx={{
@@ -36,14 +40,15 @@ const MyDrawer = (prop) => {
             `${prop.open ? "295px" : "0px"}`,
             "295px",
           ],
-          height: "100%",
+          height: "100vh",
           minHeight: "100vh",
           backgroundColor: "secondary.main",
           zIndex: 2,
           color: "black",
           borderRadius: 0,
           transition: "width .2s ease-in-out ",
-          padding: 3,
+          paddingx: 3,
+          paddingBottom: 3,
         }}
         onClick={(e) => {
           e.stopPropagation();
@@ -58,15 +63,27 @@ const MyDrawer = (prop) => {
           }}
         >
           <Stack justifyContent="center" alignItems="center" gap={2}>
-            <LaundraLogo />
-            <Divider
-              orientation="horizontal"
-              flexItem
-              light
+            <Box
               sx={{
-                borderColor: "rgba(255, 255, 255, 0.06)",
+                height: "84px",
+                display: "flex",
+                flexDirection: "column",
+                width: "100%",
+                justifyContent: "end",
+                alignItems: "center",
+                gap: 4,
               }}
-            />
+            >
+              <LaundraLogo />
+              <Divider
+                orientation="horizontal"
+                flexItem
+                light
+                sx={{
+                  borderColor: "rgba(255, 255, 255, 0.06)",
+                }}
+              />
+            </Box>
             <ProfileAvatar
               src={import.meta.env.VITE_BASE_URL + "/images/Avatar.png"}
             />
@@ -80,7 +97,13 @@ const MyDrawer = (prop) => {
               Jackson Howell{" "}
             </Typography>
           </Stack>
-          <Stack gap={2}>
+          <Stack
+            gap={2}
+            sx={{
+              alignItems: "center",
+              flexGrow: 1,
+            }}
+          >
             <SideMenuOption
               selected={true}
               title="My Orders"
@@ -211,9 +234,31 @@ const MyDrawer = (prop) => {
             }}
           >
             <Divider />
-            <IconButton sx={{ color: "text.light" }}>
+            <Box
+              component={"a"}
+              sx={{
+                mt: 2,
+                color: "text.light",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+                gap: 2,
+                "&>h6": {
+                  fontWeight: 800,
+                },
+              }}
+            >
+              <AiOutlinePoweroff
+                size={40}
+                style={{
+                  background: theme.palette.primary.main,
+                  padding: theme.spacing(1),
+                  borderRadius: "100%",
+                }}
+              />
               <Typography variant="subtitle1">Logout</Typography>
-            </IconButton>
+            </Box>
           </Stack>
         </Stack>
       </Paper>

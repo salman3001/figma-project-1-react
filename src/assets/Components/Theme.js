@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material";
-import nuckelfont from '../fonts/Nuckle-Regular.woff2'
+import interfont from '../fonts/inter-font.ttf'
 
 const theme = createTheme({
     palette: {
@@ -15,8 +15,6 @@ const theme = createTheme({
             secondary: "#03444F",
             light: "#FFFFFF",
             muted: "#747474",
-
-
         },
 
     },
@@ -31,11 +29,11 @@ const theme = createTheme({
         }
     },
     typography: {
-        fontFamily: "Nuckle",
+        allVariants: { fontFamily: "'Inter', sans-serif" },
+        fontFamily: "'Inter', sans-serif",
         h6: {
             fontWeight: 600
         }
-
     },
     components: {
         MuiContainer: {
@@ -45,19 +43,26 @@ const theme = createTheme({
         },
         MuiIconButton: {
             defaultProps: {
-                disableRipple: true
+
+            },
+            styleOverrides: {
+                root: {
+                    color: "white"
+                }
             }
         },
-        MuiCssBaseline: {
-            styleOverrides: ` @font-face {
-            font-family: "Nuckle";
-          src:url(${nuckelfont}) ;
+        MuiButton: {
+            defaultProps: {
+                disableRipple: true,
+                disableElevation: true
+            },
         }
-
-
+    },
+    MuiCssBaseline: {
+        styleOverrides: `
       `,
-        }
     }
+
 })
 
 export default theme;
