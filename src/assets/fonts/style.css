@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Nuckle';
+    src: local('Nuckle Regular'), local('Nuckle-Regular'),
+        url('Nuckle-Regular.woff2') format('woff2'),
+        url('Nuckle-Regular.woff') format('woff'),
+        url('Nuckle-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
