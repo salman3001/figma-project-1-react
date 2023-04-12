@@ -1,11 +1,10 @@
 import {
+  Box,
   Button,
-  Dialog,
-  DialogContent,
   Link,
   MenuItem,
+  Modal,
   Select,
-  Slide,
   Stack,
   styled,
   Typography,
@@ -17,6 +16,7 @@ import { SlArrowDown } from "react-icons/sl";
 import { forwardRef, useState } from "react";
 import { GoLocation } from "react-icons/go";
 import { demoOrderData } from "../DemoData/demoOrderData";
+import TrackingModal from "./TrackingModal";
 
 const MyOrders = () => {
   return (
@@ -77,9 +77,6 @@ const OrderCard = (prop) => {
   const togelTrackingModal = () => {
     setModalOpen((state) => (state === true ? false : true));
   };
-  const Transition = forwardRef(function Transition(props, ref) {
-    return <Slide direction="up" ref={ref} {...props} />;
-  });
 
   return (
     <Stack
@@ -151,8 +148,8 @@ const OrderCard = (prop) => {
                   </Button>
                   <TrackingModal
                     open={modalOpen}
-                    transition={Transition}
                     handleClose={togelTrackingModal}
+                    trackingStatus="processing"
                   />
                 </Stack>
               </Stack>
@@ -266,15 +263,3 @@ const Table = styled("table")(({ theme }) => ({
     color: theme.palette.secondary.main,
   },
 }));
-
-const TrackingModal = (prop) => (
-  <Dialog
-    open={prop.open}
-    TransitionComponent={prop.transition}
-    keepMounted
-    onClose={prop.handleClose}
-    aria-describedby="alert-dialog-slide-description"
-  >
-    <DialogContent>kjekj</DialogContent>
-  </Dialog>
-);
