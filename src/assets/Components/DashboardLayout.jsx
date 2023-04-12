@@ -25,6 +25,7 @@ const DashboardLayout = () => {
             transition: "width .2s  ease-in-out",
             maxHeight: "100vh",
             overflow: "scroll",
+            width: "calc(100vw - 295px)",
           }}
         >
           <Navbar togelMenu={togelState} />

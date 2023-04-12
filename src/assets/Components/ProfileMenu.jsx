@@ -12,10 +12,11 @@ import { AiOutlineUser } from "react-icons/ai";
 import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 import { TfiMedallAlt } from "react-icons/tfi";
 import { CgLogOff } from "react-icons/cg";
+import { useNavigate } from "react-router-dom";
 
 const ProfileMenu = () => {
   const theme = useTheme();
-
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -72,7 +73,14 @@ const ProfileMenu = () => {
           >
             <HiOutlineClipboardDocumentList size={25} />
           </ListItemIcon>
-          <Typography color="text.secondary">My Orders</Typography>
+          <Typography
+            color="text.secondary"
+            onClick={() => {
+              navigate("/myorders");
+            }}
+          >
+            My Orders
+          </Typography>
         </MenuItem>
         <MenuItem>
           <ListItemIcon
@@ -84,7 +92,14 @@ const ProfileMenu = () => {
           >
             <TfiMedallAlt size={25} />
           </ListItemIcon>
-          <Typography color="text.secondary">Promotions</Typography>
+          <Typography
+            color="text.secondary"
+            onClick={() => {
+              navigate("/promotions");
+            }}
+          >
+            Promotions
+          </Typography>
         </MenuItem>
         <MenuItem>
           <ListItemIcon
@@ -96,7 +111,14 @@ const ProfileMenu = () => {
           >
             <AiOutlineUser size={25} />
           </ListItemIcon>
-          <Typography color="text.secondary">My Account</Typography>
+          <Typography
+            color="text.secondary"
+            onClick={() => {
+              navigate("/myaccount");
+            }}
+          >
+            My Account
+          </Typography>
         </MenuItem>
         <MenuItem>
           <ListItemIcon

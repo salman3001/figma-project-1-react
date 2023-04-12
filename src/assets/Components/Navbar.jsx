@@ -11,9 +11,11 @@ import { AiOutlineMenu } from "react-icons/ai";
 import Search from "./Search";
 import NotificationMenu from "./NotificationMenu";
 import ProfileMenu from "./ProfileMenu";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = (prop) => {
   const theme = useTheme();
+  const navigate = useNavigate();
   return (
     <AppBar color="transparent" position="static">
       <Toolbar
@@ -60,7 +62,14 @@ const Navbar = (prop) => {
           </Box>
         </Stack>
         <Stack direction="row" gap={2} alignItems={"center"}>
-          <Button variant="contained">Order Now</Button>
+          <Button
+            variant="contained"
+            onClick={() => {
+              navigate("/ordernow");
+            }}
+          >
+            Order Now
+          </Button>
           <Stack direction="row" gap={2} alignItems={"center"}>
             <NotificationMenu />
             <Typography sx={{ display: ["none", "none", "block"] }}>

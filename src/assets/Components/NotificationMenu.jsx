@@ -10,6 +10,7 @@ import {
 import React, { useState } from "react";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { format } from "date-fns";
+import RouterLink from "./RouterLink";
 
 const NotificationMenu = (prop) => {
   const theme = useTheme();
@@ -70,7 +71,7 @@ const NotificationMenu = (prop) => {
           </MenuItem>
         ))}
         <MenuItem sx={{ justifyContent: "end" }}>
-          <Link>See All</Link>
+          <RouterLink to="/myorders">See all</RouterLink>
         </MenuItem>
       </Menu>
     </div>
