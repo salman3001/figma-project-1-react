@@ -2,11 +2,12 @@ import { Box, TextField } from "@mui/material";
 import React from "react";
 import { CiSearch } from "react-icons/ci";
 
-const Search = () => {
+const Search = (prop) => {
   return (
     <Box
       sx={{
         position: "relative",
+        width: "100%",
       }}
     >
       <CiSearch

@@ -19,7 +19,7 @@ const MyDrawer = (prop) => {
   return (
     <Box
       sx={{
-        position: ["absolute", "absolute", "static"],
+        position: ["fixed", "fixed", "static"],
         width: [
           `${prop.open ? "100%" : "0px"}`,
           `${prop.open ? "100%" : "0px"}`,

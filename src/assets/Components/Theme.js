@@ -5,6 +5,7 @@ const theme = createTheme({
     palette: {
         primary: {
             main: "#00A5BF",
+            contrastText: "white"
         },
         secondary: {
             main: "#03444F",
@@ -13,6 +14,7 @@ const theme = createTheme({
         text: {
             primary: "#181818",
             secondary: "#03444F",
+            blue: "#00A5BF",
             light: "#FFFFFF",
             muted: "#747474",
         },
@@ -31,9 +33,7 @@ const theme = createTheme({
     typography: {
         allVariants: { fontFamily: "'Inter', sans-serif" },
         fontFamily: "'Inter', sans-serif",
-        h6: {
-            fontWeight: 600
-        }
+
     },
     components: {
         MuiContainer: {
@@ -46,9 +46,7 @@ const theme = createTheme({
 
             },
             styleOverrides: {
-                root: {
-                    color: "white"
-                }
+
             }
         },
         MuiButton: {
@@ -56,7 +54,10 @@ const theme = createTheme({
                 disableRipple: true,
                 disableElevation: true
             },
-        }
+
+        },
+
+
     },
     MuiCssBaseline: {
         styleOverrides: `

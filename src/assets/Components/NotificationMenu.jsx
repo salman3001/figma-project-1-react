@@ -1,22 +1,15 @@
 import { useTheme } from "@emotion/react";
 import {
-  Avatar,
   Box,
-  Button,
-  Divider,
   IconButton,
-  ListItemIcon,
-  ListItemText,
+  Link,
   Menu,
   MenuItem,
+  Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import { CiSettings } from "react-icons/ci";
-import {
-  IoIosNotificationsOutline,
-  IoMdLogOut,
-  IoMdPersonAdd,
-} from "react-icons/io";
+import { IoIosNotificationsOutline } from "react-icons/io";
+import { format } from "date-fns";
 
 const NotificationMenu = (prop) => {
   const theme = useTheme();
@@ -29,6 +22,13 @@ const NotificationMenu = (prop) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  //fetch data here
+  const demoData = [
+    { id: 1, odername: "My Order", status: "delivered", date: Date.now() },
+    { id: 2, odername: "My Order", status: "delivered", date: Date.now() },
+    { id: 3, odername: "My Order", status: "delivered", date: Date.now() },
+  ];
 
   return (
     <div>
@@ -55,16 +55,23 @@ const NotificationMenu = (prop) => {
           "aria-labelledby": "basic-button",
         }}
         sx={{
-          "&>li": {
+          "&>.MuiMenuItem-root": {
             width: "210px",
           },
         }}
       >
-        <MenuItem onClick={handleClose}>
-          <Notificationcard />
+        {demoData.map((data) => (
+          <MenuItem onClick={handleClose} key={data.id}>
+            <Notificationcard
+              orderName={data.odername}
+              status={data.status}
+              date={format(data.date, "dd mm yyyy hh:mm")}
+            />
+          </MenuItem>
+        ))}
+        <MenuItem sx={{ justifyContent: "end" }}>
+          <Link>See All</Link>
         </MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
       </Menu>
     </div>
   );
@@ -72,6 +79,22 @@ const NotificationMenu = (prop) => {
 
 export default NotificationMenu;
 
-const Notificationcard = () => {
-  return <Box></Box>;
+const Notificationcard = (prop) => {
+  return (
+    <Box
+      sx={{
+        minWidth: 194,
+        minHeight: 67,
+        bgcolor: "#DDF1F4",
+        borderRadius: 2,
+        padding: 1,
+      }}
+    >
+      <Typography variant="subtitle1" fontWeight={600} color="text.secondary">
+        {prop.orderName}
+      </Typography>
+      <Typography color="text.blue">{prop.status}</Typography>
+      <Typography color="text.muted">{prop.date}</Typography>
+    </Box>
+  );
 };

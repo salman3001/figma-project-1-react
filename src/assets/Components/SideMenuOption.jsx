@@ -16,7 +16,7 @@ const SideMenuOption = (prop) => {
         },
         "&>h6": {
           color: "text.light",
-          fontWeight: 800,
+          fontWeight: 600,
           opacity: prop.selected ? 1 : 0.7,
         },
         "&>.sideMenu-svg": {
