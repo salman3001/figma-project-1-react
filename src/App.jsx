@@ -1,10 +1,15 @@
 import { Route, Routes } from "react-router-dom";
-import Dashboard from "./assets/Pages/Dashboard";
+import MyOrders from "./assets/Pages/MyOrders";
+import Promotions from "./assets/Pages/Promotions";
+import DashboardLayout from "./assets/Components/DashboardLayout";
 
 function App() {
   return (
     <Routes>
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/" element={<DashboardLayout />}>
+        <Route path="/myorders" element={<MyOrders />} />
+        <Route path="/promotions" element={<Promotions />} />
+      </Route>
     </Routes>
   );
 }

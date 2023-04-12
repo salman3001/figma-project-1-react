@@ -18,10 +18,10 @@ import { GoLocation } from "react-icons/go";
 import { demoOrderData } from "../DemoData/demoOrderData";
 import TrackingModal from "./TrackingModal";
 
-const MyOrders = () => {
+const Orders = () => {
   return (
     <Stack gap={2}>
-      <Stack direction={"row"} justifyContent="space-between">
+      <Stack direction={"row"} justifyContent="space-between" flexWrap={"wrap"}>
         <Typography variant="h4" fontWeight={600}>
           My Orders
         </Typography>
@@ -51,7 +51,7 @@ const MyOrders = () => {
           />
         </Stack>
       </Stack>
-      <Stack gap={2}>
+      <Stack spacing={3}>
         {demoOrderData.map((data) => (
           <OrderCard
             id={data.id}
@@ -72,7 +72,7 @@ const MyOrders = () => {
   );
 };
 
-export default MyOrders;
+export default Orders;
 
 const OrderCard = (prop) => {
   const [expanded, setExpanded] = useState(false);
@@ -88,10 +88,11 @@ const OrderCard = (prop) => {
   return (
     <Stack
       border={1}
-      sx={{
+      sx={(theme) => ({
         borderColor: "rgba(0, 165, 191, 0.2)",
         borderRadius: 4,
-      }}
+        boxShadow: theme.shadows[1],
+      })}
     >
       {/* Table */}
       <Stack
@@ -191,6 +192,7 @@ const OrderCard = (prop) => {
         justifyContent="space-between"
         alignItems={"center"}
         padding={2}
+        flexWrap={"wrap"}
       >
         <Stack
           color="primary.main"

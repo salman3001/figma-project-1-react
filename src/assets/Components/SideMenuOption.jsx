@@ -1,12 +1,14 @@
 import { Box, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const SideMenuOption = (prop) => {
+  const navigate = useNavigate();
   return (
     <Stack
       direction="row"
-      justifyContent={"between"}
+      justifyContent={"start"}
       alignItems="center"
       gap={2}
       sx={{
@@ -19,28 +21,25 @@ const SideMenuOption = (prop) => {
           fontWeight: 600,
           opacity: prop.selected ? 1 : 0.7,
         },
-        "&>.sideMenu-svg": {
-          width: 40,
-          height: 40,
+      }}
+      onClick={() => {
+        navigate(prop.navigateto);
+      }}
+    >
+      <Box
+        sx={{
+          p: 0.5,
+          borderRadius: 2,
+          height: "40px",
+          width: "40px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          bgcolor: prop.selected ? "white" : "secondary.light",
-          display: "flex",
-          padding: 0.5,
-          borderRadius: 2,
-        },
-        "&>.sideMenu-svg>svg>path": {
-          fill: prop.selected ? "#00A5BF" : "white",
-          stroke: prop.selected ? "primary.main" : "white",
-        },
-        "&>.sideMenu-svg>svg": {
-          fill: prop.selected ? "#00A5BF" : "white",
-          stroke: prop.selected ? "none" : "white",
-        },
-      }}
-    >
-      <div className="sideMenu-svg">{prop.svg}</div>
+          bgcolor: prop.selected ? "white" : "gray",
+        }}
+      >
+        {prop.Icon}
+      </Box>
       <Typography variant="subtitle1">{prop.title}</Typography>
     </Stack>
   );
