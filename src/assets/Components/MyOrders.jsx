@@ -29,19 +29,25 @@ const MyOrders = () => {
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={10}
+            value="upcomming"
             size="small"
+            sx={{
+              height: 40,
+            }}
           >
-            <MenuItem value={10}>Upcomming</MenuItem>
-            <MenuItem value={20}>Delivered</MenuItem>
-            <MenuItem value={30}>Confirmed</MenuItem>
+            <MenuItem value="upcomming">Upcomming</MenuItem>
+            <MenuItem value="delivered">Delivered</MenuItem>
+            <MenuItem value="confirmed">Confirmed</MenuItem>
           </Select>
           <DatePicker
             sx={{
               maxWidth: 200,
               padding: 0,
+              height: 10,
+              "& input": {
+                height: 12,
+              },
             }}
-            size="small"
           />
         </Stack>
       </Stack>
@@ -58,6 +64,7 @@ const MyOrders = () => {
             address={data.address}
             total={data.total}
             items={data.items}
+            trackingStatus={data.trackingStatus}
           />
         ))}
       </Stack>
@@ -149,7 +156,7 @@ const OrderCard = (prop) => {
                   <TrackingModal
                     open={modalOpen}
                     handleClose={togelTrackingModal}
-                    trackingStatus="processing"
+                    trackingStatus={prop.trackingStatus}
                   />
                 </Stack>
               </Stack>
