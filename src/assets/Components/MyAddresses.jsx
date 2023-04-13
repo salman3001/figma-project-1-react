@@ -4,12 +4,17 @@ import { demoAddressesData } from "../DemoData/demoAddressesData";
 import AddressCard from "./AddressCard";
 import AddAddressModal from "./AddAddressModal";
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
 const MyAddresses = () => {
+  const addressState = useSelector(
+    (state) => state.orderNow.stepperData.address
+  );
   const [modalOpen, setModalOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const handleModalTogel = () => {
     setModalOpen((state) => (state === true ? false : true));
   };
@@ -44,8 +49,10 @@ const MyAddresses = () => {
             }}
             variant="contained"
             endIcon={<BsArrowRight />}
-            onClick={handleModalTogel}
-            disabled
+            onClick={() => {
+              navigate("/ordernow/service");
+            }}
+            disabled={addressState.addressId === "" ? true : false}
           >
             Next
           </Button>

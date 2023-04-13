@@ -3,13 +3,17 @@ import { BiEdit } from "react-icons/bi";
 import { Avatar, Button, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setAddress } from "../../redux/orderNowSlice";
 
 const AddressCard = (prop) => {
-  const [selected, setSeleted] = useState(false);
   const location = useLocation();
-
+  const addressState = useSelector(
+    (state) => state.orderNow.stepperData.address
+  );
+  const dispatch = useDispatch();
   const handelSelected = () => {
-    setSeleted((state) => (state === true ? false : true));
+    dispatch(setAddress({ addressId: prop.id, address: prop.address }));
   };
   return (
     <Stack
@@ -55,10 +59,13 @@ const AddressCard = (prop) => {
             variant="contained"
             sx={{
               borderRadius: 4,
-              bgcolor: selected ? "white" : "primary.main",
-              border: selected ? 1 : 0,
-              borderColor: selected ? "primary.main" : "none",
-              color: selected ? "primary.main" : "white",
+              bgcolor:
+                prop.id === addressState.addressId ? "white" : "primary.main",
+              border: prop.id === addressState.addressId ? 1 : 0,
+              borderColor:
+                prop.id === addressState.addressId ? "primary.main" : "none",
+              color:
+                prop.id === addressState.addressId ? "primary.main" : "white",
             }}
             size="small"
             startIcon={<BiEdit />}

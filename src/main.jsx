@@ -12,7 +12,7 @@ import { Provider } from "react-redux";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={"/laundramoon-frontend-react/"}>
       <Provider store={store}>
         <ThemeProvider theme={theme}>
           <CssBaseline />

@@ -25,7 +25,7 @@ const MyAccount = () => {
             sx={{
               "& .Mui-selected": {
                 bgcolor: "primary.main",
-                color: "white",
+                color: "lightgray",
               },
               "& .MuiTabs-flexContainer": {
                 gap: 5,

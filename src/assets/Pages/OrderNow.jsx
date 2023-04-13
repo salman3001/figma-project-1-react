@@ -7,9 +7,11 @@ import { useSelector } from "react-redux";
 const OrderNow = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  console.log(location.pathname);
   const orderNowState = useSelector((state) => state.orderNow);
   useEffect(() => {
-    navigate("/ordernow/address");
+    orderNowState.stepperData.address.addressId === "" &&
+      navigate("/ordernow/address");
   }, []);
   return (
     <Stack>
@@ -24,7 +26,10 @@ const OrderNow = () => {
         minutes.
       </Typography>
       <Tabs selected={location.pathname} />
-      <ProgressBar selected={location.pathname} />
+      <ProgressBar
+        selected={location.pathname}
+        activeStep={location.pathname}
+      />
       <Grid container>
         <Grid xs={12} lg={8} padding={2}>
           <Outlet />

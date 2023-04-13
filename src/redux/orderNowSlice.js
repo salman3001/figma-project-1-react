@@ -5,7 +5,8 @@ const initialState = {
     stepperData: {
         address: { addressId: "", address: "" },
         services: {
-            wash: { items: [] }, washAndIron: { items: [] }, ironing: { items: [], }, dryCleaning: { items: [] }
+            wash: { items: [] }, washAndIron: { items: [] }, ironing: { items: [], }, dryCleaning: { items: [] },
+            serviceType: ""
         },
         collection: {
             collectionTime: {
@@ -71,6 +72,26 @@ export const orderNowSlice = createSlice({
         setService: (state, { payload }) => {
             state.stepperData.services = payload
         },
+        setServiceType: (state, { payload }) => {
+            state.stepperData.services.serviceType = payload
+        },
+        setWashItem: (state, { payload }) => {
+            const itemExist = state.stepperData.services.wash.items.filter(item => item.name === payload.name)
+
+            if (itemExist.length < 1) {
+
+                state.stepperData.services.wash.items.push(payload)
+            } else {
+                const newState = state.stepperData.services.wash.items.forEach(item => {
+                    if (item.name === payload.name) {
+                        return { name: item.name, qty: item.qty + 1, serviceType: "wash" }
+                    }
+
+                })
+            }
+        },
+
+        //start code here
         setCollection: (state, { payload }) => {
             state.stepperData.collection = payload
         },
@@ -86,6 +107,6 @@ export const orderNowSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { setActiveStep, resetStep, setService, setAddress, setCollection, setContact, setPayment } = orderNowSlice.actions
+export const { setActiveStep, resetStep, setService, setServiceType, setAddress, setCollection, setContact, setPayment } = orderNowSlice.actions
 
 export default orderNowSlice.reducer
