@@ -2,9 +2,11 @@ import { FiHome } from "react-icons/fi";
 import { BiEdit } from "react-icons/bi";
 import { Avatar, Button, Stack, Typography } from "@mui/material";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const AddressCard = (prop) => {
   const [selected, setSeleted] = useState(false);
+  const location = useLocation();
 
   const handelSelected = () => {
     setSeleted((state) => (state === true ? false : true));
@@ -48,21 +50,23 @@ const AddressCard = (prop) => {
         >
           Edit
         </Button>
-        <Button
-          variant="contained"
-          sx={{
-            borderRadius: 4,
-            bgcolor: selected ? "white" : "primary.main",
-            border: selected ? 1 : 0,
-            borderColor: selected ? "primary.main" : "none",
-            color: selected ? "primary.main" : "white",
-          }}
-          size="small"
-          startIcon={<BiEdit />}
-          onClick={handelSelected}
-        >
-          Select
-        </Button>
+        {location.pathname === "/ordernow/address" && (
+          <Button
+            variant="contained"
+            sx={{
+              borderRadius: 4,
+              bgcolor: selected ? "white" : "primary.main",
+              border: selected ? 1 : 0,
+              borderColor: selected ? "primary.main" : "none",
+              color: selected ? "primary.main" : "white",
+            }}
+            size="small"
+            startIcon={<BiEdit />}
+            onClick={handelSelected}
+          >
+            Select
+          </Button>
+        )}
       </Stack>
     </Stack>
   );

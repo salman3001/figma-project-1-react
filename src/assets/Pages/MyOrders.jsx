@@ -1,8 +1,9 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import React, { useState } from "react";
 import Orders from "../Components/Orders";
 import OfferCard from "../Components/OfferCard";
+import RouterLink from "../Components/RouterLink";
 
 const MyOrders = () => {
   return (
@@ -21,6 +22,12 @@ const MyOrders = () => {
       </Grid>
       <Grid item xs={12} lg={4}>
         <Stack paddingLeft={[0, 0, 0, 4]} spacing={2}>
+          <Stack direction="row" justifyContent={"space-between"}>
+            <Typography variant="h6" fontWeight={600}>
+              Promotions
+            </Typography>
+            <RouterLink to="/promotions">See All</RouterLink>
+          </Stack>
           <OfferCard />
           <OfferCard />
           <OfferCard />
