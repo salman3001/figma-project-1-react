@@ -11,11 +11,12 @@ import { AiOutlineMenu } from "react-icons/ai";
 import Search from "./Search";
 import NotificationMenu from "./NotificationMenu";
 import ProfileMenu from "./ProfileMenu";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = (prop) => {
   const theme = useTheme();
   const navigate = useNavigate();
+  const location = useLocation();
   return (
     <AppBar color="transparent" position="static">
       <Toolbar
@@ -48,7 +49,13 @@ const Navbar = (prop) => {
               display: ["none", "none", "block"],
             }}
           >
-            Orders
+            {location.pathname === "/myorders"
+              ? "Orders"
+              : location.pathname === "/promotions"
+              ? "Promotions"
+              : location.pathname === "/myaccount"
+              ? "My Account"
+              : location.pathname === "/ordernow" && "Order Now"}
           </Typography>
           <Box
             sx={{

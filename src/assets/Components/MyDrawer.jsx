@@ -22,8 +22,6 @@ const MyDrawer = (prop) => {
   const theme = useTheme();
   const location = useLocation();
 
-  console.log(location.pathname);
-
   return (
     <Box
       sx={{
