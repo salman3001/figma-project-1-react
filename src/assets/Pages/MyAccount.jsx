@@ -11,7 +11,7 @@ const MyAccount = () => {
   };
 
   return (
-    <Stack padding={4} paddingTop={[9, 9, 9, 4]} spacing={4}>
+    <Stack padding={[2, 3, 4]} paddingTop={[9, 9, 9, 4]} spacing={4}>
       <Typography variant="h4" fontWeight={650}>
         My Account
       </Typography>
