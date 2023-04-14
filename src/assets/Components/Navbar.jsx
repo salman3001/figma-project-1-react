@@ -72,7 +72,7 @@ const Navbar = (prop) => {
           <Button
             variant="contained"
             onClick={() => {
-              navigate("/ordernow");
+              navigate("/ordernow/address");
             }}
           >
             Order Now

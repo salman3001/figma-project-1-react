@@ -3,16 +3,13 @@ import React, { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import MyStepper from "../Components/MyStepper";
 import { useSelector } from "react-redux";
+import OfferCard from "../Components/OfferCard";
 
 const OrderNow = () => {
   const location = useLocation();
-  const navigate = useNavigate();
-  console.log(location.pathname);
+
   const orderNowState = useSelector((state) => state.orderNow);
-  useEffect(() => {
-    orderNowState.stepperData.address.addressId === "" &&
-      navigate("/ordernow/address");
-  }, []);
+
   return (
     <Stack>
       <Typography
@@ -35,7 +32,10 @@ const OrderNow = () => {
           <Outlet />
         </Grid>
         <Grid xs={12} lg={4} padding={2}>
-          <MyStepper step={orderNowState.stepperData} />
+          <Stack>
+            <MyStepper step={orderNowState.stepperData} />
+            <OfferCard />
+          </Stack>
         </Grid>
       </Grid>
     </Stack>

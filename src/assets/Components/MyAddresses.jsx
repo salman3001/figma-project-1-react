@@ -31,11 +31,14 @@ const MyAddresses = () => {
           </>
         ))
       )}
-      <Stack direction={"row"} justifyContent={"space-between"}>
+      <Stack
+        direction={"row"}
+        justifyContent={["end", "space-between"]}
+        flexWrap="wrap-reverse"
+        gap={2}
+      >
         <Button
-          sx={{
-            minWidth: 170,
-          }}
+          sx={{ width: [170] }}
           variant="contained"
           startIcon={<AiOutlinePlus />}
           onClick={handleModalTogel}
@@ -44,9 +47,7 @@ const MyAddresses = () => {
         </Button>
         {location.pathname === "/ordernow/address" && (
           <Button
-            sx={{
-              minWidth: 170,
-            }}
+            sx={{ width: [170] }}
             variant="contained"
             endIcon={<BsArrowRight />}
             onClick={() => {

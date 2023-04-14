@@ -1,15 +1,48 @@
-import { Box, Button, Stack, Tab, Tabs, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import {
+  Box,
+  Button,
+  Divider,
+  Stack,
+  Tab,
+  Tabs,
+  Typography,
+} from "@mui/material";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setService, setServiceType } from "../../redux/orderNowSlice";
+import {
+  addDryCleanItem,
+  addIroningItem,
+  addWashAndIronItem,
+  addWashItem,
+  decrementDryCleanItem,
+  decrementIroningItem,
+  decrementWashAndIronItem,
+  decrementWashItem,
+  incrementDryCleanItem,
+  incrementIroningItem,
+  incrementWashAndIronItem,
+  incrementWashItem,
+  removeDrycleanItem,
+  removeIroningItem,
+  removeWashAndIronItem,
+  removeWashItem,
+  setService,
+  setServiceType,
+} from "../../redux/orderNowSlice";
+import { AiOutlineCheckCircle } from "react-icons/ai";
 
 const Service = () => {
   const selectedService = useSelector(
     (state) => state.orderNow.stepperData.services.serviceType
   );
+  const navigate = useNavigate();
+
   return (
-    <Stack>
-      <Typography>Services</Typography>
+    <Stack spacing={2}>
+      <Typography variant="h4" fontWeight={600}>
+        Services
+      </Typography>
       <Stack
         direction="row"
         justifyContent={"center"}
@@ -32,7 +65,7 @@ const Service = () => {
         />
       </Stack>
       <Stack>
-        <Typography>
+        <Typography variant="h5" fontWeight={600}>
           {selectedService === "wash"
             ? "Wash"
             : selectedService === "washAndIron"
@@ -43,12 +76,34 @@ const Service = () => {
             ? "Dry Cleaning"
             : ""}
         </Typography>
-        <Typography>
+        <Typography color={"text.muted"}>
           Lorem Ipsum has been the industry's standard dummy text ever since the
           1500s, when an unknown printer took a galley of type and scrambled
         </Typography>
       </Stack>
       <BasicTabs></BasicTabs>
+      <Stack direction={"row"} justifyContent="space-between">
+        <Button
+          variant="contained"
+          size="large"
+          sx={{ minWidth: [150, 200], textTransform: "none" }}
+          onClick={() => {
+            navigate("/ordernow/address");
+          }}
+        >
+          Back
+        </Button>
+        <Button
+          variant="contained"
+          size="large"
+          sx={{ minWidth: [150, 200], textTransform: "none" }}
+          onClick={() => {
+            navigate("/ordernow/collection");
+          }}
+        >
+          Next
+        </Button>
+      </Stack>
     </Stack>
   );
 };
@@ -142,13 +197,16 @@ function TabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+      {value === index && <Box sx={{ p: [1, 2, 3] }}>{children}</Box>}
     </div>
   );
 }
 
 function BasicTabs() {
   const [value, setValue] = React.useState(0);
+  const selectedService = useSelector(
+    (state) => state.orderNow.stepperData.services.serviceType
+  );
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -162,31 +220,84 @@ function BasicTabs() {
           onChange={handleChange}
           indicatorColor="secondary"
           aria-label="basic tabs example"
-          sx={{
-            "& .Mui-selected": {
-              background: "white",
-              color: "darkolivegreen",
-            },
-            color: "gray",
-          }}
         >
-          <Tab label="Price List" />
-          <Tab label="Frequently asked questions" />
+          <Tab
+            sx={{
+              fontSize: 16,
+              fontWeight: 600,
+            }}
+            label="Price List"
+          />
+          <Tab
+            label="Frequently asked questions"
+            sx={{
+              fontSize: 16,
+              fontWeight: 600,
+              color: "#787878",
+            }}
+          />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <Stack direction={"row"} gap={2} flexWrap={"wrap"}>
-          <Item name="Shirts" />
-          <Item name="Bottoms" />
-          <Item name="Tops" />
-          <Item name="Dresss" />
-          <Item name="Jackets" />
-          <Item name="Outwear" />
-          <Item name="Bed Sheets" />
-        </Stack>
+        {selectedService === "wash" && (
+          <Stack direction={"row"} gap={2} flexWrap={"wrap"}>
+            <Item name="Shirts" serviceType="wash" price={12.99} />
+            <Item name="Bottoms" serviceType="wash" price={12.99} />
+            <Item name="Tops" serviceType="wash" price={12.99} />
+            <Item name="Dresss" serviceType="wash" price={12.99} />
+            <Item name="Jackets" serviceType="wash" price={12.99} />
+            <Item name="Outwear" serviceType="wash" price={12.99} />
+            <Item name="Bed Sheets" serviceType="wash" price={12.99} />
+          </Stack>
+        )}
+        {selectedService === "washAndIron" && (
+          <Stack direction={"row"} gap={2} flexWrap={"wrap"}>
+            <Item name="Shirts" serviceType="washAndIron" price={12.99} />
+            <Item name="Bottoms" serviceType="washAndIron" price={12.99} />
+            <Item name="Tops" serviceType="washAndIron" price={12.99} />
+            <Item name="Dresss" serviceType="washAndIron" price={12.99} />
+            <Item name="Jackets" serviceType="washAndIron" price={12.99} />
+            <Item name="Outwear" serviceType="washAndIron" price={12.99} />
+            <Item name="Bed Sheets" serviceType="washAndIron" price={12.99} />
+          </Stack>
+        )}
+
+        {selectedService === "ironing" && (
+          <Stack direction={"row"} gap={2} flexWrap={"wrap"}>
+            <Item name="Shirts" serviceType="ironing" price={12.99} />
+            <Item name="Bottoms" serviceType="ironing" price={12.99} />
+            <Item name="Tops" serviceType="ironing" price={12.99} />
+            <Item name="Dresss" serviceType="ironing" price={12.99} />
+            <Item name="Jackets" serviceType="ironing" price={12.99} />
+            <Item name="Outwear" serviceType="ironing" price={12.99} />
+            <Item name="Bed Sheets" serviceType="ironing" price={12.99} />
+          </Stack>
+        )}
+
+        {selectedService === "dryCleaning" && (
+          <Stack direction={"row"} gap={2} flexWrap={"wrap"}>
+            <Item name="Shirts" serviceType="dryCleaning" price={12.99} />
+            <Item name="Bottoms" serviceType="dryCleaning" price={12.99} />
+            <Item name="Tops" serviceType="dryCleaning" price={12.99} />
+            <Item name="Dresss" serviceType="dryCleaning" price={12.99} />
+            <Item name="Jackets" serviceType="dryCleaning" price={12.99} />
+            <Item name="Outwear" serviceType="dryCleaning" price={12.99} />
+            <Item name="Bed Sheets" serviceType="dryCleaning" price={12.99} />
+          </Stack>
+        )}
+        <Box
+          sx={{
+            overflow: "scroll",
+            paddingY: 2,
+          }}
+        >
+          <PriceTable />
+        </Box>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Frequently asked questions
+        <Faq />
+        <Faq />
+        <Faq />
       </TabPanel>
     </Box>
   );
@@ -194,25 +305,109 @@ function BasicTabs() {
 
 const Item = (prop) => {
   const services = useSelector((state) => state.orderNow.stepperData.services);
-  const [selected, setSelected] = useState(false);
   const dispatach = useDispatch();
-  const handleSelected = () => {
-    setSelected((state) => (state === false ? true : false));
+
+  const isSelected = () => {
+    if (prop.serviceType === "wash") {
+      const itemExist = services.wash.items.filter(
+        (item) => item.name === prop.name
+      );
+      if (itemExist.length > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    } else if (prop.serviceType === "washAndIron") {
+      const itemExist = services.washAndIron.items.filter(
+        (item) => item.name === prop.name
+      );
+      if (itemExist.length > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    } else if (prop.serviceType === "ironing") {
+      const itemExist = services.ironing.items.filter(
+        (item) => item.name === prop.name
+      );
+      if (itemExist.length > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    } else if (prop.serviceType === "dryCleaning") {
+      const itemExist = services.dryCleaning.items.filter(
+        (item) => item.name === prop.name
+      );
+      if (itemExist.length > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
   };
 
-  useEffect(() => {
-    if (selected === true) {
-      dispatach(
-        setService({
-          wash: { items: [] },
-          washAndIron: { items: [] },
-          ironing: { items: [] },
-          wdryCleaningash: { items: [] },
-        })
-      );
-    } else if (selected === false) {
+  const handleSelected = () => {
+    if (prop.serviceType === "wash") {
+      if (isSelected()) {
+        dispatach(removeWashItem({ name: prop.name }));
+      } else {
+        dispatach(
+          addWashItem({
+            name: prop.name,
+            quantity: 1,
+            price: prop.price,
+            serviceType: "wash",
+          })
+        );
+      }
     }
-  }, [selected]);
+    if (prop.serviceType === "washAndIron") {
+      if (isSelected()) {
+        dispatach(removeWashAndIronItem({ name: prop.name }));
+      } else {
+        dispatach(
+          addWashAndIronItem({
+            name: prop.name,
+            quantity: 1,
+            price: prop.price,
+            serviceType: "washAndIron",
+          })
+        );
+      }
+    }
+    if (prop.serviceType === "ironing") {
+      if (isSelected()) {
+        dispatach(removeIroningItem({ name: prop.name }));
+      } else {
+        dispatach(
+          addIroningItem({
+            name: prop.name,
+            quantity: 1,
+            price: prop.price,
+            serviceType: "ironing",
+          })
+        );
+      }
+    }
+    if (prop.serviceType === "dryCleaning") {
+      if (isSelected()) {
+        dispatach(removeDrycleanItem({ name: prop.name }));
+      } else {
+        dispatach(
+          addDryCleanItem({
+            name: prop.name,
+            quantity: 1,
+            price: prop.price,
+            serviceType: "dryCleaning",
+          })
+        );
+      }
+    }
+  };
+
   return (
     <Button
       sx={{
@@ -221,14 +416,314 @@ const Item = (prop) => {
         p: 0,
         width: 90,
         textTransform: "none",
-        background: !selected ? "white" : "#E5FCFF",
-        borderColor: !selected && "#C8C8C8",
-        color: !selected && "text.muted",
+        background: !isSelected() ? "white" : "#E5FCFF",
+        borderColor: !isSelected() && "#C8C8C8",
+        color: !isSelected() && "text.muted",
       }}
       size="small"
       onClick={handleSelected}
     >
       {prop.name}
     </Button>
+  );
+};
+
+const PriceTable = () => {
+  const serviceState = useSelector(
+    (state) => state.orderNow.stepperData.services
+  );
+
+  const dispatch = useDispatch();
+  return (
+    <Box
+      sx={{
+        "& table": {
+          width: "100%",
+          whiteSpace: "nowrap",
+        },
+        "& th": {
+          p: 1,
+        },
+        "& .name,.serviceType": {
+          textAlign: "start",
+        },
+        "& td": {
+          textAlign: "center",
+          p: 1,
+          color: "#747474",
+          whiteSpace: "nowrap",
+        },
+        "& .total-price": {
+          fontWeight: 600,
+          color: "secondary.main",
+          display: "flex",
+          justifyContent: "end",
+          gap: 6,
+          px: 2,
+        },
+        "& .qty": {
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: 1,
+        },
+      }}
+    >
+      <table>
+        <thead>
+          <tr>
+            <th className="name">Product</th>
+            <th className="serviceType">Service Type</th>
+            <th className="price">Pricing</th>
+            <th className="qty">Quantity</th>
+            <th className="estimated">Estimated</th>
+          </tr>
+        </thead>
+        <tbody>
+          {serviceState.wash.items.map((item) => (
+            <tr>
+              <td className="name">{item.name}</td>
+              <td className="serviceType">
+                {item.serviceType === "wash"
+                  ? "Wash"
+                  : item.serviceType === "washAndIron"
+                  ? "Wash & Iron"
+                  : item.serviceType === "ironing"
+                  ? "Ironing"
+                  : item.serviceType === "dryCleaning" && "Dry Clean"}
+              </td>
+              <td className="price">&#163; {item.price}</td>
+              <td className="qty">
+                <Button
+                  variant="contained"
+                  size="small"
+                  sx={{
+                    p: 0,
+                    height: 17,
+                    width: 17,
+                    minWidth: 17,
+                    borderRadius: "2px",
+                  }}
+                  onClick={() => {
+                    dispatch(decrementWashItem({ name: item.name }));
+                  }}
+                >
+                  -
+                </Button>
+                {item.quantity}
+                <Button
+                  variant="contained"
+                  sx={{
+                    p: 0,
+                    height: 17,
+                    width: 17,
+                    minWidth: 17,
+                    borderRadius: "2px",
+                  }}
+                  onClick={() => {
+                    dispatch(incrementWashItem({ name: item.name }));
+                  }}
+                >
+                  +
+                </Button>
+              </td>
+              <td className="estimated">&#163; {item.quantity * item.price}</td>
+            </tr>
+          ))}
+          {serviceState.washAndIron.items.map((item) => (
+            <tr>
+              <td className="name">{item.name}</td>
+              <td className="serviceType">
+                {item.serviceType === "wash"
+                  ? "Wash"
+                  : item.serviceType === "washAndIron"
+                  ? "Wash & Iron"
+                  : item.serviceType === "ironing"
+                  ? "Ironing"
+                  : item.serviceType === "dryCleaning" && "Dry Clean"}
+              </td>
+              <td className="price">&#163; {item.price}</td>
+              <td className="qty">
+                <Button
+                  variant="contained"
+                  size="small"
+                  sx={{
+                    p: 0,
+                    height: 17,
+                    width: 17,
+                    minWidth: 17,
+                    borderRadius: "2px",
+                  }}
+                  onClick={() => {
+                    dispatch(decrementWashAndIronItem({ name: item.name }));
+                  }}
+                >
+                  -
+                </Button>
+                {item.quantity}
+                <Button
+                  variant="contained"
+                  sx={{
+                    p: 0,
+                    height: 17,
+                    width: 17,
+                    minWidth: 17,
+                    borderRadius: "2px",
+                  }}
+                  onClick={() => {
+                    dispatch(incrementWashAndIronItem({ name: item.name }));
+                  }}
+                >
+                  +
+                </Button>
+              </td>
+              <td className="estimated">&#163; {item.quantity * item.price}</td>
+            </tr>
+          ))}
+          {serviceState.ironing.items.map((item) => (
+            <tr>
+              <td className="name">{item.name}</td>
+              <td className="serviceType">
+                {item.serviceType === "wash"
+                  ? "Wash"
+                  : item.serviceType === "washAndIron"
+                  ? "Wash & Iron"
+                  : item.serviceType === "ironing"
+                  ? "Ironing"
+                  : item.serviceType === "dryCleaning" && "Dry Clean"}
+              </td>
+              <td className="price">&#163; {item.price}</td>
+              <td className="qty">
+                <Button
+                  variant="contained"
+                  size="small"
+                  sx={{
+                    p: 0,
+                    height: 17,
+                    width: 17,
+                    minWidth: 17,
+                    borderRadius: "2px",
+                  }}
+                  onClick={() => {
+                    dispatch(decrementIroningItem({ name: item.name }));
+                  }}
+                >
+                  -
+                </Button>
+                {item.quantity}
+                <Button
+                  variant="contained"
+                  sx={{
+                    p: 0,
+                    height: 17,
+                    width: 17,
+                    minWidth: 17,
+                    borderRadius: "2px",
+                  }}
+                  onClick={() => {
+                    dispatch(incrementIroningItem({ name: item.name }));
+                  }}
+                >
+                  +
+                </Button>
+              </td>
+              <td> &#163; {item.quantity * item.price}</td>
+            </tr>
+          ))}
+          {serviceState.dryCleaning.items.map((item) => (
+            <tr>
+              <td className="name">{item.name}</td>
+              <td className="serviceType">
+                {item.serviceType === "wash"
+                  ? "Wash"
+                  : item.serviceType === "washAndIron"
+                  ? "Wash & Iron"
+                  : item.serviceType === "ironing"
+                  ? "Ironing"
+                  : item.serviceType === "dryCleaning" && "Dry Clean"}
+              </td>
+              <td className="price">&#163; {item.price}</td>
+              <td className="qty">
+                <Button
+                  variant="contained"
+                  size="small"
+                  sx={{
+                    p: 0,
+                    height: 17,
+                    width: 17,
+                    minWidth: 17,
+                    borderRadius: "2px",
+                  }}
+                  onClick={() => {
+                    dispatch(decrementDryCleanItem({ name: item.name }));
+                  }}
+                >
+                  -
+                </Button>
+                {item.quantity}
+                <Button
+                  variant="contained"
+                  sx={{
+                    p: 0,
+                    height: 17,
+                    width: 17,
+                    minWidth: 17,
+                    borderRadius: "2px",
+                  }}
+                  onClick={() => {
+                    dispatch(incrementDryCleanItem({ name: item.name }));
+                  }}
+                >
+                  +
+                </Button>
+              </td>
+              <td className="estimated">&#163; {item.quantity * item.price}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <div className="total-price">
+        <div className="total-price">total Amount</div>
+        <div className="total-price">
+          {(
+            serviceState.wash.items.reduce(
+              (acc, item) => acc + item.quantity * item.price,
+              0
+            ) +
+            serviceState.washAndIron.items.reduce(
+              (acc, item) => acc + item.quantity * item.price,
+              0
+            ) +
+            serviceState.ironing.items.reduce(
+              (acc, item) => acc + item.quantity * item.price,
+              0
+            ) +
+            serviceState.dryCleaning.items.reduce(
+              (acc, item) => acc + item.quantity * item.price,
+              0
+            )
+          ).toFixed(2)}
+        </div>
+      </div>
+    </Box>
+  );
+};
+
+const Faq = () => {
+  return (
+    <>
+      <Stack direction={"row"} alignItems="center" gap={2} padding={2}>
+        <AiOutlineCheckCircle color="#00A5BF" size={25} />
+        <Stack>
+          <Typography variant="subtitle1" fontWeight={600}>
+            Service Overview
+          </Typography>
+          <Typography color="text.muted">
+            Lorem Ipsum has been the industry's standard{" "}
+          </Typography>
+        </Stack>
+      </Stack>
+      <Divider />
+    </>
   );
 };

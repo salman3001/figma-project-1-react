@@ -10,7 +10,7 @@ const DashboardLayout = () => {
     setDrawerState((state) => (state === true ? false : true));
   };
   return (
-    <Container maxWidth="xxl" fluid sx={{ padding: "0px" }}>
+    <Container maxWidth="full" fluid sx={{ padding: "0px" }}>
       <Box
         sx={{
           display: "flex",
