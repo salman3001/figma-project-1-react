@@ -14,10 +14,10 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<DashboardLayout />}>
-        <Route path="/myorders" element={<MyOrders />} />
-        <Route path="/promotions" element={<Promotions />} />
-        <Route path="/myaccount" element={<MyAccount />} />
-        <Route path="/ordernow" element={<OrderNow />}>
+        <Route path="myorders" element={<MyOrders />} />
+        <Route path="promotions" element={<Promotions />} />
+        <Route path="myaccount" element={<MyAccount />} />
+        <Route path="ordernow" element={<OrderNow />}>
           <Route path="address" element={<MyAddresses />} />
           <Route path="service" element={<Service />} />
           <Route path="collection" element={<Collection />} />
