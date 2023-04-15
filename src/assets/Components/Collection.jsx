@@ -1,12 +1,78 @@
-import { MenuItem, Select, Typography } from "@mui/material";
+import { Button, MenuItem, Select, TextField, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import { DatePicker } from "@mui/x-date-pickers";
-import { useFormik } from "formik";
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setActiveStep,
+  setCollectionDate,
+  setCollectionMessage,
+  setCollectionTime,
+  setDeliveryDate,
+  setDeliveryMessage,
+  setDeliveryTime,
+  setFrequency,
+} from "../../redux/orderNowSlice";
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const Collection = () => {
+  const collectionState = useSelector(
+    (state) => state.orderNow.stepperData.collection
+  );
+  const activeStep = useSelector((state) => state.orderNow.activeStep);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (activeStep === "address") {
+      navigate("/ordernow/address");
+    }
+  });
+
+  const today = new Date();
+  const tomorrowDate = new Date();
+  tomorrowDate.setDate(today.getDate() + 1);
+
+  const isButtonDisabled = () => {
+    if (
+      collectionState.collectionTime.date !== null &&
+      collectionState.collectionTime.timeSlot !== "" &&
+      collectionState.deliveryTime.date !== null &&
+      collectionState.deliveryTime.timeSlot !== ""
+    ) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
+  const IsMenuDisabled = (pastHour) => {
+    if (collectionState.collectionTime.date !== null) {
+      const todayDate = new Date();
+      const thisMonth = todayDate.getMonth();
+      const todayDay = todayDate.getDay();
+      const todayHours = todayDate.getHours();
+
+      const selectedDate = collectionState.collectionTime.date;
+      const selectedDay = selectedDate.getDay();
+      const selectedMonth = selectedDate.getMonth();
+
+      if (todayDay === selectedDay && thisMonth === selectedMonth) {
+        if (pastHour <= todayHours) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    }
+    return false;
+  };
+
   return (
-    <Stack>
+    <Stack spacing={3} padding={[1, 2, 3]}>
       <Stack>
         <Typography variant="h4" fontWeight={600}>
           Collection & delivery
@@ -17,32 +83,223 @@ const Collection = () => {
           Pickup Time
         </Typography>
       </Stack>
-      <Stack direction={"row"} spacing={2}>
-        <Stack flexGrow={1}>
+      <Stack direction={["column", "row"]} gap={2} color="text.muted">
+        <Stack flexGrow={1} spacing={1}>
           <label htmlFor="delieveryDay">Select Day</label>
-          <DatePicker disablePast />
+          <DatePicker
+            disablePast
+            value={collectionState.collectionTime.date}
+            onChange={(newValue) => {
+              dispatch(setCollectionDate(newValue));
+            }}
+          />
         </Stack>
-        <Stack flexGrow={1}>
+        <Stack flexGrow={1} spacing={1}>
           <label htmlFor="delieveryDay">Select Time</label>
           <Select
-            // value={0}
-            // onChange={handleChange}
+            disabled={
+              collectionState.collectionTime.date === null ? true : false
+            }
+            value={collectionState.collectionTime.timeSlot}
+            onChange={(e) => {
+              dispatch(setCollectionTime(e.target.value));
+            }}
             displayEmpty
             inputProps={{ "aria-label": "Without label" }}
             fullWidth
           >
-            <MenuItem disabled={date.Now().get} value={10}>
+            <MenuItem disabled={IsMenuDisabled(9)} value={"09:00-12:00"}>
               09:00-12:00
             </MenuItem>
-            <MenuItem value={20}>12:00-15:00</MenuItem>
-            <MenuItem value={30}>15:00-18:00</MenuItem>
-            <MenuItem value={30}>18:00-21:00</MenuItem>
-            <MenuItem value={30}>21:00-00:00</MenuItem>
+            <MenuItem disabled={IsMenuDisabled(12)} value={"12:00-15:00"}>
+              12:00-15:00
+            </MenuItem>
+            <MenuItem disabled={IsMenuDisabled(15)} value={"15:00-18:00"}>
+              15:00-18:00
+            </MenuItem>
+            <MenuItem disabled={IsMenuDisabled(18)} value={"18:00-21:00"}>
+              18:00-21:00
+            </MenuItem>
+            <MenuItem disabled={IsMenuDisabled(21)} value={"21:00-00:00"}>
+              21:00-00:00
+            </MenuItem>
           </Select>
         </Stack>
+      </Stack>
+      <TextareaCollectionMessage />
+      <Stack>
+        <Typography variant="h5" fontWeight={600}>
+          Delivery Time
+        </Typography>
+      </Stack>
+      <Stack direction={["column", "row"]} gap={2} color="text.muted">
+        <Stack flexGrow={1} spacing={1}>
+          <label htmlFor="delieveryDay">Select Day</label>
+          <DatePicker
+            minDate={tomorrowDate}
+            value={collectionState.deliveryTime.date}
+            onChange={(newValue) => {
+              dispatch(setDeliveryDate(newValue));
+            }}
+          />
+        </Stack>
+        <Stack flexGrow={1} spacing={1}>
+          <label htmlFor="delieveryDay">Select Time</label>
+          <Select
+            value={collectionState.deliveryTime.timeSlot}
+            onChange={(e) => {
+              dispatch(setDeliveryTime(e.target.value));
+            }}
+            inputProps={{ "aria-label": "Without label" }}
+            fullWidth
+          >
+            <MenuItem value={"09:00-12:00"}>09:00-12:00</MenuItem>
+            <MenuItem value={"12:00-15:00"}>12:00-15:00</MenuItem>
+            <MenuItem value={"15:00-18:00"}>15:00-18:00</MenuItem>
+            <MenuItem value={"18:00-21:00"}>18:00-21:00</MenuItem>
+            <MenuItem value={"21:00-00:00"}>21:00-00:00</MenuItem>
+          </Select>
+        </Stack>
+      </Stack>
+      <TextareaDeliveryMessage />
+      <Stack flexGrow={1} spacing={1}>
+        <label htmlFor="delieveryDay">Frequency</label>
+        <Select
+          value={collectionState.frequency}
+          onChange={(e) => {
+            dispatch(setFrequency(e.target.value));
+          }}
+          inputProps={{ "aria-label": "Without label" }}
+          fullWidth
+        >
+          <MenuItem value={"Once"}>Once</MenuItem>
+          <MenuItem value={"Weekly"}>Weekly</MenuItem>
+        </Select>
+      </Stack>
+      <Stack direction={"row"} justifyContent="space-between">
+        <Button
+          variant="contained"
+          size="large"
+          sx={{ minWidth: [150, 200], textTransform: "none" }}
+          onClick={() => {
+            navigate("/ordernow/service");
+          }}
+          startIcon={<BsArrowLeft />}
+        >
+          Back
+        </Button>
+        <Button
+          variant="contained"
+          size="large"
+          sx={{ minWidth: [150, 200], textTransform: "none" }}
+          onClick={() => {
+            dispatch(setActiveStep("contact"));
+            navigate("/ordernow/contact");
+          }}
+          disabled={isButtonDisabled()}
+          endIcon={<BsArrowRight />}
+        >
+          Next
+        </Button>
       </Stack>
     </Stack>
   );
 };
 
 export default Collection;
+
+const TextareaCollectionMessage = () => {
+  const dispatch = useDispatch();
+  const [value, setValue] = useState("");
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      dispatch(setCollectionMessage(value));
+    }, 2000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [value]);
+  return (
+    <Stack
+      color="text.muted"
+      sx={{
+        "& textarea": {
+          resize: "none",
+          height: 100,
+          borderRadius: 2,
+          borderColor: "rgba(0, 0, 0, 0.2)",
+          p: 1,
+          fontFamily: "inter",
+          "&:focus": {
+            outline: "none",
+            border: 1,
+            borderColor: "primary.main",
+          },
+          "&:hover": {
+            borderColor: "black",
+          },
+        },
+      }}
+      spacing={1}
+    >
+      <Typography>Driver instructions</Typography>
+      <textarea
+        placeholder="Add any special instructions for driver "
+        value={value}
+        onChange={(e) => {
+          dispatch(setValue(e.target.value));
+        }}
+      ></textarea>
+    </Stack>
+  );
+};
+
+const TextareaDeliveryMessage = () => {
+  const dispatch = useDispatch();
+  const [value, setValue] = useState("");
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      dispatch(setDeliveryMessage(value));
+    }, 2000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [value]);
+  return (
+    <Stack
+      color="text.muted"
+      sx={{
+        "& textarea": {
+          resize: "none",
+          height: 100,
+          borderRadius: 2,
+          borderColor: "rgba(0, 0, 0, 0.2)",
+          p: 1,
+          fontFamily: "inter",
+          "&:focus": {
+            outline: "none",
+            border: 1,
+            borderColor: "primary.main",
+          },
+          "&:hover": {
+            borderColor: "black",
+          },
+        },
+      }}
+      spacing={1}
+    >
+      <Typography>Driver instructions</Typography>
+      <textarea
+        placeholder="Add any special instructions for driver "
+        value={value}
+        onChange={(e) => {
+          dispatch(setValue(e.target.value));
+        }}
+      ></textarea>
+    </Stack>
+  );
+};

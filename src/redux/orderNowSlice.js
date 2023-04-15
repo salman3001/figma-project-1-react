@@ -10,14 +10,16 @@ const initialState = {
         },
         collection: {
             collectionTime: {
-                time: "",
+                date: null,
+                timeSlot: "",
                 message: "",
-                notes: ""
+                notes: "Notes Lorem Ipsum has been the industry's standard dummy"
             }, deliveryTime: {
-                time: "",
+                date: null,
+                timeSlot: "",
                 message: "",
-                notes: ""
-            }, frquency: ""
+                notes: "Notes Lorem Ipsum has been the industry's standard dummy"
+            }, frequency: ""
         },
 
         contact: {
@@ -220,8 +222,26 @@ export const orderNowSlice = createSlice({
         },
 
         //start code here
-        setCollection: (state, { payload }) => {
-            state.stepperData.collection = payload
+        setCollectionDate: (state, { payload }) => {
+            state.stepperData.collection.collectionTime.date = payload
+        },
+        setCollectionTime: (state, { payload }) => {
+            state.stepperData.collection.collectionTime.timeSlot = payload
+        },
+        setCollectionMessage: (state, { payload }) => {
+            state.stepperData.collection.collectionTime.message = payload
+        },
+        setDeliveryDate: (state, { payload }) => {
+            state.stepperData.collection.deliveryTime.date = payload
+        },
+        setDeliveryTime: (state, { payload }) => {
+            state.stepperData.collection.deliveryTime.timeSlot = payload
+        },
+        setDeliveryMessage: (state, { payload }) => {
+            state.stepperData.collection.deliveryTime.message = payload
+        },
+        setFrequency: (state, { payload }) => {
+            state.stepperData.collection.frequency = payload
         },
 
         setContact: (state, { payload }) => {
@@ -235,6 +255,6 @@ export const orderNowSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { setActiveStep, resetStep, setService, setServiceType, addWashItem, removeWashItem, incrementWashItem, decrementWashItem, addWashAndIronItem, removeWashAndIronItem, incrementWashAndIronItem, decrementWashAndIronItem, addIroningItem, removeIroningItem, incrementIroningItem, decrementIroningItem, addDryCleanItem, removeDrycleanItem, incrementDryCleanItem, decrementDryCleanItem, setAddress, setCollection, setContact, setPayment } = orderNowSlice.actions
+export const { setActiveStep, resetStep, setService, setServiceType, addWashItem, removeWashItem, incrementWashItem, decrementWashItem, addWashAndIronItem, removeWashAndIronItem, incrementWashAndIronItem, decrementWashAndIronItem, addIroningItem, removeIroningItem, incrementIroningItem, decrementIroningItem, addDryCleanItem, removeDrycleanItem, incrementDryCleanItem, decrementDryCleanItem, setAddress, setCollectionTimeData, setCollectionDate, setCollectionTime, setCollectionMessage, setDeliveryDate, setDeliveryTime, setDeliveryMessage, setFrequency, setContact, setPayment } = orderNowSlice.actions
 
 export default orderNowSlice.reducer
