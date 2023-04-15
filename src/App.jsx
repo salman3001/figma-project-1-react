@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import MyOrders from "./assets/Pages/MyOrders";
 import Promotions from "./assets/Pages/Promotions";
 import DashboardLayout from "./assets/Components/DashboardLayout";
@@ -9,6 +9,7 @@ import Service from "./assets/Components/Service";
 import Collection from "./assets/Components/Collection";
 import Contact from "./assets/Components/Contact";
 import Payment from "./assets/Components/Payment";
+import { useSelector } from "react-redux";
 
 function App() {
   return (

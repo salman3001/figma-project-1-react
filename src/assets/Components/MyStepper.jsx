@@ -21,9 +21,9 @@ const MyStepper = (prop) => {
       : location.pathname === "/ordernow/collection"
       ? 2
       : location.pathname === "/ordernow/contact"
-      ? 6
+      ? 5
       : location.pathname === "/ordernow/payment"
-      ? 7
+      ? 6
       : null;
   return (
     <Stepper
@@ -153,7 +153,7 @@ const MyStepper = (prop) => {
           {prop.step.collection.collectionTime.time !== "" && (
             <>
               <Typography>
-                {prop.step.collection.collectionTime.time}
+                {prop.step.collection.collectionTime.timeSlot}
               </Typography>
               <Typography>
                 {prop.step.collection.collectionTime.message}
@@ -172,7 +172,9 @@ const MyStepper = (prop) => {
         <StepContent>
           {prop.step.collection.deliveryTime.time !== "" && (
             <>
-              <Typography>{prop.step.collection.deliveryTime.time}</Typography>
+              <Typography>
+                {prop.step.collection.deliveryTime.timeSlot}
+              </Typography>
               <Typography>
                 {prop.step.collection.deliveryTime.message}
               </Typography>
@@ -186,8 +188,8 @@ const MyStepper = (prop) => {
           <Typography fontWeight={650}>Frequency</Typography>
         </StepLabel>
         <StepContent>
-          {prop.step.collection.frquency !== "" && (
-            <Typography>{prop.step.collection.frquency}</Typography>
+          {prop.step.collection.frequency !== "" && (
+            <Typography>{prop.step.collection.frequency}</Typography>
           )}
           <Divider sx={{ pt: 2 }} />
         </StepContent>

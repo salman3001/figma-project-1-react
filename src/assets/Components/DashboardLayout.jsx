@@ -1,14 +1,16 @@
 import { Box, Container, Stack } from "@mui/material";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Outlet } from "react-router-dom";
 import MyDrawer from "./MyDrawer";
 import Navbar from "./Navbar";
 
 const DashboardLayout = () => {
   const [drawerState, setDrawerState] = useState(false);
-  const togelState = () => {
+
+  const togelState = useCallback(() => {
     setDrawerState((state) => (state === true ? false : true));
-  };
+  }, []);
+
   return (
     <Container maxWidth="full" fluid sx={{ padding: "0px" }}>
       <Box

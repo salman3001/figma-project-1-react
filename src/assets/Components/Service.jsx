@@ -7,9 +7,10 @@ import {
   Tabs,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import {
   addDryCleanItem,
   addIroningItem,
@@ -27,16 +28,41 @@ import {
   removeIroningItem,
   removeWashAndIronItem,
   removeWashItem,
+  setActiveStep,
   setService,
   setServiceType,
 } from "../../redux/orderNowSlice";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 
 const Service = () => {
+  const navigate = useNavigate();
   const selectedService = useSelector(
     (state) => state.orderNow.stepperData.services.serviceType
   );
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const serviceState = useSelector(
+    (state) => state.orderNow.stepperData.services
+  );
+  const activeStep = useSelector((state) => state.orderNow.activeStep);
+
+  useEffect(() => {
+    if (activeStep === "address") {
+      navigate("/ordernow/address");
+    }
+  });
+
+  const isButtonDisabled = () => {
+    if (
+      serviceState.wash.items.length >= 1 ||
+      serviceState.washAndIron.items.length >= 1 ||
+      serviceState.ironing.items.length >= 1 ||
+      serviceState.dryCleaning.items.length >= 1
+    ) {
+      return false;
+    } else {
+      return true;
+    }
+  };
 
   return (
     <Stack spacing={2}>
@@ -88,8 +114,10 @@ const Service = () => {
           size="large"
           sx={{ minWidth: [150, 200], textTransform: "none" }}
           onClick={() => {
+            dispatch(setActiveStep("/ordernow/collection"));
             navigate("/ordernow/address");
           }}
+          startIcon={<BsArrowLeft />}
         >
           Back
         </Button>
@@ -98,8 +126,11 @@ const Service = () => {
           size="large"
           sx={{ minWidth: [150, 200], textTransform: "none" }}
           onClick={() => {
+            dispatch(setActiveStep("collection"));
             navigate("/ordernow/collection");
           }}
+          disabled={isButtonDisabled()}
+          endIcon={<BsArrowRight />}
         >
           Next
         </Button>

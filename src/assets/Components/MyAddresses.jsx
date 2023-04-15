@@ -6,12 +6,14 @@ import AddAddressModal from "./AddAddressModal";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setActiveStep } from "../../redux/orderNowSlice";
 
 const MyAddresses = () => {
   const addressState = useSelector(
     (state) => state.orderNow.stepperData.address
   );
+  const dispatch = useDispatch();
   const [modalOpen, setModalOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -51,6 +53,7 @@ const MyAddresses = () => {
             variant="contained"
             endIcon={<BsArrowRight />}
             onClick={() => {
+              dispatch(setActiveStep("service"));
               navigate("/ordernow/service");
             }}
             disabled={addressState.addressId === "" ? true : false}

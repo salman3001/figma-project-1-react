@@ -8,7 +8,7 @@ import {
   Typography,
   formLabelClasses,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import AvatarEditable from "./AvatarEditable";
 import { useFormik } from "formik";
 import { RxCross1 } from "react-icons/rx";
@@ -17,9 +17,9 @@ import { BsArrowRight } from "react-icons/bs";
 
 const MyProfile = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const handelModalTogel = () => {
+  const handelModalTogel = useCallback(() => {
     setModalOpen((state) => (state === true ? false : true));
-  };
+  }, []);
   const formik = useFormik({
     initialValues: {
       image: null,
@@ -41,8 +41,6 @@ const MyProfile = () => {
         .min(2, "minimum two charectors required"),
     }),
     onSubmit: (values) => {
-      console.log(formik.values.image);
-
       if (formik.values.image === "" || formik.values.image == null) {
         alert(
           `user have entered data - name - ${values.name}, surname - ${values.surname}, email- ${values.email}, mobile- ${values.mobile}`
@@ -60,8 +58,6 @@ const MyProfile = () => {
       }
     },
   });
-
-  console.log(formik.values);
 
   return (
     <Stack padding={[1, 2, 3, 4]} spacing={4} bgcolor="white">

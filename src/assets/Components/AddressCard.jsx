@@ -1,7 +1,6 @@
 import { FiHome } from "react-icons/fi";
 import { BiEdit } from "react-icons/bi";
 import { Avatar, Button, Stack, Typography } from "@mui/material";
-import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setAddress } from "../../redux/orderNowSlice";
@@ -15,6 +14,7 @@ const AddressCard = (prop) => {
   const handelSelected = () => {
     dispatch(setAddress({ addressId: prop.id, address: prop.address }));
   };
+
   return (
     <Stack
       direction={["column", "row"]}
@@ -66,6 +66,10 @@ const AddressCard = (prop) => {
                 prop.id === addressState.addressId ? "primary.main" : "none",
               color:
                 prop.id === addressState.addressId ? "primary.main" : "white",
+              "&:hover": {
+                bgcolor:
+                  prop.id === addressState.addressId ? "white" : "primary.main",
+              },
             }}
             size="small"
             startIcon={<BiEdit />}

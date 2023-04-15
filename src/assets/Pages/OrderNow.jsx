@@ -7,8 +7,14 @@ import OfferCard from "../Components/OfferCard";
 
 const OrderNow = () => {
   const location = useLocation();
-
   const orderNowState = useSelector((state) => state.orderNow);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (location.pathname === "/ordernow/") {
+      navigate("/ordernow/address");
+    }
+  });
 
   return (
     <Stack>
