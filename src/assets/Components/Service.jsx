@@ -90,8 +90,8 @@ const Service = () => {
           value="dryCleaning"
         />
       </Stack>
-      <Stack>
-        <Typography variant="h5" fontWeight={600}>
+      <Stack gap={1}>
+        <Typography variant="h4" fontWeight={600}>
           {selectedService === "wash"
             ? "Wash"
             : selectedService === "washAndIron"
@@ -250,21 +250,23 @@ function BasicTabs() {
           value={value}
           onChange={handleChange}
           indicatorColor="secondary"
+          textColor="secondary"
           aria-label="basic tabs example"
         >
           <Tab
             sx={{
-              fontSize: 16,
+              fontSize: [16, 17, 18, 20],
               fontWeight: 600,
+              color: "text.muted  ",
             }}
             label="Price List"
           />
           <Tab
             label="Frequently asked questions"
             sx={{
-              fontSize: 16,
+              fontSize: [16, 17, 18, 20],
               fontWeight: 600,
-              color: "#787878",
+              color: "text.muted",
             }}
           />
         </Tabs>

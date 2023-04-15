@@ -6,7 +6,8 @@ const Promotions = () => {
   return (
     <Grid
       container
-      spacing={2}
+      spacing={4}
+      padding={4}
       sx={{
         px: [2, 2, 4],
         py: [9, 9, 9, 2],

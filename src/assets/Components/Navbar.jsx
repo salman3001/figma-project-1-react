@@ -60,7 +60,7 @@ const Navbar = (prop) => {
           <Box
             sx={{
               position: ["absolute", "absolute", "absolute", "static"],
-              top: [80],
+              top: [75, 75, 60],
               left: [0],
               width: [280],
             }}

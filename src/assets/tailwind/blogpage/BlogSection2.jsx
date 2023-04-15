@@ -1,12 +1,12 @@
 import { BlogCard1 } from "../common/BlogCard1";
 import BlogCard2 from "../common/BlogCard2";
-import Searchinput from "../common/Searchinput";
+import Searchinput from "../common/SearchInput";
 
 const BlogSection2 = () => {
   return (
     <div className="p-10 px-10 md:px-20 flex flex-col gap-12">
       <div className="self-end">
-        <Searchinput />
+        <SearchInput />
       </div>
       <div className="w-full flex flex-col lg:flex-row gap-6">
         <div className="lg:w-[60%]">

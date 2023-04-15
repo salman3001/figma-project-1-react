@@ -17,7 +17,7 @@ const MyOrders = () => {
       }}
     >
       <Grid item xs={12} lg={8}>
-        <Stack>
+        <Stack padding={2}>
           <Orders />
         </Stack>
       </Grid>

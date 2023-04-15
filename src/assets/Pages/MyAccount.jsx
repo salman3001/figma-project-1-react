@@ -21,17 +21,21 @@ const MyAccount = () => {
           <Tabs
             value={value}
             onChange={handleChange}
+            indicatorColor="primary"
+            textColor="white"
             aria-label="basic tabs example"
             sx={{
               "& .Mui-selected": {
                 bgcolor: "primary.main",
-                color: "lightgray",
               },
               "& .MuiTabs-flexContainer": {
                 gap: 5,
               },
               "& .MuiButtonBase-root": {
+                border: 1,
                 borderRadius: "10px 10px 0px 0px",
+                borderColor: "rgba(161, 242, 255, 0.4)",
+                fontSize: 17,
                 minWidth: ["100px", "150px", "200px"],
                 borderBottom: "none",
               },
@@ -64,12 +68,18 @@ function TabPanel(props) {
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
       {...other}
+      style={{ borderRadius: 40 }}
     >
       {value === index && (
         <Box
           bgcolor="#F3F9FD"
           minHeight={300}
-          sx={{ border: 0.1, borderColor: "rgba(161, 242, 255, 0.4)" }}
+          sx={{
+            border: 0.1,
+            borderColor: "rgba(161, 242, 255, 0.4)",
+            borderRadius: 3,
+            borderTopLeftRadius: 0,
+          }}
         >
           {children}
         </Box>

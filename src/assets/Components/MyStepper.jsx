@@ -7,6 +7,7 @@ import {
   Stepper,
   Typography,
 } from "@mui/material";
+import { format } from "date-fns";
 import React from "react";
 import { useLocation } from "react-router-dom";
 
@@ -153,12 +154,22 @@ const MyStepper = (prop) => {
           {prop.step.collection.collectionTime.time !== "" && (
             <>
               <Typography>
+                {format(prop.step.collection.collectionTime.date, "dd/MM/yy")}
+              </Typography>
+              <Typography>
                 {prop.step.collection.collectionTime.timeSlot}
               </Typography>
               <Typography>
                 {prop.step.collection.collectionTime.message}
               </Typography>
-              <Typography>
+              <Typography
+                color="secondary.main"
+                fontWeight={500}
+                variant="subtitle1"
+              >
+                Notes
+              </Typography>
+              <Typography color="secondary.main">
                 {prop.step.collection.collectionTime.notes}
               </Typography>
             </>
@@ -173,12 +184,24 @@ const MyStepper = (prop) => {
           {prop.step.collection.deliveryTime.time !== "" && (
             <>
               <Typography>
+                {format(prop.step.collection.deliveryTime.date, "dd/MM/yy")}
+              </Typography>
+              <Typography>
                 {prop.step.collection.deliveryTime.timeSlot}
               </Typography>
               <Typography>
                 {prop.step.collection.deliveryTime.message}
               </Typography>
-              <Typography>{prop.step.collection.deliveryTime.notes}</Typography>
+              <Typography
+                color="secondary.main"
+                fontWeight={500}
+                variant="subtitle1"
+              >
+                Notes
+              </Typography>
+              <Typography color="secondary.main">
+                {prop.step.collection.collectionTime.notes}
+              </Typography>
             </>
           )}
         </StepContent>

@@ -34,11 +34,11 @@ const OrderNow = () => {
         activeStep={location.pathname}
       />
       <Grid container>
-        <Grid xs={12} lg={8} padding={2}>
+        <Grid item xs={12} lg={8} padding={2} gap={2}>
           <Outlet />
         </Grid>
-        <Grid xs={12} lg={4} padding={2}>
-          <Stack>
+        <Grid item xs={12} lg={4} padding={2}>
+          <Stack paddingY={(0, 2, 3)} paddingX={2} spacing={4}>
             <MyStepper step={orderNowState.stepperData} />
             <OfferCard />
           </Stack>

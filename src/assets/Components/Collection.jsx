@@ -30,9 +30,17 @@ const Collection = () => {
     }
   });
 
-  const today = new Date();
-  const tomorrowDate = new Date();
-  tomorrowDate.setDate(today.getDate() + 1);
+  const validDeliveryDate = () => {
+    const tempdate = new Date();
+
+    if (collectionState.collectionTime.date !== null) {
+      return tempdate.setDate(
+        collectionState.collectionTime.date.getDate() + 1
+      );
+    } else {
+      return tempdate;
+    }
+  };
 
   const isButtonDisabled = () => {
     if (
@@ -46,6 +54,15 @@ const Collection = () => {
       return true;
     }
   };
+
+  const isDatePickerDisabled = () => {
+    if (collectionState.collectionTime.date === null) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  console.log(isDatePickerDisabled());
 
   const IsMenuDisabled = (pastHour) => {
     if (collectionState.collectionTime.date !== null) {
@@ -136,7 +153,8 @@ const Collection = () => {
         <Stack flexGrow={1} spacing={1}>
           <label htmlFor="delieveryDay">Select Day</label>
           <DatePicker
-            minDate={tomorrowDate}
+            disabled={isDatePickerDisabled()}
+            minDate={validDeliveryDate()}
             value={collectionState.deliveryTime.date}
             onChange={(newValue) => {
               dispatch(setDeliveryDate(newValue));
@@ -162,7 +180,19 @@ const Collection = () => {
         </Stack>
       </Stack>
       <TextareaDeliveryMessage />
-      <Stack flexGrow={1} spacing={1}>
+      <Stack
+        flexGrow={1}
+        spacing={1}
+        color="text.muted"
+        renderValue={(value) => {
+          return (
+            <Box sx={{ display: "flex", gap: 1 }}>
+              <BsArrowLeft />
+              {value}
+            </Box>
+          );
+        }}
+      >
         <label htmlFor="delieveryDay">Frequency</label>
         <Select
           value={collectionState.frequency}
@@ -232,6 +262,7 @@ const TextareaCollectionMessage = () => {
           borderColor: "rgba(0, 0, 0, 0.2)",
           p: 1,
           fontFamily: "inter",
+          border: 1,
           "&:focus": {
             outline: "none",
             border: 1,
@@ -280,6 +311,7 @@ const TextareaDeliveryMessage = () => {
           borderColor: "rgba(0, 0, 0, 0.2)",
           p: 1,
           fontFamily: "inter",
+          border: 1,
           "&:focus": {
             outline: "none",
             border: 1,
@@ -294,6 +326,9 @@ const TextareaDeliveryMessage = () => {
     >
       <Typography>Driver instructions</Typography>
       <textarea
+        style={{
+          borderColor: "gray",
+        }}
         placeholder="Add any special instructions for driver "
         value={value}
         onChange={(e) => {

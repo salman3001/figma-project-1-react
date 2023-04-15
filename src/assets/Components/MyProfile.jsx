@@ -60,7 +60,13 @@ const MyProfile = () => {
   });
 
   return (
-    <Stack padding={[1, 2, 3, 4]} spacing={4} bgcolor="white">
+    <Stack
+      margin={[1, 2, 3, 4]}
+      padding={[1, 2, 3, 4]}
+      spacing={4}
+      bgcolor="white"
+      borderRadius={2}
+    >
       <Stack direction={["column", "column", "column", "row"]} spacing={4}>
         <Box
           sx={{

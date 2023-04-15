@@ -12,7 +12,7 @@ import { AiOutlineDownload } from "react-icons/ai";
 import { DatePicker } from "@mui/x-date-pickers";
 import { BsCompass } from "react-icons/bs";
 import { SlArrowDown } from "react-icons/sl";
-import { forwardRef, useState } from "react";
+import { useState } from "react";
 import { GoLocation } from "react-icons/go";
 import { demoOrderData } from "../DemoData/demoOrderData";
 import TrackingModal from "./TrackingModal";
@@ -44,7 +44,7 @@ const Orders = () => {
               padding: 0,
               height: 10,
               "& input": {
-                height: 12,
+                height: 5,
               },
             }}
           />
