@@ -27,7 +27,7 @@ const MyOrders = () => {
             <Typography variant="h6" fontWeight={600}>
               Promotions
             </Typography>
-            <RouterLink to="/promotions">See All</RouterLink>
+            <RouterLink to="/dashboard/promotions">See All</RouterLink>
           </Stack>
           <OfferCard />
           <OfferCard />

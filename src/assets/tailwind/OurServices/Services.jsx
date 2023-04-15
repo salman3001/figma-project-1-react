@@ -11,7 +11,7 @@ import OurServiceSection6 from "./OurServiceSection6";
 
 const Services = () => {
   return (
-    <div className="flex bg-white container min-h-screen mx-auto flex-col justify-between">
+    <div className="flex bg-white  min-h-screen mx-auto flex-col justify-between">
       <header>
         <NavBar />
       </header>

@@ -16,6 +16,7 @@
     "@mui/material": "^5.11.16",
     "@mui/x-date-pickers": "^6.1.0",
     "@reduxjs/toolkit": "^1.9.3",
+    "daisyui": "^2.51.5",
     "date-fns": "^2.29.3",
     "formik": "^2.2.9",
     "gh-pages": "^5.0.0",
@@ -24,6 +25,7 @@
     "react-icons": "^4.8.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.10.0",
+    "tailwind-scrollbar-hide": "^1.1.7",
     "yup": "^1.1.0"
   },
   "devDependencies": {

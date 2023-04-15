@@ -1,11 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import FormInput from "../common/forms/FormInput";
 import Label from "../common/forms/Label";
 import OrDivider from "../common/OrDivider";
-import NavBar from "../navbar/NavBar";
 
 const Login = () => {
+  const navigate = useNavigate();
   return (
-    <main className="grid container mx-auto lg:grid-cols-2 min-h-screen max-w-screen  ">
+    <main className="grid r mx-auto lg:grid-cols-2 min-h-screen max-w-screen  ">
       <div className="bg-[#00A5BF] relative flex text-white flex-col justify-between  items-center">
         <h1 className="w-full p-6 border-b border-white border-opacity-20">
           <img
@@ -23,14 +24,20 @@ const Login = () => {
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/loginart.png"}
           alt=""
-          className="self-start"
+          className="self-start 2xl:self-center"
         />
       </div>
       <div className="bg-white ">
         <h1 className="w-full p-5 border-b text-end border-gray-300 border-opacity-20">
           <p>
             Don't have an account?{" "}
-            <a className="text-[#00A5BF]" href="/signup">
+            <a
+              className="text-[#00A5BF] cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate("/signup");
+              }}
+            >
               Signup
             </a>
           </p>

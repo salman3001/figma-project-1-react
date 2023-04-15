@@ -7,7 +7,7 @@ const Payment = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if (activeStep === "address") {
-      navigate("/ordernow/address");
+      navigate("/dashboard/ordernow/address");
     }
   });
   return <div>Payment</div>;

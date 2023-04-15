@@ -111,39 +111,45 @@ const MyDrawer = (prop) => {
             }}
           >
             <SideMenuOption
-              selected={location.pathname === "/myorders"}
-              navigateto="/myorders"
+              selected={location.pathname === "/dashboard/myorders"}
+              navigateto="/dashboard/myorders"
               title="My Orders"
               Icon={
                 <HiOutlineClipboard
                   color={
-                    location.pathname === "/myorders" ? "#00a5bf" : "white"
+                    location.pathname === "/dashboard/myorders"
+                      ? "#00a5bf"
+                      : "white"
                   }
                   size={25}
                 />
               }
             />
             <SideMenuOption
-              selected={location.pathname === "/promotions"}
-              navigateto="/promotions"
+              selected={location.pathname === "/dashboard/promotions"}
+              navigateto="/dashboard/promotions"
               title="Promotions"
               Icon={
                 <TfiMedallAlt
                   color={
-                    location.pathname === "/promotions" ? "#00a5bf" : "white"
+                    location.pathname === "/dashboard/promotions"
+                      ? "#00a5bf"
+                      : "white"
                   }
                   size={25}
                 />
               }
             />
             <SideMenuOption
-              selected={location.pathname === "/myaccount"}
-              navigateto="/myaccount"
+              selected={location.pathname === "/dashboard/myaccount"}
+              navigateto="/dashboard//myaccount"
               title="My Account"
               Icon={
                 <BiUser
                   color={
-                    location.pathname === "/myaccount" ? "#00a5bf" : "white"
+                    location.pathname === "/dashboard/myaccount"
+                      ? "#00a5bf"
+                      : "white"
                   }
                   size={25}
                 />

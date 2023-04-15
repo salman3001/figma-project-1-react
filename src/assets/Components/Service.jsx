@@ -47,7 +47,7 @@ const Service = () => {
 
   useEffect(() => {
     if (activeStep === "address") {
-      navigate("/ordernow/address");
+      navigate("/dashboard/ordernow/address");
     }
   });
 
@@ -115,7 +115,7 @@ const Service = () => {
           sx={{ minWidth: [150, 200], textTransform: "none" }}
           onClick={() => {
             dispatch(setActiveStep("/ordernow/collection"));
-            navigate("/ordernow/address");
+            navigate("/dashboard/ordernow/address");
           }}
           startIcon={<BsArrowLeft />}
         >
@@ -127,7 +127,7 @@ const Service = () => {
           sx={{ minWidth: [150, 200], textTransform: "none" }}
           onClick={() => {
             dispatch(setActiveStep("collection"));
-            navigate("/ordernow/collection");
+            navigate("/dashboard/ordernow/collection");
           }}
           disabled={isButtonDisabled()}
           endIcon={<BsArrowRight />}

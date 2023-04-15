@@ -1,3 +1,95 @@
+/* @import url("./styles/Home.css"); */
+
+@font-face {
+  font-family: "Nuckle";
+  src: url("/fonts/Nuckle-Regular.woff2");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components {
+  .btn-1 {
+    @apply btn font-medium bg-white text-black hover:bg-white;
+    border: 2px solid #000000;
+    border-radius: 8px;
+  }
+
+  .btn-2 {
+    @apply btn font-medium;
+    color: white;
+    background: #022a30;
+    border: 2px solid #000000;
+    border-radius: 8px;
+  }
+
+  .btn-2:hover {
+    background: #022a30;
+  }
+
+  .btn-3 {
+    @apply btn font-medium max-w-[200px] text-lg;
+    color: #00a5bf;
+    background: white;
+    border-radius: 8px;
+  }
+
+  .btn-3:hover {
+    background: white;
+  }
+
+  .btn-4 {
+    @apply font-medium rounded-2xl  h-7 w-24 border border-[#03444F];
+    color: #03444f;
+    background: white;
+  }
+
+  .special-radius {
+    border-radius: 15px 15px 15px 0px;
+  }
+
+  .shadow-hero-1 {
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
+  }
+
+  .section3gradient {
+    background: linear-gradient(
+      121.16deg,
+      #fcfcfc 18.31%,
+      #eaeff3 73.06%,
+      #d0e3f1 96.73%
+    );
+  }
+
+  .section7-gradient {
+    background: linear-gradient(
+      -10.16deg,
+      #fcfcfc 18.31%,
+      #eaeff3 73.06%,
+      #d0e3f1 96.73%
+    );
+  }
+
+  .card-btn {
+    @apply btn border-2 bg-transparent border-[#03444F] text-[#03444F]  hover:bg-transparent   rounded-full w-24 btn-sm;
+  }
+
+  .about-section3-gradient {
+    background: linear-gradient(
+      121.16deg,
+      #fcfcfc 18.31%,
+      #eaeff3 73.06%,
+      #d0e3f1 96.73%
+    );
+  }
+
+  .promo-card-gradient {
+    background: linear-gradient(
+      260.16deg,
+      #fcfcfc 18.31%,
+      #eaeff3 73.06%,
+      #d0e3f1 96.73%
+    );
+    border-radius: 9px;
+  }
+}

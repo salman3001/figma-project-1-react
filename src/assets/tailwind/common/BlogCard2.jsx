@@ -1,6 +1,14 @@
+import { useNavigate } from "react-router-dom";
+
 const BlogCard2 = () => {
+  const navigate = useNavigate();
   return (
-    <div className="flex flex-col justify-center md:justify-start items-center md:items-start w-full md:flex-row gap-4 ">
+    <div
+      className="flex flex-col justify-center md:justify-start items-center md:items-start w-full md:flex-row gap-4 cursor-pointer"
+      onClick={() => {
+        navigate("/blog/blogid");
+      }}
+    >
       <div>
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/card2-img2.png"}

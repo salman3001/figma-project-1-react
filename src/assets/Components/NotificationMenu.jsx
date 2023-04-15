@@ -1,12 +1,5 @@
 import { useTheme } from "@emotion/react";
-import {
-  Box,
-  IconButton,
-  Link,
-  Menu,
-  MenuItem,
-  Typography,
-} from "@mui/material";
+import { Box, IconButton, Menu, MenuItem, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { format } from "date-fns";
@@ -71,7 +64,7 @@ const NotificationMenu = (prop) => {
           </MenuItem>
         ))}
         <MenuItem sx={{ justifyContent: "end" }}>
-          <RouterLink to="/myorders">See all</RouterLink>
+          <RouterLink to="/dashboard//myorders">See all</RouterLink>
         </MenuItem>
       </Menu>
     </div>

@@ -47,14 +47,14 @@ const MyAddresses = () => {
         >
           Add Address
         </Button>
-        {location.pathname === "/ordernow/address" && (
+        {location.pathname === "/dashboard/ordernow/address" && (
           <Button
             sx={{ width: [170] }}
             variant="contained"
             endIcon={<BsArrowRight />}
             onClick={() => {
               dispatch(setActiveStep("service"));
-              navigate("/ordernow/service");
+              navigate("/dashboard/ordernow/service");
             }}
             disabled={addressState.addressId === "" ? true : false}
           >

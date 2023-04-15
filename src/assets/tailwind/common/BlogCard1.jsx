@@ -1,6 +1,14 @@
+import { useNavigate } from "react-router-dom";
+
 export const BlogCard1 = () => {
+  const navigate = useNavigate();
   return (
-    <div>
+    <div
+      onClick={() => {
+        navigate("/blog/blogid");
+      }}
+      className="cursor-pointer"
+    >
       <div>
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/blog-card1-img.png"}

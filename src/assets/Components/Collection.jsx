@@ -26,7 +26,7 @@ const Collection = () => {
 
   useEffect(() => {
     if (activeStep === "address") {
-      navigate("/ordernow/address");
+      navigate("/dashboard/ordernow/address");
     }
   });
 
@@ -182,7 +182,7 @@ const Collection = () => {
           size="large"
           sx={{ minWidth: [150, 200], textTransform: "none" }}
           onClick={() => {
-            navigate("/ordernow/service");
+            navigate("/dashboard/ordernow/service");
           }}
           startIcon={<BsArrowLeft />}
         >
@@ -194,7 +194,7 @@ const Collection = () => {
           sx={{ minWidth: [150, 200], textTransform: "none" }}
           onClick={() => {
             dispatch(setActiveStep("contact"));
-            navigate("/ordernow/contact");
+            navigate("/dashboard/ordernow/contact");
           }}
           disabled={isButtonDisabled()}
           endIcon={<BsArrowRight />}

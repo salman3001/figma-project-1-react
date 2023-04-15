@@ -71,7 +71,7 @@ const OurServiceSection4 = () => {
     { child: <p></p>, completed: true },
   ];
   return (
-    <div className="p-5 xs:10 md:p-20 pb-0 mb- flex flex-col gap-6 about-section3-gradient overflow-hidden h-[1350px] xs:h-[1200px] sm:h-[1100px] md:h-[1300px] lg:h-[1150px]">
+    <div className="p-5 xs:10 md:p-20 pb-0 mb- flex flex-col gap-6 about-section3-gradient overflow-hidden h-[1350px] xs:h-[1200px] sm:h-[1100px] md:h-[1300px] lg:h-[1150px] ">
       <div className="flex flex-col gap-4 items-center">
         <h1 className="text-4xl font-semibold ">Our History</h1>
         <p className="opacity-80 text-center max-w-sm ">

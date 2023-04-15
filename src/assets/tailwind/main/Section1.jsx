@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 const Section1 = () => {
+  const navigate = useNavigate();
   return (
     <section className=" flex flex-col md:flex-row min-h-[450px]  w-full   bg-[#EAEFF3]">
       {/* left side */}
-      <div className="flex  w-full md:w-1/2  items-start px-10 md:px-16 lg:px-32 pb-20 flex-col gap-2  pt-16">
+      <div className="flex  w-full md:w-1/2 text-center  items-center px-5 md:px-16 lg:px-32 pb-10 md:pb-20 flex-col gap-2  pt-16">
         <div className="font-bold text-4xl ">
           Your professional dry clean & laundry service
         </div>
@@ -61,7 +64,14 @@ const Section1 = () => {
             </div>
             <div className="pl-2 font-semibold">Enter Zipcode</div>
           </div>
-          <button className="btn-2 btn-sm">Place Order</button>
+          <button
+            className="btn-2 btn-sm"
+            onClick={() => {
+              navigate("/dashboard/ordernow/address");
+            }}
+          >
+            Place Order
+          </button>
 
           <div className="absolute flex flex-col gap-1 p-1 w-72 h-16  bg-white top-56 shadow-hero-1 border-[#03444F] border-2 rounded-2xl">
             <div className=" text-black font-semibold">Quantity</div>

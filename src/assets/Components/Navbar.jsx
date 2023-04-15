@@ -49,13 +49,13 @@ const Navbar = (prop) => {
               display: ["none", "none", "block"],
             }}
           >
-            {location.pathname === "/myorders"
+            {location.pathname === "/dashboard//myorders"
               ? "Orders"
-              : location.pathname === "/promotions"
+              : location.pathname === "/dashboard//promotions"
               ? "Promotions"
-              : location.pathname === "/myaccount"
+              : location.pathname === "/dashboard//myaccount"
               ? "My Account"
-              : location.pathname === "/ordernow" && "Order Now"}
+              : location.pathname === "/dashboard//ordernow" && "Order Now"}
           </Typography>
           <Box
             sx={{
@@ -72,7 +72,7 @@ const Navbar = (prop) => {
           <Button
             variant="contained"
             onClick={() => {
-              navigate("/ordernow/address");
+              navigate("/dashboard/ordernow/address");
             }}
           >
             Order Now

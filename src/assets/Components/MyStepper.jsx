@@ -14,15 +14,15 @@ const MyStepper = (prop) => {
   const location = useLocation();
 
   const active =
-    location.pathname === "/ordernow/address"
+    location.pathname === "/dashboard/ordernow/address"
       ? 0
-      : location.pathname === "/ordernow/service"
+      : location.pathname === "/dashboard/ordernow/service"
       ? 1
-      : location.pathname === "/ordernow/collection"
+      : location.pathname === "/dashboard/ordernow/collection"
       ? 2
-      : location.pathname === "/ordernow/contact"
+      : location.pathname === "/dashboard/ordernow/contact"
       ? 5
-      : location.pathname === "/ordernow/payment"
+      : location.pathname === "/dashboard/ordernow/payment"
       ? 6
       : null;
   return (

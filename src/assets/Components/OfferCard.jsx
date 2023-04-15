@@ -1,5 +1,6 @@
 import { Box, Link, Stack, Typography } from "@mui/material";
 import React from "react";
+import RouterLink from "./RouterLink";
 
 const OfferCard = () => {
   return (
@@ -73,7 +74,7 @@ const OfferCard = () => {
         </Stack>
       </Box>
       <Typography color="primary.main" padding={2}>
-        <Link href="#">Claim the offer</Link>
+        <RouterLink to="/dashboard/promotions">Claim the offer</RouterLink>
       </Typography>
     </Box>
   );

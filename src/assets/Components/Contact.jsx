@@ -7,7 +7,7 @@ const Contact = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if (activeStep === "address") {
-      navigate("/ordernow/address");
+      navigate("/dashboard/ordernow/address");
     }
   });
   return <div>Contact</div>;

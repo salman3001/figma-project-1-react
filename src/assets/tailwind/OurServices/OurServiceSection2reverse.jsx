@@ -1,6 +1,6 @@
 const OurServiceSection2reverse = () => {
   return (
-    <div className="p-10 lg:p-20 lg:h-[700px] flex-col gap-0 items-center  flex  relative text-white md:px-20 bg-[#03444F] lg:mb-[400px]">
+    <div className="p-10 lg:p-20   lg:h-[700px]  flex-col gap-0 items-center  flex  relative text-white md:px-20 bg-[#03444F] lg:mb-[400px]">
       <div className="grid md:grid-cols-2  w-full">
         <div className="flex flex-col gap-3">
           <h1 className="text-4xl md:text-7xl font-semibold max-w-xs">
@@ -20,7 +20,7 @@ const OurServiceSection2reverse = () => {
           alt=""
         />
       </div>
-      <div className="lg:absolute lg:bottom-[-400px] py-5 lg:p-20 ">
+      <div className="lg:absolute xl:bottom-[-600px] lg:bottom-[-400px] py-5 lg:p-20 ">
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/aboutsection2-img.png"}
           alt=""

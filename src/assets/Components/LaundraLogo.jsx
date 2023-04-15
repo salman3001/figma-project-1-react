@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 const LaundraLogo = (prop) => {
+  const navigate = useNavigate();
   return (
     <svg
       width={prop.width || "200"}
@@ -6,6 +9,10 @@ const LaundraLogo = (prop) => {
       viewBox="0 0 200 23"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      onClick={() => {
+        navigate("/home");
+      }}
+      className="cursor-pointer"
     >
       <path
         d="M0.240234 22.4954V0.269531H4.26651V19.1203H14.0555V22.4954H0.240234Z"

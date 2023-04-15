@@ -54,7 +54,7 @@ const AddressCard = (prop) => {
         >
           Edit
         </Button>
-        {location.pathname === "/ordernow/address" && (
+        {location.pathname === "/dashboard/ordernow/address" && (
           <Button
             variant="contained"
             sx={{

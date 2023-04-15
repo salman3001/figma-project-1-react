@@ -1,6 +1,6 @@
 import { Box, Container, Stack } from "@mui/material";
-import React, { useCallback, useState } from "react";
-import { Outlet } from "react-router-dom";
+import React, { useCallback, useEffect, useState } from "react";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import MyDrawer from "./MyDrawer";
 import Navbar from "./Navbar";
 

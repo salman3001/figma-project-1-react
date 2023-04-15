@@ -1,11 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import FormInput from "../common/forms/FormInput";
 import Label from "../common/forms/Label";
 import MobileInput from "../common/forms/MobileInput";
 
 const Signup = () => {
+  const navigate = useNavigate();
   return (
-    <main className="grid container mx-auto lg:grid-cols-2 min-h-screen max-w-screen  ">
+    <main className="grid  mx-auto lg:grid-cols-2 min-h-screen max-w-screen  ">
       <div className="bg-[#00A5BF] relative flex text-white flex-col justify-between  items-center">
         <h1 className="w-full p-6 border-b border-white border-opacity-20">
           <img
@@ -23,14 +25,20 @@ const Signup = () => {
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/Signupart.png"}
           alt=""
-          className="self-start"
+          className="self-start 2xl:self-center"
         />
       </div>
       <div className="bg-white ">
         <h1 className="w-full p-5 border-b text-end border-gray-300 border-opacity-20">
           <p>
             I already have an accound?
-            <a className="text-[#00A5BF]" href="/login">
+            <a
+              className="text-[#00A5BF] cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate("/login");
+              }}
+            >
               Login
             </a>
           </p>

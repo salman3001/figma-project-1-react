@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export const Section5 = () => {
+  const navigate = useNavigate();
   return (
     <div className=" flex flex-col gap-4 justify-center md:justify-start p-5 md:p-20 md:pb-10  w-full text-white">
       <div className="bg-[#03444F] flex flex-col gap-2 rounded-2xl p-10 md:p-20">
@@ -9,7 +12,15 @@ export const Section5 = () => {
             come with free delivery
           </div>
           <div className="flex gap-2 items-center justify-end hover:underline">
-            <a href="">View More</a>
+            <a
+              href=""
+              onClick={(e) => {
+                e.preventDefault();
+                navigate("/services");
+              }}
+            >
+              View More
+            </a>
             <img
               src={import.meta.env.VITE_BASE_URL + "/images/arrow.svg"}
               alt=""
@@ -28,7 +39,7 @@ export const Section5 = () => {
   );
 };
 
-const CardWhite = (prop: { title: string }) => (
+const CardWhite = (prop) => (
   <div className="flex flex-col gap-1">
     <img src="/images/section5art1.svg" alt="" />
     <p className="font-bold">{prop.title}</p>

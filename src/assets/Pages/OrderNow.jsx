@@ -11,8 +11,8 @@ const OrderNow = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (location.pathname === "/ordernow/") {
-      navigate("/ordernow/address");
+    if (location.pathname === "/dashboard/ordernow") {
+      navigate("/dashboard/ordernow/address");
     }
   });
 
@@ -57,7 +57,7 @@ const Tabs = (prop) => {
       paddingX={[0, 1, 4]}
       flexWrap={"wrap"}
       sx={{
-        "& .tab": {
+        "& .xtab": {
           p: 2,
           minWidth: [50, 50, 100],
           textAlign: "center",
@@ -66,41 +66,51 @@ const Tabs = (prop) => {
     >
       <Box
         bgcolor={
-          prop.selected === "/ordernow/address" ? "primary.main" : "white"
+          prop.selected === "/dashboard/ordernow/address"
+            ? "primary.main"
+            : "white"
         }
-        className="tab"
+        className="xtab"
       >
         Address
       </Box>
       <Box
         bgcolor={
-          prop.selected === "/ordernow/service" ? "primary.main" : "white"
+          prop.selected === "/dashboard/ordernow/service"
+            ? "primary.main"
+            : "white"
         }
-        className="tab"
+        className="xtab"
       >
         Service
       </Box>
       <Box
         bgcolor={
-          prop.selected === "/ordernow/collection" ? "primary.main" : "white"
+          prop.selected === "/dashboard/ordernow/collection"
+            ? "primary.main"
+            : "white"
         }
-        className="tab"
+        className="xtab"
       >
         Collection
       </Box>
       <Box
         bgcolor={
-          prop.selected === "/ordernow/contact" ? "primary.main" : "white"
+          prop.selected === "/dashboard/ordernow/contact"
+            ? "primary.main"
+            : "white"
         }
-        className="tab"
+        className="xtab"
       >
         Contact
       </Box>
       <Box
         bgcolor={
-          prop.selected === "/ordernow/payment" ? "primary.main" : "white"
+          prop.selected === "/dashboard/ordernow/payment"
+            ? "primary.main"
+            : "white"
         }
-        className="tab"
+        className="xtab"
       >
         Payment
       </Box>
@@ -113,15 +123,15 @@ const ProgressBar = ({ selected }) => {
     <LinearProgress
       variant="determinate"
       value={
-        selected === "/ordernow/address"
+        selected === "/dashboard/ordernow/address"
           ? 20
-          : selected === "/ordernow/service"
+          : selected === "/dashboard/ordernow/service"
           ? 40
-          : selected === "/ordernow/collection"
+          : selected === "/dashboard/ordernow/collection"
           ? 60
-          : selected === "/ordernow/contact"
+          : selected === "/dashboard/ordernow/contact"
           ? 80
-          : selected === "/ordernow/payment" && 95
+          : selected === "/dashboard/ordernow/payment" && 95
       }
     />
   );

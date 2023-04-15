@@ -5,7 +5,7 @@ import Blog from "./Blog";
 
 const BlogDetail = () => {
   return (
-    <div className="flex bg-white container min-h-screen mx-auto flex-col justify-between">
+    <div className="flex bg-white min-h-screen mx-auto flex-col justify-between">
       <header>
         <NavBar />
       </header>

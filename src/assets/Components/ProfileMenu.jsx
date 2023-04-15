@@ -1,7 +1,6 @@
 import { useTheme } from "@emotion/react";
 import {
   IconButton,
-  Link,
   ListItemIcon,
   Menu,
   MenuItem,
@@ -76,7 +75,7 @@ const ProfileMenu = () => {
           <Typography
             color="text.secondary"
             onClick={() => {
-              navigate("/myorders");
+              navigate("/dashboard/myorders");
             }}
           >
             My Orders
@@ -95,7 +94,7 @@ const ProfileMenu = () => {
           <Typography
             color="text.secondary"
             onClick={() => {
-              navigate("/promotions");
+              navigate("/dashboard/promotions");
             }}
           >
             Promotions
@@ -114,7 +113,7 @@ const ProfileMenu = () => {
           <Typography
             color="text.secondary"
             onClick={() => {
-              navigate("/myaccount");
+              navigate("/dashboard/myaccount");
             }}
           >
             My Account

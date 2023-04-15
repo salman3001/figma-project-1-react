@@ -62,7 +62,7 @@ const Section7 = () => {
 export default Section7;
 
 const SiteInduction = () => (
-  <div className="flex justify-center items-center">
+  <div className="flex justify-center gap-2 items-center">
     <img
       src={import.meta.env.VITE_BASE_URL + "/images/section7check.svg"}
       alt=""

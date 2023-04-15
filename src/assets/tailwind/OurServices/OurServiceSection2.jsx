@@ -3,7 +3,7 @@ import React from "react";
 const OurServiceSection2 = () => {
   return (
     <div className="p-10 flex-col items-center  flex justify-center relative text-white md:p-20 bg-[#03444F] mt-20 md:mt-40 lg:mt-64">
-      <div className="absolute w-[90%] top-[-70px] md:top-[-100px] lg:top-[-150px] xl:top-[-300px]">
+      <div className="absolute w-[90%] top-[-70px] md:top-[-100px] lg:top-[-150px] xl:top-[-300px] 3xl:top-[400px] flex justify-center max-w-[1500px]">
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/aboutsection2-img.png"}
           alt=""
@@ -21,7 +21,7 @@ const OurServiceSection2 = () => {
         <p className="uppercase">Laundarmoon</p>
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/quote.svg"}
-          className=" h-8 sm:h-16 md:h-32 absolute "
+          className="h-8 sm:h-16 md:h-32 absolute "
           alt=""
         />
       </div>
