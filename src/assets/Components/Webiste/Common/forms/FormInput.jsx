@@ -1,8 +1,4 @@
-const FormInput = (prop: {
-  placeholder: string;
-  name: string;
-  type: string;
-}) => {
+const FormInput = (prop) => {
   return (
     <input
       className=" border  p-4 w-full text-black rounded-lg"

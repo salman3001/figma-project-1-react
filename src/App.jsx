@@ -14,6 +14,9 @@ import WebLayout from "./assets/Components/Webiste/WebLayout";
 import Home from "./assets/Pages/Home";
 import Blogs from "./assets/Pages/Blogs";
 import Blog from "./assets/Pages/blog";
+import ContactUs from "./assets/Pages/ContactUs";
+import Faq from "./assets/Pages/Faq";
+import PrivaryPolicy from "./assets/Pages/PrivaryPolicy";
 
 function App() {
   return (
@@ -36,6 +39,9 @@ function App() {
         <Route path="home" element={<Home />} />
         <Route path="blogs" element={<Blogs />} />
         <Route path="blogs/:blogid" element={<Blog />} />
+        <Route path="contactus" element={<ContactUs />} />
+        <Route path="faqs" element={<Faq />} />
+        <Route path="privacy" element={<PrivaryPolicy />} />
         {/* <Route path="/services" element={<Services />} />
       <Route path="/blog/:blogId" element={<BlogDetail />} />
       <Route path="/contacus" element={<Contactus />} />
