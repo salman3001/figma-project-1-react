@@ -151,7 +151,7 @@ const MyStepper = (prop) => {
           <Typography fontWeight={650}>Collection Time</Typography>
         </StepLabel>
         <StepContent>
-          {prop.step.collection.collectionTime.time !== "" && (
+          {prop.step.collection.collectionTime.date !== null && (
             <>
               <Typography>
                 {format(prop.step.collection.collectionTime.date, "dd/MM/yy")}
@@ -181,7 +181,7 @@ const MyStepper = (prop) => {
           <Typography fontWeight={650}>Delivery time</Typography>
         </StepLabel>
         <StepContent>
-          {prop.step.collection.deliveryTime.time !== "" && (
+          {prop.step.collection.deliveryTime.date !== null && (
             <>
               <Typography>
                 {format(prop.step.collection.deliveryTime.date, "dd/MM/yy")}

@@ -1,5 +1,4 @@
-import React from "react";
-import SocialIcons from "../common/SocialIcons";
+import SocialLinks from "../Components/Webiste/Common/SocialLinks";
 
 const Blog = () => {
   return (
@@ -17,7 +16,7 @@ const Blog = () => {
           <button className="btn-4">UIUX</button>
         </div>
         <div className="flex h-8 ">
-          <SocialIcons color1="#00A5BF" color2="white" />
+          <SocialLinks color1="#00A5BF" color2="white" />
         </div>
       </div>
       <img

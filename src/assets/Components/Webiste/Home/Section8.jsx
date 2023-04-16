@@ -1,11 +1,14 @@
+import { Typography } from "@mui/material";
 import React from "react";
 
 const Section8 = () => {
   return (
     <div className="py-10 sm:p-10  xl:px-40 flex flex-col gap-4 md:gap-16">
-      <div className="flex flex-col justify-center gap-2 items-center">
-        <h1 className="text-4xl font-bold">Frequently Asked Questions</h1>
-        <p className="text-xl text-[#141111] opacity-80">
+      <div className="flex flex-col p-2 justify-center gap-2 items-center">
+        <h1 className="text-4xl font-bold text-center">
+          Frequently Asked Questions
+        </h1>
+        <p className="text-xl text-[#141111] opacity-80 text-center">
           Get a question? we're here to answer!
         </p>
       </div>
@@ -46,8 +49,10 @@ const Accordian = (prop) => {
   return (
     <details className="group ">
       <summary className="list-none before:content-[+] flex justify-between cursor-pointer font-bold text-lg">
-        <span>{prop.title}</span>
-        <span className="flex group-open:hidden justify-center items-center p-2 aspect-square  border rounded-full">
+        <Typography fontWeight={650} variant="subtitle1" color="#181818">
+          {prop.title}
+        </Typography>
+        <span className="flex group-open:hidden justify-center items-center p-2 h-7 w-7  border-2 border-gray-300  rounded-full">
           <svg
             width="18"
             height="15"
@@ -75,7 +80,7 @@ const Accordian = (prop) => {
             />
           </svg>
         </span>
-        <span className="hidden group-open:flex justify-center items-center p-2 aspect-square  border rounded-full">
+        <span className="hidden group-open:flex  justify-center items-center p-2 h-7 w-7  border-2 border-gray-300  rounded-full">
           <svg
             width="18"
             height="2"
@@ -95,7 +100,7 @@ const Accordian = (prop) => {
           </svg>
         </span>
       </summary>
-      <p className="opacity-60">{prop.summery}</p>
+      <Typography color="text.muted">{prop.summery}</Typography>
     </details>
   );
 };

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const Section1 = () => {
   const navigate = useNavigate();
+
   return (
     <section className=" flex flex-col md:flex-row min-h-[450px] md:min-h-[550px]  w-full   bg-[#EAEFF3]">
       {/* left side */}

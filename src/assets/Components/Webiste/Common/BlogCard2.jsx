@@ -1,36 +1,72 @@
+import {
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Typography,
+} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-const BlogCard2 = () => {
+const Blogcard2 = (prop) => {
   const navigate = useNavigate();
+
   return (
-    <div
-      className="flex flex-col justify-center md:justify-start items-center md:items-start w-full md:flex-row gap-4 cursor-pointer"
+    <Card
+      sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
       onClick={() => {
         navigate("/blog/blogid");
       }}
+      elevation={0}
     >
-      <div>
-        <img
-          src={import.meta.env.VITE_BASE_URL + "/images/card2-img2.png"}
-          className="h-auto rounded-2xl"
-          alt=""
-        />
-      </div>
-      <div className="flex flex-col gap-2 md:w-1/2">
-        <h1 className="text-2xl font-bold leading-6">
-          Lorem Ipsum is simply dummy text of the
-        </h1>
-        <p className="opacity-80 text-lg leading-5">
-          Mentioned below are our ever-growing list of services. All orders come
-          with free delivery
-        </p>
-        <div className="flex gap-2">
-          <button className="card-btn">UIUX</button>
-          <button className="card-btn">UIUX</button>
-        </div>
-      </div>
-    </div>
+      <CardMedia
+        sx={{ minHeight: 300, minWidth: 300, borderRadius: 4 }}
+        image={prop.img}
+        title="green iguana"
+      />
+      <Box display="flex" flexDirection="column" maxWidth={300}>
+        <CardContent>
+          <Typography variant="h5" fontWeight={600} component="div">
+            {prop.title}
+          </Typography>
+          <Typography variant="body2" color="text.muted">
+            {prop.description}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button
+            sx={{
+              borderRadius: 6,
+              border: 1,
+              borderColor: "secondary.main",
+              color: "secondary.main",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              minWidth: 100,
+            }}
+          >
+            UXUI
+          </Button>
+          <Button
+            sx={{
+              borderRadius: 6,
+              border: 1,
+              borderColor: "secondary.main",
+              color: "secondary.main",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              minWidth: 100,
+            }}
+          >
+            UXUI
+          </Button>
+        </CardActions>
+      </Box>
+    </Card>
   );
 };
 
-export default BlogCard2;
+export default Blogcard2;

@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import MyOrders from "./assets/Pages/MyOrders";
 import Promotions from "./assets/Pages/Promotions";
 import DashboardLayout from "./assets/Components/DashboardLayout";
@@ -12,6 +12,8 @@ import Payment from "./assets/Components/Payment";
 import NotFound from "./assets/Pages/NotFound";
 import WebLayout from "./assets/Components/Webiste/WebLayout";
 import Home from "./assets/Pages/Home";
+import Blogs from "./assets/Pages/Blogs";
+import Blog from "./assets/Pages/blog";
 
 function App() {
   return (
@@ -31,9 +33,10 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Route>
       <Route path="/" element={<WebLayout />}>
-        <Route path="/home" element={<Home />} />
+        <Route path="home" element={<Home />} />
+        <Route path="blogs" element={<Blogs />} />
+        <Route path="blogs/:blogid" element={<Blog />} />
         {/* <Route path="/services" element={<Services />} />
-      <Route path="/blogs" element={<Blog />} />
       <Route path="/blog/:blogId" element={<BlogDetail />} />
       <Route path="/contacus" element={<Contactus />} />
       <Route path="/faqs" element={<Faqs />} />

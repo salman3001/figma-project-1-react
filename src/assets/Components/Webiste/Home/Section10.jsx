@@ -1,13 +1,22 @@
+import { Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 const Section10 = () => {
+  const navigate = useNavigate();
   return (
     <div className=" flex  gap-4  p-5 md:p-10 lg:p-20 pb-0  w-full text-white">
       <div className="bg-[#03444F] flex-col md:flex-row items-center md:items-start flex gap-2 rounded-2xl p-10 md:p-20 md:pb-0">
         <div className="md:w-[30%] flex flex-col gap-4">
-          <h1 className="text-4xl font-bold leading-[55px]">
-            Your Safety Is Our Prime Concern
-          </h1>
+          <Typography variant="h3">Your Safety Is Our Prime Concern</Typography>
           <div className="flex">
-            <button className="btn-3"> Place Order</button>
+            <button
+              className="btn-3"
+              onClick={() => {
+                navigate("/dashboard/ordernow/address");
+              }}
+            >
+              {" "}
+              Place Order
+            </button>
           </div>
         </div>
         <div className="md:w-[70%] flex flex-col gap-10 justify-between lg:gap-20  md:pr-10">

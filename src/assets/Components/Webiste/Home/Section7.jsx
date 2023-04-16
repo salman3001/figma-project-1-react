@@ -1,3 +1,5 @@
+import { Typography } from "@mui/material";
+
 const Section7 = () => {
   return (
     <div className="relative section7-gradient md:my-24 flex justify-center md:justify-start items-center md:items-start gap-5 md:gap-0 flex-col md:flex-row p-10">
@@ -13,13 +15,22 @@ const Section7 = () => {
       </div>
       {/* right */}
       <div className="flex flex-col gap-4 justify-center md:justify-start items-center md:items-start md:w-1/2">
-        <h1 className="text-4xl font-bold">
+        <Typography
+          variant="h4"
+          fontWeight={650}
+          textAlign={["center", "center", "start"]}
+          maxWidth={500}
+        >
           App For LaundraMoon With Laundry Services
-        </h1>
-        <p className="text-[#777777] max-w-[500px]">
+        </Typography>
+        <Typography
+          color={"text.muted"}
+          maxWidth={500}
+          textAlign={["center", "center", "start"]}
+        >
           Using the App, you can check the current service rate for Laundry at
           any time and keep yourself updated.
-        </p>
+        </Typography>
         <div className="flex flex-col gap-4">
           <div className="flex gap-10">
             <SiteInduction />
@@ -67,6 +78,6 @@ const SiteInduction = () => (
       src={import.meta.env.VITE_BASE_URL + "/images/section7check.svg"}
       alt=""
     />
-    <p className="font-semibold"> Site Inductions</p>
+    <Typography fontWeight={550}> Site Inductions</Typography>
   </div>
 );

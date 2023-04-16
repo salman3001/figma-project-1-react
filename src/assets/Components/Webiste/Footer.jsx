@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex flex-col gap-4">
           <img
             src={import.meta.env.VITE_BASE_URL + "/images/Launder-logo.svg"}
-            className="h-5 relative left-[-20px]"
+            className="h-6 relative left-[-8%]"
             alt=""
           />
           <Typography>

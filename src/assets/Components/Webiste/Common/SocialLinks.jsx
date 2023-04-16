@@ -1,4 +1,6 @@
-const SocialIcons = (prop) => {
+import React from "react";
+
+const SocialLinks = (prop) => {
   return (
     <div className={`flex gap-2 ${prop.align}`}>
       {/* fb */}
@@ -150,4 +152,4 @@ const SocialIcons = (prop) => {
   );
 };
 
-export default SocialIcons;
+export default SocialLinks;

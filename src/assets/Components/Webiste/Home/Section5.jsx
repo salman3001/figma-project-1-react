@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-export const Section5 = () => {
+const Section5 = () => {
   const navigate = useNavigate();
   return (
     <div className=" flex flex-col gap-4 justify-center md:justify-start p-5 md:p-20 md:pb-10  w-full text-white">
@@ -10,7 +10,7 @@ export const Section5 = () => {
           Ease to Made Laundry
         </Typography>
         <div className="flex flex-col gap-4">
-          <Typography>
+          <Typography color="rgba(235, 235, 235, 0.88)">
             Mentioned below are our ever-growing list of services. All orders
             come with free delivery
           </Typography>
@@ -52,6 +52,8 @@ const CardWhite = (prop) => (
 const Cardblue = (prop) => (
   <div className="flex flex-col gap-1 w-36 md:w-auto">
     <img src="/images/section5art2.svg" alt="" />
-    <Typography fontWeight={550}>{prop.title}</Typography>
+    <Typography fontWeight={550}>{prop.title} </Typography>
   </div>
 );
+
+export default Section5;

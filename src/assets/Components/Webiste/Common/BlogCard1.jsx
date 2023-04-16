@@ -1,34 +1,68 @@
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Typography,
+} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-export const BlogCard1 = () => {
+const Blogcard1 = (prop) => {
   const navigate = useNavigate();
   return (
-    <div
+    <Card
+      sx={{}}
       onClick={() => {
         navigate("/blog/blogid");
       }}
-      className="cursor-pointer"
+      elevation={0}
     >
-      <div>
-        <img
-          src={import.meta.env.VITE_BASE_URL + "/images/blog-card1-img.png"}
-          alt=""
-        />
-      </div>
-      <div className="flex flex-col gap-4">
-        <h1 className="text-2xl font-bold">
-          Lorem Ipsum is simply dummy text of the
-        </h1>
-        <p className="opacity-80 text-xl">
-          Mentioned below are our ever-growing list of services. All orders come
-          with free delivery
-        </p>
-        <div className="flex gap-2">
-          <button className="card-btn">UIUX</button>
-          <button className="card-btn">UIUX</button>
-          <button className="card-btn">UIUX</button>
-        </div>
-      </div>
-    </div>
+      <CardMedia
+        sx={{ minHeight: 500, borderRadius: 4 }}
+        image={prop.img}
+        title="green iguana"
+      />
+      <CardContent>
+        <Typography variant="h5" fontWeight={600} component="div">
+          {prop.title}
+        </Typography>
+        <Typography variant="body2" color="text.muted">
+          {prop.description}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button
+          sx={{
+            borderRadius: 6,
+            border: 1,
+            borderColor: "secondary.main",
+            color: "secondary.main",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            minWidth: 100,
+          }}
+        >
+          UXUI
+        </Button>
+        <Button
+          sx={{
+            borderRadius: 6,
+            border: 1,
+            borderColor: "secondary.main",
+            color: "secondary.main",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            minWidth: 100,
+          }}
+        >
+          UXUI
+        </Button>
+      </CardActions>
+    </Card>
   );
 };
+
+export default Blogcard1;
