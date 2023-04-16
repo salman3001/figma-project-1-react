@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const Section1 = () => {
@@ -70,14 +70,16 @@ const Section1 = () => {
             </div>
             <div className="pl-2 font-semibold">Enter Zipcode</div>
           </div>
-          <button
-            className="btn-2 btn-sm"
+          <Button
+            variant="contained"
+            color="secondary"
+            size="large"
             onClick={() => {
               navigate("/dashboard/ordernow/address");
             }}
           >
             Place Order
-          </button>
+          </Button>
 
           <div className="absolute flex flex-col gap-1 p-1 w-72 h-16  bg-white top-56 shadow-hero-1 border-[#03444F] border-2 rounded-2xl">
             <div className=" text-black font-semibold">Quantity</div>

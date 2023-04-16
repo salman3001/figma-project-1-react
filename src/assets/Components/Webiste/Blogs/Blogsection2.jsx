@@ -1,5 +1,5 @@
-import Blogcard1 from "../common/Blogcard1";
-import Blogcard2 from "../common/Blogcard2";
+import Blogcard1 from "../Common/Blogcard1";
+import Blogcard2 from "../Common/Blogcard2";
 import Searchinput from "../Common/Searchinput";
 
 const Blogsection2 = () => {

@@ -1,16 +1,17 @@
 import { Typography } from "@mui/material";
 import React from "react";
+import Accordian from "../Common/Accordian";
 
 const Section8 = () => {
   return (
     <div className="py-10 sm:p-10  xl:px-40 flex flex-col gap-4 md:gap-16">
       <div className="flex flex-col p-2 justify-center gap-2 items-center">
-        <h1 className="text-4xl font-bold text-center">
+        <Typography variant="h4" fontWeight={600}>
           Frequently Asked Questions
-        </h1>
-        <p className="text-xl text-[#141111] opacity-80 text-center">
+        </Typography>
+        <Typography variant="h5">
           Get a question? we're here to answer!
-        </p>
+        </Typography>
       </div>
       <div className="md:pt-8 px-5 md:px-20">
         <Accordian
@@ -44,63 +45,3 @@ const Section8 = () => {
 };
 
 export default Section8;
-
-const Accordian = (prop) => {
-  return (
-    <details className="group ">
-      <summary className="list-none before:content-[+] flex justify-between cursor-pointer font-bold text-lg">
-        <Typography fontWeight={650} variant="subtitle1" color="#181818">
-          {prop.title}
-        </Typography>
-        <span className="flex group-open:hidden justify-center items-center p-2 h-7 w-7  border-2 border-gray-300  rounded-full">
-          <svg
-            width="18"
-            height="15"
-            viewBox="0 0 18 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <line
-              x1="1"
-              y1="7"
-              x2="17"
-              y2="7"
-              stroke="black"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-            <line
-              x1="9"
-              y1="14"
-              x2="9"
-              y2="1"
-              stroke="black"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-          </svg>
-        </span>
-        <span className="hidden group-open:flex  justify-center items-center p-2 h-7 w-7  border-2 border-gray-300  rounded-full">
-          <svg
-            width="18"
-            height="2"
-            viewBox="0 0 18 2"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <line
-              x1="1"
-              y1="1"
-              x2="17"
-              y2="1"
-              stroke="black"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-          </svg>
-        </span>
-      </summary>
-      <Typography color="text.muted">{prop.summery}</Typography>
-    </details>
-  );
-};

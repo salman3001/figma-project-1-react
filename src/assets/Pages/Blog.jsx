@@ -1,12 +1,13 @@
+import { Button, Typography } from "@mui/material";
 import SocialLinks from "../Components/Webiste/Common/SocialLinks";
 
 const Blog = () => {
   return (
     <div className="p-5 md:p-20 pb-5 flex flex-col gap-6">
-      <h1 className="text-2xl md:text-4xl font-bold">
+      <Typography variant="h4" fontWeight={600}>
         Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in
         45 BC
-      </h1>
+      </Typography>
       <div className="flex justify-between items-end">
         <div className="flex flex-wrap gap-2 max-w-sm ">
           <button className="btn-4">UIUX</button>
@@ -23,11 +24,11 @@ const Blog = () => {
         src={import.meta.env.VITE_BASE_URL + "/images/Blog-photo.png"}
         alt=""
       />
-      <h1 className="text-xl md:text-3xl font-semibold py-4">
+      <Typography variant="h5" fontWeight={600}>
         Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in
-        45 BC written by Cicero in 45 BC
-      </h1>
-      <p className="py-2 text-lg md:text-2xl md:leading-10">
+        45 BC
+      </Typography>
+      <Typography variant="subtitle1">
         At vero eos et accusamus et iusto odio dignissimos ducimus qui
         blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
         et quas molestias excepturi sint occaecati cupiditate non provident,
@@ -41,30 +42,45 @@ const Blog = () => {
         earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
         voluptatibus maiores alias consequatur aut perferendis doloribus
         asperiores repellat.
-      </p>
-      <p className="py-2 text-lg md:text-2xl md:leading-10">
+      </Typography>
+      <Typography variant="subtitle1">
         At vero eos et accusamus et iusto odio dignissimos ducimus qui
         blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
         et quas molestias excepturi sint occaecati cupiditate non provident,
         similique sunt in culpa qui officia deserunt mollitia animi, id est
         laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
         distinctio.
-      </p>
-      <h1 className="text-xl md:text-3xl font-semibold py-4">
+      </Typography>
+      <Typography variant="h5" fontWeight={600}>
         Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in
-        45 BC written by Cicero in 45 BC
-      </h1>
-      <p className="py-2 text-lg md:text-2xl md:leading-10">
+        45 BC
+      </Typography>
+      <Typography variant="subtitle1">
+        At vero eos et accusamus et iusto odio dignissimos ducimus qui
+        blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
+        et quas molestias excepturi sint occaecati cupiditate non provident,
+        similique sunt in culpa qui officia deserunt mollitia animi, id est
+        laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
+        distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
+        cumque nihil impedit quo minus id quod maxime placeat facere possimus,
+        omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem
+        quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet
+        ut et voluptates repudiandae sint et molestiae non recusandae. Itaque
+        earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
+        voluptatibus maiores alias consequatur aut perferendis doloribus
+        asperiores repellat.
+      </Typography>
+      <Typography variant="subtitle1">
         At vero eos et accusamus et iusto odio dignissimos ducimus qui
         blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
         et quas molestias excepturi sint occaecati cupiditate non provident,
         similique sunt in culpa qui officia deserunt mollitia animi, id est
         laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
         distinctio.
-      </p>
+      </Typography>
       <div className="text-lg md:text-2xl flex justify-between [&>button]:text-[#00A5BF]">
-        <button>&lt; Previous</button>
-        <button>Next &gt;</button>
+        <Button size="large">&lt; Previous</Button>
+        <Button size="large"> Next &gt;</Button>
       </div>
     </div>
   );

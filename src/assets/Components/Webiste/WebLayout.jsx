@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import WebsiteNavbar from "./WebsiteNavbar";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Footer from "./Footer";
+import { Box } from "@mui/material";
 
 const WebLayout = () => {
   const navigate = useNavigate();
@@ -17,9 +18,13 @@ const WebLayout = () => {
       <header>
         <WebsiteNavbar />
       </header>
-      <main className="grow">
+      <Box
+        component="main"
+        className="grow"
+        sx={{ mt: ["50px", "60px", "80px"] }}
+      >
         <Outlet />
-      </main>
+      </Box>
       <Footer />
     </div>
   );

@@ -7,7 +7,7 @@ const NotFound = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate("/home");
-    }, 3000);
+    }, 4000);
 
     return () => {
       clearTimeout(timer);
@@ -17,7 +17,10 @@ const NotFound = () => {
     <div className="w-full text-red-600  h-full p-32 flex justify-center items-center text-5xl">
       !!! Sorry the page your looking for is under maintenace. Please visit
       later.
-      <br /> Redirecing to homepage.......
+      <br />{" "}
+      <span className="animate-bounce duration-100 ">
+        Redirecing to homepage.......
+      </span>
     </div>
   );
 };

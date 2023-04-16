@@ -1,12 +1,16 @@
+import { Typography } from "@mui/material";
+
 const Accordian = (prop) => {
   return (
     <details className="group ">
       <summary className="list-none before:content-[+] flex justify-between cursor-pointer font-bold text-lg">
-        <span>{prop.title}</span>
-        <span className="flex group-open:hidden justify-center items-center p-2 aspect-square  border rounded-full">
+        <Typography variant="subtitle1" fontWeight={600}>
+          {prop.title}
+        </Typography>
+        <span className="flex group-open:hidden justify-center h-4 w-4 items-center p-2 aspect-square  border rounded-full">
           <svg
-            width="18"
-            height="15"
+            width="12"
+            height="12"
             viewBox="0 0 18 15"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -31,10 +35,10 @@ const Accordian = (prop) => {
             />
           </svg>
         </span>
-        <span className="hidden group-open:flex justify-center items-center p-2 aspect-square  border rounded-full">
+        <span className="hidden group-open:flex justify-center h-4 w-4 items-center p-2 aspect-square  border rounded-full">
           <svg
-            width="18"
-            height="2"
+            width="12"
+            height="12"
             viewBox="0 0 18 2"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +55,7 @@ const Accordian = (prop) => {
           </svg>
         </span>
       </summary>
-      <p className="opacity-60">{prop.summery}</p>
+      <Typography>{prop.summery}</Typography>
     </details>
   );
 };

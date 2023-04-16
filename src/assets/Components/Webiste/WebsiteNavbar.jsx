@@ -1,6 +1,7 @@
 import { AppBar, Button, Drawer, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import { useState } from "react";
+import { BiMenu } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 
 const WebsiteNavbar = () => {
@@ -12,20 +13,20 @@ const WebsiteNavbar = () => {
   return (
     <AppBar
       color="default"
-      position="static"
+      position="fixed"
       elevation={7}
       sx={{
         overflow: "hidden",
-        paddingX: [1, 2, 2, 2, 2, 8],
-        paddingY: 2,
         mb: 1,
+        justifyContent: "center",
+        height: [50, 60, 80],
       }}
     >
-      <Toolbar sx={{ justifyContent: "space-between" }}>
+      <Toolbar sx={{ justifyContent: "space-between", minHeight: 50 }}>
         {/* logo */}
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/Launder-logo.svg"}
-          className="h-4 md:h-8 cursor-pointer"
+          className="h-3 sm:h-4 md:h-5 lg:h-6 cursor-pointer"
           onClick={() => {
             navigate("/home");
           }}
@@ -102,14 +103,7 @@ const WebsiteNavbar = () => {
         </div>
         <div className="block lg:hidden " onClick={togelDrawer}>
           <label htmlFor="hameburger" className="cursor-pointer">
-            <img
-              src={
-                import.meta.env.VITE_BASE_URL +
-                "/images/hamburger-menu-icon.svg"
-              }
-              className="h-6"
-              alt=""
-            />
+            <BiMenu size={25} />
           </label>
         </div>
         <Drawer

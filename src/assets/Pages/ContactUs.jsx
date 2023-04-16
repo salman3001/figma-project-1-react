@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import { TextField, Typography } from "@mui/material";
 import { useFormik } from "formik";
 import React from "react";
 import Label from "../Components/Webiste/Common/forms/Label";
@@ -53,10 +53,10 @@ const ContactUs = () => {
     <div className="flex flex-col gap-6 lg:flex-row w-full p-5 lg:p-20">
       {/* left */}
       <div className="lg:w-1/2 flex px-5 lg:px-10 flex-col gap-4">
-        <h1 className="text-2xl md:text-6xl">
+        <Typography variant="h3">
           Talk to our product analytics expert
-        </h1>
-        <p className="text-xl md:text-2xl">Our Location</p>
+        </Typography>
+        <Typography variant="h5">Our Location</Typography>
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/location.png"}
           alt=""
@@ -67,25 +67,26 @@ const ContactUs = () => {
               src={import.meta.env.VITE_BASE_URL + "/images/location 1.svg"}
               alt=""
             />
-            <p>
+            <Typography variant="subtitle1">
               Nash Conversions Ltd, Unit 5, Shaftesbury Road, LONDON, E10 7DA
-            </p>
+            </Typography>
           </div>
           <div className="flex gap-2">
             <img
               src={import.meta.env.VITE_BASE_URL + "/images/mail 1.svg"}
               alt=""
             />
-            <p>
+            <Typography variant="subtitle1">
               londramoon@email.com <br /> londramoon@email.com
-            </p>
+            </Typography>
           </div>
           <div className="flex gap-2">
             <img
               src={import.meta.env.VITE_BASE_URL + "/images/phone 1.svg"}
               alt=""
             />
-            <p>+1 73657029000</p>
+            <Typography variant="subtitle1"></Typography>
+            +1 73657029000 <Typography />
           </div>
           <div className="flex h-10 ">
             <SocialLinks color1="#00A5BF" color2="white" />

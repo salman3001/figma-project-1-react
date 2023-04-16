@@ -1,4 +1,4 @@
-import Blogcard1 from "../common/Blogcard1";
+import Blogcard1 from "../Common/Blogcard1";
 
 const Blogsection3 = () => {
   return (

@@ -13,10 +13,14 @@ import NotFound from "./assets/Pages/NotFound";
 import WebLayout from "./assets/Components/Webiste/WebLayout";
 import Home from "./assets/Pages/Home";
 import Blogs from "./assets/Pages/Blogs";
-import Blog from "./assets/Pages/blog";
+import Blog from "./assets/Pages/Blog";
 import ContactUs from "./assets/Pages/ContactUs";
 import Faq from "./assets/Pages/Faq";
 import PrivaryPolicy from "./assets/Pages/PrivaryPolicy";
+import Login from "./assets/Pages/Login";
+import Signup from "./assets/Pages/Signup";
+import CheckYourEmail from "./assets/Pages/CheckYourEmail";
+import SuccessfullyVarified from "./assets/Pages/SuccessfullyVarified";
 
 function App() {
   return (
@@ -44,10 +48,13 @@ function App() {
         <Route path="privacy" element={<PrivaryPolicy />} />
         {/* <Route path="/services" element={<Services />} />
         <Route path="/aboutus" element={<Aboutus />} /> 
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />*/}
+        */}
         <Route path="*" element={<NotFound />} />
       </Route>
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/checkyouremail" element={<CheckYourEmail />} />
+      <Route path="/successfullyvarified" element={<SuccessfullyVarified />} />
     </Routes>
   );
 }

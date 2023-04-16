@@ -15,9 +15,9 @@ const Section3 = () => {
           Easy to made laundry
         </Typography>
         <p>Pick-up & Delivery At Your Door Step</p>
-        <div className="pt-4 flex flex-col gap-4">
+        <div className="flex flex-col gap-4">
           <Icontexts
-            src={import.meta.env.VITE_BASE_URL + "/images/moneyhand.svg"}
+            src={import.meta.env.VITE_BASE_URL + "/images/globe-hand.svg"}
             title="Quality Service"
             description="Our experts inspect the clothes received then proceed for laundry or drycleaning service. We assure to maintain the quality without degrading the texture."
           />
@@ -40,11 +40,11 @@ const Section3 = () => {
 export default Section3;
 
 const Icontexts = (prop) => (
-  <div className="flex gap-4">
-    <div className="">
-      <img src={prop.src} width={80} alt="" />
+  <div className="flex gap-4 w-full">
+    <div className="flex justify-center items-center  h-auto">
+      <img src={prop.src} className="min- w-20 h-auto" alt="" />
     </div>
-    <div className="">
+    <div className="w-full">
       <h3 className="font-bold ">{prop.title}</h3>
       <p className="text-[#545252] pt-2">{prop.description}</p>
     </div>

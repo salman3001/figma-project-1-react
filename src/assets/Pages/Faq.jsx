@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import Accordian from "../Components/Webiste/Common/Accordian";
 import Section10 from "../Components/Webiste/Home/Section10";
 
@@ -6,9 +7,9 @@ const Faq = () => {
     <>
       <div className="grid lg:grid-cols-2 text-xl py-4 md:py-10 p-10 md:p-20 ">
         <div className="flex flex-col gap-4">
-          <h1 className="text-4xl md:text-7xl py-10 font-bold">
+          <Typography variant="h3" fontWeight={600}>
             Frequently asked questions
-          </h1>
+          </Typography>
           <ul className="text-2xl md:text-3xl flex flex-col gap-7 opacity-80">
             <li className="flex gap-6 items-center font-bold">
               <img
@@ -16,7 +17,7 @@ const Faq = () => {
                 className="h-4"
                 alt=""
               />
-              General Information
+              <Typography variant="h6"> General Information</Typography>
             </li>
             <li className="flex gap-6 items-center">
               <img
@@ -24,7 +25,7 @@ const Faq = () => {
                 className="h-4"
                 alt=""
               />
-              Our Services
+              <Typography variant="h6"> Our Services</Typography>
             </li>
             <li className="flex gap-6 items-center">
               <img
@@ -32,7 +33,7 @@ const Faq = () => {
                 className="h-4"
                 alt=""
               />
-              Collection & Delivery
+              <Typography variant="h6">Coolection & delivery</Typography>
             </li>
             <li className="flex gap-6 items-center">
               <img
@@ -40,7 +41,7 @@ const Faq = () => {
                 className="h-4"
                 alt=""
               />
-              Pricing & Payments
+              <Typography variant="h6">Pricing and payment</Typography>
             </li>
             <li className="flex gap-6 items-center">
               <img
@@ -48,7 +49,10 @@ const Faq = () => {
                 className="h-4"
                 alt=""
               />
-              Rescheduling, Cancellations, & Complaints
+              <Typography variant="h6">
+                {" "}
+                Rescheduling, Cancellations, & Complaints
+              </Typography>
             </li>
           </ul>
         </div>
