@@ -12,9 +12,9 @@ const Blogcard1 = (prop) => {
   const navigate = useNavigate();
   return (
     <Card
-      sx={{}}
+      sx={{ cursor: "pointer" }}
       onClick={() => {
-        navigate("/blog/blogid");
+        navigate("/blogs/blogid");
       }}
       elevation={0}
     >

@@ -43,15 +43,10 @@ function App() {
         <Route path="faqs" element={<Faq />} />
         <Route path="privacy" element={<PrivaryPolicy />} />
         {/* <Route path="/services" element={<Services />} />
-      <Route path="/blog/:blogId" element={<BlogDetail />} />
-      <Route path="/contacus" element={<Contactus />} />
-      <Route path="/faqs" element={<Faqs />} />
-      <Route path="/aboutus" element={<Aboutus />} />
-      <Route path="/contacus" element={<Contactus />} />
-      <Route path="/privaypolicy" element={<Privacy />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="*" element={<NotFound />} /> */}
+        <Route path="/aboutus" element={<Aboutus />} /> 
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />*/}
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

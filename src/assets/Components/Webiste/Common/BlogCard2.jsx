@@ -14,9 +14,14 @@ const Blogcard2 = (prop) => {
 
   return (
     <Card
-      sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
+      sx={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        cursor: "pointer",
+      }}
       onClick={() => {
-        navigate("/blog/blogid");
+        navigate("/blogs/blogid");
       }}
       elevation={0}
     >

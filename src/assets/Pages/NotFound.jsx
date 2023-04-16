@@ -14,9 +14,10 @@ const NotFound = () => {
     };
   }, []);
   return (
-    <div className="w-full h-full p-32 flex justify-center items-center text-2xl">
-      Sorry the page your looking for was not found. <br /> Redirecing to
-      homepage.......
+    <div className="w-full text-red-600  h-full p-32 flex justify-center items-center text-5xl">
+      !!! Sorry the page your looking for is under maintenace. Please visit
+      later.
+      <br /> Redirecing to homepage.......
     </div>
   );
 };

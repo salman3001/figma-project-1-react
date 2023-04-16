@@ -86,5 +86,3 @@ const Faq = () => {
 };
 
 export default Faq;
-
-<Route path="faqs" element={<Faq />} />;
