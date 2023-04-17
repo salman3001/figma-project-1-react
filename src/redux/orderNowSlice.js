@@ -23,10 +23,13 @@ const initialState = {
         },
 
         contact: {
+            addressType: "",
             name: "",
             surname: "",
             email: "",
-            mobile: ""
+            mobile: "",
+            company: "",
+            tax: ""
         },
         payment: ""
 
