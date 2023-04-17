@@ -1,8 +1,11 @@
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import Blogcard1 from "../Common/Blogcard1";
 import Blogcard2 from "../Common/Blogcard2";
+import { BsArrowRight } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const Section9 = () => {
+  const navigate = useNavigate();
   return (
     <div className="lg:p-20 px-10 flex flex-col gap-12 ">
       <div className="flex flex-col gap-4 justify-center items-center">
@@ -11,17 +14,13 @@ const Section9 = () => {
         <Typography variant="h5">
           Get a question? we're here to answer!
         </Typography>
-        <a
-          href=""
-          className="flex hover:underline gap-2 self-end  items-center text-2xl text-[#00A5BF]"
+        <Button
+          sx={{ alignSelf: "end" }}
+          endIcon={<BsArrowRight />}
+          onClick={navigate("/blogs")}
         >
-          See all{" "}
-          <img
-            src={import.meta.env.VITE_BASE_URL + "/images/arrowblue.svg"}
-            alt=""
-            className="h-5"
-          />
-        </a>
+          See all
+        </Button>
       </div>
       <div className="w-full flex flex-col lg:flex-row gap-6">
         <div className="w-full lg:w-[60%]">

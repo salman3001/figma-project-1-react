@@ -19,14 +19,14 @@ const WebsiteNavbar = () => {
         overflow: "hidden",
         mb: 1,
         justifyContent: "center",
-        height: [50, 60, 80],
+        height: [60, 70, 80],
       }}
     >
       <Toolbar sx={{ justifyContent: "space-between", minHeight: 50 }}>
         {/* logo */}
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/Launder-logo.svg"}
-          className="h-3 sm:h-4 md:h-5 lg:h-6 cursor-pointer"
+          className="h-4 sm:h-5 md:h-6 lg:h-7 cursor-pointer"
           onClick={() => {
             navigate("/home");
           }}

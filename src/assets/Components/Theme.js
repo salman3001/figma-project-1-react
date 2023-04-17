@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material";
+import { createTheme, responsiveFontSizes } from "@mui/material";
 import interfont from '../fonts/inter-font.ttf'
 
 const theme = createTheme({
@@ -66,4 +66,4 @@ const theme = createTheme({
 
 })
 
-export default theme;
+export default responsiveFontSizes(theme);

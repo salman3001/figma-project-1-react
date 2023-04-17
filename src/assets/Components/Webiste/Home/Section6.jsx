@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 
 const Section6 = () => {
   return (
@@ -68,12 +68,7 @@ const Section6 = () => {
         <Typography variant="h6" fontWeight={550} color="text.muted">
           We’d love to hear from you
         </Typography>
-        <a
-          className="text-[#00A5BF]  hover:underline text-lg font-semibold"
-          href=""
-        >
-          Leave Review
-        </a>
+        <Button>Leave Review</Button>
       </div>
     </div>
   );

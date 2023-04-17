@@ -1,5 +1,6 @@
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { BsArrowRight } from "react-icons/bs";
 
 const Section5 = () => {
   const navigate = useNavigate();
@@ -15,20 +16,15 @@ const Section5 = () => {
             come with free delivery
           </Typography>
           <div className="flex gap-4 items-center justify-end hover:underline">
-            <a
-              href=""
+            <Button
+              sx={{ color: "white" }}
               onClick={(e) => {
-                e.preventDefault();
                 navigate("/services");
               }}
+              endIcon={<BsArrowRight />}
             >
               View More
-            </a>
-            <img
-              src={import.meta.env.VITE_BASE_URL + "/images/arrow.svg"}
-              alt=""
-              className="h-3"
-            />
+            </Button>
           </div>
         </div>
         <div className="flex gap-4 justify-center flex-wrap md:flex-nowrap">
