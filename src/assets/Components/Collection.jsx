@@ -107,6 +107,7 @@ const Collection = () => {
             disablePast
             value={collectionState.collectionTime.date}
             onChange={(newValue) => {
+              dispatch(setCollectionTime(""));
               dispatch(setCollectionDate(newValue));
             }}
           />
@@ -157,6 +158,7 @@ const Collection = () => {
             minDate={validDeliveryDate()}
             value={collectionState.deliveryTime.date}
             onChange={(newValue) => {
+              dispatch(setDeliveryTime(""));
               dispatch(setDeliveryDate(newValue));
             }}
           />
