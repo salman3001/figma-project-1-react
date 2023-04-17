@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 const Accordian = (prop) => {
   return (
     <details className="group ">
-      <summary className="list-none before:content-[+] flex justify-between cursor-pointer font-bold text-lg">
+      <summary className="list-none before:content-[+] flex justify-between cursor-pointer font-bold ">
         <Typography variant="subtitle1" fontWeight={600}>
           {prop.title}
         </Typography>

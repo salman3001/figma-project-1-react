@@ -1,11 +1,12 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
 import { useFormik } from "formik";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import MobileInput from "../Components/Webiste/Common/forms/MobileInput";
 import Label from "../Components/Webiste/Common/forms/Label";
 import { BsArrowRight } from "react-icons/bs";
+
 const Signup = () => {
   const navigate = useNavigate();
   const [formType, SetFormType] = useState("individual");
@@ -54,14 +55,14 @@ const Signup = () => {
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/signup-leaf.svg"}
           alt=""
-          className="absolute"
+          className="absolute brightness-50 top-0 left-0"
         />
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/signup-leaf.svg"}
           alt=""
-          className="absolute bottom-0 right-0 rotate-180"
+          className="absolute brightness-50 bottom-0 right-0 rotate-180 z-0"
         />
-        <h1 className="w-full p-4 border-b text-end border-gray-300 border-opacity-20">
+        <h1 className="w-full p-4 border-b text-end border-gray-300 border-opacity-20 z-10">
           <Typography variant="subtitle1">
             I already have an account?{" "}
             <Button
@@ -75,7 +76,7 @@ const Signup = () => {
             </Button>
           </Typography>
         </h1>
-        <div className="flex flex-col ">
+        <div className="flex flex-col z-10 relative">
           <div className="flex flex-col gap-16 justify-center items-center py-16 px-10 md:px-20 w-full  ">
             <div className="text-center flex flex-col gap-2">
               <Typography variant="h4" fontWeight={600}>
@@ -179,6 +180,10 @@ const InvidualForm = () => {
       }
     },
   });
+
+  useEffect(() => {
+    formik.validateForm();
+  }, []);
 
   return (
     <>
@@ -413,9 +418,10 @@ const InvidualForm = () => {
       )}
 
       <div className="flex w-full">
-        <label htmlFor="" className=" flex gap-2 label">
+        <label htmlFor="agree" className=" flex gap-2 label">
           <input
             type="checkbox"
+            id="agree"
             className="checkbox checkbox-info text-white"
             checked={agree}
             onChange={() => {
@@ -487,6 +493,10 @@ const CompanyForm = () => {
       }
     },
   });
+
+  useEffect(() => {
+    formik.validateForm();
+  }, []);
 
   return (
     <>
@@ -761,8 +771,9 @@ const CompanyForm = () => {
       )}
 
       <div className="flex w-full">
-        <label htmlFor="" className=" flex gap-2 label">
+        <label htmlFor="aggree" className=" flex gap-2 label">
           <input
+            id="aggree"
             type="checkbox"
             className="checkbox checkbox-info text-white"
             checked={agree}

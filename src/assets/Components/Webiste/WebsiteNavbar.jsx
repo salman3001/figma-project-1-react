@@ -112,7 +112,7 @@ const WebsiteNavbar = () => {
           sx={{
             display: ["block", "block", "bock", "none"],
             ".MuiDrawer-paper": {
-              width: ["90%", "70%"],
+              width: ["80%", "60%"],
             },
           }}
           onClose={togelDrawer}
@@ -125,8 +125,19 @@ const WebsiteNavbar = () => {
               height: "100%",
               paddingY: 7,
               gap: 4,
+              position: "relative",
             }}
           >
+            <img
+              src={import.meta.env.VITE_BASE_URL + "/images/signup-leaf.svg"}
+              alt=""
+              className="absolute brightness-50 top-0 left-0"
+            />
+            <img
+              src={import.meta.env.VITE_BASE_URL + "/images/signup-leaf.svg"}
+              alt=""
+              className="absolute brightness-50 bottom-0 right-0 rotate-180"
+            />
             <a
               href=""
               onClick={(e) => {
@@ -161,7 +172,7 @@ const WebsiteNavbar = () => {
                 navigate("/blogs");
               }}
             >
-              <Typography variant="h6">Pricing</Typography>
+              <Typography variant="h6">Blogs</Typography>
             </a>
             <a
               href=""

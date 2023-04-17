@@ -1,4 +1,4 @@
-import { Button, TextField, Typography } from "@mui/material";
+import { Box, Button, Modal, TextField, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,6 +9,7 @@ import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { setActiveStep, setContact } from "../../redux/orderNowSlice";
+import { RxCross1 } from "react-icons/rx";
 
 const Contact = () => {
   const activeStep = useSelector((state) => state.orderNow.activeStep);
@@ -22,11 +23,11 @@ const Contact = () => {
   });
 
   return (
-    <Stack>
+    <Stack spacing={3} padding={2}>
       <Typography variant="h4" fontWeight={550}>
         Contact
       </Typography>
-      <div className="flex gap-8 w-full">
+      <div className="flex gap-8 w-full ">
         <div className="flex justify-center items-center gap-4 font-bold">
           <input
             type="radio"
@@ -69,12 +70,13 @@ const InvidualForm = () => {
   const contactState = useSelector(
     (state) => state.orderNow.stepperData.contact
   );
+
   const formik = useFormik({
     initialValues: {
-      name: contactState.name,
-      surname: contactState.surname,
-      email: contactState.email,
-      mobile: contactState.mobile,
+      name: "Jackson",
+      surname: "Howell",
+      email: "Jacksone@gmail.com",
+      mobile: "0543873763",
     },
     validationSchema: Yup.object({
       name: Yup.string().required("Required"),
@@ -98,6 +100,11 @@ const InvidualForm = () => {
       );
     },
   });
+
+  useEffect(() => {
+    formik.validateForm();
+  }, []);
+
   const IsButtonDisabled = () => {
     if (
       !formik.errors.name &&
@@ -117,6 +124,7 @@ const InvidualForm = () => {
         <div className="flex flex-col gap-2">
           <Label htmlFor="name" titile="Enter name" />
           <TextField
+            disabled
             fullWidth
             id="name"
             name="name"
@@ -131,6 +139,7 @@ const InvidualForm = () => {
         <div className="flex flex-col gap-2">
           <Label htmlFor="surname" titile="Enter surname" />
           <TextField
+            disabled
             fullWidth
             id="surname"
             name="surname"
@@ -145,6 +154,7 @@ const InvidualForm = () => {
         <div className="flex flex-col gap-2">
           <Label htmlFor="email" titile="Enter email" />
           <TextField
+            disabled
             fullWidth
             id="email"
             name="email"
@@ -160,6 +170,7 @@ const InvidualForm = () => {
           <Label htmlFor="mobile" titile="Enter mobile" />
           <MobileInput
             id="mobile"
+            disabled
             name="mobile"
             placeholder="Enter mobile"
             value={formik.values.mobile}
@@ -167,50 +178,55 @@ const InvidualForm = () => {
             error={formik.touched.mobile && Boolean(formik.errors.mobile)}
             helperText={formik.touched.mobile && formik.errors.mobile}
           />
+          <IndividualModalform />
         </div>
-        <Stack direction={"row"} justifyContent="space-between">
-          <Button
-            variant="contained"
-            size="large"
-            sx={{ minWidth: [150, 200], textTransform: "none" }}
-            onClick={() => {
-              navigate("/dashboard/ordernow/collection");
-            }}
-            startIcon={<BsArrowLeft />}
-          >
-            Back
-          </Button>
-          <Button
-            variant="contained"
-            size="large"
-            sx={{ minWidth: [150, 200], textTransform: "none" }}
-            onClick={() => {
-              dispatch(setActiveStep("payment"));
-              formik.handleSubmit();
-              navigate("/dashboard/ordernow/payment");
-            }}
-            disabled={IsButtonDisabled()}
-            endIcon={<BsArrowRight />}
-          >
-            Next
-          </Button>
-        </Stack>
+      </div>
+      <div className="flex w-full justify-between">
+        <Button
+          variant="contained"
+          size="large"
+          sx={{ minWidth: [150, 200], textTransform: "none" }}
+          onClick={() => {
+            navigate("/dashboard/ordernow/collection");
+          }}
+          startIcon={<BsArrowLeft />}
+        >
+          Back
+        </Button>
+        <Button
+          variant="contained"
+          size="large"
+          sx={{ minWidth: [150, 200], textTransform: "none" }}
+          onClick={() => {
+            dispatch(setActiveStep("payment"));
+            formik.handleSubmit();
+            navigate("/dashboard/ordernow/payment");
+          }}
+          disabled={IsButtonDisabled()}
+          endIcon={<BsArrowRight />}
+        >
+          Next
+        </Button>
       </div>
     </form>
   );
 };
 
 const CompanyForm = () => {
+  const contactState = useSelector(
+    (state) => state.orderNow.stepperData.contact
+  );
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const formik = useFormik({
     initialValues: {
-      name: "",
-      surname: "",
-      email: "",
-      mobile: "",
-      companyName: "",
-      taxNumber: "",
+      name: "Jackson",
+      surname: "Howell",
+      email: "Jacksone@gmail.com",
+      mobile: "0543873763",
+      company: "Apple",
+      tax: "867276shs",
     },
     validationSchema: Yup.object({
       name: Yup.string().required("Required"),
@@ -219,10 +235,22 @@ const CompanyForm = () => {
       mobile: Yup.string()
         .min(6, "Mobile number seems incorrect")
         .required("Required"),
-      companyName: Yup.string().required("Required"),
-      taxNumber: Yup.string().required("Required"),
+      company: Yup.string().required("Required"),
+      tax: Yup.string().required("Required"),
     }),
-    onSubmit: (values) => {},
+    onSubmit: (values) => {
+      dispatch(
+        setContact({
+          addressType: "individual",
+          name: values.name,
+          surname: values.surname,
+          email: values.email,
+          mobile: values.mobile,
+          company: values.company,
+          tax: values.tax,
+        })
+      );
+    },
   });
 
   const IsButtonDisabled = () => {
@@ -231,8 +259,8 @@ const CompanyForm = () => {
       !formik.errors.surname &&
       !formik.errors.email &&
       !formik.errors.mobile &&
-      !formik.errors.companyName &&
-      !formik.errors.taxNumber
+      !formik.errors.company &&
+      !formik.errors.tax
     ) {
       return false;
     } else {
@@ -240,12 +268,17 @@ const CompanyForm = () => {
     }
   };
 
+  useEffect(() => {
+    formik.validateForm();
+  }, []);
+
   return (
     <form id="signup-form" className="w-full flex flex-col gap-8">
       <div className="grid md:grid-cols-2 gap-4">
         <div className="flex flex-col gap-2">
           <Label htmlFor="name" titile="Enter name" />
           <TextField
+            disabled
             fullWidth
             id="name"
             name="name"
@@ -260,6 +293,7 @@ const CompanyForm = () => {
         <div className="flex flex-col gap-2">
           <Label htmlFor="surname" titile="Enter surname" />
           <TextField
+            disabled
             fullWidth
             id="surname"
             name="surname"
@@ -274,6 +308,7 @@ const CompanyForm = () => {
         <div className="flex flex-col gap-2">
           <Label htmlFor="email" titile="Enter email" />
           <TextField
+            disabled
             fullWidth
             id="email"
             name="email"
@@ -288,6 +323,7 @@ const CompanyForm = () => {
         <div className="flex flex-col gap-2">
           <Label htmlFor="mobile" titile="Enter mobile" />
           <MobileInput
+            disabled={true}
             id="mobile"
             name="mobile"
             placeholder="Enter mobile"
@@ -298,67 +334,416 @@ const CompanyForm = () => {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <Label htmlFor="companyName" titile="Enter company name" />
+          <Label htmlFor="company" titile="Enter company name" />
           <TextField
             fullWidth
-            id="companyName"
-            name="companyName"
+            id="company"
+            name="company"
             type="text"
             placeholder="Apple"
-            value={formik.values.companyName}
+            value={formik.values.company}
             onChange={formik.handleChange}
-            error={
-              formik.touched.companyName && Boolean(formik.errors.companyName)
-            }
-            helperText={formik.touched.companyName && formik.errors.companyName}
+            error={formik.touched.company && Boolean(formik.errors.company)}
+            helperText={formik.touched.company && formik.errors.company}
           />
         </div>
         <div className="flex flex-col gap-2">
-          <Label htmlFor="taxNumber" titile="Enter Tax Number " />
+          <Label htmlFor="tax" titile="Enter Tax Number " />
           <TextField
             fullWidth
-            id="taxNumber"
-            name="taxNumber"
+            id="tax"
+            name="tax"
             type="text"
             placeholder="46GDH46GGH"
-            value={formik.values.taxNumber}
+            value={formik.values.tax}
             onChange={formik.handleChange}
-            error={formik.touched.taxNumber && Boolean(formik.errors.taxNumber)}
-            helperText={formik.touched.taxNumber && formik.errors.taxNumber}
+            error={formik.touched.tax && Boolean(formik.errors.tax)}
+            helperText={formik.touched.tax && formik.errors.tax}
           />
+          <CompanyModalform />
         </div>
-        <Stack direction={"row"} justifyContent="space-between">
-          <Button
-            variant="contained"
-            size="large"
-            sx={{ minWidth: [150, 200], textTransform: "none" }}
-            onClick={() => {
-              navigate("/dashboard/ordernow/collection");
-            }}
-            startIcon={<BsArrowLeft />}
-          >
-            Back
-          </Button>
-          <Button
-            variant="contained"
-            size="large"
-            sx={{ minWidth: [150, 200], textTransform: "none" }}
-            onClick={() => {
-              dispatch(setActiveStep("payment"));
-              navigate("/dashboard/ordernow/payment");
-            }}
-            disabled={IsButtonDisabled()}
-            endIcon={<BsArrowRight />}
-          >
-            Next
-          </Button>
-        </Stack>
       </div>
+
+      <Stack direction={"row"} justifyContent="space-between">
+        <Button
+          variant="contained"
+          size="large"
+          sx={{ minWidth: [150, 200], textTransform: "none" }}
+          onClick={() => {
+            navigate("/dashboard/ordernow/collection");
+          }}
+          startIcon={<BsArrowLeft />}
+        >
+          Back
+        </Button>
+        <Button
+          variant="contained"
+          size="large"
+          sx={{ minWidth: [150, 200], textTransform: "none" }}
+          onClick={() => {
+            dispatch(setActiveStep("payment"));
+            formik.handleSubmit();
+            navigate("/dashboard/ordernow/payment");
+          }}
+          disabled={IsButtonDisabled()}
+          endIcon={<BsArrowRight />}
+        >
+          Next
+        </Button>
+      </Stack>
     </form>
   );
 };
 
-// !formik.errors.name &&
-//   !formik.errors.surname &&
-//   !formik.errors.email &&
-//   !formik.errors.mobile;
+const IndividualModalform = (prop) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [open, setOpen] = useState(false);
+  const togelModal = () => {
+    setOpen((state) => (state === false ? true : false));
+  };
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      surname: "",
+      email: "",
+      mobile: "",
+    },
+    validationSchema: Yup.object({
+      name: Yup.string().required("Required"),
+      surname: Yup.string().required("Required"),
+      email: Yup.string().email("Enter a valid email").required("Required"),
+      mobile: Yup.string()
+        .min(6, "Mobile number seems incorrect")
+        .required("Required"),
+    }),
+    onSubmit: (values) => {
+      dispatch(
+        setContact({
+          addressType: "individual",
+          name: values.name,
+          surname: values.surname,
+          email: values.email,
+          mobile: values.mobile,
+          company: "",
+          tax: "",
+        })
+      );
+      dispatch(setActiveStep("/ordernow/payment"));
+      navigate("/dashboard/ordernow/payment");
+    },
+  });
+
+  return (
+    <>
+      <Button
+        sx={{ alignSelf: "end", textTransform: "none" }}
+        onClick={togelModal}
+      >
+        Book for others
+      </Button>
+      <Modal open={open} onClose={togelModal}>
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            maxWidth: 700,
+            minHeight: 400,
+            maxHeight: 600,
+            width: "100%",
+            bgcolor: "background.paper",
+            border: "1px solid #000",
+            boxShadow: 24,
+            p: 6,
+            borderRadius: 2,
+            overflowY: ["scroll", "unset"],
+          }}
+        >
+          <Stack alignItems={"center"} gap={2} paddingBottom={2}>
+            <Typography variant="h5" fontWeight={600}>
+              Add Address
+            </Typography>
+            <Typography maxWidth={300} textAlign={"center"} color="text.muted">
+              Please fill in your details below and we will get in touch with
+              you shortly.
+            </Typography>
+          </Stack>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="flex flex-col gap-2">
+              <Label htmlFor="name" titile="Enter name" />
+              <TextField
+                fullWidth
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Enter name"
+                value={formik.values.name}
+                onChange={formik.handleChange}
+                error={formik.touched.name && Boolean(formik.errors.name)}
+                helperText={formik.touched.name && formik.errors.name}
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <Label htmlFor="surname" titile="Enter surname" />
+              <TextField
+                fullWidth
+                id="surname"
+                name="surname"
+                type="text"
+                placeholder="Enter surname"
+                value={formik.values.surname}
+                onChange={formik.handleChange}
+                error={formik.touched.surname && Boolean(formik.errors.surname)}
+                helperText={formik.touched.surname && formik.errors.surname}
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <Label htmlFor="email" titile="Enter email" />
+              <TextField
+                fullWidth
+                id="email"
+                name="email"
+                type="text"
+                placeholder="Enter email"
+                value={formik.values.email}
+                onChange={formik.handleChange}
+                error={formik.touched.email && Boolean(formik.errors.email)}
+                helperText={formik.touched.email && formik.errors.email}
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <Label htmlFor="mobile" titile="Enter mobile" />
+              <MobileInput
+                id="mobile"
+                name="mobile"
+                placeholder="Enter mobile"
+                value={formik.values.mobile}
+                onChange={formik.handleChange}
+                error={formik.touched.mobile && Boolean(formik.errors.mobile)}
+                helperText={formik.touched.mobile && formik.errors.mobile}
+              />
+            </div>
+          </div>
+          <div className="flex w-full justify-center">
+            <Button
+              variant="contained"
+              fullwidth
+              size="large"
+              sx={{ width: "100%", textTransform: "none", mt: 2 }}
+              onClick={() => {
+                formik.handleSubmit();
+              }}
+              endIcon={<BsArrowRight />}
+            >
+              Sumbit
+            </Button>
+          </div>
+          <div
+            style={{
+              position: "absolute",
+              top: 12,
+              right: 12,
+              cursor: "pointer",
+            }}
+            onClick={togelModal}
+          >
+            <RxCross1 />
+          </div>
+        </Box>
+      </Modal>
+    </>
+  );
+};
+
+const CompanyModalform = (prop) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [open, setOpen] = useState(false);
+  const togelModal = () => {
+    setOpen((state) => (state === false ? true : false));
+  };
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      surname: "",
+      email: "",
+      mobile: "",
+      company: "",
+      tax: "",
+    },
+    validationSchema: Yup.object({
+      name: Yup.string().required("Required"),
+      surname: Yup.string().required("Required"),
+      email: Yup.string().email("Enter a valid email").required("Required"),
+      mobile: Yup.string()
+        .min(6, "Mobile number seems incorrect")
+        .required("Required"),
+    }),
+    onSubmit: (values) => {
+      dispatch(
+        setContact({
+          addressType: "company",
+          name: values.name,
+          surname: values.surname,
+          email: values.email,
+          mobile: values.mobile,
+          company: values.company,
+          tax: values.tax,
+        })
+      );
+      dispatch(setActiveStep("/ordernow/payment"));
+      navigate("/dashboard/ordernow/payment");
+    },
+  });
+
+  return (
+    <>
+      <Button
+        sx={{ alignSelf: "end", textTransform: "none" }}
+        onClick={togelModal}
+      >
+        Book for others
+      </Button>
+      <Modal open={open} onClose={togelModal}>
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            maxWidth: 700,
+            minHeight: 400,
+            maxHeight: 600,
+            width: "100%",
+            bgcolor: "background.paper",
+            border: "1px solid #000",
+            boxShadow: 24,
+            p: 6,
+            borderRadius: 2,
+            overflowY: ["scroll", "unset"],
+          }}
+        >
+          <Stack alignItems={"center"} gap={2} paddingBottom={2}>
+            <Typography variant="h5" fontWeight={600}>
+              Add Address
+            </Typography>
+            <Typography maxWidth={300} textAlign={"center"} color="text.muted">
+              Please fill in your details below and we will get in touch with
+              you shortly.
+            </Typography>
+          </Stack>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="flex flex-col gap-2">
+              <Label htmlFor="name" titile="Enter name" />
+              <TextField
+                fullWidth
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Enter name"
+                value={formik.values.name}
+                onChange={formik.handleChange}
+                error={formik.touched.name && Boolean(formik.errors.name)}
+                helperText={formik.touched.name && formik.errors.name}
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <Label htmlFor="surname" titile="Enter surname" />
+              <TextField
+                fullWidth
+                id="surname"
+                name="surname"
+                type="text"
+                placeholder="Enter surname"
+                value={formik.values.surname}
+                onChange={formik.handleChange}
+                error={formik.touched.surname && Boolean(formik.errors.surname)}
+                helperText={formik.touched.surname && formik.errors.surname}
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <Label htmlFor="email" titile="Enter email" />
+              <TextField
+                fullWidth
+                id="email"
+                name="email"
+                type="text"
+                placeholder="Enter email"
+                value={formik.values.email}
+                onChange={formik.handleChange}
+                error={formik.touched.email && Boolean(formik.errors.email)}
+                helperText={formik.touched.email && formik.errors.email}
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <Label htmlFor="mobile" titile="Enter mobile" />
+              <MobileInput
+                id="mobile"
+                name="mobile"
+                placeholder="Enter mobile"
+                value={formik.values.mobile}
+                onChange={formik.handleChange}
+                error={formik.touched.mobile && Boolean(formik.errors.mobile)}
+                helperText={formik.touched.mobile && formik.errors.mobile}
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <Label htmlFor="company" titile="Enter company name" />
+              <TextField
+                fullWidth
+                id="company"
+                name="company"
+                type="text"
+                placeholder="Apple"
+                value={formik.values.company}
+                onChange={formik.handleChange}
+                error={formik.touched.company && Boolean(formik.errors.company)}
+                helperText={formik.touched.company && formik.errors.company}
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <Label htmlFor="tax" titile="Enter Tax Number " />
+              <TextField
+                fullWidth
+                id="tax"
+                name="tax"
+                type="text"
+                placeholder="46GDH46GGH"
+                value={formik.values.tax}
+                onChange={formik.handleChange}
+                error={formik.touched.tax && Boolean(formik.errors.tax)}
+                helperText={formik.touched.tax && formik.errors.tax}
+              />
+            </div>
+          </div>
+          <div className="flex w-full justify-between">
+            <Button
+              variant="contained"
+              size="large"
+              sx={{ width: "100%", textTransform: "none", mt: 2 }}
+              onClick={() => {
+                formik.handleSubmit();
+              }}
+              endIcon={<BsArrowRight />}
+            >
+              Sumbit
+            </Button>
+          </div>
+          <div
+            style={{
+              position: "absolute",
+              top: 12,
+              right: 12,
+              cursor: "pointer",
+            }}
+            onClick={togelModal}
+          >
+            <RxCross1 />
+          </div>
+        </Box>
+      </Modal>
+    </>
+  );
+};

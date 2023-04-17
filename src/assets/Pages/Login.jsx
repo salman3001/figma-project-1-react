@@ -75,12 +75,12 @@ const Login = () => {
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/signup-leaf.svg"}
           alt=""
-          className="absolute"
+          className="absolute brightness-50 top-0 left-0 z-0"
         />
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/signup-leaf.svg"}
           alt=""
-          className="absolute bottom-0 right-0 rotate-180"
+          className="absolute brightness-50 bottom-0 right-0 rotate-180 z-0"
         />
         <h1 className="w-full p-4 border-b text-end border-gray-300 border-opacity-20">
           <Typography variant="subtitle1">
@@ -96,7 +96,7 @@ const Login = () => {
             </Button>
           </Typography>
         </h1>
-        <div className="flex flex-col ">
+        <div className="flex flex-col relative z-10">
           <div className="flex flex-col gap-16 justify-center items-center py-16 px-10 md:px-20 w-full  ">
             <div className="text-center flex flex-col gap-2">
               <Typography variant="h4" fontWeight={600}>

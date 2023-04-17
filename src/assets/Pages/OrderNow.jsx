@@ -4,6 +4,7 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import MyStepper from "../Components/MyStepper";
 import { useSelector } from "react-redux";
 import OfferCard from "../Components/OfferCard";
+import MakePaymentCard from "../Components/MakePaymentCard";
 
 const OrderNow = () => {
   const location = useLocation();
@@ -39,6 +40,7 @@ const OrderNow = () => {
         </Grid>
         <Grid item xs={12} lg={4} padding={2}>
           <Stack paddingY={(0, 2, 3)} paddingX={2} spacing={4}>
+            <MakePaymentCard />
             <MyStepper step={orderNowState.stepperData} />
             <OfferCard />
           </Stack>
