@@ -40,7 +40,9 @@ const OrderNow = () => {
         </Grid>
         <Grid item xs={12} lg={4} padding={2}>
           <Stack paddingY={(0, 2, 3)} paddingX={2} spacing={4}>
-            <MakePaymentCard />
+            {location.pathname === "/dashboard/ordernow/payment" && (
+              <MakePaymentCard />
+            )}
             <MyStepper step={orderNowState.stepperData} />
             <OfferCard />
           </Stack>

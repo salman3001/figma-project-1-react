@@ -1,8 +1,12 @@
 import { Button, Stack, TextField, Typography } from "@mui/material";
 import React from "react";
 import { BsArrowRight, BsInfoLg } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
 const MakePaymentCard = () => {
+  const serviceState = useSelector(
+    (state) => state.orderNow.stepperData.services
+  );
   return (
     <Stack
       spacing={2}
@@ -19,8 +23,25 @@ const MakePaymentCard = () => {
           Pay Now
         </Typography>
         <Typography variant="subtitle1" fontWeight={600} color="secondary">
-          {" "}
-          &#163; 75
+          &#163;{" "}
+          {(
+            serviceState.wash.items.reduce(
+              (acc, item) => acc + item.quantity * item.price,
+              0
+            ) +
+            serviceState.washAndIron.items.reduce(
+              (acc, item) => acc + item.quantity * item.price,
+              0
+            ) +
+            serviceState.ironing.items.reduce(
+              (acc, item) => acc + item.quantity * item.price,
+              0
+            ) +
+            serviceState.dryCleaning.items.reduce(
+              (acc, item) => acc + item.quantity * item.price,
+              0
+            )
+          ).toFixed(2)}
         </Typography>
       </Stack>
       <Stack color="text.muted">
