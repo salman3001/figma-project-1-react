@@ -1,10 +1,5 @@
 /* @import url("./styles/Home.css"); */
 
-@font-face {
-  font-family: "Nuckle";
-  src: url("/fonts/Nuckle-Regular.woff2");
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

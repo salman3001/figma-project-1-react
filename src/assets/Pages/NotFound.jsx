@@ -14,7 +14,7 @@ const NotFound = () => {
     };
   }, []);
   return (
-    <div className="w-full text-red-600  h-full p-32 flex justify-center items-center text-5xl">
+    <div className="w-full text-red-600  h-full p-32 flex justify-center items-center text-xl">
       !!! Sorry the page your looking for is under maintenace. Please visit
       later.
       <br />{" "}

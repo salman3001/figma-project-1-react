@@ -1,5 +1,4 @@
 import { createTheme, responsiveFontSizes } from "@mui/material";
-import interfont from '../fonts/inter-font.ttf'
 
 const theme = createTheme({
     palette: {

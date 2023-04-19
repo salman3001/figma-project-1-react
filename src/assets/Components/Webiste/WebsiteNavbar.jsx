@@ -2,6 +2,7 @@ import { AppBar, Button, Drawer, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import { useState } from "react";
 import { BiMenu } from "react-icons/bi";
+import { FiSettings } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 const WebsiteNavbar = () => {
@@ -31,6 +32,7 @@ const WebsiteNavbar = () => {
             navigate("/home");
           }}
         />
+
         {/* links */}
         <div className="hidden lg:flex items-center text-xl gap-6 justify-between">
           <a
@@ -78,7 +80,17 @@ const WebsiteNavbar = () => {
           >
             <Typography variant="h6">Faqs</Typography>
           </a>
+          <div
+            className="border-2 rounded-full animate-pulse duration-0 p-1 cursor-pointer z-50 top-24 text-xl"
+            onClick={() => {
+              navigate("/devs");
+            }}
+          >
+            <FiSettings />
+          </div>
         </div>
+        {/* temp for devs */}
+
         {/* actions */}
         <div className="hidden lg:flex gap-2 md:gap-6">
           <Button
@@ -183,6 +195,14 @@ const WebsiteNavbar = () => {
             >
               <Typography variant="h6">Faqs</Typography>
             </a>
+            <div
+              className="border-2 rounded-full animate-pulse duration-0 p-1 cursor-pointer z-50 top-24 text-xl"
+              onClick={() => {
+                navigate("/devs");
+              }}
+            >
+              <FiSettings />
+            </div>
             <div className="flex gap-2 md:gap-6 ">
               <Button
                 variant="outlined"

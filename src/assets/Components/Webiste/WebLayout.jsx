@@ -3,6 +3,7 @@ import WebsiteNavbar from "./WebsiteNavbar";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import { Box } from "@mui/material";
+import { FiSettings } from "react-icons/fi";
 
 const WebLayout = () => {
   const navigate = useNavigate();

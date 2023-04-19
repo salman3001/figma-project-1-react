@@ -53,7 +53,7 @@ const ContactUs = () => {
     <div className="flex flex-col gap-6 lg:flex-row w-full p-5 lg:p-20">
       {/* left */}
       <div className="lg:w-1/2 flex px-5 lg:px-10 flex-col gap-4">
-        <Typography variant="h3">
+        <Typography variant="h3" fontWeight={550}>
           Talk to our product analytics expert
         </Typography>
         <Typography variant="h5">Our Location</Typography>

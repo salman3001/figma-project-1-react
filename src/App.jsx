@@ -21,6 +21,11 @@ import Login from "./assets/Pages/Login";
 import Signup from "./assets/Pages/Signup";
 import CheckYourEmail from "./assets/Pages/CheckYourEmail";
 import SuccessfullyVarified from "./assets/Pages/SuccessfullyVarified";
+import Devs from "./assets/Pages/Devs";
+import AboutUs from "./assets/Pages/AboutUs";
+import Services from "./assets/Pages/Services";
+import OurServices from "./assets/Pages/OurServices";
+import Location from "./assets/Pages/Location";
 
 function App() {
   return (
@@ -46,15 +51,17 @@ function App() {
         <Route path="contactus" element={<ContactUs />} />
         <Route path="faqs" element={<Faq />} />
         <Route path="privacy" element={<PrivaryPolicy />} />
-        {/* <Route path="/services" element={<Services />} />
-        <Route path="/aboutus" element={<Aboutus />} /> 
-        */}
+        <Route path="services" element={<Services />} />
+        <Route path="ourservices" element={<OurServices />} />
+        <Route path="location" element={<Location />} />
+        <Route path="aboutus" element={<AboutUs />} />
         <Route path="*" element={<NotFound />} />
       </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/checkyouremail" element={<CheckYourEmail />} />
       <Route path="/successfullyvarified" element={<SuccessfullyVarified />} />
+      <Route path="/devs" element={<Devs />} />
     </Routes>
   );
 }
