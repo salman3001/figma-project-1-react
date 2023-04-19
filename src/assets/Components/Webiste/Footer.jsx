@@ -1,24 +1,28 @@
-import { Divider, Stack, Typography } from "@mui/material";
-import { ReactNode } from "react";
+import { Stack, Typography } from "@mui/material";
 
 const Footer = () => {
   return (
     <>
-      <footer className="grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5  gap-8 md:gap-16">
-        <List>
+      <footer className="grid grid-cols-2 md:grid-cols-3 h-a xl:grid-cols-5 gap-8">
+        <div className="max-w-[300px] col-span-2 sm:col-span-1">
           <Stack spacing={2} alignItems="start">
             <img
               src={import.meta.env.VITE_BASE_URL + "/images/Launder-logo.svg"}
-              className="h-6 slef-start"
+              className="h-6 slef-start wrap"
               alt=""
             />
-            <Typography variant="body22" color="text.muted">
+            <Typography
+              variant="body22"
+              color="text.muted"
+              maxWidth={"200px"}
+              text
+            >
               Bringing the premium laundry & dry cleaning services straight to
               your door 84 South Road Southall UB1 1RD United Kingdom. Phone :
               020 8574 6433 Email : info@laundramoon.com
             </Typography>
           </Stack>
-        </List>
+        </div>
         <List>
           <Typography variant="subtitle18" mb={1}>
             Popular Services
@@ -207,7 +211,10 @@ const Footer = () => {
         </List>
       </footer>
       <div className="flex justify-between w-full flex-wrap gap-2 col-span-2 md:col-span-3 lg:col-span-5 border-t-2 pt-4 ">
-        <div>copyright © 2023 Laundramoon All rights reserved.</div>
+        <Typography variant="body22" color="text.muted">
+          copyright &#169; 2023 <span className="underline">Laundramoon </span>{" "}
+          All rights reserved.
+        </Typography>
         <div className="flex gap-3 pr-10">
           <a href="">
             <img
@@ -248,7 +255,7 @@ const Footer = () => {
 export default Footer;
 
 const List = (prop) => (
-  <Stack color="text.muted" spacing={0.2}>
+  <Stack color="text.muted" spacing={0.2} className="grow">
     {prop.children}
   </Stack>
 );

@@ -5,17 +5,17 @@ const Section1 = () => {
   const navigate = useNavigate();
 
   return (
-    <section className=" flex flex-col md:flex-row min-h-[450px] md:min-h-[550px]  w-full   bg-[#EAEFF3]">
+    <section className=" flex flex-col md:flex-row h-[820px] w-full   bg-[#EAEFF3]  ">
       {/* left side */}
-      <div className="flex  w-full md:w-1/2 text-center lg:text-start  items-center px-5 md:px-16 lg:px-32 pb-10 md:pb-20 flex-col gap-2  pt-16">
-        <Typography variant="h3" fontWeight={580}>
+      <div className="flex  w-full md:w-1/2 text-start  items-start justify-center py-10  flex-col gap-2 respnsive-pading-1">
+        <Typography variant="h72" className="leading-[80px]">
           Your professional dry clean & laundry service
         </Typography>
-        <Typography variant="subtitle1">
+        <Typography variant="body28" classname="leading-10">
           We collect, clean & return at the location of your choice on time.
         </Typography>
         <div className="mt-10">
-          <Typography variant="subtitle1" fontWeight={600}>
+          <Typography variant="subtitle28" fontWeight={600}>
             Download the app now
           </Typography>
         </div>
@@ -25,7 +25,7 @@ const Section1 = () => {
               src={
                 import.meta.env.VITE_BASE_URL + "/images/google-store-btn 2.jpg"
               }
-              className="h-14 w-48"
+              className="h-14 w-48 md:h-[77px] md:w-[254px] "
               alt="Play Store"
             />
           </a>
@@ -34,7 +34,7 @@ const Section1 = () => {
               src={
                 import.meta.env.VITE_BASE_URL + "/images/app-store-btn 2.png"
               }
-              className="h-14 w-48"
+              className="h-14 w-48 md:h-[77px] md:w-[254px] "
               alt="Apple Store"
             />
           </a>
@@ -42,25 +42,25 @@ const Section1 = () => {
       </div>
       {/* right side */}
       <div className="min-h-[450px] relative w-full md:w-1/2  bg-[#02A5BF]">
-        {/* top */}
-        <div className="absolute top-20 z-20 md:left-40 xs:left-[160px]">
-          <img
-            src={import.meta.env.VITE_BASE_URL + "/images/section1-art1.svg"}
-            alt=""
-            className="h-28"
-          />
-        </div>
-        {/* bottom */}
-        <div className="absolute flex flex-col px-5 py-7 h-60 gap-2 w-80 md:w-96 top-32 z-10 sm:left-[50px] md:left-[-50px] shadow-hero-1 border-2 border-[#03444F] rounded-2xl bg-white">
+        <div className="absolute flex flex-col p-7   h-60 md:h-[435px] gap-6 w-80 md:w-[629px] top-56 z-20 sm:left-[50px] md:left-[-50px] shadow-hero-1 border-2 border-[#03444F] rounded-2xl bg-white">
+          {/* top box */}
+          <div className="absolute top-[-70px] right-[-200px] z-20 ">
+            <img
+              src={import.meta.env.VITE_BASE_URL + "/images/section1-art1.svg"}
+              alt=""
+              className="h-28 md:h-[146px] md:w-[445px]"
+            />
+          </div>
+          {/* cebter box */}
           <img
             src={import.meta.env.VITE_BASE_URL + "/images/Launder-logo.svg"}
             alt=""
-            className="h-3 self-start"
+            className="h-3 md:h-[21px] md self-start z-20"
           />
 
-          <div className="w-full flex flex-col gap-2 h-28  p-4 bg-[#E9E9E9] rounded-lg">
-            <div className="text-4xl flex  gap-2">
-              <div className="">E10 7DA</div>
+          <div className="w-full flex flex-col justify-center  gap-6 h-28 md:h-[204px] md:w-[569px]  p-6 bg-[#E9E9E9] rounded-lg z-20">
+            <div className="text-4xl flex z-20  gap-2">
+              <Typography variant="h96">E10 7DA</Typography>
               <div className="">
                 <img
                   src={import.meta.env.VITE_BASE_URL + "/images/editicon.svg"}
@@ -68,20 +68,25 @@ const Section1 = () => {
                 />
               </div>
             </div>
-            <div className="pl-2 font-semibold">Enter Zipcode</div>
+            <Typography variant="subtitle18">Enter Zipcode</Typography>
           </div>
           <Button
             variant="contained"
             color="secondary"
             size="large"
+            className="z-20"
+            sx={{ fontSize: 22, height: 72 }}
+            style={{
+              backgroundColor: "#022A30",
+            }}
             onClick={() => {
               navigate("/dashboard/ordernow/address");
             }}
           >
             Place Order
           </Button>
-
-          <div className="absolute flex flex-col gap-1 p-1 w-72 h-16  bg-white top-56 shadow-hero-1 border-[#03444F] border-2 rounded-2xl">
+          {/* bottom box */}
+          <div className="absolute flex flex-col justify-center p-2 w-72 md:w-[445px] h-16 md:h-[81px]  bg-white top-[400px] shadow-hero-1 border-[#03444F] border-2 rounded-xl z-20">
             <div className=" text-black font-semibold">Quantity</div>
             <div>
               <img
@@ -90,28 +95,28 @@ const Section1 = () => {
                 className=""
               />
             </div>
+            {/* rectangel */}
           </div>
-          {/* leaves svg */}
+          <div className="absolute  w-80 md:w-[602px]  h-60 md:h-[435px] right-[-20px] top-[20px] [124px] border-b-2 border-r-2 border-[#03444F] rounded-2xl z-[0]"></div>
         </div>
-        {/* rectangel */}
-        <div className="absolute  w-80 h-60 top-[135px] md:left-6 sm:left-[124px] border-2 border-[#03444F] rounded-2xl "></div>
+        {/* leaves svg */}
         <div className="absolute right-0 bottom-[-15px]">
           <img
             src={import.meta.env.VITE_BASE_URL + "/images/leaves.svg"}
             alt=""
-            className="h-64"
+            className=""
           />
         </div>
 
         {/* stars */}
-        <div className="absolute top-[121px]">
+        <div className="absolute top-[100px] left-[-25px]">
           <img
             src={import.meta.env.VITE_BASE_URL + "/images/stars.svg"}
             alt=""
           />
         </div>
         {/* reviews */}
-        <div className="hidden absolute md:flex text-white gap-2 flex-wrap font-[700] bottom-[10%] right-[10%]">
+        <div className="hidden absolute md:flex text-white gap-2 flex-wrap font-[700] bottom-10 left-16">
           <div className="flex">
             <img
               src={import.meta.env.VITE_BASE_URL + "/images/star.svg"}
@@ -134,7 +139,9 @@ const Section1 = () => {
               alt=""
             />
           </div>
-          <div className="">2000+ reviews - Trusted by 750,0000+ geniuses</div>
+          <Typography variant="body22" color="white">
+            2000+ reviews - Trusted by 750,0000+ geniuses
+          </Typography>
         </div>
       </div>
     </section>
