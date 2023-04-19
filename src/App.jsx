@@ -21,6 +21,7 @@ import Login from "./assets/Pages/Login";
 import Signup from "./assets/Pages/Signup";
 import CheckYourEmail from "./assets/Pages/CheckYourEmail";
 import SuccessfullyVarified from "./assets/Pages/SuccessfullyVarified";
+import Test from "./assets/Pages/Test";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
       <Route path="/signup" element={<Signup />} />
       <Route path="/checkyouremail" element={<CheckYourEmail />} />
       <Route path="/successfullyvarified" element={<SuccessfullyVarified />} />
+      <Route path="/test" element={<Test />} />
     </Routes>
   );
 }

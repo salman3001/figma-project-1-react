@@ -1,4 +1,11 @@
-import { AppBar, Button, Drawer, Toolbar, Typography } from "@mui/material";
+import {
+  AppBar,
+  Button,
+  Drawer,
+  Toolbar,
+  Typography,
+  Stack,
+} from "@mui/material";
 import React from "react";
 import { useState } from "react";
 import { BiMenu } from "react-icons/bi";
@@ -18,8 +25,10 @@ const WebsiteNavbar = () => {
       sx={{
         overflow: "hidden",
         mb: 1,
+        px: [0, 1, 2, 3, 3, "138px"],
         justifyContent: "center",
-        height: [60, 70, 80],
+        height: [70, 80, 100, 121],
+        bgColor: "#FFFFFF",
       }}
     >
       <Toolbar sx={{ justifyContent: "space-between", minHeight: 50 }}>
@@ -32,7 +41,14 @@ const WebsiteNavbar = () => {
           }}
         />
         {/* links */}
-        <div className="hidden lg:flex items-center text-xl gap-6 justify-between">
+        <Stack
+          direction="row"
+          spacing={3}
+          flexgrow="grow"
+          sx={{
+            display: ["none", "none", "none", "flex"],
+          }}
+        >
           <a
             href=""
             onClick={(e) => {
@@ -40,7 +56,14 @@ const WebsiteNavbar = () => {
               navigate("/home");
             }}
           >
-            <Typography variant="h6">Pricing</Typography>
+            <Typography
+              variant="body24"
+              sx={{
+                color: "#000000",
+              }}
+            >
+              Pricing
+            </Typography>
           </a>
           <a
             href=""
@@ -49,7 +72,14 @@ const WebsiteNavbar = () => {
               navigate("/services");
             }}
           >
-            <Typography variant="h6">Services</Typography>
+            <Typography
+              variant="body24"
+              sx={{
+                color: "#000000",
+              }}
+            >
+              Services
+            </Typography>
           </a>
           <a
             href=""
@@ -58,7 +88,14 @@ const WebsiteNavbar = () => {
               navigate("/home");
             }}
           >
-            <Typography variant="h6">Business</Typography>
+            <Typography
+              variant="body24"
+              sx={{
+                color: "#000000",
+              }}
+            >
+              Business
+            </Typography>
           </a>
           <a
             href=""
@@ -67,7 +104,14 @@ const WebsiteNavbar = () => {
               navigate("/blogs");
             }}
           >
-            <Typography variant="h6">Blog</Typography>
+            <Typography
+              variant="body24"
+              sx={{
+                color: "#000000",
+              }}
+            >
+              Blog
+            </Typography>
           </a>
           <a
             href=""
@@ -76,36 +120,70 @@ const WebsiteNavbar = () => {
               navigate("/faqs");
             }}
           >
-            <Typography variant="h6">Faqs</Typography>
+            <Typography
+              variant="body24"
+              sx={{
+                color: "#000000",
+              }}
+            >
+              Faqs
+            </Typography>
           </a>
-        </div>
+        </Stack>
         {/* actions */}
-        <div className="hidden lg:flex gap-2 md:gap-6">
+        <Stack
+          direction="row"
+          spacing={2}
+          sx={{
+            display: ["none", "none", "none", "flex"],
+          }}
+        >
           <Button
             variant="outlined"
+            szie="small"
             color="inherit"
             className="w-32"
             onClick={(e) => {
               navigate("/login");
             }}
+            sx={{
+              width: [150, 150, 150, 164],
+              height: [50, 50, 50, 59],
+              fontSize: 22,
+              borderRadius: ["6px", "6px", "6px", "8px"],
+            }}
           >
             Login
           </Button>
           <Button
+            szie="small"
             variant="contained"
-            color="secondary"
             onClick={(e) => {
               navigate("/dashboard/ordernow/address");
+            }}
+            sx={{
+              width: [150, 150, 150, 196],
+              height: [50, 50, 50, 59],
+              fontSize: 22,
+              borderRadius: ["6px", "6px", "6px", "8px"],
+            }}
+            style={{
+              backgroundColor: "#022A30",
             }}
           >
             Book Now
           </Button>
-        </div>
-        <div className="block lg:hidden " onClick={togelDrawer}>
+        </Stack>
+        <Stack
+          onClick={togelDrawer}
+          sx={{
+            display: ["flex", "flex", "flex", "none"],
+          }}
+        >
           <label htmlFor="hameburger" className="cursor-pointer">
-            <BiMenu size={25} />
+            <BiMenu size={30} />
           </label>
-        </div>
+        </Stack>
         <Drawer
           anchor="right"
           open={open}
@@ -145,7 +223,7 @@ const WebsiteNavbar = () => {
                 navigate("/home");
               }}
             >
-              <Typography variant="h6">Pricing</Typography>
+              <Typography variant="body24">Pricing</Typography>
             </a>
             <a
               href=""
@@ -154,7 +232,7 @@ const WebsiteNavbar = () => {
                 navigate("/services");
               }}
             >
-              <Typography variant="h6">Services</Typography>
+              <Typography variant="body24">Services</Typography>
             </a>
             <a
               href=""
@@ -163,7 +241,7 @@ const WebsiteNavbar = () => {
                 navigate("/home");
               }}
             >
-              <Typography variant="h6">Business</Typography>
+              <Typography variant="body24">Business</Typography>
             </a>
             <a
               href=""
@@ -172,7 +250,7 @@ const WebsiteNavbar = () => {
                 navigate("/blogs");
               }}
             >
-              <Typography variant="h6">Blogs</Typography>
+              <Typography variant="body24">Blogs</Typography>
             </a>
             <a
               href=""
@@ -181,9 +259,9 @@ const WebsiteNavbar = () => {
                 navigate("/faqs");
               }}
             >
-              <Typography variant="h6">Faqs</Typography>
+              <Typography variant="body24">Faqs</Typography>
             </a>
-            <div className="flex gap-2 md:gap-6 ">
+            <div className="flex gap-2 flex-wrap justify-center items-center md:gap-6 ">
               <Button
                 variant="outlined"
                 color="inherit"
@@ -191,14 +269,28 @@ const WebsiteNavbar = () => {
                 onClick={(e) => {
                   navigate("/login");
                 }}
+                sx={{
+                  width: 120,
+                  height: 40,
+                  fontSize: 18,
+                  borderRadius: "8px",
+                }}
+                size="small"
               >
                 Login
               </Button>
               <Button
                 variant="contained"
+                size="small"
                 color="secondary"
                 onClick={(e) => {
                   navigate("/dashboard/ordernow/address");
+                }}
+                sx={{
+                  width: 120,
+                  height: 40,
+                  fontSize: 18,
+                  borderRadius: "8px",
                 }}
               >
                 Book Now
