@@ -26,6 +26,7 @@ import AboutUs from "./assets/Pages/AboutUs";
 import Services from "./assets/Pages/Services";
 import OurServices from "./assets/Pages/OurServices";
 import Location from "./assets/Pages/Location";
+import Test from "./assets/Pages/Test";
 
 function App() {
   return (
@@ -62,6 +63,7 @@ function App() {
       <Route path="/checkyouremail" element={<CheckYourEmail />} />
       <Route path="/successfullyvarified" element={<SuccessfullyVarified />} />
       <Route path="/devs" element={<Devs />} />
+      <Route path="/test" element={<Test />} />
     </Routes>
   );
 }

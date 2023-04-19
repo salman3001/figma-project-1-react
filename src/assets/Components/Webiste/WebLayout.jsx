@@ -15,7 +15,7 @@ const WebLayout = () => {
     }
   });
   return (
-    <div className="flex bg-white  min-h-screen mx-auto flex-col justify-between">
+    <div className="flex bg-white px-[137px]  min-h-screen mx-auto flex-col justify-between">
       <header>
         <WebsiteNavbar />
       </header>
