@@ -1,21 +1,22 @@
 import { Typography } from "@mui/material";
+import { Stack } from "@mui/system";
 
 const Section3 = () => {
   return (
-    <div className="relative w-full flex flex-col md:flex-row justify-center md:justify-start items-center p-5 md:p-20  section3gradient">
-      <div className="relative md:w-1/2  flex  justify-center items-center">
+    <div className="relative w-full flex flex-col lg:flex-row justify-center lg:justify-start items-center  respnsive-pading-1 section3gradient respnsive-pading-2 ">
+      <div className="lg:w-1/2  flex  justify-center items-center">
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/section3art.png"}
-          className="h-auto w-full"
+          className="h-auto w-full max-w-[750px]"
           alt=""
         />
       </div>
-      <div className="md:w-1/2 pl-5 pt-0 md:pl-2 p-10 flex flex-col gap-4 justify-center ">
-        <Typography variant="h3" fontWeight={580}>
-          Easy to made laundry
+      <div className="lg:w-1/2 max-w-[750px] md:pl-2  flex flex-col justify-center ">
+        <Typography variant="h68">Easy to made laundry</Typography>
+        <Typography variant="body22">
+          Pick-up & Delivery At Your Door Step
         </Typography>
-        <p>Pick-up & Delivery At Your Door Step</p>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-12 pt-12">
           <Icontexts
             src={import.meta.env.VITE_BASE_URL + "/images/globe-hand.svg"}
             title="Quality Service"
@@ -41,12 +42,14 @@ export default Section3;
 
 const Icontexts = (prop) => (
   <div className="flex gap-4 w-full">
-    <div className="flex justify-center items-center  h-auto">
-      <img src={prop.src} className="min- w-20 h-auto" alt="" />
+    <div className="flex justify-center items-start  h-auto">
+      <img src={prop.src} className="w-12 md:w-16 h-auto" alt="" />
     </div>
     <div className="w-full">
-      <h3 className="font-bold ">{prop.title}</h3>
-      <p className="text-[#545252] pt-2">{prop.description}</p>
+      <Typography variant="subtitle28">{prop.title}</Typography>
+      <Typography variant="body22" color="text.muted">
+        {prop.description}
+      </Typography>
     </div>
   </div>
 );

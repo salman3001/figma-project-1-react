@@ -13,33 +13,25 @@ const Blogcard2 = (prop) => {
   const navigate = useNavigate();
 
   return (
-    <Card
-      sx={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        cursor: "pointer",
-      }}
-      onClick={() => {
-        navigate("/blogs/blogid");
-      }}
-      elevation={0}
-    >
-      <CardMedia
-        sx={{ minHeight: 300, minWidth: 300, borderRadius: 4 }}
-        image={prop.img}
-        title="green iguana"
-      />
-      <Box display="flex" flexDirection="column" maxWidth={300}>
-        <CardContent>
-          <Typography variant="h5" fontWeight={600} component="div">
-            {prop.title}
-          </Typography>
-          <Typography variant="body2" color="text.muted">
-            {prop.description}
-          </Typography>
-        </CardContent>
-        <CardActions>
+    <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 sm:min-h-[340px] w-full rounded-2xl ">
+      <div
+        className="sm:w-[50%] h-48 sm:h-auto"
+        style={{
+          backgroundImage: `url(${prop.img})`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
+      ></div>
+      <div className=" sm:w-[50%] flex flex-col gap-4">
+        <Typography variant="subtitle28" lineHeight="36px">
+          {prop.title}
+        </Typography>
+
+        <Typography variant="body24 " color="text.muted">
+          {prop.description}
+        </Typography>
+        <div className="flex gap-4 flex-wrap">
           <Button
             sx={{
               borderRadius: 6,
@@ -68,9 +60,66 @@ const Blogcard2 = (prop) => {
           >
             UXUI
           </Button>
-        </CardActions>
-      </Box>
-    </Card>
+        </div>
+      </div>
+    </div>
+    // <Card
+    //   sx={{
+    //     display: "flex",
+    //     justifyContent: "center",
+    //     cursor: "pointer",
+    //   }}
+    //   onClick={() => {
+    //     navigate("/blogs/blogid");
+    //   }}
+    //   elevation={0}
+    // >
+    //   <CardMedia
+    //     sx={{ width: 358, borderRadius: 4 }}
+    //     image={prop.img}
+    //     title="green iguana"
+    //   />
+    //   <Box display="flex" flexDirection="column" maxWidth={300} maxHeight={400}>
+    //     <CardContent>
+    //       <Typography variant="subtitle28" lineHeight="36px">
+    //         {prop.title}
+    //       </Typography>
+    //       <Typography variant="body24 " color="text.muted">
+    //         {prop.description}
+    //       </Typography>
+    //     </CardContent>
+    //     <CardActions>
+    //       <Button
+    //         sx={{
+    //           borderRadius: 6,
+    //           border: 1,
+    //           borderColor: "secondary.main",
+    //           color: "secondary.main",
+    //           display: "flex",
+    //           justifyContent: "center",
+    //           alignItems: "center",
+    //           minWidth: 100,
+    //         }}
+    //       >
+    //         UXUI
+    //       </Button>
+    //       <Button
+    //         sx={{
+    //           borderRadius: 6,
+    //           border: 1,
+    //           borderColor: "secondary.main",
+    //           color: "secondary.main",
+    //           display: "flex",
+    //           justifyContent: "center",
+    //           alignItems: "center",
+    //           minWidth: 100,
+    //         }}
+    //       >
+    //         UXUI
+    //       </Button>
+    //     </CardActions>
+    //   </Box>
+    // </Card>
   );
 };
 

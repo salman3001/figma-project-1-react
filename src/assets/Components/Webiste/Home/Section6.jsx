@@ -2,12 +2,10 @@ import { Button, Typography } from "@mui/material";
 
 const Section6 = () => {
   return (
-    <div className="w-full p-5 md:p-20 flex flex-col gap-8 md:gap-16 ">
+    <div className="w-full respnsive-pading-1 respnsive-pading-2 flex flex-col gap-8 md:gap-16 ">
       <div className="flex flex-col gap-4 justify-center items-center">
-        <Typography variant="h4" fontWeight={550}>
-          Customers opinion
-        </Typography>
-        <Typography color="text.muted">
+        <Typography variant="h45">Customers opinion</Typography>
+        <Typography variant="body22" color="text.muted">
           Get a question? we're here to answer!
         </Typography>
       </div>
@@ -65,10 +63,16 @@ const Section6 = () => {
         </button>
       </div>
       <div className="flex flex-col gap-4 justify-center items-center">
-        <Typography variant="h6" fontWeight={550} color="text.muted">
+        <Typography variant="body36" fontFamily={591}>
           We’d love to hear from you
         </Typography>
-        <Button>Leave Review</Button>
+        <Typography
+          variant="body32"
+          color={"primary"}
+          sx={{ cursor: "pointer" }}
+        >
+          Leave Review
+        </Typography>
       </div>
     </div>
   );
@@ -77,19 +81,21 @@ const Section6 = () => {
 export default Section6;
 
 const Card = () => (
-  <div className="bg-[#F5F7F9] snap-center w-[300px]  sm:w-[500px] p-8 rounded-2xl h-72 flex flex-col justify-between gap-2">
+  <div className="bg-[#F5F7F9] snap-center w-[370px]  sm:w-[685px] p-8 sm:p-12 rounded-2xl h-[389px] flex flex-col justify-between gap-2">
     <img
       src={import.meta.env.VITE_BASE_URL + "/images/bluestars.svg"}
-      className="h-4 self-start "
+      className="h-6 self-start "
       alt=""
     />
     <div className="grow pt-4">
-      <h1 className="text-xl font-bold">Great design and support</h1>
-      <p className="text-[#8CA0A4] ">
+      <Typography variant="subtitle36">Great design and support</Typography>
+      <Typography variant="body24" color="text.muted">
         It is a long established fact that a reader will be distracted by the
         readable content
-      </p>
+      </Typography>
     </div>
-    <p className="pt-4 font-bold text-[#8CA0A4]">Natalia Ramos </p>
+    <Typography variant="subtitle24" color="#8CA0A4">
+      Natalia Ramos{" "}
+    </Typography>
   </div>
 );

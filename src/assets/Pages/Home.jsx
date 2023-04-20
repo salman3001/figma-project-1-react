@@ -14,17 +14,15 @@ const Home = () => {
   return (
     <>
       <Section1 />
-      <div className="respnsive-pading-1">
-        <Section2 />
-        <Section3 />
-        <Section4 />
-        <Section5 />
-        <Section6 />
-        <Section7 />
-        <Section8 />
-        <Section9 />
-        <Section10 />
-      </div>
+      <Section2 />
+      <Section3 />
+      <Section4 />
+      <Section5 />
+      <Section6 />
+      <Section7 />
+      <Section8 />
+      <Section9 />
+      <Section10 />
     </>
   );
 };

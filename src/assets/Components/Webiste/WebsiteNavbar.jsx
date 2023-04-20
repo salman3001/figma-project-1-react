@@ -22,7 +22,7 @@ const WebsiteNavbar = () => {
     <AppBar
       color="default"
       position="fixed"
-      elevation={7}
+      elevation={4}
       sx={{
         overflow: "hidden",
         mb: 1,
@@ -30,6 +30,9 @@ const WebsiteNavbar = () => {
         justifyContent: "center",
         height: [70, 80, 100, 121],
         bgColor: "#FFFFFF",
+      }}
+      style={{
+        backgroundColor: "white",
       }}
     >
       <Toolbar sx={{ justifyContent: "space-between", minHeight: 50 }}>
@@ -45,10 +48,12 @@ const WebsiteNavbar = () => {
         {/* links */}
         <Stack
           direction="row"
-          spacing={3}
           flexgrow="grow"
           sx={{
             display: ["none", "none", "none", "flex"],
+            width: "100%",
+            justifyContent: "end",
+            gap: [1, 1, 1, 4, 10],
           }}
         >
           <a

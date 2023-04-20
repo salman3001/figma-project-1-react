@@ -11,57 +11,56 @@ import { useNavigate } from "react-router-dom";
 const Blogcard1 = (prop) => {
   const navigate = useNavigate();
   return (
-    <Card
-      sx={{ cursor: "pointer" }}
-      onClick={() => {
-        navigate("/blogs/blogid");
-      }}
-      elevation={0}
-    >
-      <CardMedia
-        sx={{ minHeight: 500, borderRadius: 4 }}
-        image={prop.img}
-        title="green iguana"
-      />
-      <CardContent>
-        <Typography variant="h5" fontWeight={600} component="div">
+    <div className="min-h-[350px] sm:min-h-[750px] w-full flex flex-col gap-4">
+      <div
+        className="min-h-[350px] sm:min-h-[550px] w-full rounded-2xl"
+        style={{
+          backgroundImage: `url(${prop.img})`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
+      ></div>
+      <div className="flex flex-col gap-4">
+        <Typography variant="subtitle28" fontWeight={600} component="div">
           {prop.title}
         </Typography>
-        <Typography variant="body2" color="text.muted">
+
+        <Typography variant="body24" color="text.muted" minWidth={0}>
           {prop.description}
         </Typography>
-      </CardContent>
-      <CardActions>
-        <Button
-          sx={{
-            borderRadius: 6,
-            border: 1,
-            borderColor: "secondary.main",
-            color: "secondary.main",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            minWidth: 100,
-          }}
-        >
-          UXUI
-        </Button>
-        <Button
-          sx={{
-            borderRadius: 6,
-            border: 1,
-            borderColor: "secondary.main",
-            color: "secondary.main",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            minWidth: 100,
-          }}
-        >
-          UXUI
-        </Button>
-      </CardActions>
-    </Card>
+        <div className="flex gap-4">
+          <Button
+            sx={{
+              borderRadius: 6,
+              border: 1,
+              borderColor: "secondary.main",
+              color: "secondary.main",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              minWidth: 150,
+            }}
+          >
+            UXUI
+          </Button>
+          <Button
+            sx={{
+              borderRadius: 6,
+              border: 1,
+              borderColor: "secondary.main",
+              color: "secondary.main",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              minWidth: 150,
+            }}
+          >
+            UXUI
+          </Button>
+        </div>
+      </div>
+    </div>
   );
 };
 

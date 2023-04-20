@@ -2,12 +2,12 @@ import { Typography } from "@mui/material";
 
 const Section2 = () => {
   return (
-    <div className="py-24 flex flex-col gap-12">
-      <Typography variant="h4" textAlign={"center"} fontWeight={500}>
+    <div className="respnsive-pading-2 md:py-[120px] flex flex-col gap-12 respnsive-pading-1 ">
+      <Typography variant="h45" textAlign={"center"}>
         Over software businesses growing
       </Typography>
 
-      <div className="flex flex-wrap justify-center items-center gap-12 p-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-10 place-items-center">
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/openzepline.png"}
           alt=""
