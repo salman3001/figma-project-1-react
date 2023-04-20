@@ -13,9 +13,9 @@ const Blogcard2 = (prop) => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 sm:min-h-[340px] w-full rounded-2xl ">
+    <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 sm:min-h-[340px] w-full ">
       <div
-        className="sm:w-[50%] h-48 sm:h-auto"
+        className="sm:w-[50%] h-48 sm:h-auto rounded-3xl"
         style={{
           backgroundImage: `url(${prop.img})`,
           backgroundRepeat: "no-repeat",
@@ -24,7 +24,7 @@ const Blogcard2 = (prop) => {
         }}
       ></div>
       <div className=" sm:w-[50%] flex flex-col gap-4">
-        <Typography variant="subtitle28" lineHeight="36px">
+        <Typography variant="subtitle28" lineHeight="36px" fontWeight={700}>
           {prop.title}
         </Typography>
 

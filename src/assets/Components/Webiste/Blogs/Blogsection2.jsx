@@ -4,7 +4,7 @@ import Searchinput from "../Common/Searchinput";
 
 const Blogsection2 = () => {
   return (
-    <div className="p-10 px-10 md:px-20 flex flex-col gap-12">
+    <div className="respnsive-pading-1 respnsive-pading-2 flex flex-col gap-12">
       <div className="self-end">
         <Searchinput />
       </div>

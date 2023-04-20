@@ -13,7 +13,7 @@ const Blogcard1 = (prop) => {
   return (
     <div className="min-h-[350px] sm:min-h-[750px] w-full flex flex-col gap-4">
       <div
-        className="min-h-[350px] sm:min-h-[550px] w-full rounded-2xl"
+        className="min-h-[350px] sm:min-h-[550px] w-full rounded-3xl"
         style={{
           backgroundImage: `url(${prop.img})`,
           backgroundRepeat: "no-repeat",
@@ -22,7 +22,7 @@ const Blogcard1 = (prop) => {
         }}
       ></div>
       <div className="flex flex-col gap-4">
-        <Typography variant="subtitle28" fontWeight={600} component="div">
+        <Typography variant="subtitle28" fontWeight={700} component="div">
           {prop.title}
         </Typography>
 

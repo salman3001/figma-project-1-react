@@ -26,7 +26,7 @@ const WebsiteNavbar = () => {
       sx={{
         overflow: "hidden",
         mb: 1,
-        px: [0, 1, 2, 3, 3, "138px"],
+        px: [0, 1, 2, 3, "138px"],
         justifyContent: "center",
         height: [70, 80, 100, 121],
         bgColor: "#FFFFFF",
@@ -53,7 +53,7 @@ const WebsiteNavbar = () => {
             display: ["none", "none", "none", "flex"],
             width: "100%",
             justifyContent: "end",
-            gap: [1, 1, 1, 4, 10],
+            gap: [1, 1, 1, 4],
           }}
         >
           <a
@@ -133,11 +133,11 @@ const WebsiteNavbar = () => {
                 color: "#000000",
               }}
             >
-              Faqs
+              FAQs
             </Typography>
           </a>
           <div
-            className="border-2 rounded-full animate-pulse duration-0 p-1 cursor-pointer z-50 top-24 text-xl"
+            className=" border-2 rounded-full animate-pulse duration-0 p-1 cursor-pointer z-50 top-24 text-xl"
             onClick={() => {
               navigate("/devs");
             }}
@@ -276,7 +276,7 @@ const WebsiteNavbar = () => {
                 navigate("/faqs");
               }}
             >
-              <Typography variant="body24">Faqs</Typography>
+              <Typography variant="body24">FAQs</Typography>
             </a>
             <div
               className="border-2 rounded-full animate-pulse duration-0 p-1 cursor-pointer z-50 top-24 text-xl"
