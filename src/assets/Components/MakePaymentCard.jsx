@@ -19,10 +19,10 @@ const MakePaymentCard = () => {
       }}
     >
       <Stack direction="row" justifyContent={"space-between"}>
-        <Typography variant="subtitle1" fontWeight={600} color="secondary">
+        <Typography variant="subtitle22" fontWeight={600} color="secondary">
           Pay Now
         </Typography>
-        <Typography variant="subtitle1" fontWeight={600} color="secondary">
+        <Typography variant="subtitle22" fontWeight={600} color="secondary">
           &#163;{" "}
           {(
             serviceState.wash.items.reduce(
@@ -48,7 +48,7 @@ const MakePaymentCard = () => {
         <table>
           <tr>
             <td className="flex items-center gap-1 ">
-              <Typography>Minimum Order</Typography>
+              <Typography variant="body22">Minimum Order</Typography>
               <div className="p-0.5 rounded-full bg-[#03444F] hover:cursor-pointer">
                 <BsInfoLg color="white" size={15} />
               </div>
@@ -57,7 +57,7 @@ const MakePaymentCard = () => {
           </tr>
           <tr>
             <td className="flex items-center gap-1 ">
-              <Typography>Service fee</Typography>
+              <Typography variant="body22">Service fee</Typography>
               <div className="p-0.5 rounded-full bg-[#03444F] hover:cursor-pointer">
                 <BsInfoLg color="white" size={15} />
               </div>
@@ -66,7 +66,7 @@ const MakePaymentCard = () => {
           </tr>
           <tr>
             <td className="flex items-center gap-1 ">
-              <Typography>collection & delivery</Typography>
+              <Typography variant="body22">collection & delivery</Typography>
               <div className="p-0.5 rounded-full bg-[#03444F] hover:cursor-pointer">
                 <BsInfoLg color="white" size={15} />
               </div>
@@ -76,10 +76,10 @@ const MakePaymentCard = () => {
         </table>
       </Stack>
       <Stack>
-        <Button sx={{ alignSelf: "end" }}>Apply Coupon</Button>
+        <Button sx={{ alignSelf: "end", fontSize: 16 }}>Apply Coupon</Button>
         <TextField />
-        <Button disabled sx={{ alignSelf: "start" }}>
-          Apply Coupon
+        <Button disabled sx={{ alignSelf: "start", fontSize: 16 }}>
+          Coupon Applied
         </Button>
       </Stack>
       <Button
@@ -88,6 +88,7 @@ const MakePaymentCard = () => {
         sx={{
           textTransform: "none",
           fontSize: 20,
+          height: [55, 55, 73],
         }}
         endIcon={<BsArrowRight />}
         onClick={() => {

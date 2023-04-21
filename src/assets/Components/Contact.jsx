@@ -23,10 +23,8 @@ const Contact = () => {
   });
 
   return (
-    <Stack spacing={3} padding={2}>
-      <Typography variant="h4" fontWeight={550}>
-        Contact
-      </Typography>
+    <Stack spacing={3} padding={[0, 1, 2]}>
+      <Typography variant="h45">Contact</Typography>
       <div className="flex gap-8 w-full ">
         <div className="flex justify-center items-center gap-4 font-bold">
           <input
@@ -40,7 +38,9 @@ const Contact = () => {
               SetFormType(e.target.value);
             }}
           />
-          <label htmlFor="formType-1">Individual </label>
+          <label htmlFor="formType-1" className="text-xl font-semibold">
+            Individual{" "}
+          </label>
         </div>
         <div className="flex justify-center items-center gap-4 font-bold">
           <input
@@ -54,7 +54,9 @@ const Contact = () => {
               SetFormType(e.target.value);
             }}
           />
-          <label htmlFor="formType-2">Company </label>
+          <label htmlFor="formType-2" className="text-xl font-semibold">
+            Company{" "}
+          </label>
         </div>
       </div>
       {formType === "individual" ? <InvidualForm /> : <CompanyForm />}
@@ -196,7 +198,7 @@ const InvidualForm = () => {
         <Button
           variant="contained"
           size="large"
-          sx={{ minWidth: [150, 200], textTransform: "none" }}
+          sx={{ minWidth: [170, 200], textTransform: "none" }}
           onClick={() => {
             dispatch(setActiveStep("payment"));
             formik.handleSubmit();
@@ -205,7 +207,7 @@ const InvidualForm = () => {
           disabled={IsButtonDisabled()}
           endIcon={<BsArrowRight />}
         >
-          Next
+          Make Payment
         </Button>
       </div>
     </form>
@@ -451,21 +453,26 @@ const IndividualModalform = (prop) => {
             transform: "translate(-50%, -50%)",
             maxWidth: 700,
             minHeight: 400,
-            maxHeight: 600,
+            maxHeight: 900,
             width: "100%",
             bgcolor: "background.paper",
             border: "1px solid #000",
             boxShadow: 24,
             p: 6,
             borderRadius: 2,
-            overflowY: ["scroll", "unset"],
+            overflowY: ["scroll", "scroll"],
           }}
         >
-          <Stack alignItems={"center"} gap={2} paddingBottom={2}>
-            <Typography variant="h5" fontWeight={600}>
+          <Stack alignItems={"center"} gap={4} paddingBottom={2}>
+            <Typography variant="subtitle32" fontWeight={600}>
               Add Address
             </Typography>
-            <Typography maxWidth={300} textAlign={"center"} color="text.muted">
+            <Typography
+              variant="body22"
+              maxWidth={485}
+              textAlign={"center"}
+              color="text.muted"
+            >
               Please fill in your details below and we will get in touch with
               you shortly.
             </Typography>
@@ -531,11 +538,17 @@ const IndividualModalform = (prop) => {
               variant="contained"
               fullwidth
               size="large"
-              sx={{ width: "100%", textTransform: "none", mt: 2 }}
+              sx={{
+                width: "100%",
+                textTransform: "none",
+                mt: 4,
+                height: [60, 60, 84],
+                fontSize: 24,
+              }}
               onClick={() => {
                 formik.handleSubmit();
               }}
-              endIcon={<BsArrowRight />}
+              endIcon={<BsArrowRight size={35} />}
             >
               Sumbit
             </Button>
@@ -615,21 +628,26 @@ const CompanyModalform = (prop) => {
             transform: "translate(-50%, -50%)",
             maxWidth: 700,
             minHeight: 400,
-            maxHeight: 600,
+            maxHeight: 800,
             width: "100%",
             bgcolor: "background.paper",
             border: "1px solid #000",
             boxShadow: 24,
             p: 6,
             borderRadius: 2,
-            overflowY: ["scroll", "unset"],
+            overflowY: ["scroll", "scroll"],
           }}
         >
-          <Stack alignItems={"center"} gap={2} paddingBottom={2}>
-            <Typography variant="h5" fontWeight={600}>
+          <Stack alignItems={"center"} gap={4} paddingBottom={2}>
+            <Typography variant="subtitle32" fontWeight={600}>
               Add Address
             </Typography>
-            <Typography maxWidth={300} textAlign={"center"} color="text.muted">
+            <Typography
+              variant="body22"
+              maxWidth={485}
+              textAlign={"center"}
+              color="text.muted"
+            >
               Please fill in your details below and we will get in touch with
               you shortly.
             </Typography>
@@ -721,12 +739,19 @@ const CompanyModalform = (prop) => {
           <div className="flex w-full justify-between">
             <Button
               variant="contained"
+              fullwidth
               size="large"
-              sx={{ width: "100%", textTransform: "none", mt: 2 }}
+              sx={{
+                width: "100%",
+                textTransform: "none",
+                mt: 4,
+                height: [60, 60, 84],
+                fontSize: 24,
+              }}
               onClick={() => {
                 formik.handleSubmit();
               }}
-              endIcon={<BsArrowRight />}
+              endIcon={<BsArrowRight size={35} />}
             >
               Sumbit
             </Button>

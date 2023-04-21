@@ -27,7 +27,7 @@ const TrackingModal = (prop) => {
         }}
       >
         <Stack width={"100%"} height={"100%"}>
-          <Typography textAlign={"center"} variant="h5">
+          <Typography textAlign={"center"} variant="subtitle32">
             Progress
           </Typography>
           <svg

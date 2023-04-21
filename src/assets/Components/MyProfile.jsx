@@ -14,6 +14,7 @@ import { useFormik } from "formik";
 import { RxCross1 } from "react-icons/rx";
 import * as Yup from "yup";
 import { BsArrowRight } from "react-icons/bs";
+import Label from "./Webiste/Common/forms/Label";
 
 const MyProfile = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -95,63 +96,75 @@ const MyProfile = () => {
         <form>
           <Grid container spacing={4} sx={{ paddingTop: [2, 2, 2, 8] }}>
             <Grid item xs={12} md={6}>
-              <TextField
-                fullWidth
-                id="name"
-                name="name"
-                label="Name"
-                value={formik.values.name}
-                onChange={formik.handleChange}
-                error={formik.touched.name && Boolean(formik.errors.name)}
-                helperText={formik.touched.name && formik.errors.name}
-              />
+              <div className="flex flex-col gap-2">
+                <Label htmlFor="name" titile="Name" />
+                <TextField
+                  fullWidth
+                  id="name"
+                  name="name"
+                  value={formik.values.name}
+                  onChange={formik.handleChange}
+                  error={formik.touched.name && Boolean(formik.errors.name)}
+                  helperText={formik.touched.name && formik.errors.name}
+                />
+              </div>
             </Grid>
             <Grid item xs={12} md={6}>
-              <TextField
-                fullWidth
-                id="surname"
-                name="surname"
-                label="Surname"
-                value={formik.values.surname}
-                onChange={formik.handleChange}
-                error={formik.touched.surname && Boolean(formik.errors.surname)}
-                helperText={formik.touched.surname && formik.errors.surname}
-              />
+              <div className="flex flex-col gap-2">
+                <Label htmlFor="name" titile="Surname" />
+                <TextField
+                  fullWidth
+                  id="surname"
+                  name="surname"
+                  value={formik.values.surname}
+                  onChange={formik.handleChange}
+                  error={
+                    formik.touched.surname && Boolean(formik.errors.surname)
+                  }
+                  helperText={formik.touched.surname && formik.errors.surname}
+                />
+              </div>
             </Grid>
             <Grid item xs={12} md={6}>
-              <TextField
-                fullWidth
-                id="email"
-                name="email"
-                label="Email"
-                value={formik.values.email}
-                onChange={formik.handleChange}
-                error={formik.touched.email && Boolean(formik.errors.email)}
-                helperText={formik.touched.email && formik.errors.email}
-              />
+              <div className="flex flex-col gap-2">
+                <Label htmlFor="name" titile="Email" />
+                <TextField
+                  fullWidth
+                  id="email"
+                  name="email"
+                  value={formik.values.email}
+                  onChange={formik.handleChange}
+                  error={formik.touched.email && Boolean(formik.errors.email)}
+                  helperText={formik.touched.email && formik.errors.email}
+                />
+              </div>
             </Grid>
             <Grid item xs={12} md={6}>
-              <TextField
-                fullWidth
-                type="number"
-                id="mobile"
-                name="mobile"
-                label="mobile"
-                value={formik.values.mobile}
-                onChange={formik.handleChange}
-                error={formik.touched.mobile && Boolean(formik.errors.mobile)}
-                helperText={formik.touched.mobile && formik.errors.mobile}
-              />
+              <div className="flex flex-col gap-2">
+                <Label htmlFor="name" titile="Mobile No." />
+                <TextField
+                  fullWidth
+                  type="number"
+                  id="mobile"
+                  name="mobile"
+                  value={formik.values.mobile}
+                  onChange={formik.handleChange}
+                  error={formik.touched.mobile && Boolean(formik.errors.mobile)}
+                  helperText={formik.touched.mobile && formik.errors.mobile}
+                />
+              </div>
             </Grid>
             <Grid item xs={12} md={6}>
-              <TextField
-                fullWidth
-                id="password"
-                name="password"
-                label="Password"
-                value={"********"}
-                disabled
-              />
+              <div className="flex flex-col gap-2">
+                <Label htmlFor="name" titile="Passwrod" />
+                <TextField
+                  fullWidth
+                  id="password"
+                  name="password"
+                  value={"********"}
+                  disabled
+                />
+              </div>
               <Box
                 width="100%"
                 sx={{
@@ -161,7 +174,7 @@ const MyProfile = () => {
               >
                 <Button
                   size="small"
-                  sx={{ textTransform: "none" }}
+                  sx={{ textTransform: "none", fontSize: 16 }}
                   onClick={handelModalTogel}
                 >
                   Change Password
@@ -177,7 +190,7 @@ const MyProfile = () => {
       </Stack>
       <Button
         variant="contained"
-        sx={{ alignSelf: "end" }}
+        sx={{ alignSelf: "end", width: 240 }}
         size="large"
         onClick={formik.handleSubmit}
       >
@@ -208,14 +221,14 @@ const ChangePasswordModal = (prop) => {
           transform: "translate(-50%, -50%)",
           maxWidth: 700,
           minHeight: 400,
-          maxHeight: 600,
+          maxHeight: 800,
           width: "100%",
           bgcolor: "background.paper",
           border: "1px solid #000",
           boxShadow: 24,
           p: 6,
           borderRadius: 2,
-          overflowY: ["scroll", "unset"],
+          overflowY: ["scroll", "scroll"],
         }}
       >
         {passwordChanged === false ? (
@@ -240,7 +253,7 @@ const ChangePasswordModal = (prop) => {
             setPasswordChange(false);
           }}
         >
-          <RxCross1 />
+          <RxCross1 size={30} color="gray" />
         </div>
       </Box>
     </Modal>
@@ -267,50 +280,75 @@ const ChangePassworForm = (prop) => {
     },
   });
   return (
-    <Stack spacing={3} textAlign={"center"}>
-      <Typography variant="h5">Change Password?</Typography>
-      <Typography>
+    <Stack
+      spacing={3}
+      textAlign={"center"}
+      alignItems="center"
+      maxWidth={637}
+      padding={3}
+    >
+      <Typography variant="subtitle32">Change Password?</Typography>
+      <Typography
+        variant="body22"
+        maxWidth={485}
+        color="text.muted"
+        textAlign={"center"}
+      >
         Iaculis ipsum congue sit tempor sed imperdiet vivamus urna.
       </Typography>
-      <TextField
-        fullWidth
-        id="oldPassword"
-        name="oldPassword"
-        label="Old Password"
-        value={formik.values.oldPassword}
-        onChange={formik.handleChange}
-        error={formik.touched.oldPassword && Boolean(formik.errors.oldPassword)}
-        helperText={formik.touched.oldPassword && formik.errors.oldPassword}
-      />
-      <TextField
-        fullWidth
-        id="newPassword"
-        name="newPassword"
-        label="New Password"
-        value={formik.values.newPassword}
-        onChange={formik.handleChange}
-        error={formik.touched.newPassword && Boolean(formik.errors.newPassword)}
-        helperText={formik.touched.newPassword && formik.errors.newPassword}
-      />
-      <TextField
-        fullWidth
-        id="confirmPassword"
-        name="confirmPassword"
-        label="Confirm Password"
-        value={formik.values.confirmPassword}
-        onChange={formik.handleChange}
-        error={
-          formik.touched.confirmPassword &&
-          Boolean(formik.errors.confirmPassword)
-        }
-        helperText={
-          formik.touched.confirmPassword && formik.errors.confirmPassword
-        }
-      />
+      <div className="flex flex-col gap-2 w-full text-start">
+        <Label htmlFor="name" titile="Old Password" />
+        <TextField
+          fullWidth
+          id="oldPassword"
+          value={formik.values.oldPassword}
+          onChange={formik.handleChange}
+          error={
+            formik.touched.oldPassword && Boolean(formik.errors.oldPassword)
+          }
+          helperText={formik.touched.oldPassword && formik.errors.oldPassword}
+        />
+      </div>
+      <div className="flex flex-col gap-2 w-full text-start">
+        <Label htmlFor="name" titile="New Password" />
+        <TextField
+          fullWidth
+          id="newPassword"
+          name="newPassword"
+          value={formik.values.newPassword}
+          onChange={formik.handleChange}
+          error={
+            formik.touched.newPassword && Boolean(formik.errors.newPassword)
+          }
+          helperText={formik.touched.newPassword && formik.errors.newPassword}
+        />
+      </div>
+      <div className="flex flex-col gap-2 w-full text-start">
+        <Label htmlFor="name" titile="Confirm Password" />
+        <TextField
+          fullWidth
+          id="confirmPassword"
+          name="confirmPassword"
+          value={formik.values.confirmPassword}
+          onChange={formik.handleChange}
+          error={
+            formik.touched.confirmPassword &&
+            Boolean(formik.errors.confirmPassword)
+          }
+          helperText={
+            formik.touched.confirmPassword && formik.errors.confirmPassword
+          }
+        />
+      </div>
       <Button
+        fullWidth
+        sx={{
+          height: [60, 60, 84],
+          fontSize: 24,
+        }}
         variant="contained"
         size="large"
-        endIcon={<BsArrowRight />}
+        endIcon={<BsArrowRight size={30} />}
         onClick={formik.handleSubmit}
       >
         Submit
@@ -338,16 +376,21 @@ const PasswordChangedSuccess = (prop) => {
           fill="#00A5BF"
         />
       </svg>
-      <Typography variant="h5" fontWeight={600}>
+      <Typography variant="subtitle32" fontWeight={600}>
         Succefully Changed
       </Typography>
-      <Typography maxWidth={300}>
+      <Typography variant="body22" maxWidth={300}>
         Iaculis ipsum congue sit tempor sed imperdiet vivamus urna.
       </Typography>
       <Button
+        fullWidth
+        sx={{
+          height: [60, 60, 84],
+          fontSize: 24,
+        }}
         variant="contained"
         size="large"
-        endIcon={<BsArrowRight />}
+        endIcon={<BsArrowRight size={30} />}
         onClick={prop.handleClose}
       >
         Done

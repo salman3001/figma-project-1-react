@@ -10,21 +10,21 @@ const MyOrders = () => {
   return (
     <Grid
       container
-      spacing={2}
+      spacing={4}
       sx={{
-        px: [2, 2, 4],
         py: [9, 9, 9, 2],
+        paddingX: [2, 2, 4, 8],
       }}
     >
       <Grid item xs={12} lg={8}>
-        <Stack padding={2}>
+        <Stack>
           <Orders />
         </Stack>
       </Grid>
       <Grid item xs={12} lg={4}>
-        <Stack paddingLeft={[0, 0, 0, 4]} spacing={2}>
+        <Stack spacing={3} pt={3}>
           <Stack direction="row" justifyContent={"space-between"}>
-            <Typography variant="h6" fontWeight={600}>
+            <Typography variant="subtitle20" fontWeight={600}>
               Promotions
             </Typography>
             <RouterLink to="/dashboard/promotions">See All</RouterLink>

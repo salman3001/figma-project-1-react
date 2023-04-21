@@ -19,9 +19,15 @@ import TrackingModal from "./TrackingModal";
 
 const Orders = () => {
   return (
-    <Stack gap={2}>
-      <Stack direction={"row"} justifyContent="space-between" flexWrap={"wrap"}>
-        <Typography variant="h4" fontWeight={600}>
+    <Stack gap={2} pt={2}>
+      <Stack
+        direction={"row"}
+        gap={2}
+        justifyContent="space-between"
+        alignItems={"center"}
+        flexWrap={"wrap"}
+      >
+        <Typography variant="h45" fontWeight={600}>
           My Orders
         </Typography>
         <Stack direction={"row"} gap={2}>
@@ -88,9 +94,9 @@ const OrderCard = (prop) => {
     <Stack
       border={1}
       sx={(theme) => ({
+        border: 2,
         borderColor: "rgba(0, 165, 191, 0.2)",
         borderRadius: 4,
-        boxShadow: theme.shadows[1],
       })}
     >
       {/* Table */}
@@ -100,29 +106,44 @@ const OrderCard = (prop) => {
         bgcolor="#F3F9FD"
         padding={2}
         flexWrap="wrap"
+        sx={{
+          borderRadius: 4,
+          borderBottomLeftRadius: 0,
+          borderBottomRightRadius: 0,
+        }}
       >
         <Stack gap={0.5}>
-          <Typography color="secondary.main" fontWeight={650}>
+          <Typography variant="body15" color="secondary.main" fontWeight={650}>
             Order Id
           </Typography>
-          <Typography color="text.muted">{prop.orderId}</Typography>
+          <Typography variant="body15" color="text.muted">
+            {prop.orderId}
+          </Typography>
         </Stack>
         <Stack gap={0.5}>
-          <Typography color="secondary.main" fontWeight={650}>
+          <Typography variant="body15" color="secondary.main" fontWeight={650}>
             Collection
           </Typography>
-          <Typography color="text.muted">{prop.collectionDate}</Typography>
-          <Typography color="text.muted">{prop.collectionTime}</Typography>
+          <Typography variant="body15" color="text.muted">
+            {prop.collectionDate}
+          </Typography>
+          <Typography variant="body15" color="text.muted">
+            {prop.collectionTime}
+          </Typography>
         </Stack>
         <Stack gap={0.5}>
-          <Typography color="secondary.main" fontWeight={650}>
+          <Typography variant="body15" color="secondary.main" fontWeight={650}>
             Delivery
           </Typography>
-          <Typography color="text.muted">{prop.deliveryDate}</Typography>
-          <Typography color="text.muted">{prop.deliveryTime}</Typography>
+          <Typography variant="body15" color="text.muted">
+            {prop.deliveryDate}
+          </Typography>
+          <Typography variant="body15" color="text.muted">
+            {prop.deliveryTime}
+          </Typography>
         </Stack>
         <Stack gap={0.5}>
-          <Typography color="secondary.main" fontWeight={650}>
+          <Typography variant="body15" color="secondary.main" fontWeight={650}>
             OrderStatus
           </Typography>
           {prop.status === "processing" ? (
@@ -138,7 +159,9 @@ const OrderCard = (prop) => {
                 }}
               >
                 <Stack direction={"row"} gap={1} flexWrap="wrap">
-                  <Typography color="text.muted">Processing</Typography>
+                  <Typography variant="body15" color="text.muted">
+                    Processing
+                  </Typography>
                   <Button
                     variant="contained"
                     size="small"
@@ -164,7 +187,9 @@ const OrderCard = (prop) => {
           ) : prop.status === "delivered" ? (
             <Stack>
               <Stack direction={"row"} gap={1}>
-                <Typography color="text.muted">Delivered</Typography>
+                <Typography variant="body15" color="text.muted">
+                  Delivered
+                </Typography>
 
                 <Stack
                   component={Link}
@@ -178,7 +203,9 @@ const OrderCard = (prop) => {
                   }}
                 >
                   <AiOutlineDownload size={22} />
-                  <Typography color="primary.main ">Invoice</Typography>
+                  <Typography variant="body15" color="primary.main ">
+                    Invoice
+                  </Typography>
                 </Stack>
               </Stack>
             </Stack>
@@ -193,19 +220,15 @@ const OrderCard = (prop) => {
         padding={2}
         flexWrap={"wrap"}
       >
-        <Stack
-          color="primary.main"
-          direction="row"
-          maxWidth={400}
-          gap={1}
-          alignItems="center"
-        >
+        <Stack color="primary.main" direction="row" gap={1} alignItems="center">
           <GoLocation />
-          <Typography>{prop.address}</Typography>
+          <Typography fontSize={12} color="secondary">
+            {prop.address}
+          </Typography>
         </Stack>
         <Stack direction={"row"} gap={2} alignItems="center">
           <Typography
-            variant="subtitle1"
+            variant="subtitle15"
             fontWeight={650}
             color="secondary.main"
           >
@@ -215,10 +238,24 @@ const OrderCard = (prop) => {
           <Button
             size="small"
             variant="contained"
-            endIcon={<SlArrowDown />}
+            sx={{
+              width: 84,
+              height: 24,
+              fontSize: 10,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              p: 0,
+              gap: 1,
+            }}
             onClick={handelExpand}
           >
-            View More
+            View More{" "}
+            {expanded ? (
+              <SlArrowDown className="rotate-180" />
+            ) : (
+              <SlArrowDown />
+            )}
           </Button>
         </Stack>
       </Stack>

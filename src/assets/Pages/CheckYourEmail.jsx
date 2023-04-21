@@ -17,31 +17,42 @@ const CheckYourEmail = () => {
           alignItems: "center",
           color: "white",
           bgcolor: "primary.main",
+          maxHeight: "100vh",
         }}
       >
-        <h1 className="w-full p-6 border-b border-white border-opacity-20">
+        <h1
+          className="w-full p-6 md:px-16 border-b border-white border-opacity-20"
+          onClick={() => {
+            navigate("/home");
+          }}
+        >
           <img
             src={
               import.meta.env.VITE_BASE_URL + "/images/launder-logo-white.svg"
             }
             className="h-6 "
             alt=""
-            onClick={() => {
-              navigate("/home");
-            }}
           />
         </h1>
         <div className="flex pt-8 flex-col items-center">
-          <Typography variant="h4">Welcome back!</Typography>
-          <Typography variant="subtitle1" sx={{ opacity: 0.7 }}>
+          <Typography variant="h45" color={"white"}>
+            Welcome back!
+          </Typography>
+          <Typography
+            variant="body22"
+            color="rgba(255, 255, 255, 0.73)"
+            className="px-5 text-center"
+          >
             See the latest system update on our blog
           </Typography>
         </div>
-        <img
-          src={import.meta.env.VITE_BASE_URL + "/images/Signupart.png"}
-          alt=""
-          className="self-start"
-        />
+        <div>
+          <img
+            src={import.meta.env.VITE_BASE_URL + "/images/Signupart.png"}
+            alt=""
+            className="self-start xl:scale-105 xl:translate-y-[-20px]"
+          />
+        </div>
       </Box>
       <div className="bg-white relative">
         <img
@@ -78,10 +89,8 @@ const CheckYourEmail = () => {
             />
           </div>
           <div className="max-w-md">
-            <Typography variant="h4" fontWeight={600}>
-              Check Your Email
-            </Typography>
-            <Typography variant="subtitle1" color="text.muted ">
+            <Typography variant="subtitle36">Check Your Email</Typography>
+            <Typography variant="body22" color="text.muted" maxWidth={579}>
               To confirm your email address, tap the linkin the email we sent to
               ioaefhiahe@gmail.com
             </Typography>

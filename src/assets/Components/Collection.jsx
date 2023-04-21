@@ -89,16 +89,12 @@ const Collection = () => {
   };
 
   return (
-    <Stack spacing={3} padding={[1, 2, 3]}>
+    <Stack spacing={3} padding={[0, 2, 3]}>
       <Stack>
-        <Typography variant="h4" fontWeight={600}>
-          Collection & delivery
-        </Typography>
+        <Typography variant="h45">Collection & delivery</Typography>
       </Stack>
       <Stack>
-        <Typography variant="h5" fontWeight={600}>
-          Pickup Time
-        </Typography>
+        <Typography variant="subtitle32">Pickup Time</Typography>
       </Stack>
       <Stack direction={["column", "row"]} gap={2} color="text.muted">
         <Stack flexGrow={1} spacing={1}>
@@ -146,9 +142,7 @@ const Collection = () => {
       </Stack>
       <TextareaCollectionMessage />
       <Stack>
-        <Typography variant="h5" fontWeight={600}>
-          Delivery Time
-        </Typography>
+        <Typography variant="subtitle32">Delivery Time</Typography>
       </Stack>
       <Stack direction={["column", "row"]} gap={2} color="text.muted">
         <Stack flexGrow={1} spacing={1}>

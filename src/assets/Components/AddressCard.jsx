@@ -30,29 +30,24 @@ const AddressCard = (prop) => {
       <Stack>
         <Stack direction="row" spacing={2} alignItems={"center"}>
           <Avatar sx={{ bgcolor: "primary.main" }}>
-            <FiHome />
+            <FiHome size={25} />
           </Avatar>
           <Stack>
             <Typography
-              variant="subtitle1"
+              variant="subtitle24"
               color="secondary.main"
               fontWeight={600}
             >
               Address
             </Typography>
-            <Typography>{prop.address}</Typography>
+            <Typography variant="body22">{prop.address}</Typography>
           </Stack>
         </Stack>
         <Stack></Stack>
       </Stack>
       <Stack direction="row" spacing={2}>
-        <Button
-          variant="contained"
-          sx={{ borderRadius: 4 }}
-          size="small"
-          startIcon={<BiEdit />}
-        >
-          Edit
+        <Button variant="contained" sx={{ borderRadius: 4 }} size="large">
+          <BiEdit size={20} /> Edit
         </Button>
         {location.pathname === "/dashboard/ordernow/address" && (
           <Button
@@ -71,11 +66,10 @@ const AddressCard = (prop) => {
                   prop.id === addressState.addressId ? "white" : "primary.main",
               },
             }}
-            size="small"
-            startIcon={<BiEdit />}
+            size="large"
             onClick={handelSelected}
           >
-            Select
+            <BiEdit size={20} /> Select
           </Button>
         )}
       </Stack>

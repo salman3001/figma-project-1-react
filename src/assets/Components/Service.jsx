@@ -66,16 +66,13 @@ const Service = () => {
 
   return (
     <Stack spacing={2}>
-      <Typography variant="h4" fontWeight={600}>
-        Services
-      </Typography>
+      <Typography variant="subtitle36">Services</Typography>
       <Stack
         direction="row"
         justifyContent={"center"}
         alignItems={"center"}
         gap={4}
         flexWrap={"wrap"}
-        p={2}
       >
         <ServiceCard name="wash" label="wash" value="wash" />
         <ServiceCard
@@ -91,7 +88,7 @@ const Service = () => {
         />
       </Stack>
       <Stack gap={1}>
-        <Typography variant="h4" fontWeight={600}>
+        <Typography variant="subtitle32" fontWeight={600}>
           {selectedService === "wash"
             ? "Wash"
             : selectedService === "washAndIron"
@@ -102,7 +99,7 @@ const Service = () => {
             ? "Dry Cleaning"
             : ""}
         </Typography>
-        <Typography color={"text.muted"}>
+        <Typography variant="body16" maxWidth={691} color={"text.muted"}>
           Lorem Ipsum has been the industry's standard dummy text ever since the
           1500s, when an unknown printer took a galley of type and scrambled
         </Typography>
@@ -209,7 +206,13 @@ const ServiceCard = (prop) => {
           />
         </svg>
 
-        <Typography minWidth={100} textAlign={"center"} className="font-bold">
+        <Typography
+          variant="body22"
+          minWidth={100}
+          color={selectedService === prop.value ? "white" : "black"}
+          textAlign={"center"}
+          className="font-bold"
+        >
           {prop.label}
         </Typography>
       </Box>
@@ -267,6 +270,7 @@ function BasicTabs() {
               fontSize: [16, 17, 18, 20],
               fontWeight: 600,
               color: "text.muted",
+              whiteSpace: "nowrap",
             }}
           />
         </Tabs>
@@ -748,10 +752,10 @@ const Faq = () => {
       <Stack direction={"row"} alignItems="center" gap={2} padding={2}>
         <AiOutlineCheckCircle color="#00A5BF" size={25} />
         <Stack>
-          <Typography variant="subtitle1" fontWeight={600}>
+          <Typography variant="subtitle22" fontWeight={600}>
             Service Overview
           </Typography>
-          <Typography color="text.muted">
+          <Typography variant="body16" color="text.muted">
             Lorem Ipsum has been the industry's standard{" "}
           </Typography>
         </Stack>

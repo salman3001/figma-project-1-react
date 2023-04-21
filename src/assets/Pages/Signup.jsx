@@ -1,4 +1,12 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  FormControlLabel,
+  Radio,
+  RadioGroup,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { useFormik } from "formik";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +20,7 @@ const Signup = () => {
   const [formType, SetFormType] = useState("individual");
 
   return (
-    <main className="grid container2 mx-auto lg:grid-cols-2 min-h-screen max-w-screen  ">
+    <main className="grid 2 mx-auto xl:grid-cols-2 min-h-screen max-w-screen">
       <Box
         className="relative flex text-white flex-col justify-between  items-center"
         sx={{
@@ -23,10 +31,11 @@ const Signup = () => {
           alignItems: "center",
           color: "white",
           bgcolor: "primary.main",
+          maxHeight: "100vh",
         }}
       >
         <h1
-          className="w-full p-6 border-b border-white border-opacity-20"
+          className="w-full p-6 md:px-16 border-b border-white border-opacity-20"
           onClick={() => {
             navigate("/home");
           }}
@@ -40,18 +49,26 @@ const Signup = () => {
           />
         </h1>
         <div className="flex pt-8 flex-col items-center">
-          <Typography variant="h4">Welcome back!</Typography>
-          <Typography variant="subtitle1" sx={{ opacity: 0.7 }}>
+          <Typography variant="h45" color={"white"}>
+            Welcome back!
+          </Typography>
+          <Typography
+            variant="body22"
+            color="rgba(255, 255, 255, 0.73)"
+            className="px-5 text-center"
+          >
             See the latest system update on our blog
           </Typography>
         </div>
-        <img
-          src={import.meta.env.VITE_BASE_URL + "/images/Signupart.png"}
-          alt=""
-          className="self-start"
-        />
+        <div>
+          <img
+            src={import.meta.env.VITE_BASE_URL + "/images/Signupart.png"}
+            alt=""
+            className="self-start xl:scale-105 xl:translate-y-[-20px]"
+          />
+        </div>
       </Box>
-      <div className="bg-white relative">
+      <div className="bg-white relative max-h-screen ">
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/signup-leaf.svg"}
           alt=""
@@ -62,11 +79,11 @@ const Signup = () => {
           alt=""
           className="absolute brightness-50 bottom-0 right-0 rotate-180 z-0"
         />
-        <h1 className="w-full p-4 border-b text-end border-gray-300 border-opacity-20 z-10">
-          <Typography variant="subtitle1">
+        <h1 className="w-full p-4 border-b text-end border-gray-300 border-opacity-20">
+          <Typography variant="body18">
             I already have an account?{" "}
             <Button
-              sx={{ textTransform: "none" }}
+              sx={{ textTransform: "none", fontSize: 18 }}
               size="large"
               onClick={() => {
                 navigate("/login");
@@ -76,48 +93,50 @@ const Signup = () => {
             </Button>
           </Typography>
         </h1>
-        <div className="flex flex-col z-10 relative">
-          <div className="flex flex-col gap-16 justify-center items-center py-16 px-10 md:px-20 w-full  ">
-            <div className="text-center flex flex-col gap-2">
-              <Typography variant="h4" fontWeight={600}>
-                Sign up to Laundramoon
-              </Typography>
-              <Typography variant="h6" color="text.muted">
-                Please fill in your details below and we will get in touch with
-                you shortly.
-              </Typography>
-            </div>
-            <div className="flex gap-8 w-full">
-              <div className="flex justify-center items-center gap-4 font-bold">
-                <input
-                  type="radio"
-                  name="formType"
-                  className="radio radio-accent"
-                  id="formType-1"
-                  value={"individual"}
-                  checked={formType === "individual"}
-                  onChange={(e) => {
-                    SetFormType(e.target.value);
-                  }}
-                />
-                <label htmlFor="formType-1">Individual </label>
+        <div className="flex flex-col   items-center  z-10 relative ">
+          <div className="w-full p-4 lg:pt-10 max-w-[700px]">
+            <div className="flex flex-col gap-8   justify-center items-center w-full  ">
+              <div className="text-center flex flex-col gap-2">
+                <Typography variant="subtitle36">
+                  Sign up to Laundramoon
+                </Typography>
+                <Typography variant="body22" maxWidth={420} color="text.muted">
+                  Please fill in your details below and we will get in touch
+                  with you shortly.
+                </Typography>
               </div>
-              <div className="flex justify-center items-center gap-4 font-bold">
-                <input
-                  type="radio"
-                  name="formType"
-                  id="formType-2"
-                  className="radio radio-accent"
-                  value="company"
-                  checked={formType === "company"}
-                  onChange={(e) => {
-                    SetFormType(e.target.value);
-                  }}
-                />
-                <label htmlFor="formType-2">Company </label>
+              <div className="flex gap-8 w-full">
+                <RadioGroup defaultValue="individual" name="formType" row>
+                  <FormControlLabel
+                    value="individual"
+                    control={<Radio />}
+                    label="Inidvidual"
+                    checked={formType === "individual"}
+                    onChange={(e) => {
+                      SetFormType(e.target.value);
+                    }}
+                    sx={{
+                      fontSize: 20,
+                      fontWeight: 600,
+                    }}
+                  />
+                  <FormControlLabel
+                    value="company"
+                    control={<Radio />}
+                    label="company"
+                    checked={formType === "company"}
+                    onChange={(e) => {
+                      SetFormType(e.target.value);
+                    }}
+                    sx={{
+                      fontSize: 20,
+                      fontWeight: 600,
+                    }}
+                  />
+                </RadioGroup>
               </div>
+              {formType === "individual" ? <InvidualForm /> : <CompanyForm />}
             </div>
-            {formType === "individual" ? <InvidualForm /> : <CompanyForm />}
           </div>
         </div>
       </div>
@@ -287,10 +306,10 @@ const InvidualForm = () => {
           </form>
           <Button
             fullWidth
-            sx={{ textTransform: "none" }}
+            sx={{ textTransform: "none", height: [60, 60, 84], fontSize: 24 }}
             variant="contained"
             size="large"
-            endIcon={<BsArrowRight />}
+            endIcon={<BsArrowRight size={35} />}
             onClick={() => {
               if (
                 !formik.errors.name &&
@@ -406,10 +425,10 @@ const InvidualForm = () => {
           </form>
           <Button
             fullWidth
-            sx={{ textTransform: "none" }}
+            sx={{ textTransform: "none", height: [60, 60, 84], fontSize: 24 }}
             variant="contained"
             size="large"
-            endIcon={<BsArrowRight />}
+            endIcon={<BsArrowRight size={35} />}
             onClick={formik.handleSubmit}
           >
             Submit
@@ -638,10 +657,10 @@ const CompanyForm = () => {
           </form>
           <Button
             fullWidth
-            sx={{ textTransform: "none" }}
+            sx={{ textTransform: "none", height: [60, 60, 84], fontSize: 24 }}
             variant="contained"
             size="large"
-            endIcon={<BsArrowRight />}
+            endIcon={<BsArrowRight size={35} />}
             onClick={() => {
               if (
                 !formik.errors.name &&
@@ -759,10 +778,10 @@ const CompanyForm = () => {
           </form>
           <Button
             fullWidth
-            sx={{ textTransform: "none" }}
+            sx={{ textTransform: "none", height: [60, 60, 84], fontSize: 24 }}
             variant="contained"
             size="large"
-            endIcon={<BsArrowRight />}
+            endIcon={<BsArrowRight size={35} />}
             onClick={formik.handleSubmit}
           >
             Submit

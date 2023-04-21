@@ -28,17 +28,17 @@ const Card = () => {
   const navigate = useNavigate();
   return (
     <div className="flex flex-col gap-4">
-      <Typography varian="h5" fontWeight={500}>
+      <Typography variant="subtitle36" color={"#1F1F1F"}>
         This Service is for Everyday Laundry
       </Typography>
-      <Typography className="opacity-70">
+      <Typography variant="body32" color={"#1F1F1F"}>
         Items are washed and tumble dried. T-shirts, skirts, bra, handkerchiefs,
         jeans, knitwear, jumper etc.
       </Typography>
-      <Typography varian="h5" fontWeight={500}>
+      <Typography variant="subtitle36" color={"#1F1F1F"}>
         Our Work Process
       </Typography>
-      <Typography className="opacity-70">
+      <Typography variant="body32" color={"#1F1F1F"}>
         Machines that use water as the main cleaning solution Clothes are
         washed, tumbled dried then folded This is suitable for daily items
         chlorine-free products and eco-friendly detergents are used
@@ -47,9 +47,14 @@ const Card = () => {
         <Button
           variant="contained"
           size="large"
-          color="secondary"
           onClick={() => {
             navigate("/dashboard/ordernow/address");
+          }}
+          sx={{
+            fontSize: [18, 22],
+            height: [45, 59],
+            width: [140, 164],
+            backgroundColor: "#022A30",
           }}
         >
           Book Now
@@ -57,7 +62,13 @@ const Card = () => {
         <Button
           variant="outlined"
           size="large"
-          sx={{ color: "black", borderColor: "black" }}
+          sx={{
+            color: "black",
+            borderColor: "black",
+            fontSize: [18, 22],
+            height: [45, 59],
+            width: [140, 164],
+          }}
           onClick={() => {
             navigate("/login");
           }}

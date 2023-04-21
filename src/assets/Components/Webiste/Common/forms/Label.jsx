@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 const Label = (prop) => {
   return (
     <Typography
-      variant="body22"
+      variant="body18"
       color="text.muted"
       component="label"
       htmlFor={prop.for}

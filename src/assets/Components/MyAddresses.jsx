@@ -21,7 +21,7 @@ const MyAddresses = () => {
     setModalOpen((state) => (state === true ? false : true));
   };
   return (
-    <Stack spacing={2} padding={3}>
+    <Stack spacing={4} p={[1, 1, 3]}>
       {demoAddressesData.length < 1 ? (
         <Typography>
           You Dont have any addresses!. Please your addresse.
@@ -40,7 +40,7 @@ const MyAddresses = () => {
         gap={2}
       >
         <Button
-          sx={{ width: [170] }}
+          sx={{ width: [170], height: 44 }}
           variant="contained"
           startIcon={<AiOutlinePlus />}
           onClick={handleModalTogel}
@@ -49,7 +49,7 @@ const MyAddresses = () => {
         </Button>
         {location.pathname === "/dashboard/ordernow/address" && (
           <Button
-            sx={{ width: [170] }}
+            sx={{ width: [170], height: 44 }}
             variant="contained"
             endIcon={<BsArrowRight />}
             onClick={() => {

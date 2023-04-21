@@ -68,7 +68,7 @@ const MyDrawer = (prop) => {
             height: "100%",
           }}
         >
-          <Stack justifyContent="center" alignItems="center" gap={2}>
+          <Stack justifyContent="center" alignItems="center" spacing={2}>
             <Box
               sx={{
                 height: "84px",
@@ -90,21 +90,24 @@ const MyDrawer = (prop) => {
                 }}
               />
             </Box>
-            <ProfileAvatar
-              src={import.meta.env.VITE_BASE_URL + "/images/Avatar.png"}
-            />
-            <Typography
-              variant="subtitle1"
-              sx={{
-                color: "text.light",
-                fontWeight: 600,
-              }}
-            >
-              Jackson Howell{" "}
-            </Typography>
+            <div className="flex flex-col justify-center items-center gap-6">
+              <ProfileAvatar
+                src={import.meta.env.VITE_BASE_URL + "/images/Avatar.png"}
+              />
+              <Typography
+                variant="subtitle18"
+                sx={{
+                  color: "text.light",
+                  fontWeight: 600,
+                }}
+              >
+                Jackson Howell{" "}
+              </Typography>
+            </div>
           </Stack>
           <Stack
-            gap={2}
+            gap={4}
+            paddingTop={4}
             sx={{
               alignItems: "center",
               flexGrow: 1,
@@ -121,7 +124,7 @@ const MyDrawer = (prop) => {
                       ? "#00a5bf"
                       : "white"
                   }
-                  size={25}
+                  size={40}
                 />
               }
             />
@@ -136,7 +139,7 @@ const MyDrawer = (prop) => {
                       ? "#00a5bf"
                       : "white"
                   }
-                  size={25}
+                  size={40}
                 />
               }
             />
@@ -151,7 +154,7 @@ const MyDrawer = (prop) => {
                       ? "#00a5bf"
                       : "white"
                   }
-                  size={25}
+                  size={40}
                 />
               }
             />
@@ -187,7 +190,9 @@ const MyDrawer = (prop) => {
                   borderRadius: "100%",
                 }}
               />
-              <Typography variant="subtitle1">Logout</Typography>
+              <Typography variant="body28" color={"white"} fontWeight={600}>
+                Logout
+              </Typography>
             </Box>
           </Stack>
         </Stack>

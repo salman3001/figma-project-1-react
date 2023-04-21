@@ -20,6 +20,7 @@ const OrderNow = () => {
   return (
     <Stack>
       <Typography
+        variant="body16"
         marginTop={[9, 9, 9, 0]}
         width={"100%"}
         bgcolor={"secondary.main"}
@@ -34,12 +35,18 @@ const OrderNow = () => {
         selected={location.pathname}
         activeStep={location.pathname}
       />
-      <Grid container>
-        <Grid item xs={12} lg={8} padding={2} gap={2}>
+      <Grid
+        container
+        sx={{
+          py: 2,
+          paddingX: [2, 2, 4],
+        }}
+      >
+        <Grid item xs={12} lg={8} gap={2}>
           <Outlet />
         </Grid>
-        <Grid item xs={12} lg={4} padding={2}>
-          <Stack paddingY={(0, 2, 3)} paddingX={2} spacing={4}>
+        <Grid item xs={12} lg={4}>
+          <Stack paddingY={[2, 3]} paddingX={[0, 2]} spacing={4}>
             {location.pathname === "/dashboard/ordernow/payment" && (
               <MakePaymentCard />
             )}
@@ -74,6 +81,9 @@ const Tabs = (prop) => {
             ? "primary.main"
             : "white"
         }
+        color={
+          prop.selected === "/dashboard/ordernow/address" ? "white" : "black"
+        }
         className="xtab"
       >
         Address
@@ -84,6 +94,9 @@ const Tabs = (prop) => {
             ? "primary.main"
             : "white"
         }
+        color={
+          prop.selected === "/dashboard/ordernow/service" ? "white" : "black"
+        }
         className="xtab"
       >
         Service
@@ -93,6 +106,9 @@ const Tabs = (prop) => {
           prop.selected === "/dashboard/ordernow/collection"
             ? "primary.main"
             : "white"
+        }
+        color={
+          prop.selected === "/dashboard/ordernow/collection" ? "white" : "black"
         }
         className="xtab"
       >

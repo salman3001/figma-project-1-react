@@ -40,7 +40,9 @@ const SideMenuOption = (prop) => {
       >
         {prop.Icon}
       </Box>
-      <Typography variant="subtitle1">{prop.title}</Typography>
+      <Typography variant="body22" color={"white"}>
+        {prop.title}
+      </Typography>
     </Stack>
   );
 };

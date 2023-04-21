@@ -1,6 +1,7 @@
 import { createTheme } from "@mui/material";
 
 
+
 const theme = createTheme({
     palette: {
         primary: {
@@ -42,6 +43,8 @@ const theme = createTheme({
         h6: undefined,
         subtitle1: undefined,
         subtitle2: undefined,
+        fontFamily: "inter"
+
     },
     components: {
         MuiTypography: {
@@ -78,6 +81,10 @@ const theme = createTheme({
                     position: "absolute",
                     right: "15px"
                 },
+                startIcon: {
+                    position: "absolute",
+                    left: "15px"
+                },
                 root: {
                     textTransform: "none",
 
@@ -85,6 +92,9 @@ const theme = createTheme({
             }
 
         },
+        MuiTab: {
+            styleOverrides: {}
+        }
 
 
 

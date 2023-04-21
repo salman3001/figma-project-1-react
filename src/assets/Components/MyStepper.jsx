@@ -40,87 +40,97 @@ const MyStepper = (prop) => {
     >
       <Step key={1} expanded>
         <StepLabel>
-          <Typography fontWeight={650}>Address</Typography>
+          <Typography variant="subtitle24">Address</Typography>
         </StepLabel>
         <StepContent>
           {prop.step.address.address !== "" && (
-            <Typography>{prop.step.address.address}</Typography>
+            <Typography variant="body18" color="text.muted">
+              {prop.step.address.address}
+            </Typography>
           )}
           <Divider sx={{ pt: 2 }} />
         </StepContent>
       </Step>
       <Step key={2} expanded>
         <StepLabel>
-          <Typography fontWeight={650}>Services</Typography>
+          <Typography variant="subtitle24">Services</Typography>
         </StepLabel>
         <StepContent>
           <Stack spacing={0.5}>
             {prop.step.services.wash.items.length > 0 && (
               <>
-                <Typography color="primary.main" padding={0.2}>
+                <Typography variant="body22" color="primary.main" padding={0.2}>
                   Wash
                 </Typography>
                 {prop.step.services.wash.items.map((item) => (
                   <Stack direction={"row"} justifyContent="space-between">
-                    <Typography>
+                    <Typography variant="body22">
                       {item.name} X {item.quantity}
                     </Typography>
-                    <Typography>&#163; {item.price * item.quantity}</Typography>
+                    <Typography variant="body22">
+                      &#163; {item.price * item.quantity}
+                    </Typography>
                   </Stack>
                 ))}
               </>
             )}
             {prop.step.services.washAndIron.items.length > 0 && (
               <>
-                <Typography color="primary.main" padding={0.2}>
+                <Typography variant="body22" color="primary.main" padding={0.2}>
                   Wash & Iron
                 </Typography>
                 {prop.step.services.washAndIron.items.map((item) => (
                   <Stack direction={"row"} justifyContent="space-between">
-                    <Typography>
+                    <Typography variant="body22">
                       {" "}
                       {item.name} X {item.quantity}
                     </Typography>
-                    <Typography>&#163; {item.price * item.quantity}</Typography>
+                    <Typography variant="body22">
+                      &#163; {item.price * item.quantity}
+                    </Typography>
                   </Stack>
                 ))}
               </>
             )}
             {prop.step.services.ironing.items.length > 0 && (
               <>
-                <Typography color="primary.main" padding={0.2}>
+                <Typography variant="body22" color="primary.main" padding={0.2}>
                   Ironing
                 </Typography>
                 {prop.step.services.ironing.items.map((item) => (
                   <Stack direction={"row"} justifyContent="space-between">
-                    <Typography>
+                    <Typography variant="body22">
                       {item.name} X {item.quantity}
                     </Typography>
-                    <Typography>&#163; {item.price * item.quantity}</Typography>
+                    <Typography variant="body22">
+                      &#163; {item.price * item.quantity}
+                    </Typography>
                   </Stack>
                 ))}
               </>
             )}
             {prop.step.services.dryCleaning.items.length > 0 && (
               <>
-                <Typography color="primary.main" padding={0.2}>
+                <Typography variant="body22" color="primary.main" padding={0.2}>
                   Dry Cleaning
                 </Typography>
                 {prop.step.services.dryCleaning.items.map((item) => (
                   <Stack direction={"row"} justifyContent="space-between">
-                    <Typography>
+                    <Typography variant="body22">
                       {item.name} X {item.quantity}
                     </Typography>
-                    <Typography>&#163; {item.price * item.quantity}</Typography>
+                    <Typography variant="body22">
+                      &#163; {item.price * item.quantity}
+                    </Typography>
                   </Stack>
                 ))}
               </>
             )}
             <Stack direction={"row"} justifyContent="space-between">
-              <Typography color="primary.main" padding={0.2}>
+              <Typography variant="body22" color="primary.main" padding={0.2}>
                 Total
               </Typography>
-              <Typography color="primary.main">
+              <Typography variant="body22" color="primary.main">
                 &#163;
                 {(
                   prop.step.services.wash.items.reduce(
@@ -148,28 +158,24 @@ const MyStepper = (prop) => {
       </Step>
       <Step key={3} expanded>
         <StepLabel>
-          <Typography fontWeight={650}>Collection Time</Typography>
+          <Typography variant="subtitle24">Collection Time</Typography>
         </StepLabel>
         <StepContent>
           {prop.step.collection.collectionTime.date !== null && (
             <>
-              <Typography>
+              <Typography variant="body22">
                 {format(prop.step.collection.collectionTime.date, "dd/MM/yy")}
               </Typography>
-              <Typography>
+              <Typography variant="body22">
                 {prop.step.collection.collectionTime.timeSlot}
               </Typography>
-              <Typography>
+              <Typography variant="body22">
                 {prop.step.collection.collectionTime.message}
               </Typography>
-              <Typography
-                color="secondary.main"
-                fontWeight={500}
-                variant="subtitle1"
-              >
+              <Typography color="secondary.main" variant="subtitle22">
                 Notes
               </Typography>
-              <Typography color="secondary.main">
+              <Typography variant="subtitle22" color="secondary.main">
                 {prop.step.collection.collectionTime.notes}
               </Typography>
             </>
@@ -178,28 +184,24 @@ const MyStepper = (prop) => {
       </Step>
       <Step key={4} expanded>
         <StepLabel>
-          <Typography fontWeight={650}>Delivery time</Typography>
+          <Typography variant="subtitle24">Delivery time</Typography>
         </StepLabel>
         <StepContent>
           {prop.step.collection.deliveryTime.date !== null && (
             <>
-              <Typography>
+              <Typography variant="body22">
                 {format(prop.step.collection.deliveryTime.date, "dd/MM/yy")}
               </Typography>
-              <Typography>
+              <Typography variant="body22">
                 {prop.step.collection.deliveryTime.timeSlot}
               </Typography>
-              <Typography>
+              <Typography variant="body22">
                 {prop.step.collection.deliveryTime.message}
               </Typography>
-              <Typography
-                color="secondary.main"
-                fontWeight={500}
-                variant="subtitle1"
-              >
+              <Typography color="secondary.main" variant="subtitle22">
                 Notes
               </Typography>
-              <Typography color="secondary.main">
+              <Typography variant="subtitle22" color="secondary.main">
                 {prop.step.collection.collectionTime.notes}
               </Typography>
             </>
@@ -208,24 +210,30 @@ const MyStepper = (prop) => {
       </Step>
       <Step key={5} expanded>
         <StepLabel>
-          <Typography fontWeight={650}>Frequency</Typography>
+          <Typography variant="subtitle24">Frequency</Typography>
         </StepLabel>
         <StepContent>
           {prop.step.collection.frequency !== "" && (
-            <Typography>{prop.step.collection.frequency}</Typography>
+            <Typography variant="body22">
+              {prop.step.collection.frequency}
+            </Typography>
           )}
           <Divider sx={{ pt: 2 }} />
         </StepContent>
       </Step>
       <Step key={6} expanded>
         <StepLabel>
-          <Typography fontWeight={650}>Contact</Typography>
+          <Typography variant="subtitle24">Contact</Typography>
         </StepLabel>
         <StepContent>
           {prop.step.contact.name !== "" && (
             <>
-              <Typography>{prop.step.contact.mobile}</Typography>
-              <Typography>{prop.step.contact.email}</Typography>
+              <Typography variant="body22">
+                {prop.step.contact.mobile}
+              </Typography>
+              <Typography variant="body22">
+                {prop.step.contact.email}
+              </Typography>
             </>
           )}
           <Divider sx={{ pt: 2 }} />
@@ -233,11 +241,11 @@ const MyStepper = (prop) => {
       </Step>
       <Step key={7} expanded>
         <StepLabel>
-          <Typography fontWeight={650}>Payment</Typography>
+          <Typography variant="subtitle24">Payment</Typography>
         </StepLabel>
         <StepContent>
           {prop.step.payment !== "" && (
-            <Typography>{prop.step.payment}</Typography>
+            <Typography variant="body22">{prop.step.payment}</Typography>
           )}
           <Divider sx={{ pt: 2 }} />
         </StepContent>

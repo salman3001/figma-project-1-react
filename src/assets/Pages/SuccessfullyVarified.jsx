@@ -16,10 +16,11 @@ const SuccessfullyVarified = () => {
           alignItems: "center",
           color: "white",
           bgcolor: "primary.main",
+          maxHeight: "100vh",
         }}
       >
         <h1
-          className="w-full p-6 border-b border-white border-opacity-20"
+          className="w-full p-6 md:px-16 border-b border-white border-opacity-20"
           onClick={() => {
             navigate("/home");
           }}
@@ -33,16 +34,24 @@ const SuccessfullyVarified = () => {
           />
         </h1>
         <div className="flex pt-8 flex-col items-center">
-          <Typography variant="h4">Welcome back!</Typography>
-          <Typography variant="subtitle1" sx={{ opacity: 0.7 }}>
+          <Typography variant="h45" color={"white"}>
+            Welcome back!
+          </Typography>
+          <Typography
+            variant="body22"
+            color="rgba(255, 255, 255, 0.73)"
+            className="px-5 text-center"
+          >
             See the latest system update on our blog
           </Typography>
         </div>
-        <img
-          src={import.meta.env.VITE_BASE_URL + "/images/Signupart.png"}
-          alt=""
-          className="self-start"
-        />
+        <div>
+          <img
+            src={import.meta.env.VITE_BASE_URL + "/images/Signupart.png"}
+            alt=""
+            className="self-start xl:scale-105 xl:translate-y-[-20px]"
+          />
+        </div>
       </Box>
       <div className="bg-white relative">
         <img
@@ -76,20 +85,20 @@ const SuccessfullyVarified = () => {
               alt=""
             />
           </div>
-          <div className="max-w-md flex flex-col gap-4">
-            <Typography variant="h4" fontWeight={600}>
+          <div className="max-w-[637] flex flex-col gap-4 ">
+            <Typography variant="subtitle36" fontWeight={600}>
               Successfully Varified
             </Typography>
-            <Typography variant="subtitle1" color="text.muted ">
+            <Typography variant="body22" maxWidth={579} color="text.muted">
               To confirm your email address, tap the linkin the email we sent to
               ioaefhiahe@gmail.com
             </Typography>
             <Button
               fullWidth
-              sx={{ textTransform: "none" }}
+              sx={{ textTransform: "none", height: [60, 60, 84], fontSize: 24 }}
               variant="contained"
               size="large"
-              endIcon={<BsArrowRight />}
+              endIcon={<BsArrowRight size={30} />}
               onClick={() => {
                 navigate("/login");
               }}

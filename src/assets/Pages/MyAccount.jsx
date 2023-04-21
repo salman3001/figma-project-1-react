@@ -11,10 +11,14 @@ const MyAccount = () => {
   };
 
   return (
-    <Stack padding={[2, 3, 4]} paddingTop={[9, 9, 9, 4]} spacing={4}>
-      <Typography variant="h4" fontWeight={650}>
-        My Account
-      </Typography>
+    <Stack
+      paddingTop={[9, 9, 9, 4]}
+      spacing={4}
+      sx={{
+        paddingX: [2, 2, 4, 8],
+      }}
+    >
+      <Typography variant="h45">My Account</Typography>
       {/* tabs */}
       <Box>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -25,8 +29,14 @@ const MyAccount = () => {
             textColor="white"
             aria-label="basic tabs example"
             sx={{
-              "& .Mui-selected": {
+              "&.MuiTab-root": {
+                borderColor: "2px solid rgba(0, 165, 191, 0.2)",
+                borderBottom: 0,
+                fontSize: 20,
+              },
+              "& .MuiTab-root.Mui-selected": {
                 bgcolor: "primary.main",
+                color: "white",
               },
               "& .MuiTabs-flexContainer": {
                 gap: 5,

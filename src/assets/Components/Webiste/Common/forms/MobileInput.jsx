@@ -54,14 +54,14 @@ export const ContryDropDown = (prop) => {
         "& .PhoneInput": {
           display: "flex",
           width: "100%",
-          height: "68px",
+          height: "58px",
           border: 1,
           padding: 0,
           borderColor: "rgba(0, 0, 0, 0.2)",
           borderRadius: 1,
         },
         "& .PhoneInputCountry": {
-          width: "20%",
+          width: "30%",
           justifyContent: "center",
           backgroundColor: "rgba(231, 230, 230, 0.49)",
         },
@@ -83,7 +83,6 @@ export const ContryDropDown = (prop) => {
         onChange={setValue}
         defaultCountry="GB"
       />
-      ;
     </Box>
   );
 };

@@ -26,10 +26,8 @@ const Payment = () => {
     }
   });
   return (
-    <Stack spacing={4} padding={2}>
-      <Typography variant="h4" fontWeight={600}>
-        Payment Options
-      </Typography>
+    <Stack spacing={4}>
+      <Typography variant="h45">Payment Options</Typography>
       <PaymentForm />
       <Button
         variant="contained"
@@ -89,6 +87,7 @@ const PaymentForm = () => {
       }}
     >
       <TextField
+        sx={{ height: 65 }}
         size="large"
         fullWidth
         id="cardName"
@@ -109,6 +108,7 @@ const PaymentForm = () => {
       />
       <Stack>
         <TextField
+          sx={{ height: 65 }}
           size="large"
           fullWidth
           id="cardNumber"
@@ -131,6 +131,7 @@ const PaymentForm = () => {
         />
         <Stack direction="row">
           <TextField
+            sx={{ height: 65 }}
             size="large"
             fullWidth
             id="expiry"
@@ -150,6 +151,7 @@ const PaymentForm = () => {
             }}
           />
           <TextField
+            sx={{ height: 65 }}
             size="large"
             fullWidth
             id="cvv"

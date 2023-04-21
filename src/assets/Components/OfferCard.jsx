@@ -6,8 +6,11 @@ const OfferCard = () => {
   return (
     <Box
       sx={(theme) => ({
-        boxShadow: theme.shadows[1],
         borderRadius: 3,
+        minHeight: 182,
+        borderWidth: 2,
+        borderColor: "1px solid rgba(0, 0, 0, 0.13)",
+        boxShadow: "0px 4px 20px 5px rgba(0, 0, 0, 0.06)",
       })}
     >
       <Box
@@ -19,11 +22,13 @@ const OfferCard = () => {
           gap: 2,
           padding: 2,
           borderRadius: 3,
+          borderBottomLeftRadius: 0,
+          borderBottomRightRadius: 0,
           background:
             "linear-gradient(121.16deg, #FCFCFC 18.31%, #EAEFF3 73.06%, #D0E3F1 96.73%)",
         })}
       >
-        <Stack maxWidth={"260px"}>
+        <Stack maxWidth={"260px"} spacing={2}>
           <Stack
             direction={"row"}
             alignItems={"center"}
@@ -38,11 +43,20 @@ const OfferCard = () => {
               src={import.meta.env.VITE_BASE_URL + "/images/hot-promo-icon.png"}
               alt=""
             />
-            <Typography color="secondary.main" variant="h6" fontWeight={650}>
+            <Typography
+              color="secondary.main"
+              variant="subtitle24"
+              fontWeight={650}
+              maxWidth={125}
+            >
               Welcome offer
             </Typography>
           </Stack>
-          <Typography variant="subtitle1" color="secondary.main">
+          <Typography
+            variant="subtitle20"
+            color="secondary.main"
+            maxWidth={170}
+          >
             Get{" "}
             <Typography
               variant="subtitle1"
@@ -73,8 +87,10 @@ const OfferCard = () => {
           />
         </Stack>
       </Box>
-      <Typography color="primary.main" padding={2}>
-        <RouterLink to="/dashboard/promotions">Claim the offer</RouterLink>
+      <Typography color="primary.main" fontWeight={600} padding={2}>
+        <RouterLink size={16} to="/dashboard/promotions">
+          Claim the offer
+        </RouterLink>
       </Typography>
     </Box>
   );

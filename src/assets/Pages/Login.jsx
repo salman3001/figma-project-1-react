@@ -44,7 +44,7 @@ const Login = () => {
     },
   });
   return (
-    <main className="grid 2 mx-auto lg:grid-cols-2 min-h-screen max-w-screen">
+    <main className="grid 2 mx-auto xl:grid-cols-2 min-h-screen max-w-screen">
       <Box
         className="relative flex text-white flex-col justify-between  items-center"
         sx={{
@@ -58,7 +58,7 @@ const Login = () => {
         }}
       >
         <h1
-          className="w-full p-6 border-b border-white border-opacity-20"
+          className="w-full p-6 md:px-16 border-b border-white border-opacity-20"
           onClick={() => {
             navigate("/home");
           }}
@@ -72,16 +72,25 @@ const Login = () => {
           />
         </h1>
         <div className="flex pt-8 flex-col items-center">
-          <Typography variant="h4">Welcome back!</Typography>
-          <Typography variant="subtitle1" sx={{ opacity: 0.7 }}>
+          <Typography variant="h45" color={"white"}>
+            Welcome back!
+          </Typography>
+          <Typography
+            variant="body22"
+            color="rgba(255, 255, 255, 0.73)"
+            className="px-5 text-center"
+          >
             See the latest system update on our blog
           </Typography>
         </div>
-        <img
-          src={import.meta.env.VITE_BASE_URL + "/images/loginart.png"}
-          alt=""
-          className="self-start"
-        />
+        <div>
+          <img
+            src={import.meta.env.VITE_BASE_URL + "/images/loginart.png"}
+            alt=""
+            className="self-start xl:scale-110 xl:translate-x-[-50px] xl:translate-y-[-40px]
+            "
+          />
+        </div>
       </Box>
       <div className="bg-white relative">
         <img
@@ -94,11 +103,11 @@ const Login = () => {
           alt=""
           className="absolute brightness-50 bottom-0 right-0 rotate-180 z-0"
         />
-        <h1 className="w-full p-4 border-b text-end border-gray-300 border-opacity-20">
-          <Typography variant="subtitle1">
+        <h1 className="w-full p-4 md:px-16 border-b text-end border-gray-300 border-opacity-20">
+          <Typography variant="body18">
             Don't have an account?{" "}
             <Button
-              sx={{ textTransform: "none" }}
+              sx={{ textTransform: "none", fontSize: 18 }}
               size="large"
               onClick={() => {
                 navigate("/signup");
@@ -109,12 +118,12 @@ const Login = () => {
           </Typography>
         </h1>
         <div className="flex flex-col relative z-10">
-          <div className="flex flex-col gap-16 justify-center items-center py-16 px-10 md:px-20 w-full  ">
+          <div className="flex flex-col gap-8 lg:gap-16 justify-center items-center py-5 lg:py-16 px-5 md:px-20 w-full  ">
             <div className="text-center flex flex-col gap-2">
-              <Typography variant="h4" fontWeight={600}>
+              <Typography variant="subtitle36" fontWeight={700}>
                 Log in to Laundramoon
               </Typography>
-              <Typography variant="h6" color="text.muted">
+              <Typography variant="body22" color="rgba(0, 0, 0, 0.62)">
                 Log in to continue
               </Typography>
             </div>
@@ -123,7 +132,11 @@ const Login = () => {
               className="md:max-w-[648px] w-full flex flex-col gap-4"
             >
               <div className="flex flex-col gap-4">
-                <label htmlFor="email">Email Address</label>
+                <Label
+                  htmlFor="email"
+                  titile="Email Address"
+                  className="text-[17px]"
+                />
                 <TextField
                   fullWidth
                   id="email"
@@ -136,7 +149,11 @@ const Login = () => {
                 />
               </div>
               <div className="flex flex-col gap-4">
-                <Label titile="Password" for="password" />
+                <Label
+                  titile="Password"
+                  for="password"
+                  className="text-[17px]"
+                />
                 <TextField
                   fullWidth
                   id="password"
@@ -152,16 +169,25 @@ const Login = () => {
                 />
               </div>
               <Button
-                sx={{ textTransform: "none", alignSelf: "end" }}
+                sx={{
+                  textTransform: "none",
+                  alignSelf: "end",
+                  fontSize: 16,
+                  color: "rgba(17, 18, 18, 0.88)",
+                }}
                 onClick={togelModal}
               >
                 Forgot Password?
               </Button>
               <Button
-                sx={{ textTransform: "none" }}
+                sx={{
+                  textTransform: "none",
+                  fontSize: 24,
+                  height: [60, 60, 84],
+                }}
                 variant="contained"
                 size="large"
-                endIcon={<BsArrowRight />}
+                endIcon={<BsArrowRight size={30} />}
                 onClick={formik.handleSubmit}
               >
                 Login
@@ -223,16 +249,18 @@ const ChangePasswordModal = (prop) => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          maxWidth: 700,
-          minHeight: 400,
+          maxWidth: 912,
+          minHeight: 618,
           maxHeight: 600,
           width: "100%",
           bgcolor: "background.paper",
           border: "1px solid #000",
           boxShadow: 24,
-          p: 6,
+          p: [2, 3, 4, 6],
           borderRadius: 2,
           overflowY: ["scroll", "unset"],
+          display: "flex",
+          justifyContent: "center",
         }}
       >
         {prop.content}
@@ -245,7 +273,7 @@ const ChangePasswordModal = (prop) => {
           }}
           onClick={prop.togelModal}
         >
-          <RxCross1 />
+          <RxCross1 size={35} />
         </div>
       </Box>
     </Modal>
@@ -273,12 +301,13 @@ const FormForgetPassword = (prop) => {
       justifyContent={"center"}
       alignItems={"center"}
       padding={1}
-      spacing={2}
+      spacing={3}
+      maxWidth={640}
     >
-      <Typography variant="h5" fontWeight={600}>
+      <Typography variant="subtitle32" fontWeight={600}>
         Forget password?
       </Typography>
-      <Typography color="text.muted" maxWidth={400}>
+      <Typography color="text.muted" variant="body22" maxWidth={509}>
         Enter your registered login id below to get your unique link to reset
         the password.
       </Typography>
@@ -298,11 +327,15 @@ const FormForgetPassword = (prop) => {
         </FormHelperText>
       </Stack>
       <Button
-        sx={{ textTransform: "none" }}
+        sx={{
+          textTransform: "none",
+          height: ["50px", "50px", "84px"],
+          fontSize: [18, 18, 24],
+        }}
         variant="contained"
         size="large"
         fullWidth
-        endIcon={<BsArrowRight />}
+        endIcon={<BsArrowRight size={30} />}
         onClick={formik.handleSubmit}
       >
         Submit
@@ -322,10 +355,8 @@ const EnterOtpForm = (prop) => {
       padding={1}
       spacing={4}
     >
-      <Typography variant="h5" fontWeight={600}>
-        Enter OTP?
-      </Typography>
-      <Typography color="text.muted" maxWidth={400}>
+      <Typography variant="subtitle32">Enter OTP?</Typography>
+      <Typography variant="body22" color="text.muted" maxWidth={280}>
         We send you an OTP to varify
       </Typography>
       <Stack
@@ -357,11 +388,15 @@ const EnterOtpForm = (prop) => {
         />
       </Stack>
       <Button
-        sx={{ textTransform: "none" }}
+        sx={{
+          textTransform: "none",
+          height: ["50px", "50px", "84px"],
+          fontSize: [18, 18, 24],
+        }}
         variant="contained"
         size="large"
         fullWidth
-        endIcon={<BsArrowRight />}
+        endIcon={<BsArrowRight size={35} />}
         onClick={() => {
           const conscent = confirm(
             `User entered OTP ${otp} Click ok to accept or click cancle to reject otp`
@@ -387,24 +422,29 @@ const OopsForm = (prop) => {
       alignItems={"center"}
       padding={1}
       spacing={4}
+      width={["auto", "auto", 650]}
     >
       <img
         src={import.meta.env.VITE_BASE_URL + "/images/failed-cross-icon.png"}
         alt=""
       />
-      <Typography variant="h5" fontWeight={600}>
+      <Typography variant="subtitle32" fontWeight={600}>
         Oops?
       </Typography>
-      <Typography color="text.muted" maxWidth={400}>
+      <Typography variant="body22" color="text.muted" maxWidth={400}>
         Iaculis ipsum congue sit tempor sed imperdiet vivamus urna.
       </Typography>
 
       <Button
-        sx={{ textTransform: "none" }}
+        sx={{
+          textTransform: "none",
+          height: ["50px", "50px", "84px"],
+          fontSize: [18, 18, 24],
+        }}
         variant="contained"
         size="large"
         fullWidth
-        endIcon={<BsArrowRight />}
+        endIcon={<BsArrowRight size={30} />}
       >
         Login
       </Button>
@@ -420,24 +460,27 @@ const SuccessForm = (prop) => {
       alignItems={"center"}
       padding={1}
       spacing={4}
+      width={["auto", "auto", 650]}
     >
       <img
         src={import.meta.env.VITE_BASE_URL + "/images/success-check-icon.png"}
         alt=""
       />
-      <Typography variant="h5" fontWeight={600}>
-        Successfully Changed
-      </Typography>
-      <Typography color="text.muted" maxWidth={400}>
+      <Typography variant="subtitle32">Successfully Changed</Typography>
+      <Typography variant="body22" color="text.muted" maxWidth={400}>
         Iaculis ipsum congue sit tempor sed imperdiet vivamus urna.
       </Typography>
 
       <Button
-        sx={{ textTransform: "none" }}
+        fullWidth
+        sx={{
+          textTransform: "none",
+          height: ["50px", "50px", "84px"],
+          fontSize: [18, 18, 24],
+        }}
         variant="contained"
         size="large"
-        fullWidth
-        endIcon={<BsArrowRight />}
+        endIcon={<BsArrowRight size={30} />}
         onClick={prop.togelModal}
       >
         Login
@@ -463,12 +506,18 @@ const ChangePasswordForm = (prop) => {
     },
   });
   return (
-    <Stack spacing={3} textAlign={"center"}>
-      <Typography variant="h5">Change Password?</Typography>
-      <Typography>
+    <Stack
+      spacing={3}
+      textAlign={"center"}
+      justifyContent="center"
+      alignItems={"center"}
+      maxWidth={640}
+    >
+      <Typography variant="subtitle32">Change Password?</Typography>
+      <Typography variant="body22" color="rgba(0, 0, 0, 0.62)" maxWidth={485}>
         Iaculis ipsum congue sit tempor sed imperdiet vivamus urna.
       </Typography>
-      <Stack textAlign={"start"}>
+      <Stack textAlign={"start"} width="100%" spacing={3}>
         <Typography>New Password</Typography>
         <TextField
           fullWidth
@@ -501,9 +550,14 @@ const ChangePasswordForm = (prop) => {
       </Stack>
       <Button
         variant="contained"
+        fullWidth
         size="large"
-        endIcon={<BsArrowRight />}
+        endIcon={<BsArrowRight size={30} />}
         onClick={formik.handleSubmit}
+        sx={{
+          height: ["50px", "50px", "84px"],
+          fontSize: [18, 18, 24],
+        }}
       >
         Submit
       </Button>

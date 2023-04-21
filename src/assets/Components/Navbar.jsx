@@ -18,7 +18,12 @@ const Navbar = (prop) => {
   const navigate = useNavigate();
   const location = useLocation();
   return (
-    <AppBar color="transparent" position="static">
+    <AppBar
+      color="transparent"
+      position="static"
+      elevation={0}
+      sx={{ boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.04)" }}
+    >
       <Toolbar
         sx={{
           width: "100%",
@@ -27,7 +32,7 @@ const Navbar = (prop) => {
           borderColor: theme.palette.divider,
           display: "flex",
           justifyContent: "space-between ",
-          paddingX: [2, 2, 4],
+          paddingX: [2, 2, 4, 8],
         }}
       >
         <Stack
@@ -43,24 +48,24 @@ const Navbar = (prop) => {
             <AiOutlineMenu size={30} />
           </Box>
           <Typography
-            variant="h6"
+            variant="subtitle22"
             fontWeight={600}
             sx={{
               display: ["none", "none", "block"],
             }}
           >
-            {location.pathname === "/dashboard//myorders"
+            {location.pathname === "/dashboard/myorders"
               ? "Orders"
-              : location.pathname === "/dashboard//promotions"
+              : location.pathname === "/dashboard/promotions"
               ? "Promotions"
-              : location.pathname === "/dashboard//myaccount"
+              : location.pathname === "/dashboard/myaccount"
               ? "My Account"
-              : location.pathname === "/dashboard//ordernow" && "Order Now"}
+              : location.pathname === "/dashboard/ordernow" && "Order Now"}
           </Typography>
           <Box
             sx={{
               position: ["absolute", "absolute", "absolute", "static"],
-              top: [75, 75, 60],
+              top: [75, 75, 75],
               left: [0],
               width: [280],
             }}
@@ -74,12 +79,19 @@ const Navbar = (prop) => {
             onClick={() => {
               navigate("/dashboard/ordernow/address");
             }}
+            sx={{
+              width: [130, 153],
+              fontSize: [12, 16],
+            }}
           >
             Order Now
           </Button>
           <Stack direction="row" gap={2} alignItems={"center"}>
             <NotificationMenu />
-            <Typography sx={{ display: ["none", "none", "block"] }}>
+            <Typography
+              variant="body18"
+              sx={{ display: ["none", "none", "block"] }}
+            >
               Jackson Howell
             </Typography>
             <ProfileMenu />
