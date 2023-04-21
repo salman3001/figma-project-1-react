@@ -3,20 +3,20 @@ import { useNavigate } from "react-router-dom";
 
 const ServiceSection2 = () => {
   return (
-    <div className="grid lg:grid-cols-2 gap-y-16 gap-x-8 p-10 md:p-20">
-      <Typography variant="h3" fontWeight={600}>
-        YOUR PROFESSIONAL DRY CLEAN & LAUNDRY SERVICE
+    <div className="grid lg:grid-cols-2 gap-y-16 gap-x-8 respnsive-pading-1 respnsive-pading-2">
+      <Typography variant="h64" maxWidth={594}>
+        Your professional dry clean & Laundry SERVICE
       </Typography>
       <Card />
-      <h1 className="text-4xl md:text-5xl font-bold">Laundry Service</h1>
+      <Typography variant="h96">Laundry Service</Typography>
       <Card />
-      <h1 className="text-4xl md:text-5xl font-bold">Dry Cleaning</h1>
+      <Typography variant="h96">Dry Cleaning</Typography>
       <Card />
-      <h1 className="text-4xl md:text-5xl font-bold">Home & Bedding</h1>
+      <Typography variant="h96">Home & Bedding</Typography>
       <Card />
-      <h1 className="text-4xl md:text-5xl font-bold">Alterations & Repairs</h1>
+      <Typography variant="h96">Alterations & Repairs</Typography>
       <Card />
-      <h1 className="text-4xl md:text-5xl font-bold">Ironing</h1>
+      <Typography variant="h96">Ironing</Typography>
       <Card />
     </div>
   );

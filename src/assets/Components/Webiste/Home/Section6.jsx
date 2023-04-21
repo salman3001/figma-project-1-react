@@ -63,7 +63,7 @@ const Section6 = () => {
         </button>
       </div>
       <div className="flex flex-col gap-4 justify-center items-center">
-        <Typography variant="body36" fontFamily={591}>
+        <Typography variant="body36" fontFamily={591} textAlign="center">
           We’d love to hear from you
         </Typography>
         <Typography

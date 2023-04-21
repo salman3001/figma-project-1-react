@@ -14,6 +14,7 @@ const ContactUs = () => {
       surname: "",
       companyName: "",
       email: "",
+      code: "",
       mobile: "",
       subject: "",
       message: "",
@@ -31,6 +32,7 @@ const ContactUs = () => {
       email: Yup.string()
         .email(2, "Please enter a valid email")
         .required("required"),
+      code: Yup.string().required("required"),
       mobile: Yup.string()
         .min(2, "Enter at least 2 charectors")
         .required("required"),
@@ -49,34 +51,38 @@ const ContactUs = () => {
       formik.resetForm();
     },
   });
+  console.log(formik.values.code);
+
   return (
-    <div className="flex flex-col gap-6 lg:flex-row w-full p-5 lg:p-20">
+    <div className="flex flex-col gap-16 lg:flex-row w-full 2xl:pt-32 respnsive-pading-1 respnsive-pading-2">
       {/* left */}
-      <div className="lg:w-1/2 flex px-5 lg:px-10 flex-col gap-4">
-        <Typography variant="h3" fontWeight={550}>
+      <div className="lg:w-1/2 flex  flex-col gap-4">
+        <Typography variant="h72" fontWeight={653}>
           Talk to our product analytics expert
         </Typography>
-        <Typography variant="h5">Our Location</Typography>
+        <Typography variant="subtitle36" fontWeight={653}>
+          Our Location
+        </Typography>
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/location.png"}
           alt=""
         />
         <div className="grid lg:grid-cols-2 gap-4 place-items-start pt-2  [&>p]:opacity-70 [&>div>img]:h-12">
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2  items-center">
             <img
               src={import.meta.env.VITE_BASE_URL + "/images/location 1.svg"}
               alt=""
             />
-            <Typography variant="subtitle1">
+            <Typography variant="body18">
               Nash Conversions Ltd, Unit 5, Shaftesbury Road, LONDON, E10 7DA
             </Typography>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 lg:justify-self-end">
             <img
               src={import.meta.env.VITE_BASE_URL + "/images/mail 1.svg"}
               alt=""
             />
-            <Typography variant="subtitle1">
+            <Typography variant="body18">
               londramoon@email.com <br /> londramoon@email.com
             </Typography>
           </div>
@@ -85,21 +91,26 @@ const ContactUs = () => {
               src={import.meta.env.VITE_BASE_URL + "/images/phone 1.svg"}
               alt=""
             />
-            <Typography variant="subtitle1"></Typography>
+            <Typography variant="body18"></Typography>
             +1 73657029000 <Typography />
           </div>
-          <div className="flex h-10 ">
+          <div className="flex h-10 justify-self-end">
             <SocialLinks color1="#00A5BF" color2="white" />
           </div>
         </div>
       </div>
       {/* right */}
-      <div className="lg:w-1/2 shadow-xl p-4 md:p-10 flex flex-col gap-4 rounded-3xl">
+      <div
+        className="lg:w-1/2  p-4 md:p-10 flex flex-col gap-4 rounded-3xl"
+        style={{ boxShadow: "0px 10px 38px 3px rgba(0, 0, 0, 0.1)" }}
+      >
         <div className="grid md:grid-cols-2 gap-4">
           <div className="flex flex-col gap-2">
             <Label titile="Name" for="name" />
             <TextField
+              sx={{ "& Muiinput": { height: "150px" } }}
               fullWidth
+              size="large"
               id="name"
               name="name"
               value={formik.values.name}
@@ -112,6 +123,7 @@ const ContactUs = () => {
             <Label titile="Surname" for="Surname" />
             <TextField
               fullWidth
+              size="large"
               id="surname"
               name="surname"
               value={formik.values.surname}
@@ -124,6 +136,7 @@ const ContactUs = () => {
             <Label titile="Company Name" for="companyname" />
             <TextField
               fullWidth
+              size="large"
               id="companyName"
               name="companyName"
               value={formik.values.companyName}
@@ -140,6 +153,7 @@ const ContactUs = () => {
             <Label titile="Business Email" for="email" />
             <TextField
               fullWidth
+              size="large"
               id="email"
               name="email"
               value={formik.values.email}
@@ -153,6 +167,8 @@ const ContactUs = () => {
           <div className="flex flex-col gap-2">
             <Label titile="Business Number" for="mobileNumber" />
             <MobileInput
+              codeValue={formik.values.code}
+              codeOnChane={formik.handleChange}
               name="mobile"
               value={formik.values.mobile}
               onChange={formik.handleChange}
@@ -181,17 +197,17 @@ const ContactUs = () => {
               error={formik.touched.message && Boolean(formik.errors.message)}
               helperText={formik.touched.message && formik.errors.message}
               placeholder="Message"
+              style={{}}
             />
           </div>
           <button
-            className="bg-[#022A30] flex justify-center items-center p-4 gap-2 mt-2 rounded-md text-white [&>img]:h-3"
+            className="bg-[#022A30] flex justify-center items-center p-4 gap-2 mt-2 rounded-md text-white md:h-[68px] text-[22px]"
             onClick={(e) => {
               e.preventDefault();
               formik.handleSubmit();
             }}
           >
             Contact Us
-            <img src="/images/arrow.svg" alt="" />
           </button>
         </div>
       </div>

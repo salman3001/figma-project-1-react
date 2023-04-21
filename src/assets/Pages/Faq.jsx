@@ -5,19 +5,23 @@ import Section10 from "../Components/Webiste/Home/Section10";
 const Faq = () => {
   return (
     <>
-      <div className="grid lg:grid-cols-2 text-xl py-4 md:py-10 p-10 md:p-20 ">
-        <div className="flex flex-col gap-4">
-          <Typography variant="h3" fontWeight={600}>
+      <div className="grid lg:grid-cols-2 text-xl respnsive-pading-1 respnsive-pading-2">
+        <div className="flex flex-col gap-4 max-w-[788px] ">
+          <Typography
+            variant="h96"
+            className="leading-[60px] md:leading-[70px] lg:leading-[80px] xl:leading-[106px]"
+            fontWeight={653}
+          >
             Frequently asked questions
           </Typography>
-          <ul className="text-2xl md:text-3xl flex flex-col gap-7 opacity-80">
+          <ul className="text-2xl md:text-3xl flex flex-col gap-7 pt-4 opacity-80">
             <li className="flex gap-6 items-center font-bold">
               <img
                 src={import.meta.env.VITE_BASE_URL + "/images/ring.svg"}
                 className="h-4"
                 alt=""
               />
-              <Typography variant="h6"> General Information</Typography>
+              <Typography variant="subtitle32"> General Information</Typography>
             </li>
             <li className="flex gap-6 items-center">
               <img
@@ -25,7 +29,7 @@ const Faq = () => {
                 className="h-4"
                 alt=""
               />
-              <Typography variant="h6"> Our Services</Typography>
+              <Typography variant="body32"> Our Services</Typography>
             </li>
             <li className="flex gap-6 items-center">
               <img
@@ -33,7 +37,7 @@ const Faq = () => {
                 className="h-4"
                 alt=""
               />
-              <Typography variant="h6">Coolection & delivery</Typography>
+              <Typography variant="body32">Coolection & delivery</Typography>
             </li>
             <li className="flex gap-6 items-center">
               <img
@@ -41,7 +45,7 @@ const Faq = () => {
                 className="h-4"
                 alt=""
               />
-              <Typography variant="h6">Pricing and payment</Typography>
+              <Typography variant="body32">Pricing and payment</Typography>
             </li>
             <li className="flex gap-6 items-center">
               <img
@@ -49,14 +53,14 @@ const Faq = () => {
                 className="h-4"
                 alt=""
               />
-              <Typography variant="h6">
+              <Typography variant="body32">
                 {" "}
                 Rescheduling, Cancellations, & Complaints
               </Typography>
             </li>
           </ul>
         </div>
-        <div className="flex  flex-col p-5 justify-center">
+        <div className="flex  flex-col pt-8 lg:pt-0 lg:px -5 justify-center">
           <Accordian
             title="Where do you operate?"
             summery="Yes, apart from dry cleaning and laundry services, we also offer alterations and repairs. You can check our services to know more. But kindly note these alteration and repairs require a minimum of 48 hours.z"

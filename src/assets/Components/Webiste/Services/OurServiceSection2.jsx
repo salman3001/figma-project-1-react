@@ -3,16 +3,20 @@ import React from "react";
 
 const OurServiceSection2 = () => {
   return (
-    <div className="p-10  flex justify-center relative text-white md:p-20 bg-[#03444F] mt-32">
+    <div className="flex justify-center relative text-white  bg-[#03444F] respnsive-pading-1 respnsive-pading-2 mt-32">
       <div className="absolute w-[90%]  top-[-100px] flex justify-center">
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/aboutsection2-img.png"}
           alt=""
         />
       </div>
-      <div className=" pt-[20%] sm:pt-[25%] md:pt-[35%] md:p-10 gap-6 justify-items-center [&>p]:opacity-80">
+      <div className=" pt-[22%]  sm:pt-[25%] md:pt-[30%] lg:pt-[40%] max-w-[1405px] md:p-10 gap-6 justify-items-center [&>p]:opacity-80">
         <div className="relative">
-          <Typography variant="h6" color="text.muted">
+          <Typography
+            variant="body28"
+            color="rgba(235, 235, 235, 0.88)"
+            maxWidth={1405}
+          >
             At Laundramoon, we provide the best care for your garments since
             1978. The process of dry cleaning and laundry is done in best class
             setups. And everything is handled by Laundramoon team from the time
@@ -22,18 +26,16 @@ const OurServiceSection2 = () => {
             require
           </Typography>
           <Typography
-            varianr="h6"
-            fontWeight={600}
-            className="uppercase"
-            color="text.muted"
+            variant="body28"
+            color="rgba(235, 235, 235, 0.88)"
             textAlign={"center"}
-            py={2}
+            py={6}
           >
             Laundarmoon
           </Typography>
           <img
             src={import.meta.env.VITE_BASE_URL + "/images/quote.svg"}
-            className=" h-8 sm:h-16 md:h-32 absolute top-0"
+            className=" h-8 sm:h-16 md:h-32 absolute top-[-30px] left-[-30px]"
             alt=""
           />
         </div>

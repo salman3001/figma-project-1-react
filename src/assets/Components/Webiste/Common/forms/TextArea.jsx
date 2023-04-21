@@ -8,7 +8,8 @@ const TextArea = (prop) => {
       sx={{
         "& textarea": {
           resize: "none",
-          height: 100,
+          height: 150,
+          fontSize: 18,
           borderRadius: 2,
           borderColor: prop.error ? "red" : "rgba(0, 0, 0, 0.2)",
           p: 1,

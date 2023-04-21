@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
 import Blogcard1 from "../Common/Blogcard1";
+import { MdArrowForwardIos } from "react-icons/md";
 
 const Blogsection3 = () => {
   return (
@@ -50,6 +51,7 @@ const Blogsection3 = () => {
           ...
         </Typography>
         <Peginationbutton number="12" selected={false} />
+        <MdArrowForwardIos color="#00A5BF" size={25} />
       </div>
     </>
   );

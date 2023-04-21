@@ -2,13 +2,21 @@ import { Typography } from "@mui/material";
 
 const OurServiceSection2reverse = () => {
   return (
-    <div className="pb-24 md:pb-0 px-10 md:px-20 pt-20 mb-16 md:mb-32  flex-col gap-0 items-center justify-center  flex  relative text-white  bg-[#03444F] ">
+    <div className="respnsive-pading-1 respnsive-pading-2 mb-16 md:mb-32  flex-col gap-0 items-center flex h-[700px] md:h-auto relative text-white  bg-[#03444F] ">
       <div className="grid md:grid-cols-2 items-center w-full grow-1">
         <div className="flex flex-col gap-3">
-          <Typography variant="h2" fontWeight={600}>
+          <Typography
+            variant="h128"
+            className="leading-[60px] md:leading-[80px] lg:leading-[100px] xl:leading-[134px] max-w-[259px]"
+            color="white"
+          >
             Our Services
           </Typography>
-          <Typography className="opacity-70 leading-7">
+          <Typography
+            variant="body22"
+            color="rgba(254, 254, 254, 0.89)"
+            className="opacity-70 leading-7 max-w-[859px]"
+          >
             From contactless pickups to expert cleaning and quick deliveries,
             Laundramoon takes all safety measures and industry best practices
             for your safety. Book our laundry and dry clean services for expert
@@ -23,10 +31,11 @@ const OurServiceSection2reverse = () => {
           alt=""
         />
       </div>
-      <div className="relative bottom-[-200px] py-5 lg:p-20 mt-[-200px]">
+      <div className="relative bottom-[-200px] pt-5 lg:pt-20 mt-[-200px]">
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/aboutsection2-img.png"}
           alt=""
+          className="w-full"
         />
       </div>
     </div>

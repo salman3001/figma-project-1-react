@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 const Section10 = () => {
   const navigate = useNavigate();
   return (
-    <div className=" flex  gap-4 respnsive-pading-1 respnsive-pading-2 w-full text-white min-h-[512px]">
-      <div className="bg-[#03444F] flex-col md:flex-row items-center md:items-start flex gap-4 rounded-2xl p-4 md:p-8 xl:p-20 md:pb-0">
+    <div className=" flex justify-center items-center respnsive-pading-1 respnsive-pading-2  w-full text-white min-h-[512px]">
+      <div className="bg-[#03444F] flex-col md:flex-row items-center md:items-start flex gap-4 rounded-2xl p-4  md:p-8 xl:p-20 xl:pb-0">
         <div className="md:w-[30%] flex flex-col gap-10">
           <Typography variant="h45" color="white">
             Your Safety Is Our Prime Concern

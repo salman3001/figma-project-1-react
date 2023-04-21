@@ -21,7 +21,7 @@ const Emailsubscribe = () => {
       <div className="flex justify-center ">
         <input
           id="email"
-          className="rounded-l-lg p-2 border text-black w-full  sm:h-16 lg:h-[78px] sm:w-60 md:w-[460px] border-[#03444F] "
+          className="rounded-l-lg p-2 border text-black w-full  sm:h-16 lg:h-[78px] sm:w-60 md:w-[460px] border-[#03444F] text-xl"
           type="email"
           placeholder="Enter email"
           name="email"
@@ -30,7 +30,7 @@ const Emailsubscribe = () => {
         />
 
         <button
-          className="rounded-r-lg w-[100px] lg:w-[200px] p-2 bg-[#022A30]"
+          className="rounded-r-lg w-[100px] lg:w-[200px] p-2 bg-[#022A30] text-xl place"
           onClick={(e) => {
             formik.handleSubmit();
           }}

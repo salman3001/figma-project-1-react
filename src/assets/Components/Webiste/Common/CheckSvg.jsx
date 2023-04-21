@@ -1,6 +1,6 @@
 const CheckSvg = (prop) => {
   return (
-    <div className="flex">
+    <div className="flex justify-center items-center">
       <svg
         width="20"
         height="20"

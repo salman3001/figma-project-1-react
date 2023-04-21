@@ -3,8 +3,8 @@ import SocialLinks from "../Components/Webiste/Common/SocialLinks";
 
 const Blog = () => {
   return (
-    <div className="p-5 md:p-20 pb-5 flex flex-col gap-6">
-      <Typography variant="h4" fontWeight={600}>
+    <div className=" respnsive-pading-1 respnsive-pading-2 flex flex-col gap-6">
+      <Typography variant="h55" fontWeight={600}>
         Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in
         45 BC
       </Typography>
@@ -24,11 +24,11 @@ const Blog = () => {
         src={import.meta.env.VITE_BASE_URL + "/images/Blog-photo.png"}
         alt=""
       />
-      <Typography variant="h5" fontWeight={600}>
+      <Typography variant="h45" fontWeight={600}>
         Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in
         45 BC
       </Typography>
-      <Typography variant="subtitle1">
+      <Typography variant="body32">
         At vero eos et accusamus et iusto odio dignissimos ducimus qui
         blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
         et quas molestias excepturi sint occaecati cupiditate non provident,
@@ -43,7 +43,7 @@ const Blog = () => {
         voluptatibus maiores alias consequatur aut perferendis doloribus
         asperiores repellat.
       </Typography>
-      <Typography variant="subtitle1">
+      <Typography variant="body32">
         At vero eos et accusamus et iusto odio dignissimos ducimus qui
         blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
         et quas molestias excepturi sint occaecati cupiditate non provident,
@@ -51,11 +51,11 @@ const Blog = () => {
         laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
         distinctio.
       </Typography>
-      <Typography variant="h5" fontWeight={600}>
+      <Typography variant="h45" fontWeight={600}>
         Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in
         45 BC
       </Typography>
-      <Typography variant="subtitle1">
+      <Typography variant="body32">
         At vero eos et accusamus et iusto odio dignissimos ducimus qui
         blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
         et quas molestias excepturi sint occaecati cupiditate non provident,
@@ -70,7 +70,7 @@ const Blog = () => {
         voluptatibus maiores alias consequatur aut perferendis doloribus
         asperiores repellat.
       </Typography>
-      <Typography variant="subtitle1">
+      <Typography variant="body32">
         At vero eos et accusamus et iusto odio dignissimos ducimus qui
         blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
         et quas molestias excepturi sint occaecati cupiditate non provident,
@@ -79,8 +79,13 @@ const Blog = () => {
         distinctio.
       </Typography>
       <div className="text-lg md:text-2xl flex justify-between [&>button]:text-[#00A5BF]">
-        <Button size="large">&lt; Previous</Button>
-        <Button size="large"> Next &gt;</Button>
+        <Button size="large" sx={{ fontSize: [28, 28, 32] }}>
+          &lt; Previous
+        </Button>
+        <Button size="large" sx={{ fontSize: [28, 28, 32] }}>
+          {" "}
+          Next &gt;
+        </Button>
       </div>
     </div>
   );

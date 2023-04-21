@@ -3,10 +3,13 @@ import CheckSteper from "../Common/CheckSteper";
 
 const AboutSection3 = () => {
   const data = [
-    { child: <Typography className="h-32"></Typography>, completed: true },
+    {
+      child: <Typography className="h-20 md:h-28 xl:h32"></Typography>,
+      completed: true,
+    },
     {
       child: (
-        <Typography variant="h6" className="px-4 text-lg opacity-80">
+        <Typography variant="body32" color="#1F1F1F" className="pl-4 pr-2 pb-8">
           We are based in Southall London since 1978, offering a range of
           services as well as collection and delivery for over 50 years. We are
           delighted to say every individual customer to corporate clients have
@@ -24,11 +27,11 @@ const AboutSection3 = () => {
     },
     {
       child: (
-        <div className="pb-24 text-lg px-4 opacity-80">
-          <Typography variant="h6" fontWeight={550}>
+        <div className="pl-4 pr-2 pb-8">
+          <Typography variant="subtitle32" color="#1F1F1F">
             OUR SERVICES MADE SIMPLE
           </Typography>
-          <Typography variant="h6">
+          <Typography variant="body32" color="#1F1F1F ">
             We provide an affordable and convenient way of getting your dry
             cleaning, laundry, alterations and repair done with top quality
             service in London. Our instant pickup service at a time slot chosen
@@ -38,15 +41,19 @@ const AboutSection3 = () => {
       ),
       completed: true,
     },
-    { child: <Typography></Typography>, completed: true },
+    {
+      child: <Typography className="h-20 "></Typography>,
+      completed: true,
+    },
   ];
   return (
-    <div className="p-5 xs:10 md:p-20 pb-0 mb- flex flex-col items-center gap-6 about-section3-gradient overflow-hidden ">
+    <div className="respnsive-pading-1 respnsive-pading-2 pb-0 flex flex-col items-center about-section3-gradient overflow-hidden ">
       <div className="flex flex-col gap-4 items-center">
-        <Typography variant="h3" fontWeight={550}>
-          Our History
-        </Typography>
-        <Typography variant="h6" className="opacity-80 text-center max-w-sm ">
+        <Typography variant="h45">Our History</Typography>
+        <Typography
+          variant="body28"
+          className="text-center max-w-[750px] opacity-90"
+        >
           Mentioned below are our ever-growing list of services. All orders come
           with free delivery
         </Typography>
@@ -59,7 +66,7 @@ const AboutSection3 = () => {
         />
       </div>
       <div className="flex  self-start w-full">
-        <div className=" px-10 md:px-20 pb-0 ">
+        <div className="pl-3 md:pl-5 xl:pl-20">
           <CheckSteper data={data} />
         </div>
       </div>

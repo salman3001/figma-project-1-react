@@ -48,11 +48,10 @@ const WebsiteNavbar = () => {
         {/* links */}
         <Stack
           direction="row"
-          flexgrow="grow"
           sx={{
             display: ["none", "none", "none", "flex"],
             width: "100%",
-            justifyContent: "end",
+            justifyContent: "center",
             gap: [1, 1, 1, 4],
           }}
         >

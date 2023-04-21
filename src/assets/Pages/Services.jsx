@@ -6,6 +6,7 @@ import Section10 from "../Components/Webiste/Home/Section10";
 import OurServiceSection2 from "../Components/Webiste/Services/OurServiceSection2";
 import OurServiceSection4 from "../Components/Webiste/Services/OurServiceSection4";
 import OurServiceSection6 from "../Components/Webiste/Services/OurServiceSection6";
+import OurServiceSection5 from "../Components/Webiste/Services/OurServiceSection5";
 
 const Services = () => {
   return (
@@ -14,7 +15,7 @@ const Services = () => {
       <OurServiceSection2 />
       <Section4 />
       <OurServiceSection4 />
-      <Section4 />
+      <OurServiceSection5 />
       <Section6 />
       <OurServiceSection6 />
       <Section10 />

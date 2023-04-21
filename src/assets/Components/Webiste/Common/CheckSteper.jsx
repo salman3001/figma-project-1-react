@@ -4,7 +4,7 @@ const CheckSteper = (prop) => {
       {prop.data.map((data, index, array) => (
         <li
           key={index}
-          className={`pb-3 pl-6 border-l-2 ${
+          className={`pb-3 pl-6 border-l-2 relative ${
             data.completed
               ? "border-[#00A5BF] [&>span]:bg-[#00A5BF] [&>span]:ring-[#00A5BF]"
               : index < array.length - 1
@@ -12,7 +12,7 @@ const CheckSteper = (prop) => {
               : "border-none [&>span]:bg-gray-400 [&>span]:ring-gray-400"
           }`}
         >
-          <span className="absolute flex items-center justify-center w-5 h-5  rounded-full -left-2 ring-4 ">
+          <span className="absolute flex items-center justify-center w-5 h-5  rounded-full left-[-10px] top-[10px]  ring-4">
             <svg
               aria-hidden="true"
               className="w-4 h-5 text-white"

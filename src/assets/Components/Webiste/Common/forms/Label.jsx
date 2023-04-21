@@ -1,8 +1,15 @@
+import { Typography } from "@mui/material";
+
 const Label = (prop) => {
   return (
-    <label className="text-[#111212]  opacity-70" htmlFor={prop.for}>
+    <Typography
+      variant="body22"
+      color="text.muted"
+      component="label"
+      htmlFor={prop.for}
+    >
       {prop.titile}
-    </label>
+    </Typography>
   );
 };
 
