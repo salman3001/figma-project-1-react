@@ -230,6 +230,7 @@ const ChangePasswordModal = (prop) => {
           borderRadius: 2,
           overflowY: ["scroll", "scroll"],
         }}
+        className="scrollbar-hide"
       >
         {passwordChanged === false ? (
           <ChangePassworForm setPasswordChange={setPasswordChange} />
@@ -379,7 +380,7 @@ const PasswordChangedSuccess = (prop) => {
       <Typography variant="subtitle32" fontWeight={600}>
         Succefully Changed
       </Typography>
-      <Typography variant="body22" maxWidth={300}>
+      <Typography variant="body22" color="text.muted" maxWidth={300}>
         Iaculis ipsum congue sit tempor sed imperdiet vivamus urna.
       </Typography>
       <Button

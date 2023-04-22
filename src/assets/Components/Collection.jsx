@@ -6,7 +6,7 @@ import {
   Typography,
 } from "@mui/material/";
 import { Stack } from "@mui/system";
-import { DatePicker } from "@mui/x-date-pickers";
+import { MobileDatePicker } from "@mui/x-date-pickers";
 import React, { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -23,6 +23,7 @@ import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { BiTime } from "react-icons/bi";
 import { FaRegCalendarCheck } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { format } from "date-fns";
 
 const Collection = () => {
   const collectionState = useSelector(
@@ -113,8 +114,7 @@ const Collection = () => {
               color="#00A5BF"
               size={20}
             />
-            <DatePicker
-              disableOpenPicker
+            <MobileDatePicker
               disablePast
               value={collectionState.collectionTime.date}
               onChange={(newValue, { validationError }) => {
@@ -181,8 +181,7 @@ const Collection = () => {
               color="#00A5BF"
               size={20}
             />
-            <DatePicker
-              disableOpenPicker
+            <MobileDatePicker
               disabled={isDatePickerDisabled()}
               minDate={validDeliveryDate()}
               value={collectionState.deliveryTime.date}
