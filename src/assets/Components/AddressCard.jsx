@@ -18,13 +18,13 @@ const AddressCard = (prop) => {
   return (
     <Stack
       direction={["column", "row"]}
-      justifyContent={"space-between"}
+      justifyContent={["start", "space-between"]}
       width="full"
       bgcolor="#E4F4FF"
       padding={2}
       borderRadius={2}
       alignItems={"center"}
-      spacing={2}
+      gap={2}
       key={prop.id}
     >
       <Stack>
@@ -43,10 +43,13 @@ const AddressCard = (prop) => {
             <Typography variant="body22">{prop.address}</Typography>
           </Stack>
         </Stack>
-        <Stack></Stack>
       </Stack>
       <Stack direction="row" spacing={2}>
-        <Button variant="contained" sx={{ borderRadius: 4 }} size="large">
+        <Button
+          variant="contained"
+          sx={{ borderRadius: 4, display: "flex", gap: 1 }}
+          size="large"
+        >
           <BiEdit size={20} /> Edit
         </Button>
         {location.pathname === "/dashboard/ordernow/address" && (

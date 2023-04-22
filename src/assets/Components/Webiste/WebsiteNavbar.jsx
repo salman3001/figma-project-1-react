@@ -153,7 +153,7 @@ const WebsiteNavbar = () => {
           direction="row"
           spacing={2}
           sx={{
-            display: ["none", "none", "none", "flex"],
+            display: ["none", "none", "none", "none", "flex"],
           }}
           alignItems="center"
         >
@@ -198,7 +198,7 @@ const WebsiteNavbar = () => {
         <Stack
           onClick={togelDrawer}
           sx={{
-            display: ["flex", "flex", "flex", "none"],
+            display: ["flex", "flex", "flex", "flex", "none"],
           }}
         >
           <label htmlFor="hameburger" className="cursor-pointer">
@@ -209,7 +209,7 @@ const WebsiteNavbar = () => {
           anchor="right"
           open={open}
           sx={{
-            display: ["block", "block", "bock", "none"],
+            display: ["block", "block", "bock", "block", "none"],
             ".MuiDrawer-paper": {
               width: ["80%", "60%"],
             },

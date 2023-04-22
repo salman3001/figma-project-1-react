@@ -8,8 +8,8 @@ const Promotions = () => {
       container
       spacing={3}
       sx={{
-        py: [9, 9, 9, 2],
-        paddingX: [2, 2, 4, 8],
+        py: [9, 9, 9, 9, 2],
+        paddingX: [2, 2, 2, 2, 4, 8],
         placeItems: "center",
       }}
     >

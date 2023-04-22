@@ -15,7 +15,8 @@ const MyAccount = () => {
       paddingTop={[9, 9, 9, 4]}
       spacing={4}
       sx={{
-        paddingX: [2, 2, 4, 8],
+        py: [9, 9, 9, 9, 2],
+        paddingX: [2, 2, 2, 2, 4, 8],
       }}
     >
       <Typography variant="h45">My Account</Typography>
