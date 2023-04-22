@@ -5,6 +5,7 @@ import {
   Toolbar,
   Typography,
   Stack,
+  useTheme,
 } from "@mui/material";
 import React from "react";
 import { useState } from "react";
@@ -14,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 
 const WebsiteNavbar = () => {
   const [open, setOpen] = useState(false);
+  const theme = useTheme();
   const navigate = useNavigate();
   const togelDrawer = () => {
     setOpen((state) => (state === true ? false : true));
@@ -26,9 +28,9 @@ const WebsiteNavbar = () => {
       sx={{
         overflow: "hidden",
         mb: 1,
-        px: [0, 1, 2, 3, "138px"],
+        px: [0, 0, 0, 0, 0, 0, "138px"],
         justifyContent: "center",
-        height: [70, 80, 100, 121],
+        height: [70, 80, 80, 80, 80, 100, 121],
         bgColor: "#FFFFFF",
       }}
       style={{
@@ -49,7 +51,7 @@ const WebsiteNavbar = () => {
         <Stack
           direction="row"
           sx={{
-            display: ["none", "none", "none", "flex"],
+            display: ["none", "none", "none", "none", "flex"],
             width: "100%",
             justifyContent: "center",
             gap: [1, 1, 1, 4],
@@ -153,20 +155,22 @@ const WebsiteNavbar = () => {
           sx={{
             display: ["none", "none", "none", "flex"],
           }}
+          alignItems="center"
         >
           <Button
             variant="outlined"
             szie="small"
-            color="inherit"
             className="w-32"
             onClick={(e) => {
               navigate("/login");
             }}
             sx={{
-              width: [150, 150, 150, 164],
-              height: [50, 50, 50, 59],
-              fontSize: 22,
+              width: [150, 150, 150, 150, 150, 164],
+              height: [40, 40, 40, 40, 40, 59],
+              fontSize: theme.typography.body22,
               borderRadius: ["6px", "6px", "6px", "8px"],
+              color: "black",
+              borderColor: "black",
             }}
           >
             Login
@@ -178,10 +182,11 @@ const WebsiteNavbar = () => {
               navigate("/dashboard/ordernow/address");
             }}
             sx={{
-              width: [150, 150, 150, 196],
-              height: [50, 50, 50, 59],
-              fontSize: 22,
+              width: [150, 150, 150, 150, 150, 196],
+              height: [40, 40, 40, 40, 40, 59],
+              fontSize: theme.typography.body22,
               borderRadius: ["6px", "6px", "6px", "8px"],
+              color: "white",
             }}
             style={{
               backgroundColor: "#022A30",
@@ -295,10 +300,12 @@ const WebsiteNavbar = () => {
                   navigate("/login");
                 }}
                 sx={{
-                  width: 120,
-                  height: 40,
-                  fontSize: 18,
-                  borderRadius: "8px",
+                  width: [150, 150, 150, 150, 150, 164],
+                  height: [40, 40, 40, 40, 40, 59],
+                  fontSize: theme.typography.body22,
+                  borderRadius: ["6px", "6px", "6px", "8px"],
+                  color: "black",
+                  borderColor: "black",
                 }}
                 size="small"
               >
@@ -312,10 +319,14 @@ const WebsiteNavbar = () => {
                   navigate("/dashboard/ordernow/address");
                 }}
                 sx={{
-                  width: 120,
-                  height: 40,
-                  fontSize: 18,
-                  borderRadius: "8px",
+                  width: [150, 150, 150, 150, 150, 196],
+                  height: [40, 40, 40, 40, 40, 59],
+                  fontSize: theme.typography.body22,
+                  borderRadius: ["6px", "6px", "6px", "8px"],
+                  color: "white",
+                }}
+                style={{
+                  backgroundColor: "#022A30",
                 }}
               >
                 Book Now

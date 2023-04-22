@@ -5,13 +5,13 @@ const Section1 = () => {
   const navigate = useNavigate();
 
   return (
-    <section className=" flex flex-col lg:flex-row  lg:h-[820px] w-full  bg-[#EAEFF3]  ">
+    <section className=" flex flex-col lg:flex-row h-auto  lg:h-[820px] w-full  bg-[#EAEFF3]  ">
       {/* left side */}
-      <div className="flex  w-full grow text-start  items-start justify-center  flex-col gap-2 respnsive-pading-1 respnsive-pading-2">
-        <Typography variant="h72" className="md:leading-[80px]">
+      <div className="flex  w-full grow text-start  items-start justify-center lg:pr-24 flex-col gap-2 respnsive-pading-1 respnsive-pading-2">
+        <Typography variant="h72" className="md:leading-[80px]" maxWidth={708}>
           Your professional dry clean & laundry service
         </Typography>
-        <Typography variant="body28" classname="leading-10">
+        <Typography variant="body28" classname="leading-10" maxWidth={708}>
           We collect, clean & return at the location of your choice on time.
         </Typography>
         <div className="mt-10">
@@ -42,15 +42,17 @@ const Section1 = () => {
       </div>
       {/* right side */}
       <div className="min-h-[400px] sm:min-h-[450px] relative  min-w-[50%] xl:min-w-[40%] bg-[#02A5BF]">
-        <div className="absolute flex flex-col p-7   h-auto  gap-6 left-[5%] sm:left-[10%] lg:[18%]   xl:left-[-15%] bottom-[19%] sm:bottom-[18%] xl:bottom-[10%] max-w-[700px] 2xl:max-w-[800px] z-20  border-[#03444F] rounded-2xl ">
-          <img
-            src={import.meta.env.VITE_BASE_URL + "/images/section1-art2.png"}
-            className="h-50 sm:h-80 lg:h-auto"
-            alt=""
-            onClick={() => {
-              navigate("/dashboard/ordernow/address");
-            }}
-          />
+        <div className="w-full h-full relative flex justify-center items-center">
+          <div className="absolute flex flex-col p-7 lg:left-[-20%] top-0   lg:top-auto h-auto  gap-6 z-20  border-[#03444F] rounded-2xl ">
+            <img
+              src={import.meta.env.VITE_BASE_URL + "/images/section1-art2.png"}
+              className=" max-h-[335px] lg:max-h-[435px] z-30"
+              alt=""
+              onClick={() => {
+                navigate("/dashboard/ordernow/address");
+              }}
+            />
+          </div>
         </div>
         {/* leaves svg */}
         <div className="absolute right-0 bottom-[-15px] z-10">

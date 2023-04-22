@@ -22,7 +22,7 @@ const WebLayout = () => {
       <Box
         component="main"
         className="grow"
-        sx={{ mt: ["60px", "70px", "80px"] }}
+        sx={{ mt: ["70px", "70px", "60px", "20px", "20px", "20px", "80px"] }}
       >
         <Outlet />
       </Box>

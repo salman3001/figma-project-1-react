@@ -6,7 +6,7 @@ const Section5 = () => {
   const navigate = useNavigate();
   return (
     <div className=" flex flex-col gap-4 justify-center md:justify-start respnsive-pading-1  w-full text-white">
-      <div className="bg-[#03444F] flex flex-col gap-4 rounded-2xl p-10 md:p-20">
+      <div className="bg-[#03444F] flex flex-col gap-4 rounded-2xl p-5 md:p-20">
         <Typography variant="h68" color="white">
           Ease to Made Laundry
         </Typography>

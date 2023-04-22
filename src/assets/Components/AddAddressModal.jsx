@@ -33,6 +33,7 @@ const AddAddressModal = (prop) => {
       }}
     >
       <Box
+        className="scrollbar-hide "
         sx={{
           position: "absolute",
           top: "50%",
@@ -139,11 +140,8 @@ const SearchLoactionForm = (prop) => {
           />
         </div>
       </form>
-      <Button
-        startIcon={<GoLocation />}
-        size="small"
-        sx={{ alignSelf: "start" }}
-      >
+      <Button size="small" sx={{ alignSelf: "start", display: "flex", gap: 1 }}>
+        <GoLocation />
         Postcode search
       </Button>
       <Button
