@@ -1,4 +1,7 @@
 /* @import url("./styles/Home.css"); */
+html {
+  scroll-behavior: smooth !important;
+}
 
 @tailwind base;
 @tailwind components;
@@ -10,6 +13,7 @@
     margin: 0;
   }
 }
+
 @layer components {
   .respnsive-pading-1 {
     @apply px-5 sm:px-8 md:px-10 lg:px-12 xl:px-14 2xl:px-16  3xl:px-[137px];

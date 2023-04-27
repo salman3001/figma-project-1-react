@@ -230,12 +230,12 @@ const WebsiteNavbar = () => {
             <img
               src={import.meta.env.VITE_BASE_URL + "/images/signup-leaf.svg"}
               alt=""
-              className="absolute brightness-50 top-0 left-0"
+              className="absolute brightness-50 top-0 left-0 z-[-1]"
             />
             <img
               src={import.meta.env.VITE_BASE_URL + "/images/signup-leaf.svg"}
               alt=""
-              className="absolute brightness-50 bottom-0 right-0 rotate-180"
+              className="absolute brightness-50 bottom-0 right-0 rotate-180  z-[-1]"
             />
             <a
               href=""
