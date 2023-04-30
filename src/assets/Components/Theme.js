@@ -100,181 +100,179 @@ const theme = createTheme({
 
 
     },
-    MuiCssBaseline: {
-        styleOverrides: `
-      `,
-    }
+
+
 
 })
 
 theme.typography.allVariants = { fontFamily: "'Inter', sans-serif" }
 theme.typography.fontFamily = { fontFamily: "'Inter', sans-serif" }
 theme.typography.h128 = {
-    fontSize: 128,
+    fontSize: "7rem",
     color: "black",
     fontWeight: 700,
-    [theme.breakpoints.up("xs")]: {
-        fontSize: 38
-    },
-    [theme.breakpoints.up("sm")]: {
-        fontSize: 53
-    },
-    [theme.breakpoints.up("md")]: {
-        fontSize: 68
-    }
-    ,
-    [theme.breakpoints.up("lg")]: {
-        fontSize: 82
-    },
-    [theme.breakpoints.up("xl")]: {
-        fontSize: 98
-    },
-    [theme.breakpoints.up("xxl")]: {
-        fontSize: 113
-    },
-    [theme.breakpoints.up("xxxl")]: {
-        fontSize: 128
-    }
+    // [theme.breakpoints.up("xs")]: {
+    //     fontSize: 38
+    // },
+    // [theme.breakpoints.up("sm")]: {
+    //     fontSize: 53
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //     fontSize: 68
+    // }
+    // ,
+    // [theme.breakpoints.up("lg")]: {
+    //     fontSize: 82
+    // },
+    // [theme.breakpoints.up("xl")]: {
+    //     fontSize: 98
+    // },
+    // [theme.breakpoints.up("xxl")]: {
+    //     fontSize: 113
+    // },
+    // [theme.breakpoints.up("xxxl")]: {
+    //     fontSize: 128 
+    // }
 }
 
 theme.typography.h96 = {
-    fontSize: 96,
+    fontSize: "5rem",
     color: "black",
     fontWeight: 600,
-    [theme.breakpoints.up("xs")]: {
-        fontSize: 32
-    },
-    [theme.breakpoints.up("sm")]: {
-        fontSize: 46
-    },
-    [theme.breakpoints.up("md")]: {
-        fontSize: 56
-    }
-    ,
-    [theme.breakpoints.up("lg")]: {
-        fontSize: 66
-    },
-    [theme.breakpoints.up("xl")]: {
-        fontSize: 76
-    }
-    ,
-    [theme.breakpoints.up("xxl")]: {
-        fontSize: 86
-    },
-    [theme.breakpoints.up("xxxl")]: {
-        fontSize: 96
-    }
+    // [theme.breakpoints.up("xs")]: {
+    //     fontSize: 32
+    // },
+    // [theme.breakpoints.up("sm")]: {
+    //     fontSize: 46
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //     fontSize: 56
+    // }
+    // ,
+    // [theme.breakpoints.up("lg")]: {
+    //     fontSize: 66
+    // },
+    // [theme.breakpoints.up("xl")]: {
+    //     fontSize: 76
+    // }
+    // ,
+    // [theme.breakpoints.up("xxl")]: {
+    //     fontSize: 86
+    // },
+    // [theme.breakpoints.up("xxxl")]: {
+    //     fontSize: 96
+    // }
 }
 
 theme.typography.h72 = {
-    fontSize: 72,
+    fontSize: "4.5rem",
     color: "black",
     fontWeight: 600,
-    [theme.breakpoints.up("xs")]: {
-        fontSize: 29
-    },
-    [theme.breakpoints.up("sm")]: {
-        fontSize: 38
-    },
-    [theme.breakpoints.up("md")]: {
-        fontSize: 44
-    }
-    ,
-    [theme.breakpoints.up("lg")]: {
-        fontSize: 53
-    },
-    [theme.breakpoints.up("xl")]: {
-        fontSize: 59
-    },
-    [theme.breakpoints.up("xxl")]: {
-        fontSize: 65
-    },
-    [theme.breakpoints.up("xxxl")]: {
-        fontSize: 72
-    }
+    // [theme.breakpoints.up("xs")]: {
+    //     fontSize: 29
+    // },
+    // [theme.breakpoints.up("sm")]: {
+    //     fontSize: 38
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //     fontSize: 44
+    // }
+    // ,
+    // [theme.breakpoints.up("lg")]: {
+    //     fontSize: 53
+    // },
+    // [theme.breakpoints.up("xl")]: {
+    //     fontSize: 59
+    // },
+    // [theme.breakpoints.up("xxl")]: {
+    //     fontSize: 65
+    // },
+    // [theme.breakpoints.up("xxxl")]: {
+    //     fontSize: 72
+    // }
 }
 
 theme.typography.h68 = {
-    fontSize: 68,
+    fontSize: "4rem",
     color: "black",
     fontWeight: 717,
-    [theme.breakpoints.up("xs")]: {
-        fontSize: 27
-    },
-    [theme.breakpoints.up("sm")]: {
-        fontSize: 34
-    },
-    [theme.breakpoints.up("md")]: {
-        fontSize: 41
-    }
-    ,
-    [theme.breakpoints.up("lg")]: {
-        fontSize: 48
-    },
-    [theme.breakpoints.up("xl")]: {
-        fontSize: 54
-    }, [theme.breakpoints.up("xxl")]: {
-        fontSize: 61
-    }, [theme.breakpoints.up("xxxl")]: {
-        fontSize: 68
-    }
+    // [theme.breakpoints.up("xs")]: {
+    //     fontSize: 27
+    // },
+    // [theme.breakpoints.up("sm")]: {
+    //     fontSize: 34
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //     fontSize: 41
+    // }
+    // ,
+    // [theme.breakpoints.up("lg")]: {
+    //     fontSize: 48
+    // },
+    // [theme.breakpoints.up("xl")]: {
+    //     fontSize: 54
+    // }, [theme.breakpoints.up("xxl")]: {
+    //     fontSize: 61
+    // }, [theme.breakpoints.up("xxxl")]: {
+    //     fontSize: 68
+    // }
 }
 
 theme.typography.h64 = {
-    fontSize: 64,
+    fontSize: "3.75rem ",
     color: "black",
     fontWeight: 600,
-    [theme.breakpoints.up("xs")]: {
-        fontSize: 24
-    },
-    [theme.breakpoints.up("sm")]: {
-        fontSize: 29
-    },
-    [theme.breakpoints.up("md")]: {
-        fontSize: 36
-    }
-    ,
-    [theme.breakpoints.up("lg")]: {
-        fontSize: 43
-    },
-    [theme.breakpoints.up("xl")]: {
-        fontSize: 50
-    }, [theme.breakpoints.up("xxl")]: {
-        fontSize: 57
-    }, [theme.breakpoints.up("xxxl")]: {
-        fontSize: 64
-    }
+    // [theme.breakpoints.up("xs")]: {
+    //     fontSize: 24
+    // },
+    // [theme.breakpoints.up("sm")]: {
+    //     fontSize: 29
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //     fontSize: 36
+    // }
+    // ,
+    // [theme.breakpoints.up("lg")]: {
+    //     fontSize: 43
+    // },
+    // [theme.breakpoints.up("xl")]: {
+    //     fontSize: 50
+    // }, [theme.breakpoints.up("xxl")]: {
+    //     fontSize: 57
+    // }, [theme.breakpoints.up("xxxl")]: {
+    //     fontSize: 64
+    // }
 }
 
 theme.typography.h55 = {
-    fontSize: 55,
+    fontSize: "3.25rem",
     color: "black",
     fontWeight: 600,
-    [theme.breakpoints.up("xs")]: {
-        fontSize: 22
-    },
-    [theme.breakpoints.up("sm")]: {
-        fontSize: 29
-    },
-    [theme.breakpoints.up("md")]: {
-        fontSize: 34
-    }
-    ,
-    [theme.breakpoints.up("lg")]: {
-        fontSize: 41
-    },
-    [theme.breakpoints.up("xl")]: {
-        fontSize: 45
-    },
-    [theme.breakpoints.up("xxl")]: {
-        fontSize: 50
-    }, [theme.breakpoints.up("xxxl")]: {
-        fontSize: 55
-    }
+    //     [theme.breakpoints.up("xs")]: {
+    //         fontSize: 22
+    //     },
+    //     [theme.breakpoints.up("sm")]: {
+    //         fontSize: 29
+    //     },
+    //     [theme.breakpoints.up("md")]: {
+    //         fontSize: 34
+    //     }
+    //     ,
+    //     [theme.breakpoints.up("lg")]: {
+    //         fontSize: 41
+    //     },
+    //     [theme.breakpoints.up("xl")]: {
+    //         fontSize: 45
+    //     },
+    //     [theme.breakpoints.up("xxl")]: {
+    //         fontSize: 50
+    //     }, [theme.breakpoints.up("xxxl")]: {
+    //         fontSize: 55
+    //     }
 }
 
 theme.typography.h45 = {
-    fontSize: 45,
+    fontSize: "2.75rem",
     color: "black",
     fontWeight: 600,
     [theme.breakpoints.up("xs")]: {
@@ -302,396 +300,403 @@ theme.typography.h45 = {
 }
 
 theme.typography.subtitle36 = {
-    fontSize: 36,
+    fontSize: "2.25rem",
     color: "black",
     fontWeight: 600,
-    [theme.breakpoints.up("xs")]: {
-        fontSize: 20
-    },
-    [theme.breakpoints.up("sm")]: {
-        fontSize: 23
-    },
-    [theme.breakpoints.up("md")]: {
-        fontSize: 26.5
-    }
-    ,
-    [theme.breakpoints.up("lg")]: {
-        fontSize: 29
-    },
-    [theme.breakpoints.up("xl")]: {
-        fontSize: 31.5
-    },
-    [theme.breakpoints.up("xxl")]: {
-        fontSize: 33.5
-    },
-    [theme.breakpoints.up("xxxl")]: {
-        fontSize: 36
-    },
+    // [theme.breakpoints.up("xs")]: {
+    //     fontSize: 20
+    // },
+    // [theme.breakpoints.up("sm")]: {
+    //     fontSize: 23
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //     fontSize: 26.5
+    // }
+    // ,
+    // [theme.breakpoints.up("lg")]: {
+    //     fontSize: 29
+    // },
+    // [theme.breakpoints.up("xl")]: {
+    //     fontSize: 31.5
+    // },
+    // [theme.breakpoints.up("xxl")]: {
+    //     fontSize: 33.5
+    // },
+    // [theme.breakpoints.up("xxxl")]: {
+    //     fontSize: 36
+    // },
 }
 
 theme.typography.body36 = {
-    fontSize: 36,
+    fontSize: "2.25rem",
     color: "black",
     fontWeight: 500,
-    [theme.breakpoints.up("xs")]: {
-        fontSize: 20
-    },
-    [theme.breakpoints.up("sm")]: {
-        fontSize: 23
-    },
-    [theme.breakpoints.up("md")]: {
-        fontSize: 26.5
-    }
-    ,
-    [theme.breakpoints.up("lg")]: {
-        fontSize: 29
-    },
-    [theme.breakpoints.up("xl")]: {
-        fontSize: 31.5
-    },
-    [theme.breakpoints.up("xxl")]: {
-        fontSize: 33.5
-    },
-    [theme.breakpoints.up("xxxl")]: {
-        fontSize: 36
-    }
+    // [theme.breakpoints.up("xs")]: {
+    //     fontSize: 20
+    // },
+    // [theme.breakpoints.up("sm")]: {
+    //     fontSize: 23
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //     fontSize: 26.5
+    // }
+    // ,
+    // [theme.breakpoints.up("lg")]: {
+    //     fontSize: 29
+    // },
+    // [theme.breakpoints.up("xl")]: {
+    //     fontSize: 31.5
+    // },
+    // [theme.breakpoints.up("xxl")]: {
+    //     fontSize: 33.5
+    // },
+    // [theme.breakpoints.up("xxxl")]: {
+    //     fontSize: 36
+    // }
 }
 
 theme.typography.subtitle32 = {
-    fontSize: 32,
+    fontSize: "2rem",
     color: "black",
     fontWeight: 600,
-    [theme.breakpoints.up("xs")]: {
-        fontSize: 19
-    },
-    [theme.breakpoints.up("sm")]: {
-        fontSize: 21
-    },
-    [theme.breakpoints.up("md")]: {
-        fontSize: 23
-    }
-    ,
-    [theme.breakpoints.up("lg")]: {
-        fontSize: 25
-    },
-    [theme.breakpoints.up("xl")]: {
-        fontSize: 27
-    },
-    [theme.breakpoints.up("xxl")]: {
-        fontSize: 30
-    },
-    [theme.breakpoints.up("xxxl")]: {
-        fontSize: 32
-    }
+    // [theme.breakpoints.up("xs")]: {
+    //     fontSize: 19
+    // },
+    // [theme.breakpoints.up("sm")]: {
+    //     fontSize: 21
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //     fontSize: 23
+    // }
+    // ,
+    // [theme.breakpoints.up("lg")]: {
+    //     fontSize: 25
+    // },
+    // [theme.breakpoints.up("xl")]: {
+    //     fontSize: 27
+    // },
+    // [theme.breakpoints.up("xxl")]: {
+    //     fontSize: 30
+    // },
+    // [theme.breakpoints.up("xxxl")]: {
+    //     fontSize: 32
+    // }
 }
 
 theme.typography.body32 = {
-    fontSize: 32,
+    fontSize: "2rem",
     color: "black",
     fontWeight: 500,
-    [theme.breakpoints.up("xs")]: {
-        fontSize: 19
-    },
-    [theme.breakpoints.up("sm")]: {
-        fontSize: 21
-    },
-    [theme.breakpoints.up("md")]: {
-        fontSize: 23
-    }
-    ,
-    [theme.breakpoints.up("lg")]: {
-        fontSize: 25
-    },
-    [theme.breakpoints.up("xl")]: {
-        fontSize: 27
-    },
-    [theme.breakpoints.up("xxl")]: {
-        fontSize: 30
-    },
-    [theme.breakpoints.up("xxxl")]: {
-        fontSize: 32
-    }
+    // [theme.breakpoints.up("xs")]: {
+    //     fontSize: 19
+    // },
+    // [theme.breakpoints.up("sm")]: {
+    //     fontSize: 21
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //     fontSize: 23
+    // }
+    // ,
+    // [theme.breakpoints.up("lg")]: {
+    //     fontSize: 25
+    // },
+    // [theme.breakpoints.up("xl")]: {
+    //     fontSize: 27
+    // },
+    // [theme.breakpoints.up("xxl")]: {
+    //     fontSize: 30
+    // },
+    // [theme.breakpoints.up("xxxl")]: {
+    //     fontSize: 32
+    // }
 }
 
 theme.typography.subtitle28 = {
-    fontSize: 28,
+    fontSize: "1.75rem",
     color: "black",
     fontWeight: 600,
-    [theme.breakpoints.up("xs")]: {
-        fontSize: 18
-    },
-    [theme.breakpoints.up("sm")]: {
-        fontSize: 19
-    },
-    [theme.breakpoints.up("md")]: {
-        fontSize: 20.5
-    }
-    ,
-    [theme.breakpoints.up("lg")]: {
-        fontSize: 22
-    },
-    [theme.breakpoints.up("xl")]: {
-        fontSize: 24.5
-    },
-    [theme.breakpoints.up("xxl")]: {
-        fontSize: 26.5
-    },
-    [theme.breakpoints.up("xxxl")]: {
-        fontSize: 28
-    }
+    // [theme.breakpoints.up("xs")]: {
+    //     fontSize: 18
+    // },
+    // [theme.breakpoints.up("sm")]: {
+    //     fontSize: 19
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //     fontSize: 20.5
+    // }
+    // ,
+    // [theme.breakpoints.up("lg")]: {
+    //     fontSize: 22
+    // },
+    // [theme.breakpoints.up("xl")]: {
+    //     fontSize: 24.5
+    // },
+    // [theme.breakpoints.up("xxl")]: {
+    //     fontSize: 26.5
+    // },
+    // [theme.breakpoints.up("xxxl")]: {
+    //     fontSize: 28
+    // }
 }
 
 theme.typography.body28 = {
-    fontSize: 28,
+    fontSize: "1.75rem",
+
     color: "black",
     fontWeight: 500,
-    [theme.breakpoints.up("xs")]: {
-        fontSize: 18
-    },
-    [theme.breakpoints.up("sm")]: {
-        fontSize: 19
-    },
-    [theme.breakpoints.up("md")]: {
-        fontSize: 20.5
-    }
-    ,
-    [theme.breakpoints.up("lg")]: {
-        fontSize: 22
-    },
-    [theme.breakpoints.up("xl")]: {
-        fontSize: 24.5
-    },
-    [theme.breakpoints.up("xxl")]: {
-        fontSize: 26.5
-    },
-    [theme.breakpoints.up("xxxl")]: {
-        fontSize: 28
-    }
+    // [theme.breakpoints.up("xs")]: {
+    //     fontSize: 18
+    // },
+    // [theme.breakpoints.up("sm")]: {
+    //     fontSize: 19
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //     fontSize: 20.5
+    // }
+    // ,
+    // [theme.breakpoints.up("lg")]: {
+    //     fontSize: 22
+    // },
+    // [theme.breakpoints.up("xl")]: {
+    //     fontSize: 24.5
+    // },
+    // [theme.breakpoints.up("xxl")]: {
+    //     fontSize: 26.5
+    // },
+    // [theme.breakpoints.up("xxxl")]: {
+    //     fontSize: 28
+    // }
 }
 
 theme.typography.subtitle24 = {
-    fontSize: 24,
+    fontSize: "1.5rem",
     color: "black",
     fontWeight: 600,
-    [theme.breakpoints.up("xs")]: {
-        fontSize: 17
-    },
-    [theme.breakpoints.up("sm")]: {
-        fontSize: 18
-    },
-    [theme.breakpoints.up("md")]: {
-        fontSize: 19
-    }
-    ,
-    [theme.breakpoints.up("lg")]: {
-        fontSize: 20
-    },
-    [theme.breakpoints.up("xl")]: {
-        fontSize: 22
-    },
-    [theme.breakpoints.up("xxl")]: {
-        fontSize: 23
-    },
-    [theme.breakpoints.up("xxl")]: {
-        fontSize: 24
-    }
+    // [theme.breakpoints.up("xs")]: {
+    //     fontSize: 17
+    // },
+    // [theme.breakpoints.up("sm")]: {
+    //     fontSize: 18
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //     fontSize: 19
+    // }
+    // ,
+    // [theme.breakpoints.up("lg")]: {
+    //     fontSize: 20
+    // },
+    // [theme.breakpoints.up("xl")]: {
+    //     fontSize: 22
+    // },
+    // [theme.breakpoints.up("xxl")]: {
+    //     fontSize: 23
+    // },
+    // [theme.breakpoints.up("xxl")]: {
+    //     fontSize: 24
+    // }
 }
 
 theme.typography.body24 = {
-    fontSize: 24,
+    fontSize: "1.5rem",
+
     color: "black",
     fontWeight: 500,
-    [theme.breakpoints.up("xs")]: {
-        fontSize: 17
-    },
-    [theme.breakpoints.up("sm")]: {
-        fontSize: 18
-    },
-    [theme.breakpoints.up("md")]: {
-        fontSize: 19
-    }
-    ,
-    [theme.breakpoints.up("lg")]: {
-        fontSize: 20
-    },
-    [theme.breakpoints.up("xl")]: {
-        fontSize: 22
-    },
-    [theme.breakpoints.up("xxl")]: {
-        fontSize: 23
-    },
-    [theme.breakpoints.up("xxl")]: {
-        fontSize: 24
-    }
+    // [theme.breakpoints.up("xs")]: {
+    //     fontSize: 17
+    // },
+    // [theme.breakpoints.up("sm")]: {
+    //     fontSize: 18
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //     fontSize: 19
+    // }
+    // ,
+    // [theme.breakpoints.up("lg")]: {
+    //     fontSize: 20
+    // },
+    // [theme.breakpoints.up("xl")]: {
+    //     fontSize: 22
+    // },
+    // [theme.breakpoints.up("xxl")]: {
+    //     fontSize: 23
+    // },
+    // [theme.breakpoints.up("xxl")]: {
+    //     fontSize: 24
+    // }
 }
 
 theme.typography.subtitle22 = {
-    fontSize: 22,
+    fontSize: "1.35rem",
     color: "black",
     fontWeight: 600,
-    [theme.breakpoints.up("xs")]: {
-        fontSize: 16
-    },
-    [theme.breakpoints.up("sm")]: {
-        fontSize: 17
-    },
-    [theme.breakpoints.up("md")]: {
-        fontSize: 18
-    }
-    ,
-    [theme.breakpoints.up("lg")]: {
-        fontSize: 19
-    },
-    [theme.breakpoints.up("xl")]: {
-        fontSize: 20
-    },
-    [theme.breakpoints.up("xxl")]: {
-        fontSize: 21
-    },
-    [theme.breakpoints.up("xxxl")]: {
-        fontSize: 22
-    }
+    // [theme.breakpoints.up("xs")]: {
+    //     fontSize: 16
+    // },
+    // [theme.breakpoints.up("sm")]: {
+    //     fontSize: 17
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //     fontSize: 18
+    // }
+    // ,
+    // [theme.breakpoints.up("lg")]: {
+    //     fontSize: 19
+    // },
+    // [theme.breakpoints.up("xl")]: {
+    //     fontSize: 20
+    // },
+    // [theme.breakpoints.up("xxl")]: {
+    //     fontSize: 21
+    // },
+    // [theme.breakpoints.up("xxxl")]: {
+    //     fontSize: 22
+    // }
 }
 
 theme.typography.body22 = {
-    fontSize: 22,
+    fontSize: "1.35rem",
     color: "black",
     fontWeight: 500,
-    [theme.breakpoints.up("xs")]: {
-        fontSize: 16
-    },
-    [theme.breakpoints.up("sm")]: {
-        fontSize: 17
-    },
-    [theme.breakpoints.up("md")]: {
-        fontSize: 18
-    }
-    ,
-    [theme.breakpoints.up("lg")]: {
-        fontSize: 19
-    },
-    [theme.breakpoints.up("xl")]: {
-        fontSize: 20
-    },
-    [theme.breakpoints.up("xxl")]: {
-        fontSize: 21
-    },
-    [theme.breakpoints.up("xxxl")]: {
-        fontSize: 22
-    }
+    // [theme.breakpoints.up("xs")]: {
+    //     fontSize: 16
+    // },
+    // [theme.breakpoints.up("sm")]: {
+    //     fontSize: 17
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //     fontSize: 18
+    // }
+    // ,
+    // [theme.breakpoints.up("lg")]: {
+    //     fontSize: 19
+    // },
+    // [theme.breakpoints.up("xl")]: {
+    //     fontSize: 20
+    // },
+    // [theme.breakpoints.up("xxl")]: {
+    //     fontSize: 21
+    // },
+    // [theme.breakpoints.up("xxxl")]: {
+    //     fontSize: 22
+    // }
 }
 
 theme.typography.subtitle18 = {
-    fontSize: 18,
+    fontSize: "1.12rem",
     color: "black",
     fontWeight: 600,
-    [theme.breakpoints.up("xs")]: {
-        fontSize: 14
-    },
-    [theme.breakpoints.up("sm")]: {
-        fontSize: 14.5
-    },
-    [theme.breakpoints.up("md")]: {
-        fontSize: 15
-    }
-    ,
-    [theme.breakpoints.up("lg")]: {
-        fontSize: 15.5
-    },
-    [theme.breakpoints.up("xl")]: {
-        fontSize: 16.5
-    },
-    [theme.breakpoints.up("xxl")]: {
-        fontSize: 17.5
-    },
-    [theme.breakpoints.up("xxxl")]: {
-        fontSize: 18
-    }
+    // [theme.breakpoints.up("xs")]: {
+    //     fontSize: 14
+    // },
+    // [theme.breakpoints.up("sm")]: {
+    //     fontSize: 14.5
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //     fontSize: 15
+    // }
+    // ,
+    // [theme.breakpoints.up("lg")]: {
+    //     fontSize: 15.5
+    // },
+    // [theme.breakpoints.up("xl")]: {
+    //     fontSize: 16.5
+    // },
+    // [theme.breakpoints.up("xxl")]: {
+    //     fontSize: 17.5
+    // },
+    // [theme.breakpoints.up("xxxl")]: {
+    //     fontSize: 18
+    // }
 }
 
 theme.typography.body18 = {
-    fontSize: 18,
+    fontSize: "1.12rem",
+
     color: "black",
     fontWeight: 500,
-    [theme.breakpoints.up("xs")]: {
-        fontSize: 14
-    },
-    [theme.breakpoints.up("sm")]: {
-        fontSize: 14.5
-    },
-    [theme.breakpoints.up("md")]: {
-        fontSize: 15
-    }
-    ,
-    [theme.breakpoints.up("lg")]: {
-        fontSize: 15.5
-    },
-    [theme.breakpoints.up("xl")]: {
-        fontSize: 16.5
-    },
-    [theme.breakpoints.up("xxl")]: {
-        fontSize: 17.5
-    },
-    [theme.breakpoints.up("xxxl")]: {
-        fontSize: 18
-    }
+    // [theme.breakpoints.up("xs")]: {
+    //     fontSize: 14
+    // },
+    // [theme.breakpoints.up("sm")]: {
+    //     fontSize: 14.5
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //     fontSize: 15
+    // }
+    // ,
+    // [theme.breakpoints.up("lg")]: {
+    //     fontSize: 15.5
+    // },
+    // [theme.breakpoints.up("xl")]: {
+    //     fontSize: 16.5
+    // },
+    // [theme.breakpoints.up("xxl")]: {
+    //     fontSize: 17.5
+    // },
+    // [theme.breakpoints.up("xxxl")]: {
+    //     fontSize: 18
 }
 
+
 theme.typography.subtitle15 = {
-    fontSize: 15,
+    fontSize: "1rem",
     color: "black",
     fontWeight: 600,
-    [theme.breakpoints.up("xs")]: {
-        fontSize: 12
-    },
-    [theme.breakpoints.up("sm")]: {
-        fontSize: 13.5
-    },
-    [theme.breakpoints.up("md")]: {
-        fontSize: 13
-    }
-    ,
-    [theme.breakpoints.up("lg")]: {
-        fontSize: 13.5
-    },
-    [theme.breakpoints.up("xl")]: {
-        fontSize: 14
-    },
-    [theme.breakpoints.up("xxl")]: {
-        fontSize: 14.5
-    },
-    [theme.breakpoints.up("xxxl")]: {
-        fontSize: 15
-    }
+    // [theme.breakpoints.up("xs")]: {
+    //     fontSize: 12
+    // },
+    // [theme.breakpoints.up("sm")]: {
+    //     fontSize: 13.5
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //     fontSize: 13
+    // }
+    // ,
+    // [theme.breakpoints.up("lg")]: {
+    //     fontSize: 13.5
+    // },
+    // [theme.breakpoints.up("xl")]: {
+    //     fontSize: 14
+    // },
+    // [theme.breakpoints.up("xxl")]: {
+    //     fontSize: 14.5
+    // },
+    // [theme.breakpoints.up("xxxl")]: {
+    //     fontSize: 15
+    // }
 }
 
 theme.typography.body15 = {
-    fontSize: 15,
+    fontSize: "1rem",
     color: "black",
     fontWeight: 500,
-    [theme.breakpoints.up("xs")]: {
-        fontSize: 12
-    },
-    [theme.breakpoints.up("sm")]: {
-        fontSize: 13.5
-    },
-    [theme.breakpoints.up("md")]: {
-        fontSize: 13
-    }
-    ,
-    [theme.breakpoints.up("lg")]: {
-        fontSize: 13.5
-    },
-    [theme.breakpoints.up("xl")]: {
-        fontSize: 14
-    },
-    [theme.breakpoints.up("xxl")]: {
-        fontSize: 14.5
-    },
-    [theme.breakpoints.up("xxxl")]: {
-        fontSize: 15
-    }
+    // [theme.breakpoints.up("xs")]: {
+    //     fontSize: 12
+    // },
+    // [theme.breakpoints.up("sm")]: {
+    //     fontSize: 13.5
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //     fontSize: 13
+    // }
+    // ,
+    // [theme.breakpoints.up("lg")]: {
+    //     fontSize: 13.5
+    // },
+    // [theme.breakpoints.up("xl")]: {
+    //     fontSize: 14
+    // },
+    // [theme.breakpoints.up("xxl")]: {
+    //     fontSize: 14.5
+    // },
+    // [theme.breakpoints.up("xxxl")]: {
+    //     fontSize: 15
+    // }
 }
+
+// theme.components.MuiCssBaseline.styleOverrides = `
+
+// `
 
 theme.components.MuiTypography.defaultProps.variantMapping.h128 = "h1"
 theme.components.MuiTypography.defaultProps.variantMapping.h96 = "h2"

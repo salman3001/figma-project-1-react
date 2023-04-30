@@ -9,6 +9,10 @@
     -webkit-appearance: none;
     margin: 0;
   }
+
+  html {
+    @apply 3xl:text-[15px] 2xl:text-[14px] xl:text-[13.5px] lg:text-[13px] md:text-[13px] sm:text-[12.5px] text-[12px];
+  }
 }
 @layer components {
   .respnsive-pading-1 {
