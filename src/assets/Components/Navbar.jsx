@@ -32,7 +32,7 @@ const Navbar = (prop) => {
           borderColor: theme.palette.divider,
           display: "flex",
           justifyContent: "space-between ",
-          paddingX: [2, 2, 4, 8],
+          paddingX: [2, 2, 2, 2, 4, 8],
         }}
       >
         <Stack
@@ -42,7 +42,10 @@ const Navbar = (prop) => {
           sx={{ position: "relative" }}
         >
           <Box
-            sx={{ display: ["block", "block", "none"], cursor: "pointer" }}
+            sx={{
+              display: ["block", "block", "block", "block", "none"],
+              cursor: "pointer",
+            }}
             onClick={prop.togelMenu}
           >
             <AiOutlineMenu size={30} />
@@ -51,7 +54,7 @@ const Navbar = (prop) => {
             variant="subtitle22"
             fontWeight={600}
             sx={{
-              display: ["none", "none", "block"],
+              display: ["none", "none", "none", "none", "block"],
             }}
           >
             {location.pathname === "/dashboard/myorders"
@@ -64,8 +67,14 @@ const Navbar = (prop) => {
           </Typography>
           <Box
             sx={{
-              position: ["absolute", "absolute", "absolute", "static"],
-              top: [75, 75, 75],
+              position: [
+                "absolute",
+                "absolute",
+                "absolute",
+                "absolute",
+                "static",
+              ],
+              top: [70],
               left: [0],
               width: [280],
             }}

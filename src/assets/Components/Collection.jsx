@@ -1,6 +1,12 @@
-import { Button, MenuItem, Select, TextField, Typography } from "@mui/material";
+import {
+  Button,
+  MenuItem,
+  Select,
+  TextField,
+  Typography,
+} from "@mui/material/";
 import { Stack } from "@mui/system";
-import { DatePicker } from "@mui/x-date-pickers";
+import { MobileDatePicker } from "@mui/x-date-pickers";
 import React, { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -14,7 +20,10 @@ import {
   setFrequency,
 } from "../../redux/orderNowSlice";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import { BiTime } from "react-icons/bi";
+import { FaRegCalendarCheck } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { format } from "date-fns";
 
 const Collection = () => {
   const collectionState = useSelector(
@@ -99,45 +108,64 @@ const Collection = () => {
       <Stack direction={["column", "row"]} gap={2} color="text.muted">
         <Stack flexGrow={1} spacing={1}>
           <label htmlFor="delieveryDay">Select Day</label>
-          <DatePicker
-            disablePast
-            value={collectionState.collectionTime.date}
-            onChange={(newValue) => {
-              dispatch(setCollectionTime(""));
-              dispatch(setCollectionDate(newValue));
-            }}
-          />
+          <div className="flex relative items-center w-full">
+            <FaRegCalendarCheck
+              className="absolute left-2"
+              color="#00A5BF"
+              size={20}
+            />
+            <MobileDatePicker
+              disablePast
+              value={collectionState.collectionTime.date}
+              onChange={(newValue, { validationError }) => {
+                if (!validationError) {
+                  dispatch(setCollectionTime(""));
+                  dispatch(setCollectionDate(newValue));
+                }
+              }}
+              sx={{
+                width: "100%",
+                "& .MuiInputBase-input": {
+                  pl: 5,
+                },
+              }}
+            />
+          </div>
         </Stack>
         <Stack flexGrow={1} spacing={1}>
           <label htmlFor="delieveryDay">Select Time</label>
-          <Select
-            disabled={
-              collectionState.collectionTime.date === null ? true : false
-            }
-            value={collectionState.collectionTime.timeSlot}
-            onChange={(e) => {
-              dispatch(setCollectionTime(e.target.value));
-            }}
-            displayEmpty
-            inputProps={{ "aria-label": "Without label" }}
-            fullWidth
-          >
-            <MenuItem disabled={IsMenuDisabled(9)} value={"09:00-12:00"}>
-              09:00-12:00
-            </MenuItem>
-            <MenuItem disabled={IsMenuDisabled(12)} value={"12:00-15:00"}>
-              12:00-15:00
-            </MenuItem>
-            <MenuItem disabled={IsMenuDisabled(15)} value={"15:00-18:00"}>
-              15:00-18:00
-            </MenuItem>
-            <MenuItem disabled={IsMenuDisabled(18)} value={"18:00-21:00"}>
-              18:00-21:00
-            </MenuItem>
-            <MenuItem disabled={IsMenuDisabled(21)} value={"21:00-00:00"}>
-              21:00-00:00
-            </MenuItem>
-          </Select>
+          <div className="flex relative items-center">
+            <BiTime className="absolute left-2" color="#00A5BF" size={20} />
+            <Select
+              disabled={
+                collectionState.collectionTime.date === null ? true : false
+              }
+              value={collectionState.collectionTime.timeSlot}
+              onChange={(e) => {
+                dispatch(setCollectionTime(e.target.value));
+              }}
+              displayEmpty
+              inputProps={{ "aria-label": "Without label" }}
+              fullWidth
+              sx={{ pl: 4 }}
+            >
+              <MenuItem disabled={IsMenuDisabled(9)} value={"09:00-12:00"}>
+                09:00-12:00
+              </MenuItem>
+              <MenuItem disabled={IsMenuDisabled(12)} value={"12:00-15:00"}>
+                12:00-15:00
+              </MenuItem>
+              <MenuItem disabled={IsMenuDisabled(15)} value={"15:00-18:00"}>
+                15:00-18:00
+              </MenuItem>
+              <MenuItem disabled={IsMenuDisabled(18)} value={"18:00-21:00"}>
+                18:00-21:00
+              </MenuItem>
+              <MenuItem disabled={IsMenuDisabled(21)} value={"21:00-00:00"}>
+                21:00-00:00
+              </MenuItem>
+            </Select>
+          </div>
         </Stack>
       </Stack>
       <TextareaCollectionMessage />
@@ -147,32 +175,51 @@ const Collection = () => {
       <Stack direction={["column", "row"]} gap={2} color="text.muted">
         <Stack flexGrow={1} spacing={1}>
           <label htmlFor="delieveryDay">Select Day</label>
-          <DatePicker
-            disabled={isDatePickerDisabled()}
-            minDate={validDeliveryDate()}
-            value={collectionState.deliveryTime.date}
-            onChange={(newValue) => {
-              dispatch(setDeliveryTime(""));
-              dispatch(setDeliveryDate(newValue));
-            }}
-          />
+          <div className="flex relative items-center w-full">
+            <FaRegCalendarCheck
+              className="absolute left-2"
+              color="#00A5BF"
+              size={20}
+            />
+            <MobileDatePicker
+              disabled={isDatePickerDisabled()}
+              minDate={validDeliveryDate()}
+              value={collectionState.deliveryTime.date}
+              onChange={(newValue, { validationError }) => {
+                if (!validationError) {
+                  dispatch(setDeliveryTime(""));
+                  dispatch(setDeliveryDate(newValue));
+                }
+              }}
+              sx={{
+                width: "100%",
+                "& .MuiInputBase-input": {
+                  pl: 5,
+                },
+              }}
+            />
+          </div>
         </Stack>
         <Stack flexGrow={1} spacing={1}>
           <label htmlFor="delieveryDay">Select Time</label>
-          <Select
-            value={collectionState.deliveryTime.timeSlot}
-            onChange={(e) => {
-              dispatch(setDeliveryTime(e.target.value));
-            }}
-            inputProps={{ "aria-label": "Without label" }}
-            fullWidth
-          >
-            <MenuItem value={"09:00-12:00"}>09:00-12:00</MenuItem>
-            <MenuItem value={"12:00-15:00"}>12:00-15:00</MenuItem>
-            <MenuItem value={"15:00-18:00"}>15:00-18:00</MenuItem>
-            <MenuItem value={"18:00-21:00"}>18:00-21:00</MenuItem>
-            <MenuItem value={"21:00-00:00"}>21:00-00:00</MenuItem>
-          </Select>
+          <div className="flex relative items-center">
+            <BiTime className="absolute left-2" color="#00A5BF" size={20} />
+            <Select
+              value={collectionState.deliveryTime.timeSlot}
+              onChange={(e) => {
+                dispatch(setDeliveryTime(e.target.value));
+              }}
+              inputProps={{ "aria-label": "Without label" }}
+              fullWidth
+              sx={{ pl: 4 }}
+            >
+              <MenuItem value={"09:00-12:00"}>09:00-12:00</MenuItem>
+              <MenuItem value={"12:00-15:00"}>12:00-15:00</MenuItem>
+              <MenuItem value={"15:00-18:00"}>15:00-18:00</MenuItem>
+              <MenuItem value={"18:00-21:00"}>18:00-21:00</MenuItem>
+              <MenuItem value={"21:00-00:00"}>21:00-00:00</MenuItem>
+            </Select>
+          </div>
         </Stack>
       </Stack>
       <TextareaDeliveryMessage />

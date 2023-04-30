@@ -46,7 +46,7 @@ const Section1 = () => {
           <div className="absolute flex flex-col p-7 lg:left-[-20%] top-0   lg:top-auto h-auto  gap-6 z-20  border-[#03444F] rounded-2xl ">
             <img
               src={import.meta.env.VITE_BASE_URL + "/images/section1-art2.png"}
-              className=" max-h-[335px] lg:max-h-[435px] z-30"
+              className=" max-h-[285px] lg:max-h-[485px] z-30"
               alt=""
               onClick={() => {
                 navigate("/dashboard/ordernow/address");
@@ -72,8 +72,8 @@ const Section1 = () => {
           />
         </div>
         {/* reviews */}
-        <div className="absolute md:flex text-white gap-2 flex-wrap font-[700] bottom-6 sm:bottom-10 left-6 sm:left-16">
-          <div className="flex">
+        <div className="absolute flex-wrap md:flex text-white gap-4 font-[700] bottom-6 sm:bottom-10 left-6 sm:left-16">
+          <div className="flex h-7">
             <img
               src={import.meta.env.VITE_BASE_URL + "/images/star.svg"}
               alt=""

@@ -41,14 +41,14 @@ const AddAddressModal = (prop) => {
           transform: "translate(-50%, -50%)",
           maxWidth: 700,
           minHeight: 400,
-          maxHeight: 862,
+          maxHeight: [500, 500, 700],
           width: "100%",
           bgcolor: "background.paper",
           border: "1px solid #000",
           boxShadow: 24,
           p: 6,
           borderRadius: 2,
-          overflowY: ["scroll"],
+          overflowY: ["scroll", "scroll"],
         }}
       >
         {formStep === 0 ? (
@@ -188,7 +188,7 @@ const AddressForm = (prop) => {
   });
 
   return (
-    <Stack textAlign={"center"} spacing={2} alignItems={"center"}>
+    <Stack textAlign={"center"} spacing={1} alignItems={"center"}>
       <Typography variant="subtitle32" fontWeight={600}>
         Add Address
       </Typography>
@@ -310,7 +310,7 @@ const AddressForm = (prop) => {
             Hotel
           </Box>
         </Stack>
-        <Grid container spacing={2}>
+        <Grid container spacing={1}>
           <Grid item xs={12} sm={6} md={6}>
             <div className="flex flex-col gap-2">
               <label className="self-start text-start text-[#111212] opacity-70">

@@ -21,7 +21,7 @@ const OrderNow = () => {
     <Stack>
       <Typography
         variant="body16"
-        marginTop={[9, 9, 9, 0]}
+        marginTop={[9, 9, 9, 9, 0]}
         width={"100%"}
         bgcolor={"secondary.main"}
         color={"text.light"}

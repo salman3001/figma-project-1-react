@@ -25,8 +25,10 @@ const MyDrawer = (prop) => {
   return (
     <Box
       sx={{
-        position: ["fixed", "fixed", "static"],
+        position: ["fixed", "fixed", "fixed", "fixed", "static"],
         width: [
+          `${prop.open ? "100%" : "0px"}`,
+          `${prop.open ? "100%" : "0px"}`,
           `${prop.open ? "100%" : "0px"}`,
           `${prop.open ? "100%" : "0px"}`,
           "295px",
@@ -42,6 +44,8 @@ const MyDrawer = (prop) => {
       <Paper
         sx={{
           width: [
+            `${prop.open ? "295px" : "0px"}`,
+            `${prop.open ? "295px" : "0px"}`,
             `${prop.open ? "295px" : "0px"}`,
             `${prop.open ? "295px" : "0px"}`,
             "295px",

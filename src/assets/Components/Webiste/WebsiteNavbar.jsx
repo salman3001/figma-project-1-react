@@ -153,7 +153,7 @@ const WebsiteNavbar = () => {
           direction="row"
           spacing={2}
           sx={{
-            display: ["none", "none", "none", "flex"],
+            display: ["none", "none", "none", "none", "flex"],
           }}
           alignItems="center"
         >
@@ -198,7 +198,7 @@ const WebsiteNavbar = () => {
         <Stack
           onClick={togelDrawer}
           sx={{
-            display: ["flex", "flex", "flex", "none"],
+            display: ["flex", "flex", "flex", "flex", "none"],
           }}
         >
           <label htmlFor="hameburger" className="cursor-pointer">
@@ -209,7 +209,7 @@ const WebsiteNavbar = () => {
           anchor="right"
           open={open}
           sx={{
-            display: ["block", "block", "bock", "none"],
+            display: ["block", "block", "bock", "block", "none"],
             ".MuiDrawer-paper": {
               width: ["80%", "60%"],
             },
@@ -230,12 +230,12 @@ const WebsiteNavbar = () => {
             <img
               src={import.meta.env.VITE_BASE_URL + "/images/signup-leaf.svg"}
               alt=""
-              className="absolute brightness-50 top-0 left-0"
+              className="absolute brightness-50 top-0 left-0 z-[-1]"
             />
             <img
               src={import.meta.env.VITE_BASE_URL + "/images/signup-leaf.svg"}
               alt=""
-              className="absolute brightness-50 bottom-0 right-0 rotate-180"
+              className="absolute brightness-50 bottom-0 right-0 rotate-180  z-[-1]"
             />
             <a
               href=""

@@ -376,13 +376,12 @@ const EnterOtpForm = (prop) => {
             <input
               {...props}
               style={{
-                width: 50,
-                height: 50,
                 borderWidth: 2,
                 textAlign: "center",
                 borderRadius: 10,
                 borderColor: "rgba(0, 0, 0, 0.2)",
               }}
+              className="w-10 h-10 sm:w-16 sm:h-16 lg:w-24 lg:h-24"
             />
           )}
         />

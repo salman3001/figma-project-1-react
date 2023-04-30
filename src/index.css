@@ -1,4 +1,7 @@
 /* @import url("./styles/Home.css"); */
+html {
+  scroll-behavior: smooth !important;
+}
 
 @tailwind base;
 @tailwind components;
@@ -14,13 +17,14 @@
     @apply 3xl:text-[15px] 2xl:text-[14px] xl:text-[13.5px] lg:text-[13px] md:text-[13px] sm:text-[12.5px] text-[12px];
   }
 }
+
 @layer components {
   .respnsive-pading-1 {
     @apply px-5 sm:px-8 md:px-10 lg:px-12 xl:px-14 2xl:px-16  3xl:px-[137px];
   }
 
   .respnsive-pading-2 {
-    @apply py-5 sm:py-7 md:py-10 lg:py-10 xl:py-10 2xl:py-12;
+    @apply py-7 sm:py-9 md:py-12 lg:py-16 xl:py-20 2xl:py-20;
   }
 
   .btn-1 {
