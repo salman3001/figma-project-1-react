@@ -11,9 +11,9 @@ import { useNavigate } from "react-router-dom";
 const Blogcard1 = (prop) => {
   const navigate = useNavigate();
   return (
-    <div className="min-h-[350px] sm:min-h-[750px] w-full flex flex-col gap-4">
+    <div className="min-h-[270px] sm:min-h-[575px] w-full flex flex-col gap-4">
       <div
-        className="min-h-[350px] sm:min-h-[550px] w-full rounded-3xl"
+        className="min-h-[270px] sm:min-h-[440px] w-full rounded-3xl"
         style={{
           backgroundImage: `url(${prop.img})`,
           backgroundRepeat: "no-repeat",
@@ -26,7 +26,7 @@ const Blogcard1 = (prop) => {
           {prop.title}
         </Typography>
 
-        <Typography variant="body24" color="text.muted" minWidth={0}>
+        <Typography variant="body28" color="text.muted" minWidth={0}>
           {prop.description}
         </Typography>
         <div className="flex gap-4">
@@ -39,7 +39,7 @@ const Blogcard1 = (prop) => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              minWidth: 150,
+              minWidth: 70,
             }}
           >
             UXUI
@@ -53,7 +53,7 @@ const Blogcard1 = (prop) => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              minWidth: 150,
+              minWidth: 70,
             }}
           >
             UXUI

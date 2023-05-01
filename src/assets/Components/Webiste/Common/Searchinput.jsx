@@ -8,9 +8,9 @@ const Searchinput = () => {
         name="search"
         placeholder="Search Order ID"
         type="text"
-        className="md:w-[500px] h-[52px] md:h-[72px] rounded-lg border border-black opacity-40 text-xl p-2"
+        className="md:w-[400px] w-96 h-[40px] md:h-[48px] rounded-lg border border-black opacity-40 text-xl p-2 pl-4"
       />
-      <button className="absolute right-3 top-3 md:top-1/3 ">
+      <button className="absolute right-6 top-1/2 -translate-y-1/2 ">
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/magnifier.svg"}
           alt=""

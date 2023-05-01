@@ -28,9 +28,9 @@ const WebsiteNavbar = () => {
       sx={{
         overflow: "hidden",
         mb: 1,
-        px: [0, 0, 0, 0, 0, 0, "138px"],
+        px: [0, 0, 0, 0, 0, "20px", "138px"],
         justifyContent: "center",
-        height: [70, 80, 80, 80, 80, 100, 121],
+        height: [70, 80],
         bgColor: "#FFFFFF",
       }}
       style={{
@@ -41,7 +41,7 @@ const WebsiteNavbar = () => {
         {/* logo */}
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/Launder-logo.svg"}
-          className="h-4 sm:h-5 md:h-6 lg:h-7 cursor-pointer"
+          className="h-6 xl:h-7 cursor-pointer"
           onClick={() => {
             navigate("/home");
           }}
@@ -51,10 +51,10 @@ const WebsiteNavbar = () => {
         <Stack
           direction="row"
           sx={{
-            display: ["none", "none", "none", "none", "flex"],
+            display: ["none", "none", "none", "flex"],
             width: "100%",
             justifyContent: "center",
-            gap: [1, 1, 1, 4],
+            gap: [1, 1, 1, 2, 6, 10],
           }}
         >
           <a
@@ -153,7 +153,7 @@ const WebsiteNavbar = () => {
           direction="row"
           spacing={2}
           sx={{
-            display: ["none", "none", "none", "none", "flex"],
+            display: ["none", "none", "none", "flex"],
           }}
           alignItems="center"
         >
@@ -165,8 +165,8 @@ const WebsiteNavbar = () => {
               navigate("/login");
             }}
             sx={{
-              width: [150, 150, 150, 150, 150, 164],
-              height: [40, 40, 40, 40, 40, 59],
+              width: 130,
+              height: 45,
               fontSize: theme.typography.body22,
               borderRadius: ["6px", "6px", "6px", "8px"],
               color: "black",
@@ -182,8 +182,8 @@ const WebsiteNavbar = () => {
               navigate("/dashboard/ordernow/address");
             }}
             sx={{
-              width: [150, 150, 150, 150, 150, 196],
-              height: [40, 40, 40, 40, 40, 59],
+              width: 140,
+              height: 45,
               fontSize: theme.typography.body22,
               borderRadius: ["6px", "6px", "6px", "8px"],
               color: "white",
@@ -198,7 +198,7 @@ const WebsiteNavbar = () => {
         <Stack
           onClick={togelDrawer}
           sx={{
-            display: ["flex", "flex", "flex", "flex", "none"],
+            display: ["flex", "flex", "flex", "none"],
           }}
         >
           <label htmlFor="hameburger" className="cursor-pointer">
@@ -209,7 +209,7 @@ const WebsiteNavbar = () => {
           anchor="right"
           open={open}
           sx={{
-            display: ["block", "block", "bock", "block", "none"],
+            display: ["block", "block", "bock", "none"],
             ".MuiDrawer-paper": {
               width: ["80%", "60%"],
             },
@@ -291,7 +291,7 @@ const WebsiteNavbar = () => {
               <FiSettings />
             </div>
 
-            <div className="flex gap-2 flex-wrap justify-center items-center md:gap-6 ">
+            <div className="flex gap-6 flex-wrap justify-center items-center md:gap-6 ">
               <Button
                 variant="outlined"
                 color="inherit"
@@ -300,8 +300,8 @@ const WebsiteNavbar = () => {
                   navigate("/login");
                 }}
                 sx={{
-                  width: [150, 150, 150, 150, 150, 164],
-                  height: [40, 40, 40, 40, 40, 59],
+                  width: 130,
+                  height: 45,
                   fontSize: theme.typography.body22,
                   borderRadius: ["6px", "6px", "6px", "8px"],
                   color: "black",
@@ -319,8 +319,8 @@ const WebsiteNavbar = () => {
                   navigate("/dashboard/ordernow/address");
                 }}
                 sx={{
-                  width: [150, 150, 150, 150, 150, 196],
-                  height: [40, 40, 40, 40, 40, 59],
+                  width: 140,
+                  height: 45,
                   fontSize: theme.typography.body22,
                   borderRadius: ["6px", "6px", "6px", "8px"],
                   color: "white",

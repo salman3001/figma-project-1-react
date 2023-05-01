@@ -5,13 +5,13 @@ const Section1 = () => {
   const navigate = useNavigate();
 
   return (
-    <section className=" flex flex-col lg:flex-row h-auto  lg:h-[820px] w-full  bg-[#EAEFF3]  ">
+    <section className=" flex flex-col lg:flex-row h-auto  lg:h-[620px] w-full  bg-[#EAEFF3]  ">
       {/* left side */}
       <div className="flex  w-full grow text-start  items-start justify-center lg:pr-24 flex-col gap-2 respnsive-pading-1 respnsive-pading-2">
-        <Typography variant="h72" className="md:leading-[80px]" maxWidth={708}>
+        <Typography variant="h72" className="md:leading-[80px]" maxWidth={670}>
           Your professional dry clean & laundry service
         </Typography>
-        <Typography variant="body28" classname="leading-10" maxWidth={708}>
+        <Typography variant="body28" classname="leading-10" maxWidth={670}>
           We collect, clean & return at the location of your choice on time.
         </Typography>
         <div className="mt-10">
@@ -25,7 +25,7 @@ const Section1 = () => {
               src={
                 import.meta.env.VITE_BASE_URL + "/images/google-store-btn 2.jpg"
               }
-              className="h-14 w-48 md:h-[77px] md:w-[254px] "
+              className="h-16 w-44 md:h-[58px] md:w-[175px] "
               alt="Play Store"
             />
           </a>
@@ -34,7 +34,7 @@ const Section1 = () => {
               src={
                 import.meta.env.VITE_BASE_URL + "/images/app-store-btn 2.png"
               }
-              className="h-14 w-48 md:h-[77px] md:w-[254px] "
+              className="h-16 w-44 md:h-[58px] md:w-[175px] "
               alt="Apple Store"
             />
           </a>
@@ -46,7 +46,7 @@ const Section1 = () => {
           <div className="absolute flex flex-col p-7 lg:left-[-20%] top-0   lg:top-auto h-auto  gap-6 z-20  border-[#03444F] rounded-2xl ">
             <img
               src={import.meta.env.VITE_BASE_URL + "/images/section1-art2.png"}
-              className=" max-h-[285px] lg:max-h-[485px] z-30"
+              className="max-h-[280px] md:max-h-[330px]  lg:max-h-[390px] z-30"
               alt=""
               onClick={() => {
                 navigate("/dashboard/ordernow/address");
@@ -59,7 +59,7 @@ const Section1 = () => {
           <img
             src={import.meta.env.VITE_BASE_URL + "/images/leaves.svg"}
             alt=""
-            className=" h-56 md:h-auto"
+            className=" h-72 sm:h-96 "
           />
         </div>
 
@@ -68,7 +68,7 @@ const Section1 = () => {
           <img
             src={import.meta.env.VITE_BASE_URL + "/images/stars.svg"}
             alt=""
-            className="h-56 lg:h-auto"
+            className=" h-72 sm:h-96 "
           />
         </div>
         {/* reviews */}

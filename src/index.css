@@ -14,7 +14,7 @@ html {
   }
 
   html {
-    @apply 3xl:text-[15px] 2xl:text-[14px] xl:text-[13.5px] lg:text-[13px] md:text-[13px] sm:text-[12.5px] text-[12px];
+    @apply 3xl:text-[14px] 2xl:text-[12px] xl:text-[11px] lg:text-[10.5px] md:text-[10px] sm:text-[10px] text-[9px];
   }
 }
 
@@ -24,7 +24,7 @@ html {
   }
 
   .respnsive-pading-2 {
-    @apply py-7 sm:py-9 md:py-12 lg:py-16 xl:py-20 2xl:py-20;
+    @apply py-10 sm:py-12 md:py-14 lg:py-16;
   }
 
   .btn-1 {

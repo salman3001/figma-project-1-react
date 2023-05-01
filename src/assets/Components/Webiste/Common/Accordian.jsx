@@ -8,14 +8,14 @@ const Accordian = (prop) => {
         <Typography variant="subtitle28">{prop.title}</Typography>
         <span className="flex group-open:hidden ">
           <CiCirclePlus
-            size={45}
+            size={35}
             style={{
               fontWeight: 10,
             }}
           />
         </span>
         <span className="hidden group-open:flex ">
-          <CiCircleMinus size={45} />
+          <CiCircleMinus size={35} />
         </span>
       </summary>
       <Typography variant="body22" color="text.muted" paddingTop={1}>

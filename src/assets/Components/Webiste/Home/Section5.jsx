@@ -33,7 +33,7 @@ const Section5 = () => {
             </Typography>
           </div>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 place-items-center gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 place-items-center gap-16">
           <CardWhite title="Wash" />
           <Cardblue title="Wash & Iron" />
           <CardWhite title="Ironing" />
@@ -45,7 +45,7 @@ const Section5 = () => {
 };
 
 const CardWhite = (prop) => (
-  <div className="flex flex-col gap-1 w-28 md:w-36 lg:w-auto">
+  <div className="flex flex-col gap-1 w-auto">
     <img
       src={import.meta.env.VITE_BASE_URL + "/images/section5art1.svg"}
       alt=""
@@ -57,7 +57,7 @@ const CardWhite = (prop) => (
 );
 
 const Cardblue = (prop) => (
-  <div className="flex flex-col gap-1 w-28 md:w-36 lg:w-auto">
+  <div className="flex flex-col gap-1 w-auto">
     <img
       src={import.meta.env.VITE_BASE_URL + "/images/section5art2.svg"}
       alt=""

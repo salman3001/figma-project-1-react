@@ -13,7 +13,7 @@ const Blogcard2 = (prop) => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 sm:min-h-[340px] w-full ">
+    <div className="flex flex-col sm:flex-row gap-4 sm:gap-8  sm:min-h-[260px] w-full ">
       <div
         className="sm:w-[50%] h-48 sm:h-auto rounded-3xl"
         style={{
@@ -28,7 +28,7 @@ const Blogcard2 = (prop) => {
           {prop.title}
         </Typography>
 
-        <Typography variant="body24 " color="text.muted">
+        <Typography variant="body24" color="text.muted">
           {prop.description}
         </Typography>
         <div className="flex gap-4 flex-wrap">
@@ -41,7 +41,7 @@ const Blogcard2 = (prop) => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              minWidth: 100,
+              minWidth: 70,
             }}
           >
             UXUI
@@ -55,7 +55,7 @@ const Blogcard2 = (prop) => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              minWidth: 100,
+              minWidth: 70,
             }}
           >
             UXUI

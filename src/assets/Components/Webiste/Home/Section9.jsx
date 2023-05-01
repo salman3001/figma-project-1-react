@@ -33,7 +33,7 @@ const Section9 = () => {
         </Typography>
       </div>
       <div className="grid grid-cols-12 gap-6  ">
-        <div className="col-span-12 2xl:col-span-7 2xl:pr-8">
+        <div className="col-span-12 xl:col-span-7 xl:pr-8">
           <Blogcard1
             img={import.meta.env.VITE_BASE_URL + "/images/blog-card1-img.png"}
             title="Lorem Ipsum is simply dummy text of the"
@@ -41,7 +41,7 @@ const Section9 = () => {
             come with free delivery"
           />
         </div>
-        <div className="w-full h-full flex flex-col justify-evenly items-start col-span-12 2xl:col-span-5 2xl:pl-8 gap-16 ">
+        <div className="w-full h-full flex flex-col justify-evenly items-start col-span-12 xl:col-span-5 xl:pl-8 gap-16 ">
           <Blogcard2
             img={import.meta.env.VITE_BASE_URL + "/images/card2-img2.png"}
             title="Lorem Ipsum is simply dummy text of the"

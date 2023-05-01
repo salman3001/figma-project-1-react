@@ -5,16 +5,16 @@ const Section7 = () => {
     <div className="relative section7-gradient lg:my-24 flex justify-center lg:justify-start items-center lg:items-start gap-5 lg:gap-0 flex-col lg:flex-row respnsive-pading-1 respnsive-pading-2">
       {/* left */}
       <div className="w-1/2 lg:h-96 flex items-center justify-center">
-        <div className="xl:absolute xl:bottom-[-20px] xl:scale-125">
+        <div className="lg:absolute  lg:bottom-[30px] lg:scale-125">
           <img
             src={import.meta.env.VITE_BASE_URL + "/images/section7art.png "}
-            className="max-h-[500px] lg:max-h-[740px]"
+            className="max-h-[350px] lg:max-h-[470px] 2xl:max-h-[570px] "
             alt=""
           />
         </div>
       </div>
       {/* right */}
-      <div className="flex flex-col gap-3 justify-center lg:justify-start items-center lg:items-start lg:w-1/2">
+      <div className="flex flex-col gap-6 justify-center lg:justify-start items-center lg:items-start lg:w-1/2">
         <Typography
           variant="h45"
           maxWidth={650}
@@ -25,7 +25,7 @@ const Section7 = () => {
         <Typography
           variant="body28"
           color={"text.muted"}
-          maxWidth={650}
+          maxWidth={400}
           className="text-center lg:text-start"
         >
           Using the App, you can check the current service rate for Laundry at
@@ -52,7 +52,7 @@ const Section7 = () => {
                   import.meta.env.VITE_BASE_URL +
                   "/images/google-store-btn 2.jpg"
                 }
-                className="h-16 md:h-[77px]"
+                className="h-16 md:h-[60px]"
                 alt=""
               />
             </a>
@@ -61,7 +61,7 @@ const Section7 = () => {
                 src={
                   import.meta.env.VITE_BASE_URL + "/images/app-store-btn 2.png"
                 }
-                className="h-16 md:h-[77px]"
+                className="h-16 md:h-[60px]"
                 alt=""
               />
             </a>

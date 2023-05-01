@@ -215,7 +215,7 @@ const Footer = () => {
           copyright &#169; 2023 <span className="underline">Laundramoon </span>{" "}
           All rights reserved.
         </Typography>
-        <div className="flex gap-3 pr-10">
+        <div className="flex gap-3 pr-10 pb-8">
           <a href="">
             <img
               src={import.meta.env.VITE_BASE_URL + "/images/fb-icon.svg"}

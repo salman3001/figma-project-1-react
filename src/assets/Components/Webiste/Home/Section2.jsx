@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 
 const Section2 = () => {
   return (
-    <div className="respnsive-pading-2 md:py-[120px] flex flex-col gap-12 respnsive-pading-1 ">
+    <div className="respnsive-pading-2 py-24 md:py-[120px] flex flex-col gap-12 respnsive-pading-1 ">
       <Typography variant="h45" textAlign={"center"}>
         Over software businesses growing
       </Typography>
