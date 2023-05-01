@@ -14,7 +14,7 @@ html {
   }
 
   html {
-    @apply 3xl:text-[14px] 2xl:text-[12px] xl:text-[11px] lg:text-[10.5px] md:text-[10px] sm:text-[10px] text-[9px];
+    @apply 3xl:text-[14px] 2xl:text-[13px] xl:text-[12.5px] lg:text-[12px] md:text-[11.5px] sm:text-[11px] text-[10.5px];
   }
 }
 
