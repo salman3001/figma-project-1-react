@@ -29,7 +29,7 @@ const theme = createTheme({
             lg: 900,
             xl: 1200,
             xxl: 1536,
-            xxxl: 1920
+            xxxl: 1900
         }
     },
     shape: {

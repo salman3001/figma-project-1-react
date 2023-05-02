@@ -147,8 +147,8 @@ const Faq = () => {
   const [category, setCaegory] = useState(1);
   return (
     <>
-      <div className="grid lg:grid-cols-2 text-xl respnsive-pading-1 respnsive-pading-2">
-        <div className="flex flex-col gap-4 max-w-[788px] ">
+      <div className="grid lg:grid-cols-2 space-y-8 lg:space-y-0 lg:space-x-10 text-xl respnsive-pading-1 respnsive-pading-2">
+        <div className="flex flex-col gap-4 max-w-[688px] ">
           <Typography
             variant="h96"
             className="leading-[60px] md:leading-[70px] lg:leading-[80px] xl:leading-[106px]"

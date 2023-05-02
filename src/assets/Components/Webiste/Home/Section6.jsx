@@ -201,7 +201,7 @@ const Section6 = () => {
 export default Section6;
 
 const Card = () => (
-  <div className="bg-[#F5F7F9] snap-center w-[520px] p-8 sm:p-12 rounded-2xl h-[300px] flex flex-col justify-between gap-2">
+  <div className="bg-[#F5F7F9] snap-center w-[30rem] md:w-[38rem] p-8 sm:p-12 rounded-2xl h-[23rem] md:h-[25rem] flex flex-col justify-between gap-2">
     <img
       src={import.meta.env.VITE_BASE_URL + "/images/bluestars.svg"}
       className="h-6 self-start "

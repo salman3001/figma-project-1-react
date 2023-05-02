@@ -4,19 +4,29 @@ import { useNavigate } from "react-router-dom";
 const ServiceSection2 = () => {
   return (
     <div className="grid lg:grid-cols-2 gap-y-16 gap-x-8 respnsive-pading-1 respnsive-pading-2">
-      <Typography variant="h64" maxWidth={594}>
+      <Typography variant="h64" maxWidth={"35rem"}>
         Your professional dry clean & Laundry SERVICE
       </Typography>
       <Card />
-      <Typography variant="h96">Laundry Service</Typography>
+      <Typography maxWidth={"35rem"} variant="h96">
+        Laundry Service
+      </Typography>
       <Card />
-      <Typography variant="h96">Dry Cleaning</Typography>
+      <Typography maxWidth={"30rem"} variant="h96">
+        Dry Cleaning
+      </Typography>
       <Card />
-      <Typography variant="h96">Home & Bedding</Typography>
+      <Typography maxWidth={"35rem"} variant="h96">
+        Home & Bedding
+      </Typography>
       <Card />
-      <Typography variant="h96">Alterations & Repairs</Typography>
+      <Typography maxWidth={"35rem"} variant="h96">
+        Alterations & Repairs
+      </Typography>
       <Card />
-      <Typography variant="h96">Ironing</Typography>
+      <Typography maxWidth={"35rem"} variant="h96">
+        Ironing
+      </Typography>
       <Card />
     </div>
   );

@@ -10,11 +10,11 @@ const AboutSection2 = () => {
           alt=""
         />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 pt-[20%] sm:pt-[25%] md:pt-[35%] gap-6 justify-items-center [&>p]:opacity-80">
+      <div className="grid grid-cols-1 md:grid-cols-2 pt-[20%] sm:pt-[25%] md:pt-[35%] gap-10 justify-items-center [&>p]:opacity-80">
         <Typography
           variant="h64"
           color="white"
-          maxWidth={1015}
+          maxWidth={"50rem"}
           textAlign={"center"}
           className="md:col-span-2"
         >
@@ -90,7 +90,7 @@ const AboutSection2 = () => {
             </div>
           </div>
         </div>
-        <button className="md:col-span-2 rounded-lg text-[#00A5BF] w-[255px] h-[59px] bg-white py-2 px-6 text-[22px]">
+        <button className="md:col-span-2 rounded-lg text-[#00A5BF] w-[15rem] h-[3.8rem] bg-white py-2 px-6 text-[1.4rem]">
           Place Order
         </button>
       </div>

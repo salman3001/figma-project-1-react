@@ -52,7 +52,7 @@ const AboutSection3 = () => {
         <Typography variant="h45">Our History</Typography>
         <Typography
           variant="body28"
-          className="text-center max-w-[750px] opacity-90"
+          className="text-center max-w-[46rem] opacity-90"
         >
           Mentioned below are our ever-growing list of services. All orders come
           with free delivery

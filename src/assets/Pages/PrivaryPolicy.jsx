@@ -9,9 +9,9 @@ const PrivaryPolicy = () => {
         <div className="flex flex-col gap-8 md:flex-row justify-between">
           <Typography
             variant="h96"
-            className="max-w-[897px]"
+            className="max-w-[500px]"
             fontWeight={600}
-            lineHeight={["60px", "80px", "95px", "106px"]}
+            lineHeight={["5.5rem"]}
           >
             Privacy and cookies policy
           </Typography>
