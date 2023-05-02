@@ -33,21 +33,22 @@ const MyAccount = () => {
               "&.MuiTab-root": {
                 borderColor: "2px solid rgba(0, 165, 191, 0.2)",
                 borderBottom: 0,
-                fontSize: 20,
+                fontSize: "1.25rem",
               },
               "& .MuiTab-root.Mui-selected": {
                 bgcolor: "primary.main",
                 color: "white",
               },
               "& .MuiTabs-flexContainer": {
-                gap: 5,
+                gap: 3,
               },
               "& .MuiButtonBase-root": {
                 border: 1,
                 borderRadius: "10px 10px 0px 0px",
                 borderColor: "rgba(161, 242, 255, 0.4)",
                 fontSize: 17,
-                minWidth: ["100px", "150px", "200px"],
+                minWidth: "12rem",
+                textTransform: "none",
                 borderBottom: "none",
               },
             }}

@@ -94,7 +94,7 @@ const MyProfile = () => {
           </Typography>
         </Box>
         <form>
-          <Grid container spacing={4} sx={{ paddingTop: [2, 2, 2, 8] }}>
+          <Grid container spacing={2} sx={{ paddingTop: [2, 2, 2, 8] }}>
             <Grid item xs={12} md={6}>
               <div className="flex flex-col gap-2">
                 <Label htmlFor="name" titile="Name" />
@@ -190,7 +190,7 @@ const MyProfile = () => {
       </Stack>
       <Button
         variant="contained"
-        sx={{ alignSelf: "end", width: 240 }}
+        sx={{ alignSelf: "end", width: "15rem" }}
         size="large"
         onClick={formik.handleSubmit}
       >
@@ -219,9 +219,9 @@ const ChangePasswordModal = (prop) => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          maxWidth: 700,
+          maxWidth: "50rem",
           minHeight: 400,
-          maxHeight: 800,
+          maxHeight: "50rem",
           width: "100%",
           bgcolor: "background.paper",
           border: "1px solid #000",
@@ -254,7 +254,7 @@ const ChangePasswordModal = (prop) => {
             setPasswordChange(false);
           }}
         >
-          <RxCross1 size={30} color="gray" />
+          <RxCross1 size={"1.8rem"} color="gray" />
         </div>
       </Box>
     </Modal>
@@ -282,11 +282,11 @@ const ChangePassworForm = (prop) => {
   });
   return (
     <Stack
-      spacing={3}
+      spacing={1.5}
       textAlign={"center"}
       alignItems="center"
-      maxWidth={637}
-      padding={3}
+      maxWidth={"32rem"}
+      marginX={"auto"}
     >
       <Typography variant="subtitle32">Change Password?</Typography>
       <Typography
@@ -344,12 +344,13 @@ const ChangePassworForm = (prop) => {
       <Button
         fullWidth
         sx={{
-          height: [60, 60, 84],
-          fontSize: 24,
+          textTransform: "none",
+          fontSize: "1.5rem",
+          height: "4.5rem",
         }}
         variant="contained"
         size="large"
-        endIcon={<BsArrowRight size={30} />}
+        endIcon={<BsArrowRight size={"2.25rem"} />}
         onClick={formik.handleSubmit}
       >
         Submit
@@ -360,10 +361,19 @@ const ChangePassworForm = (prop) => {
 
 const PasswordChangedSuccess = (prop) => {
   return (
-    <Stack textAlign={"center"} alignItems={"center"} spacing={3}>
+    <Stack
+      textAlign={"center"}
+      alignItems={"center"}
+      spacing={2}
+      justifyContent={"center"}
+      height={"100%"}
+      maxWidth={"32rem"}
+      margin={"Auto"}
+    >
       <svg
         width="148"
         height="148"
+        className="h-32"
         viewBox="0 0 148 148"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -386,12 +396,13 @@ const PasswordChangedSuccess = (prop) => {
       <Button
         fullWidth
         sx={{
-          height: [60, 60, 84],
-          fontSize: 24,
+          textTransform: "none",
+          fontSize: "1.5rem",
+          height: "4.5rem",
         }}
         variant="contained"
         size="large"
-        endIcon={<BsArrowRight size={30} />}
+        endIcon={<BsArrowRight size={"2.25rem"} />}
         onClick={prop.handleClose}
       >
         Done

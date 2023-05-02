@@ -8,7 +8,7 @@ const Section1 = () => {
     <section className=" flex flex-col lg:flex-row h-auto  lg:h-[620px] w-full  bg-[#EAEFF3]  ">
       {/* left side */}
       <div className="flex  w-full grow text-start  items-start justify-center lg:pr-24 flex-col gap-2 respnsive-pading-1 respnsive-pading-2">
-        <Typography variant="h72" className="md:leading-[80px]" maxWidth={670}>
+        <Typography variant="h72" className="leading-[5rem]" maxWidth={"45rem"}>
           Your professional dry clean & laundry service
         </Typography>
         <Typography variant="body28" classname="leading-10" maxWidth={670}>

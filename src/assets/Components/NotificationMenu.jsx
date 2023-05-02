@@ -51,6 +51,7 @@ const NotificationMenu = (prop) => {
         sx={{
           "&>.MuiMenuItem-root": {
             width: "210px",
+            fontSize: "1.5rem",
           },
         }}
       >
@@ -64,7 +65,9 @@ const NotificationMenu = (prop) => {
           </MenuItem>
         ))}
         <MenuItem sx={{ justifyContent: "end" }}>
-          <RouterLink to="/dashboard//myorders">See all</RouterLink>
+          <RouterLink size="1.5rem" to="/dashboard//myorders">
+            See all
+          </RouterLink>
         </MenuItem>
       </Menu>
     </div>
@@ -84,11 +87,15 @@ const Notificationcard = (prop) => {
         padding: 1,
       }}
     >
-      <Typography variant="subtitle1" fontWeight={600} color="text.secondary">
+      <Typography variant="subtitle24" fontWeight={600} color="text.secondary">
         {prop.orderName}
       </Typography>
-      <Typography color="text.blue">{prop.status}</Typography>
-      <Typography color="text.muted">{prop.date}</Typography>
+      <Typography variant="body22" color="text.blue">
+        {prop.status}
+      </Typography>
+      <Typography variant="body22" color="text.muted">
+        {prop.date}
+      </Typography>
     </Box>
   );
 };

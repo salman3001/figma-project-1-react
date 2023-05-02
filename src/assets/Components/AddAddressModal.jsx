@@ -39,13 +39,14 @@ const AddAddressModal = (prop) => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          maxWidth: 700,
+          maxWidth: 600,
           minHeight: 400,
           maxHeight: [500, 500, 700],
           width: "100%",
           bgcolor: "background.paper",
           border: "1px solid #000",
           boxShadow: 24,
+
           p: 6,
           borderRadius: 2,
           overflowY: ["scroll", "scroll"],
@@ -78,7 +79,7 @@ const AddAddressModal = (prop) => {
             prop.handleClose();
           }}
         >
-          <RxCross1 size={30} color="gray" />
+          <RxCross1 size={"2rem"} color="gray" />
         </div>
       </Box>
     </Modal>
@@ -112,7 +113,13 @@ const SearchLoactionForm = (prop) => {
   });
 
   return (
-    <Stack textAlign={"center"} spacing={3} justifyContent="center" padding={4}>
+    <Stack
+      textAlign={"center"}
+      spacing={2}
+      justifyContent="center"
+      maxWidth={"40rem"}
+      marginX={"auto"}
+    >
       <Typography variant="subtitle32">Add Address</Typography>
       <Typography
         variant="body22"
@@ -145,9 +152,14 @@ const SearchLoactionForm = (prop) => {
         Postcode search
       </Button>
       <Button
+        sx={{
+          textTransform: "none",
+          fontSize: "1.5rem",
+          height: "4.5rem",
+        }}
         variant="contained"
-        endIcon={<BsArrowRight size={30} />}
-        sx={{ height: [60, 60, 84], fontSize: 24 }}
+        size="large"
+        endIcon={<BsArrowRight size={"2.25rem"} />}
         onClick={formik.handleSubmit}
         disabled={formik.isSubmitting}
       >
@@ -320,7 +332,7 @@ const AddressForm = (prop) => {
                 fullWidth
                 id="landmark"
                 name="landmark"
-                label="Enter LandMark"
+                placeholder="Enter LandMark"
                 value={formik.values.landmark}
                 onChange={formik.handleChange}
                 error={
@@ -339,7 +351,7 @@ const AddressForm = (prop) => {
                 fullWidth
                 id="street"
                 name="street"
-                label="Enter Street"
+                placeholder="Enter Street"
                 value={formik.values.street}
                 onChange={formik.handleChange}
                 error={formik.touched.street && Boolean(formik.errors.street)}
@@ -356,7 +368,7 @@ const AddressForm = (prop) => {
                 fullWidth
                 id="city"
                 name="city"
-                label="Enter city"
+                placeholder="Enter city"
                 value={formik.values.city}
                 onChange={formik.handleChange}
                 error={formik.touched.city && Boolean(formik.errors.city)}
@@ -373,7 +385,7 @@ const AddressForm = (prop) => {
                 fullWidth
                 id="state"
                 name="state"
-                label="Enter state"
+                placeholder="Enter state"
                 value={formik.values.state}
                 onChange={formik.handleChange}
                 error={formik.touched.state && Boolean(formik.errors.state)}
@@ -390,7 +402,7 @@ const AddressForm = (prop) => {
                 fullWidth
                 id="country"
                 name="country"
-                label="Enter country"
+                placeholder="Enter country"
                 value={formik.values.country}
                 onChange={formik.handleChange}
                 error={formik.touched.country && Boolean(formik.errors.country)}
@@ -407,7 +419,7 @@ const AddressForm = (prop) => {
                 fullWidth
                 id="zip"
                 name="zip"
-                label="Enter zip"
+                placeholder="Enter zip"
                 value={formik.values.zip}
                 onChange={formik.handleChange}
                 error={formik.touched.zip && Boolean(formik.errors.zip)}
@@ -417,9 +429,15 @@ const AddressForm = (prop) => {
           </Grid>
         </Grid>
         <Button
-          variant="contained"
           fullWidth
-          sx={{ height: [60, 60, 84], fontSize: 24 }}
+          sx={{
+            textTransform: "none",
+            fontSize: "1.5rem",
+            height: "4.5rem",
+          }}
+          variant="contained"
+          size="large"
+          endIcon={<BsArrowRight size={"2.25rem"} />}
           onClick={formik.handleSubmit}
         >
           Add Address
@@ -433,6 +451,7 @@ const ErrorModal = (prop) => {
   return (
     <Stack spacing={2} alignItems={"center"}>
       <svg
+        className="h-36"
         width="148"
         height="148"
         viewBox="0 0 148 148"
@@ -457,7 +476,7 @@ const ErrorModal = (prop) => {
       </Typography>
       <Typography
         variant="body22"
-        maxWidth={412}
+        maxWidth={"24rem"}
         color="text.muted"
         textAlign="center"
       >
@@ -465,13 +484,14 @@ const ErrorModal = (prop) => {
       </Typography>
       <Button
         fullWidth
-        variant="contained"
         sx={{
-          fontSize: 24,
-          height: [60, 60, 84],
+          textTransform: "none",
+          fontSize: "1.5rem",
+          height: "4.5rem",
         }}
-        endIcon={<BsArrowRight size={30} />}
+        variant="contained"
         size="large"
+        endIcon={<BsArrowRight size={"2.25rem"} />}
         onClick={() => {
           prop.setFormStep(0);
         }}

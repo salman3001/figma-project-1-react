@@ -14,7 +14,8 @@ const Search = (prop) => {
         style={{
           position: "absolute",
           right: 6,
-          top: 6,
+          top: "50%",
+          transform: "translateY(-50%)",
           cursor: "pointer",
         }}
         size={25}
@@ -26,6 +27,7 @@ const Search = (prop) => {
         name="search"
         size="small"
         placeholder="Search order id"
+        sx={{ fontSize: "1.5rem" }}
       />
     </Box>
   );

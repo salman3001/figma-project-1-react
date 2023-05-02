@@ -20,7 +20,7 @@ const Signup = () => {
   const [formType, SetFormType] = useState("individual");
 
   return (
-    <main className="grid 2 mx-auto xl:grid-cols-2 min-h-screen max-w-screen">
+    <main className="grid 2 mx-auto lg:grid-cols-2 min-h-screen max-w-screen">
       <Box
         className="relative flex text-white flex-col justify-between  items-center"
         sx={{
@@ -44,7 +44,7 @@ const Signup = () => {
             src={
               import.meta.env.VITE_BASE_URL + "/images/launder-logo-white.svg"
             }
-            className="h-6 "
+            className="h-6"
             alt=""
           />
         </h1>
@@ -64,22 +64,22 @@ const Signup = () => {
           <img
             src={import.meta.env.VITE_BASE_URL + "/images/Signupart.png"}
             alt=""
-            className="self-start xl:scale-105 xl:translate-y-[-20px]"
+            className="self-start"
           />
         </div>
       </Box>
-      <div className="bg-white relative max-h-screen ">
+      <div className="bg-white relative min-h-screen ">
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/signup-leaf.svg"}
           alt=""
-          className="absolute brightness-50 top-0 left-0"
+          className="absolute brightness-50 top-0 left-0 h-72"
         />
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/signup-leaf.svg"}
           alt=""
-          className="absolute brightness-50 bottom-0 right-0 rotate-180 z-0"
+          className="absolute brightness-50 bottom-0 right-0 rotate-180 z-0 h-72"
         />
-        <h1 className="w-full p-4 border-b text-end border-gray-300 border-opacity-20">
+        <h1 className="w-full p-2 md:px-16 border-b text-end border-gray-300 border-opacity-20">
           <Typography variant="body18">
             I already have an account?{" "}
             <Button
@@ -93,14 +93,18 @@ const Signup = () => {
             </Button>
           </Typography>
         </h1>
-        <div className="flex flex-col   items-center  z-10 relative ">
-          <div className="w-full p-4 lg:pt-10 max-w-[700px]">
-            <div className="flex flex-col gap-8   justify-center items-center w-full  ">
+        <div className="flex flex-col  items-center justify-center h-[80%]  z-10 relative ">
+          <div className="w-full p-4 max-w-[50rem]">
+            <div className="flex flex-col gap-8 justify-center items-center w-full  ">
               <div className="text-center flex flex-col gap-2">
                 <Typography variant="subtitle36">
                   Sign up to Laundramoon
                 </Typography>
-                <Typography variant="body22" maxWidth={420} color="text.muted">
+                <Typography
+                  variant="body22"
+                  maxWidth={"35rem"}
+                  color="text.muted"
+                >
                   Please fill in your details below and we will get in touch
                   with you shortly.
                 </Typography>
@@ -116,8 +120,8 @@ const Signup = () => {
                       SetFormType(e.target.value);
                     }}
                     sx={{
-                      fontSize: 20,
-                      fontWeight: 600,
+                      fontSize: "1rem",
+                      fontWeight: 700,
                     }}
                   />
                   <FormControlLabel
@@ -129,8 +133,8 @@ const Signup = () => {
                       SetFormType(e.target.value);
                     }}
                     sx={{
-                      fontSize: 20,
-                      fontWeight: 600,
+                      fontSize: "1rem",
+                      fontWeight: 700,
                     }}
                   />
                 </RadioGroup>
@@ -211,13 +215,14 @@ const InvidualForm = () => {
           <form id="signup-form" className="w-full flex flex-col gap-8">
             <div className="grid md:grid-cols-2 gap-4">
               <div className="flex flex-col gap-2">
-                <Label htmlFor="name" titile="Enter name" />
+                <Label htmlFor="name" titile="Name" />
                 <TextField
+                  size="medium"
                   fullWidth
                   id="name"
                   name="name"
                   type="text"
-                  placeholder="Enter name"
+                  placeholder="Name"
                   value={formik.values.name}
                   onChange={formik.handleChange}
                   error={formik.touched.name && Boolean(formik.errors.name)}
@@ -225,13 +230,13 @@ const InvidualForm = () => {
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <Label htmlFor="surname" titile="Enter surname" />
+                <Label htmlFor="surname" titile="Surname" />
                 <TextField
                   fullWidth
                   id="surname"
                   name="surname"
                   type="text"
-                  placeholder="Enter surname"
+                  placeholder="Surname"
                   value={formik.values.surname}
                   onChange={formik.handleChange}
                   error={
@@ -241,13 +246,13 @@ const InvidualForm = () => {
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <Label htmlFor="email" titile="Enter email" />
+                <Label htmlFor="email" titile="Email" />
                 <TextField
                   fullWidth
                   id="email"
                   name="email"
                   type="text"
-                  placeholder="Enter email"
+                  placeholder="Email"
                   value={formik.values.email}
                   onChange={formik.handleChange}
                   error={formik.touched.email && Boolean(formik.errors.email)}
@@ -255,11 +260,11 @@ const InvidualForm = () => {
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <Label htmlFor="mobile" titile="Enter mobile" />
+                <Label htmlFor="mobile" titile="Mobile number" />
                 <MobileInput
                   id="mobile"
                   name="mobile"
-                  placeholder="Enter mobile"
+                  placeholder="Mobile number"
                   value={formik.values.mobile}
                   onChange={formik.handleChange}
                   error={formik.touched.mobile && Boolean(formik.errors.mobile)}
@@ -306,10 +311,10 @@ const InvidualForm = () => {
           </form>
           <Button
             fullWidth
-            sx={{ textTransform: "none", height: [60, 60, 84], fontSize: 24 }}
+            sx={{ textTransform: "none", fontSize: "1.5rem", height: "4.5rem" }}
             variant="contained"
             size="large"
-            endIcon={<BsArrowRight size={35} />}
+            endIcon={<BsArrowRight size={"2.25rem"} />}
             onClick={() => {
               if (
                 !formik.errors.name &&
@@ -425,10 +430,10 @@ const InvidualForm = () => {
           </form>
           <Button
             fullWidth
-            sx={{ textTransform: "none", height: [60, 60, 84], fontSize: 24 }}
+            sx={{ textTransform: "none", fontSize: "1.5rem", height: "4.5rem" }}
             variant="contained"
             size="large"
-            endIcon={<BsArrowRight size={35} />}
+            endIcon={<BsArrowRight size={"2.25rem"} />}
             onClick={formik.handleSubmit}
           >
             Submit
@@ -441,7 +446,7 @@ const InvidualForm = () => {
           <input
             type="checkbox"
             id="agree"
-            className="checkbox checkbox-info text-white"
+            className="checkbox checkbox-info checked:bg-[#00A5BF] checked:text-white"
             checked={agree}
             onChange={() => {
               setAgree((state) => (state === false ? true : false));
@@ -524,13 +529,13 @@ const CompanyForm = () => {
           <form id="signup-form" className="w-full flex flex-col gap-8">
             <div className="grid md:grid-cols-2 gap-4">
               <div className="flex flex-col gap-2">
-                <Label htmlFor="name" titile="Enter name" />
+                <Label htmlFor="name" titile="Name" />
                 <TextField
                   fullWidth
                   id="name"
                   name="name"
                   type="text"
-                  placeholder="Enter name"
+                  placeholder="Name"
                   value={formik.values.name}
                   onChange={formik.handleChange}
                   error={formik.touched.name && Boolean(formik.errors.name)}
@@ -538,13 +543,13 @@ const CompanyForm = () => {
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <Label htmlFor="surname" titile="Enter surname" />
+                <Label htmlFor="surname" titile="Surname" />
                 <TextField
                   fullWidth
                   id="surname"
                   name="surname"
                   type="text"
-                  placeholder="Enter surname"
+                  placeholder="Surname"
                   value={formik.values.surname}
                   onChange={formik.handleChange}
                   error={
@@ -554,13 +559,13 @@ const CompanyForm = () => {
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <Label htmlFor="email" titile="Enter email" />
+                <Label htmlFor="email" titile="Email" />
                 <TextField
                   fullWidth
                   id="email"
                   name="email"
                   type="text"
-                  placeholder="Enter email"
+                  placeholder="Email"
                   value={formik.values.email}
                   onChange={formik.handleChange}
                   error={formik.touched.email && Boolean(formik.errors.email)}
@@ -568,11 +573,11 @@ const CompanyForm = () => {
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <Label htmlFor="mobile" titile="Enter mobile" />
+                <Label htmlFor="mobile" titile="Mobile number" />
                 <MobileInput
                   id="mobile"
                   name="mobile"
-                  placeholder="Enter mobile"
+                  placeholder="Mobile number"
                   value={formik.values.mobile}
                   onChange={formik.handleChange}
                   error={formik.touched.mobile && Boolean(formik.errors.mobile)}
@@ -657,10 +662,10 @@ const CompanyForm = () => {
           </form>
           <Button
             fullWidth
-            sx={{ textTransform: "none", height: [60, 60, 84], fontSize: 24 }}
+            sx={{ textTransform: "none", fontSize: "1.5rem", height: "4.5rem" }}
             variant="contained"
             size="large"
-            endIcon={<BsArrowRight size={35} />}
+            endIcon={<BsArrowRight size={"2.25rem"} />}
             onClick={() => {
               if (
                 !formik.errors.name &&
@@ -778,10 +783,10 @@ const CompanyForm = () => {
           </form>
           <Button
             fullWidth
-            sx={{ textTransform: "none", height: [60, 60, 84], fontSize: 24 }}
+            sx={{ textTransform: "none", fontSize: "1.5rem", height: "4.5rem" }}
             variant="contained"
             size="large"
-            endIcon={<BsArrowRight size={35} />}
+            endIcon={<BsArrowRight size={"2.25rem"} />}
             onClick={formik.handleSubmit}
           >
             Submit

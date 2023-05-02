@@ -4,9 +4,9 @@ const Section10 = () => {
   const navigate = useNavigate();
   return (
     <div className=" flex justify-center items-center respnsive-pading-1 respnsive-pading-2  w-full text-white min-h-[512px]">
-      <div className="bg-[#03444F] flex-col md:flex-row items-center md:items-start flex gap-4 rounded-2xl p-4  md:p-8 xl:p-20 xl:pb-0">
+      <div className="bg-[#03444F] flex-col md:flex-row     flex gap-4 rounded-2xl p-4  md:p-8 xl:p-20 xl:pb-0">
         <div className="md:w-[30%] flex flex-col gap-10">
-          <Typography variant="h45" color="white">
+          <Typography variant="h45" color="white" maxWidth={"30rem"}>
             Your Safety Is Our Prime Concern
           </Typography>
           <div className="flex">
@@ -18,9 +18,9 @@ const Section10 = () => {
               sx={{
                 bgcolor: "white",
                 color: "primary.main",
-                fontSize: 22,
-                width: 255,
-                height: 59,
+                fontSize: "1.4rem",
+                width: "16rem",
+                height: "3.75rem",
               }}
             >
               {" "}

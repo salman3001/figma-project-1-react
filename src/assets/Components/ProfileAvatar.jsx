@@ -5,9 +5,9 @@ const ProfileAvatar = (prop) => {
   return (
     <Box
       sx={{
-        width: 173,
-        hieght: 173,
-        border: 5,
+        width: "12rem",
+        hieght: "12rem",
+        border: 4,
         borderRadius: "100%",
         borderColor: "white",
         placeSelf: "center",
@@ -19,8 +19,8 @@ const ProfileAvatar = (prop) => {
     >
       <Box
         sx={{
-          width: 170,
-          hieght: 170,
+          width: "11.8rem",
+          hieght: "11.8rem",
           borderRadius: "100%",
           overflow: "hidden",
           display: "flex",

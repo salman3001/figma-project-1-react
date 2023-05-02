@@ -29,7 +29,7 @@ const SuccessfullyVarified = () => {
             src={
               import.meta.env.VITE_BASE_URL + "/images/launder-logo-white.svg"
             }
-            className="h-6 "
+            className="h-6"
             alt=""
           />
         </h1>
@@ -49,43 +49,43 @@ const SuccessfullyVarified = () => {
           <img
             src={import.meta.env.VITE_BASE_URL + "/images/Signupart.png"}
             alt=""
-            className="self-start xl:scale-105 xl:translate-y-[-20px]"
+            className="self-start"
           />
         </div>
       </Box>
-      <div className="bg-white relative">
+      <div className="bg-white relative min-h-screen">
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/signup-leaf.svg"}
           alt=""
-          className="absolute brightness-50 top-0 left-0 z-0"
+          className="absolute brightness-50 top-0 left-0 h-72"
         />
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/signup-leaf.svg"}
           alt=""
-          className="absolute brightness-50 bottom-0 right-0 rotate-180 z-0"
+          className="absolute brightness-50 bottom-0 right-0 rotate-180 z-0 h-72"
         />
-        <h1 className="w-full p-4 border-b text-end border-gray-300 border-opacity-20">
-          <Typography variant="subtitle1">
-            Don't have an account?{" "}
+        <h1 className="w-full p-2 md:px-16 border-b text-end border-gray-300 border-opacity-20">
+          <Typography variant="body18">
+            I already have an account?{" "}
             <Button
-              sx={{ textTransform: "none" }}
+              sx={{ textTransform: "none", fontSize: 18 }}
               size="large"
               onClick={() => {
-                navigate("/signup");
+                navigate("/login");
               }}
             >
-              Signup
+              Login
             </Button>
           </Typography>
         </h1>
-        <div className="flex flex-col p-2 justify-center items-center text-center gap-8 h-[90%] relative z-10">
-          <div className="">
+        <div className="flex flex-col p-2 justify-center items-center text-center gap-8 h-[90%]  w-full relative z-10">
+          <div className="max-w-xl">
             <img
               src={import.meta.env.VITE_BASE_URL + "/images/success-icon.svg"}
               alt=""
             />
           </div>
-          <div className="max-w-[637] flex flex-col gap-4 ">
+          <div className="max-w-xl flex flex-col gap-4 ">
             <Typography variant="subtitle36" fontWeight={600}>
               Successfully Varified
             </Typography>
@@ -95,10 +95,14 @@ const SuccessfullyVarified = () => {
             </Typography>
             <Button
               fullWidth
-              sx={{ textTransform: "none", height: [60, 60, 84], fontSize: 24 }}
+              sx={{
+                textTransform: "none",
+                fontSize: "1.5rem",
+                height: "4.5rem",
+              }}
               variant="contained"
               size="large"
-              endIcon={<BsArrowRight size={30} />}
+              endIcon={<BsArrowRight size={"2.25rem"} />}
               onClick={() => {
                 navigate("/login");
               }}
@@ -106,7 +110,7 @@ const SuccessfullyVarified = () => {
               Login
             </Button>
           </div>
-          <div className="grid grid-cols-2 mb-8 p-2 border max-w-xs justify-content-center text-start rounded-lg">
+          <div className="grid grid-cols-2 p-2 border w-80 place-items-center text-start rounded-lg mb-8">
             <div className="">
               <h3>Need Help</h3>
               <a href="" className="text-xs text-[#00A5BF]">

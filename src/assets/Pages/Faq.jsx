@@ -149,11 +149,7 @@ const Faq = () => {
     <>
       <div className="grid lg:grid-cols-2 space-y-8 lg:space-y-0 lg:space-x-10 text-xl respnsive-pading-1 respnsive-pading-2">
         <div className="flex flex-col gap-4 max-w-[688px] ">
-          <Typography
-            variant="h96"
-            className="leading-[60px] md:leading-[70px] lg:leading-[80px] xl:leading-[106px]"
-            fontWeight={653}
-          >
+          <Typography variant="h96" className="leading-[6rem]" fontWeight={653}>
             Frequently asked questions
           </Typography>
           <ul className="text-2xl md:text-3xl flex flex-col gap-7 pt-4 opacity-80">

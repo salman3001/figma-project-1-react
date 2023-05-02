@@ -99,7 +99,7 @@ const Service = () => {
             ? "Dry Cleaning"
             : ""}
         </Typography>
-        <Typography variant="body16" maxWidth={691} color={"text.muted"}>
+        <Typography variant="body16" maxWidth={"45rem"} color={"text.muted"}>
           Lorem Ipsum has been the industry's standard dummy text ever since the
           1500s, when an unknown printer took a galley of type and scrambled
         </Typography>
@@ -107,27 +107,25 @@ const Service = () => {
       <BasicTabs></BasicTabs>
       <Stack direction={"row"} justifyContent="space-between">
         <Button
+          sx={{ width: "12rem", height: "2.75rem" }}
           variant="contained"
-          size="large"
-          sx={{ minWidth: [150, 200], textTransform: "none" }}
           onClick={() => {
             dispatch(setActiveStep("/ordernow/collection"));
             navigate("/dashboard/ordernow/address");
           }}
-          startIcon={<BsArrowLeft />}
+          startIcon={<BsArrowLeft size={"1.5rem"} />}
         >
           Back
         </Button>
         <Button
+          sx={{ width: "12rem", height: "2.75rem" }}
           variant="contained"
-          size="large"
-          sx={{ minWidth: [150, 200], textTransform: "none" }}
           onClick={() => {
             dispatch(setActiveStep("collection"));
             navigate("/dashboard/ordernow/collection");
           }}
           disabled={isButtonDisabled()}
-          endIcon={<BsArrowRight />}
+          endIcon={<BsArrowRight size={"1.5rem"} />}
         >
           Next
         </Button>
@@ -168,7 +166,7 @@ const ServiceCard = (prop) => {
           display: "flex",
           cursor: "pointer",
           flexDirection: "column",
-          padding: [1, 2, 3, 4],
+          padding: [1, 2, 2, 2, 2, 4],
           borderRadius: 3,
           border: 1,
           borderColor:
@@ -327,6 +325,7 @@ function BasicTabs() {
             overflow: "scroll",
             paddingY: 2,
           }}
+          className="scrollbar-hide"
         >
           <PriceTable />
         </Box>
@@ -717,31 +716,43 @@ const PriceTable = () => {
               <td className="estimated">&#163; {item.quantity * item.price}</td>
             </tr>
           ))}
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td
+              className="text-[#03444F] font-bold opacity-100"
+              style={{ color: "#03444F" }}
+            >
+              {" "}
+              Total Amount
+            </td>
+            <td
+              className="text-[#03444F] font-bold opacity-100"
+              style={{ color: "#03444F" }}
+            >
+              {(
+                serviceState.wash.items.reduce(
+                  (acc, item) => acc + item.quantity * item.price,
+                  0
+                ) +
+                serviceState.washAndIron.items.reduce(
+                  (acc, item) => acc + item.quantity * item.price,
+                  0
+                ) +
+                serviceState.ironing.items.reduce(
+                  (acc, item) => acc + item.quantity * item.price,
+                  0
+                ) +
+                serviceState.dryCleaning.items.reduce(
+                  (acc, item) => acc + item.quantity * item.price,
+                  0
+                )
+              ).toFixed(2)}
+            </td>
+          </tr>
         </tbody>
       </table>
-      <div className="total-price">
-        <div className="total-price">total Amount</div>
-        <div className="total-price">
-          {(
-            serviceState.wash.items.reduce(
-              (acc, item) => acc + item.quantity * item.price,
-              0
-            ) +
-            serviceState.washAndIron.items.reduce(
-              (acc, item) => acc + item.quantity * item.price,
-              0
-            ) +
-            serviceState.ironing.items.reduce(
-              (acc, item) => acc + item.quantity * item.price,
-              0
-            ) +
-            serviceState.dryCleaning.items.reduce(
-              (acc, item) => acc + item.quantity * item.price,
-              0
-            )
-          ).toFixed(2)}
-        </div>
-      </div>
     </Box>
   );
 };

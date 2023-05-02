@@ -69,8 +69,10 @@ const theme = createTheme({
         },
         MuiTextField: {
             styleOverrides: {
-                root: { fontSize: 22 }
-            }
+                root: { fontSize: "1.5rem", },
+            },
+
+
         },
         MuiButton: {
             defaultProps: {
@@ -582,35 +584,13 @@ theme.typography.body22 = {
 }
 
 theme.typography.subtitle18 = {
-    fontSize: "1.12rem",
+    fontSize: "1.25rem",
     color: "black",
     fontWeight: 600,
-    // [theme.breakpoints.up("xs")]: {
-    //     fontSize: 14
-    // },
-    // [theme.breakpoints.up("sm")]: {
-    //     fontSize: 14.5
-    // },
-    // [theme.breakpoints.up("md")]: {
-    //     fontSize: 15
-    // }
-    // ,
-    // [theme.breakpoints.up("lg")]: {
-    //     fontSize: 15.5
-    // },
-    // [theme.breakpoints.up("xl")]: {
-    //     fontSize: 16.5
-    // },
-    // [theme.breakpoints.up("xxl")]: {
-    //     fontSize: 17.5
-    // },
-    // [theme.breakpoints.up("xxxl")]: {
-    //     fontSize: 18
-    // }
 }
 
 theme.typography.body18 = {
-    fontSize: "1.12rem",
+    fontSize: "1.25rem",
 
     color: "black",
     fontWeight: 500,
@@ -694,9 +674,6 @@ theme.typography.body15 = {
     // }
 }
 
-// theme.components.MuiCssBaseline.styleOverrides = `
-
-// `
 
 theme.components.MuiTypography.defaultProps.variantMapping.h128 = "h1"
 theme.components.MuiTypography.defaultProps.variantMapping.h96 = "h2"

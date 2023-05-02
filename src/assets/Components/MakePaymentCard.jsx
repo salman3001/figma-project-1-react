@@ -87,10 +87,10 @@ const MakePaymentCard = () => {
         size="large"
         sx={{
           textTransform: "none",
-          fontSize: 20,
-          height: [55, 55, 73],
+          fontSize: "1.5rem",
+          height: "4.5rem",
         }}
-        endIcon={<BsArrowRight />}
+        endIcon={<BsArrowRight size={"2.25rem"} />}
         onClick={() => {
           alert(
             "All data has been recorded, Need payment Api and server api for further development."

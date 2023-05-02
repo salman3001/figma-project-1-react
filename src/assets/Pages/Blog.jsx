@@ -79,10 +79,10 @@ const Blog = () => {
         distinctio.
       </Typography>
       <div className="text-lg md:text-2xl flex justify-between [&>button]:text-[#00A5BF]">
-        <Button size="large" sx={{ fontSize: [28, 28, 32] }}>
+        <Button size="large" sx={{ fontSize: "2rem" }}>
           &lt; Previous
         </Button>
-        <Button size="large" sx={{ fontSize: [28, 28, 32] }}>
+        <Button size="large" sx={{ fontSize: "2rem" }}>
           {" "}
           Next &gt;
         </Button>

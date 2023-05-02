@@ -54,10 +54,15 @@ const ContactUs = () => {
   console.log(formik.values.code);
 
   return (
-    <div className="flex flex-col gap-16 lg:flex-row w-full 2xl:pt-32 respnsive-pading-1 respnsive-pading-2">
+    <div className="flex flex-col gap-20 lg:flex-row w-full 2xl:pt-32 respnsive-pading-1 respnsive-pading-2">
       {/* left */}
       <div className="lg:w-1/2 flex  flex-col gap-4">
-        <Typography variant="h72" fontWeight={653}>
+        <Typography
+          variant="h72"
+          className="leading-[5rem]"
+          fontWeight={653}
+          maxWidth={"50rem"}
+        >
           Talk to our product analytics expert
         </Typography>
         <Typography variant="subtitle36" fontWeight={653}>
@@ -110,7 +115,7 @@ const ContactUs = () => {
             <TextField
               sx={{ "& Muiinput": { height: "150px" } }}
               fullWidth
-              size="large"
+              size="medium"
               id="name"
               name="name"
               value={formik.values.name}
@@ -123,7 +128,7 @@ const ContactUs = () => {
             <Label titile="Surname" for="Surname" />
             <TextField
               fullWidth
-              size="large"
+              size="medium"
               id="surname"
               name="surname"
               value={formik.values.surname}
@@ -136,7 +141,7 @@ const ContactUs = () => {
             <Label titile="Company Name" for="companyname" />
             <TextField
               fullWidth
-              size="large"
+              size="medium"
               id="companyName"
               name="companyName"
               value={formik.values.companyName}
@@ -153,7 +158,7 @@ const ContactUs = () => {
             <Label titile="Business Email" for="email" />
             <TextField
               fullWidth
-              size="large"
+              size="medium"
               id="email"
               name="email"
               value={formik.values.email}
@@ -184,6 +189,7 @@ const ContactUs = () => {
               value={formik.values.subject}
               onChange={formik.handleChange}
               type="text"
+              size="medium"
               error={formik.touched.subject && Boolean(formik.errors.subject)}
               helperText={formik.touched.subject && formik.errors.subject}
             />
@@ -201,7 +207,7 @@ const ContactUs = () => {
             />
           </div>
           <button
-            className="bg-[#022A30] flex justify-center items-center p-4 gap-2 mt-2 rounded-md text-white md:h-[68px] text-[22px]"
+            className="bg-[#022A30] flex justify-center items-center p-4 gap-2 mt-2 rounded-md text-white md:h-[4rem] text-[1.4rem]"
             onClick={(e) => {
               e.preventDefault();
               formik.handleSubmit();

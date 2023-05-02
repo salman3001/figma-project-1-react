@@ -8,7 +8,7 @@ const Section7 = () => {
         <div className="lg:absolute  lg:bottom-[30px] lg:scale-125">
           <img
             src={import.meta.env.VITE_BASE_URL + "/images/section7art.png "}
-            className="max-h-[350px] lg:max-h-[470px] 2xl:max-h-[570px] "
+            className="max-h-[350px] lg:max-h-[500px] 2xl:max-h-[570px] 3xl:max-h-[630px]"
             alt=""
           />
         </div>
@@ -52,7 +52,7 @@ const Section7 = () => {
                   import.meta.env.VITE_BASE_URL +
                   "/images/google-store-btn 2.jpg"
                 }
-                className="h-16 md:h-[60px]"
+                className="h-16 md:h-[4rem]"
                 alt=""
               />
             </a>
@@ -61,7 +61,7 @@ const Section7 = () => {
                 src={
                   import.meta.env.VITE_BASE_URL + "/images/app-store-btn 2.png"
                 }
-                className="h-16 md:h-[60px]"
+                className="h-16 md:h-[4rem]"
                 alt=""
               />
             </a>

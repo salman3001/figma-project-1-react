@@ -187,7 +187,7 @@ const MyDrawer = (prop) => {
               }}
             >
               <AiOutlinePoweroff
-                size={40}
+                size={"3.25rem"}
                 style={{
                   background: theme.palette.primary.main,
                   padding: theme.spacing(1),

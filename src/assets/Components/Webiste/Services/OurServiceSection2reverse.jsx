@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 
 const OurServiceSection2reverse = () => {
   return (
-    <div className="respnsive-pading-1 respnsive-pading-2 mb-16 md:mb-56  flex-col gap-0 items-center flex h-[700px] md:h-auto relative text-white  bg-[#03444F] ">
+    <div className="respnsive-pading-1 respnsive-pading-2 mb-16 md:mb-56  flex-col gap-0 items-center flex h-[70rem] md:h-auto relative text-white  bg-[#03444F] ">
       <div className="grid md:grid-cols-2 gap-6 items-center w-full grow-1">
         <div className="flex flex-col gap-4 ">
           <Typography
@@ -27,11 +27,11 @@ const OurServiceSection2reverse = () => {
 
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/stamp.png"}
-          className=" w-40 md:w-60 self-center place-self-end h-auto"
+          className=" w-40 md:w-40 self-center place-self-end h-auto"
           alt=""
         />
       </div>
-      <div className="relative bottom-[-200px] pt-5 lg:pt-20 mt-[-200px]">
+      <div className="relative bottom-[-200px] pt-16 lg:pt-20 mt-[-200px]">
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/aboutsection2-img.png"}
           alt=""

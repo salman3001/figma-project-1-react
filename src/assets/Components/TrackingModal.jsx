@@ -26,7 +26,7 @@ const TrackingModal = (prop) => {
           borderRadius: 2,
         }}
       >
-        <Stack width={"100%"} height={"100%"}>
+        <Stack width={"100%"} height={"100%"} justifyContent={"center"}>
           <Typography textAlign={"center"} variant="subtitle32">
             Progress
           </Typography>
@@ -250,7 +250,7 @@ const TrackingModal = (prop) => {
           }}
           onClick={prop.handleClose}
         >
-          <RxCross1 />
+          <RxCross1 size={"2.5rem"} />
         </div>
       </Box>
     </Modal>

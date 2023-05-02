@@ -6,7 +6,7 @@ const Devs = () => {
   const navigate = useNavigate();
   return (
     <div className="fex flex-col justify-center items-center mx-auto gap-8 min-h-screen max-w-2xl p-10">
-      <h1 className="text-4xl p-6">
+      <h1 className="text-2xl p-6">
         Welcome to Dev page. here are the links of all the posible pages of
         website! Please explore...
       </h1>
@@ -16,7 +16,7 @@ const Devs = () => {
       >
         <Button
           sx={{
-            fontSize: 32,
+            fontSize: 20,
           }}
           onClick={() => {
             navigate("/dashboard/myorders");
@@ -26,7 +26,7 @@ const Devs = () => {
         </Button>
         <Button
           sx={{
-            fontSize: 32,
+            fontSize: 20,
           }}
           onClick={() => {
             navigate("/dashboard/promotions");
@@ -36,7 +36,7 @@ const Devs = () => {
         </Button>
         <Button
           sx={{
-            fontSize: 32,
+            fontSize: 20,
           }}
           onClick={() => {
             navigate("/dashboard/myaccount");
@@ -46,7 +46,7 @@ const Devs = () => {
         </Button>
         <Button
           sx={{
-            fontSize: 32,
+            fontSize: 20,
           }}
           onClick={() => {
             navigate("/dashboard/ordernow/address");
@@ -56,7 +56,7 @@ const Devs = () => {
         </Button>
         <Button
           sx={{
-            fontSize: 32,
+            fontSize: 20,
           }}
           onClick={() => {
             navigate("/home");
@@ -66,7 +66,7 @@ const Devs = () => {
         </Button>
         <Button
           sx={{
-            fontSize: 32,
+            fontSize: 20,
           }}
           onClick={() => {
             navigate("/blogs");
@@ -76,7 +76,7 @@ const Devs = () => {
         </Button>
         <Button
           sx={{
-            fontSize: 32,
+            fontSize: 20,
           }}
           onClick={() => {
             navigate("/blogs/blogid");
@@ -86,7 +86,7 @@ const Devs = () => {
         </Button>
         <Button
           sx={{
-            fontSize: 32,
+            fontSize: 20,
           }}
           onClick={() => {
             navigate("/contactus");
@@ -96,7 +96,7 @@ const Devs = () => {
         </Button>
         <Button
           sx={{
-            fontSize: 32,
+            fontSize: 20,
           }}
           onClick={() => {
             navigate("/faqs");
@@ -106,7 +106,7 @@ const Devs = () => {
         </Button>
         <Button
           sx={{
-            fontSize: 32,
+            fontSize: 20,
           }}
           onClick={() => {
             navigate("/aboutus");
@@ -116,7 +116,7 @@ const Devs = () => {
         </Button>
         <Button
           sx={{
-            fontSize: 32,
+            fontSize: 20,
           }}
           onClick={() => {
             navigate("/services");
@@ -126,7 +126,7 @@ const Devs = () => {
         </Button>
         <Button
           sx={{
-            fontSize: 32,
+            fontSize: 20,
           }}
           onClick={() => {
             navigate("/ourservices");
@@ -136,7 +136,7 @@ const Devs = () => {
         </Button>
         <Button
           sx={{
-            fontSize: 32,
+            fontSize: 20,
           }}
           onClick={() => {
             navigate("/Location");
@@ -146,7 +146,7 @@ const Devs = () => {
         </Button>
         <Button
           sx={{
-            fontSize: 32,
+            fontSize: 20,
           }}
           onClick={() => {
             navigate("/privacy");
@@ -156,7 +156,7 @@ const Devs = () => {
         </Button>
         <Button
           sx={{
-            fontSize: 32,
+            fontSize: 20,
           }}
           onClick={() => {
             navigate("/login");
@@ -166,7 +166,7 @@ const Devs = () => {
         </Button>
         <Button
           sx={{
-            fontSize: 32,
+            fontSize: 20,
           }}
           onClick={() => {
             navigate("/signup");
@@ -176,7 +176,7 @@ const Devs = () => {
         </Button>
         <Button
           sx={{
-            fontSize: 32,
+            fontSize: 20,
           }}
           onClick={() => {
             navigate("/checkyouremail");
@@ -186,7 +186,7 @@ const Devs = () => {
         </Button>
         <Button
           sx={{
-            fontSize: 32,
+            fontSize: 20,
           }}
           onClick={() => {
             navigate("/successfullyvarified");

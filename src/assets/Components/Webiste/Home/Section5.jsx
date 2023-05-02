@@ -47,6 +47,7 @@ const Section5 = () => {
 const CardWhite = (prop) => (
   <div className="flex flex-col gap-1 w-auto">
     <img
+      className="max-h-[15rem]"
       src={import.meta.env.VITE_BASE_URL + "/images/section5art1.svg"}
       alt=""
     />
@@ -59,6 +60,7 @@ const CardWhite = (prop) => (
 const Cardblue = (prop) => (
   <div className="flex flex-col gap-1 w-auto">
     <img
+      className="max-h-[15rem]"
       src={import.meta.env.VITE_BASE_URL + "/images/section5art2.svg"}
       alt=""
     />

@@ -187,25 +187,25 @@ const InvidualForm = () => {
         <Button
           variant="contained"
           size="large"
-          sx={{ minWidth: [150, 200], textTransform: "none" }}
+          sx={{ width: "12rem", height: "2.75rem" }}
           onClick={() => {
             navigate("/dashboard/ordernow/collection");
           }}
-          startIcon={<BsArrowLeft />}
+          startIcon={<BsArrowLeft size={"1.5rem"} />}
         >
           Back
         </Button>
         <Button
           variant="contained"
           size="large"
-          sx={{ minWidth: [170, 200], textTransform: "none" }}
+          sx={{ width: "14rem", height: "2.75rem" }}
           onClick={() => {
             dispatch(setActiveStep("payment"));
             formik.handleSubmit();
             navigate("/dashboard/ordernow/payment");
           }}
           disabled={IsButtonDisabled()}
-          endIcon={<BsArrowRight />}
+          endIcon={<BsArrowRight size={"1.5rem"} />}
         >
           Make Payment
         </Button>
@@ -370,18 +370,18 @@ const CompanyForm = () => {
         <Button
           variant="contained"
           size="large"
-          sx={{ minWidth: [150, 200], textTransform: "none" }}
+          sx={{ width: "12rem", height: "2.75rem" }}
           onClick={() => {
             navigate("/dashboard/ordernow/collection");
           }}
-          startIcon={<BsArrowLeft />}
+          startIcon={<BsArrowLeft size={"1.5rem"} />}
         >
           Back
         </Button>
         <Button
           variant="contained"
           size="large"
-          sx={{ minWidth: [150, 200], textTransform: "none" }}
+          sx={{ width: "14rem", height: "2.75rem" }}
           onClick={() => {
             dispatch(setActiveStep("payment"));
             formik.handleSubmit();
@@ -390,7 +390,7 @@ const CompanyForm = () => {
           disabled={IsButtonDisabled()}
           endIcon={<BsArrowRight />}
         >
-          Next
+          Make Payment
         </Button>
       </Stack>
     </form>
@@ -451,7 +451,7 @@ const IndividualModalform = (prop) => {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            maxWidth: 700,
+            maxWidth: 600,
             minHeight: 400,
             maxHeight: 900,
             width: "100%",
@@ -462,8 +462,15 @@ const IndividualModalform = (prop) => {
             borderRadius: 2,
             overflowY: ["scroll", "scroll"],
           }}
+          className="scrollbar-hide"
         >
-          <Stack alignItems={"center"} gap={4} paddingBottom={2}>
+          <Stack
+            alignItems={"center"}
+            gap={4}
+            paddingBottom={2}
+            maxWidth={"40rem"}
+            marginX={"Auto"}
+          >
             <Typography variant="subtitle32" fontWeight={600}>
               Add Address
             </Typography>
@@ -477,7 +484,7 @@ const IndividualModalform = (prop) => {
               you shortly.
             </Typography>
           </Stack>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4 max-w-[40rem] mx-auto">
             <div className="flex flex-col gap-2">
               <Label htmlFor="name" titile="Enter name" />
               <TextField
@@ -535,20 +542,22 @@ const IndividualModalform = (prop) => {
           </div>
           <div className="flex w-full justify-center">
             <Button
-              variant="contained"
-              fullwidth
-              size="large"
+              maxWidth={"40rem"}
+              marginX={"Auto"}
+              fullWidth
               sx={{
-                width: "100%",
                 textTransform: "none",
-                mt: 4,
-                height: [60, 60, 84],
-                fontSize: 24,
+                fontSize: "1.5rem",
+                height: "4.5rem",
+                mt: 2,
+                maxWidth: "40rem",
               }}
+              variant="contained"
+              size="large"
               onClick={() => {
                 formik.handleSubmit();
               }}
-              endIcon={<BsArrowRight size={35} />}
+              endIcon={<BsArrowRight size={"2.25rem"} />}
             >
               Sumbit
             </Button>
@@ -562,7 +571,7 @@ const IndividualModalform = (prop) => {
             }}
             onClick={togelModal}
           >
-            <RxCross1 />
+            <RxCross1 size={"2rem"} />
           </div>
         </Box>
       </Modal>
@@ -626,9 +635,9 @@ const CompanyModalform = (prop) => {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            maxWidth: 700,
+            maxWidth: 600,
             minHeight: 400,
-            maxHeight: 800,
+            maxHeight: 600,
             width: "100%",
             bgcolor: "background.paper",
             border: "1px solid #000",
@@ -637,8 +646,14 @@ const CompanyModalform = (prop) => {
             borderRadius: 2,
             overflowY: ["scroll", "scroll"],
           }}
+          className="scrollbar-hide"
         >
-          <Stack alignItems={"center"} gap={4} paddingBottom={2}>
+          <Stack
+            alignItems={"center"}
+            gap={2}
+            maxWidth={"40rem"}
+            marginX={"Auto"}
+          >
             <Typography variant="subtitle32" fontWeight={600}>
               Add Address
             </Typography>
@@ -652,7 +667,7 @@ const CompanyModalform = (prop) => {
               you shortly.
             </Typography>
           </Stack>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4 max-w-[40rem] mx-auto">
             <div className="flex flex-col gap-2">
               <Label htmlFor="name" titile="Enter name" />
               <TextField
@@ -738,20 +753,23 @@ const CompanyModalform = (prop) => {
           </div>
           <div className="flex w-full justify-between">
             <Button
-              variant="contained"
-              fullwidth
-              size="large"
+              maxWidth={"40rem"}
+              marginX={"Auto"}
+              fullWidth
               sx={{
-                width: "100%",
                 textTransform: "none",
-                mt: 4,
-                height: [60, 60, 84],
-                fontSize: 24,
+                fontSize: "1.5rem",
+                height: "4.5rem",
+                mt: 2,
+                maxWidth: "40rem",
+                marginX: "auto",
               }}
+              variant="contained"
+              size="large"
               onClick={() => {
                 formik.handleSubmit();
               }}
-              endIcon={<BsArrowRight size={35} />}
+              endIcon={<BsArrowRight size={"2.25rem"} />}
             >
               Sumbit
             </Button>
@@ -765,7 +783,7 @@ const CompanyModalform = (prop) => {
             }}
             onClick={togelModal}
           >
-            <RxCross1 />
+            <RxCross1 size={"2rem"} />
           </div>
         </Box>
       </Modal>

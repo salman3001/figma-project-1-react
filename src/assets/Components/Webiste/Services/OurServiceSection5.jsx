@@ -4,7 +4,7 @@ import { BsArrowRight } from "react-icons/bs";
 const OurServiceSection5 = () => {
   return (
     <div className="respnsive-pading-1 respnsive-pading-2 flex flex-col gap-4 justify-center  w-full text-white">
-      <div className="bg-[#03444F] flex flex-col gap-14 rounded-2xl p-2 sm:p-10 md:p-20">
+      <div className="bg-[#03444F] flex flex-col gap-10 rounded-2xl p-2 sm:p-10 md:p-20">
         <div>
           <Typography variant="h64" color="white">
             Ease to Made Laundry
@@ -38,7 +38,7 @@ const OurServiceSection5 = () => {
           <Typography variant="body36" color="white" pl={4} pb={1}>
             Price List
           </Typography>
-          <div className=" border-b-4 "></div>
+          <div className=" border-b-2 "></div>
 
           <div className="relative flex gap-2 pt-6 justify-center">
             <div className="absolute left-0">
@@ -76,7 +76,7 @@ const OurServiceSection5 = () => {
 export default OurServiceSection5;
 
 const CardWhite = (prop) => (
-  <div className="flex flex-col w-full gap-1 max-h-[22rem] max-w-[20rem]">
+  <div className="flex flex-col w-full gap-1  max-w-[16rem]">
     <img
       src={import.meta.env.VITE_BASE_URL + "/images/section5art1.svg"}
       alt=""
@@ -89,7 +89,7 @@ const CardWhite = (prop) => (
 );
 
 const Cardblue = (prop) => (
-  <div className="flex flex-col gap-1 max-h-[22rem] max-w-[20rem]">
+  <div className="flex flex-col gap-1 max-w-[16rem]">
     <img
       src={import.meta.env.VITE_BASE_URL + "/images/section5art2.svg"}
       alt=""

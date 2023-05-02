@@ -21,7 +21,7 @@ const MyAddresses = () => {
     setModalOpen((state) => (state === true ? false : true));
   };
   return (
-    <Stack spacing={4} p={[1, 1, 3]}>
+    <Stack spacing={2} p={[1, 1, 3]}>
       {demoAddressesData.length < 1 ? (
         <Typography>
           You Dont have any addresses!. Please your addresse.
@@ -38,20 +38,21 @@ const MyAddresses = () => {
         justifyContent={["end", "space-between"]}
         flexWrap="wrap-reverse"
         gap={2}
+        pt={2}
       >
         <Button
-          sx={{ width: [170], height: 44 }}
+          sx={{ width: "12rem", height: "2.75rem" }}
           variant="contained"
-          startIcon={<AiOutlinePlus />}
+          startIcon={<AiOutlinePlus size={"1.5rem"} />}
           onClick={handleModalTogel}
         >
           Add Address
         </Button>
         {location.pathname === "/dashboard/ordernow/address" && (
           <Button
-            sx={{ width: [170], height: 44 }}
+            sx={{ width: "12rem", height: "2.75rem" }}
             variant="contained"
-            endIcon={<BsArrowRight />}
+            startIcon={<AiOutlinePlus size={"1.5rem"} />}
             onClick={() => {
               dispatch(setActiveStep("service"));
               navigate("/dashboard/ordernow/service");

@@ -20,7 +20,7 @@ const OrderNow = () => {
   return (
     <Stack>
       <Typography
-        variant="body16"
+        variant="body18"
         marginTop={[9, 9, 9, 9, 0]}
         width={"100%"}
         bgcolor={"secondary.main"}
@@ -69,9 +69,10 @@ const Tabs = (prop) => {
       flexWrap={"wrap"}
       sx={{
         "& .xtab": {
-          p: 2,
+          p: 1,
           minWidth: [50, 50, 100],
           textAlign: "center",
+          fontSize: "1.5rem",
         },
       }}
     >

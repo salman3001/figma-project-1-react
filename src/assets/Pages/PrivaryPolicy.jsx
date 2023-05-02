@@ -5,7 +5,7 @@ import { Typography } from "@mui/material";
 const PrivaryPolicy = () => {
   return (
     <>
-      <div className="respnsive-pading-1 respnsive-pading-2 lg:pt-24  flex flex-col gap-8 ">
+      <div className="respnsive-pading-1 respnsive-pading-2 lg:pt-24  flex flex-col gap-12 ">
         <div className="flex flex-col gap-8 md:flex-row justify-between">
           <Typography
             variant="h96"

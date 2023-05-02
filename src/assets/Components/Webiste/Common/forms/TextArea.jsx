@@ -34,6 +34,7 @@ const TextArea = (prop) => {
         }}
         name={prop.name}
         id={prop.id}
+        className="h-12"
         placeholder="Add any special instructions for driver "
         value={prop.value}
         onChange={prop.onChange}

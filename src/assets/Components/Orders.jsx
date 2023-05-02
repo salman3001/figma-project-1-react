@@ -166,12 +166,11 @@ const OrderCard = (prop) => {
                     variant="contained"
                     size="small"
                     sx={{
-                      px: 1,
                       borderRadius: 3,
-                      fontSize: 8,
+                      fontSize: "0.75rem",
                       "&>svg": { color: "primary.main" },
                     }}
-                    startIcon={<BsCompass size={12} />}
+                    startIcon={<BsCompass size={".85rem"} />}
                     onClick={togelTrackingModal}
                   >
                     Track

@@ -13,6 +13,7 @@ const SideMenuOption = (prop) => {
       gap={2}
       sx={{
         minWidth: 200,
+        pl: 3,
         "&:hover": {
           cursor: "pointer",
         },
@@ -30,8 +31,8 @@ const SideMenuOption = (prop) => {
         sx={{
           p: 0.5,
           borderRadius: 2,
-          height: "40px",
-          width: "40px",
+          height: "3.25rem",
+          width: "3.25rem",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",

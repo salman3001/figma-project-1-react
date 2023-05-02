@@ -18,7 +18,7 @@ const Accordian = (prop) => {
           <CiCircleMinus size={35} />
         </span>
       </summary>
-      <Typography variant="body22" color="text.muted" paddingTop={1}>
+      <Typography variant="body24" color="text.muted" paddingTop={1}>
         {prop.summery}
       </Typography>
     </details>

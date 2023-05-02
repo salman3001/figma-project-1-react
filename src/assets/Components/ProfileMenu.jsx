@@ -73,6 +73,7 @@ const ProfileMenu = () => {
             <HiOutlineClipboardDocumentList size={25} />
           </ListItemIcon>
           <Typography
+            variant="body24"
             color="text.secondary"
             onClick={() => {
               navigate("/dashboard/myorders");
@@ -92,6 +93,7 @@ const ProfileMenu = () => {
             <TfiMedallAlt size={25} />
           </ListItemIcon>
           <Typography
+            variant="body24"
             color="text.secondary"
             onClick={() => {
               navigate("/dashboard/promotions");
@@ -111,6 +113,7 @@ const ProfileMenu = () => {
             <AiOutlineUser size={25} />
           </ListItemIcon>
           <Typography
+            variant="body24"
             color="text.secondary"
             onClick={() => {
               navigate("/dashboard/myaccount");
@@ -129,7 +132,9 @@ const ProfileMenu = () => {
           >
             <CgLogOff size={25} />
           </ListItemIcon>
-          <Typography color="text.secondary">Logout</Typography>
+          <Typography variant="body24" color="text.secondary">
+            Logout
+          </Typography>
         </MenuItem>
       </Menu>
     </div>
