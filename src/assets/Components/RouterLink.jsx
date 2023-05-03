@@ -6,7 +6,7 @@ const RouterLink = (prop) => {
     <Link
       component={RouteLink}
       to={prop.to}
-      sx={{ textDecoration: "none", fontSize: prop.size || "inherit" }}
+      sx={{ textDecoration: "none", fontSize: prop.size || "1rem" }}
     >
       {prop.children}
     </Link>

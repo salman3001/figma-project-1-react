@@ -95,7 +95,7 @@ const Login = () => {
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/signup-leaf.svg"}
           alt=""
-          className="absolute brightness-50 top-0 left-0 h-72"
+          className="absolute brightness-50 top-0 left-0 h-72 z-0"
         />
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/signup-leaf.svg"}
@@ -106,7 +106,7 @@ const Login = () => {
           <Typography variant="body18">
             Don't have an account?{" "}
             <Button
-              sx={{ textTransform: "none", fontSize: 18 }}
+              sx={{ textTransform: "none", fontSize: "1.25rem" }}
               size="large"
               onClick={() => {
                 navigate("/signup");
@@ -116,7 +116,7 @@ const Login = () => {
             </Button>
           </Typography>
         </h1>
-        <div className="flex flex-col relative z-10 w-full items-center h-[80%] justify-center">
+        <div className="flex flex-col relative z-10 w-full items-center h-[90%] justify-center">
           <div className="flex flex-col gap-8 lg:gap-16 justify-center items-center py-5 lg:py-16 px-5 md:px-20 w-full max-w-3xl  ">
             <div className="text-center flex flex-col gap-2 w-full">
               <Typography variant="subtitle36" fontWeight={700}>
@@ -168,7 +168,7 @@ const Login = () => {
                 sx={{
                   textTransform: "none",
                   alignSelf: "end",
-                  fontSize: 16,
+                  fontSize: "1.25rem",
                   color: "rgba(17, 18, 18, 0.88)",
                 }}
                 onClick={togelModal}

@@ -14,7 +14,7 @@ const Footer = () => {
             <Typography
               variant="body22"
               color="text.muted"
-              maxWidth={"200px"}
+              maxWidth={"20rem"}
               text
             >
               Bringing the premium laundry & dry cleaning services straight to
@@ -24,7 +24,7 @@ const Footer = () => {
           </Stack>
         </div>
         <List>
-          <Typography variant="subtitle18" mb={1}>
+          <Typography variant="subtitle22" mb={1}>
             Popular Services
           </Typography>
           <a href="">
@@ -64,7 +64,7 @@ const Footer = () => {
           </a>
         </List>
         <List>
-          <Typography variant="subtitle18" mb={1}>
+          <Typography variant="subtitle22" mb={1}>
             Quick Links
           </Typography>
           <a href="">
@@ -104,7 +104,7 @@ const Footer = () => {
           </a>
         </List>
         <List>
-          <Typography variant="subtitle18" mb={1}>
+          <Typography variant="subtitle22" mb={1}>
             Selected Locations
           </Typography>
           <a href="">
@@ -255,7 +255,7 @@ const Footer = () => {
 export default Footer;
 
 const List = (prop) => (
-  <Stack color="text.muted" spacing={0.2} className="grow">
+  <Stack color="text.muted" spacing={1} className="grow">
     {prop.children}
   </Stack>
 );

@@ -52,7 +52,7 @@ const AddressCard = (prop) => {
       >
         <Button
           variant="contained"
-          sx={{ borderRadius: 4, display: "flex", gap: 1 }}
+          sx={{ borderRadius: 4, fontSize: "1.15rem", display: "flex", gap: 1 }}
           size="small"
         >
           <BiEdit size={"1.25rem"} /> Edit
@@ -63,6 +63,7 @@ const AddressCard = (prop) => {
             sx={{
               borderRadius: 4,
               gap: 1,
+              fontSize: "1.15rem",
               bgcolor:
                 prop.id === addressState.addressId ? "white" : "primary.main",
               border: prop.id === addressState.addressId ? 1 : 0,

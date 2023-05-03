@@ -59,7 +59,7 @@ const OfferCard = () => {
           >
             Get{" "}
             <Typography
-              variant="subtitle1"
+              variant="subtitle24"
               color="secondary.main"
               fontWeight={650}
               display={"inline"}

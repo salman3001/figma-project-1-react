@@ -41,7 +41,7 @@ const MyAddresses = () => {
         pt={2}
       >
         <Button
-          sx={{ width: "12rem", height: "2.75rem" }}
+          sx={{ width: "15rem", height: "3.75rem", fontSize: "1.25rem" }}
           variant="contained"
           startIcon={<AiOutlinePlus size={"1.5rem"} />}
           onClick={handleModalTogel}
@@ -50,9 +50,9 @@ const MyAddresses = () => {
         </Button>
         {location.pathname === "/dashboard/ordernow/address" && (
           <Button
-            sx={{ width: "12rem", height: "2.75rem" }}
+            sx={{ width: "15rem", height: "3.75rem", fontSize: "1.25rem" }}
             variant="contained"
-            startIcon={<AiOutlinePlus size={"1.5rem"} />}
+            endIcon={<BsArrowRight size={"1.5rem"} />}
             onClick={() => {
               dispatch(setActiveStep("service"));
               navigate("/dashboard/ordernow/service");

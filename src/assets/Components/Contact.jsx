@@ -187,7 +187,7 @@ const InvidualForm = () => {
         <Button
           variant="contained"
           size="large"
-          sx={{ width: "12rem", height: "2.75rem" }}
+          sx={{ width: "15rem", height: "3.75rem", fontSize: "1.25rem" }}
           onClick={() => {
             navigate("/dashboard/ordernow/collection");
           }}
@@ -198,7 +198,7 @@ const InvidualForm = () => {
         <Button
           variant="contained"
           size="large"
-          sx={{ width: "14rem", height: "2.75rem" }}
+          sx={{ width: "15rem", height: "3.75rem", fontSize: "1.25rem" }}
           onClick={() => {
             dispatch(setActiveStep("payment"));
             formik.handleSubmit();
@@ -370,7 +370,7 @@ const CompanyForm = () => {
         <Button
           variant="contained"
           size="large"
-          sx={{ width: "12rem", height: "2.75rem" }}
+          sx={{ width: "15rem", height: "3.75rem", fontSize: "1.25rem" }}
           onClick={() => {
             navigate("/dashboard/ordernow/collection");
           }}
@@ -381,7 +381,7 @@ const CompanyForm = () => {
         <Button
           variant="contained"
           size="large"
-          sx={{ width: "14rem", height: "2.75rem" }}
+          sx={{ width: "15rem", height: "3.75rem", fontSize: "1.25rem" }}
           onClick={() => {
             dispatch(setActiveStep("payment"));
             formik.handleSubmit();

@@ -32,7 +32,7 @@ const Payment = () => {
       <Button
         variant="contained"
         size="large"
-        sx={{ width: "12rem", height: "2.75rem" }}
+        sx={{ width: "15rem", height: "3.75rem", fontSize: "1.25rem" }}
         startIcon={<BsArrowLeft size={"1.5rem"} />}
         onClick={() => {
           navigate("/dashboard/ordernow/contact");

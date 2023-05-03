@@ -99,15 +99,20 @@ const Service = () => {
             ? "Dry Cleaning"
             : ""}
         </Typography>
-        <Typography variant="body16" maxWidth={"45rem"} color={"text.muted"}>
+        <Typography variant="body18" maxWidth={"45rem"} color={"text.muted"}>
           Lorem Ipsum has been the industry's standard dummy text ever since the
           1500s, when an unknown printer took a galley of type and scrambled
         </Typography>
       </Stack>
       <BasicTabs></BasicTabs>
-      <Stack direction={"row"} justifyContent="space-between">
+      <Stack
+        direction={"row"}
+        flexWrap="wrap"
+        gap={2}
+        justifyContent={["end", "space-between"]}
+      >
         <Button
-          sx={{ width: "12rem", height: "2.75rem" }}
+          sx={{ width: "15rem", height: "3.75rem", fontSize: "1.25rem" }}
           variant="contained"
           onClick={() => {
             dispatch(setActiveStep("/ordernow/collection"));
@@ -118,7 +123,7 @@ const Service = () => {
           Back
         </Button>
         <Button
-          sx={{ width: "12rem", height: "2.75rem" }}
+          sx={{ width: "15rem", height: "3.75rem", fontSize: "1.25rem" }}
           variant="contained"
           onClick={() => {
             dispatch(setActiveStep("collection"));
@@ -449,14 +454,13 @@ const Item = (prop) => {
       sx={{
         border: 1,
         borderRadius: 10,
-        p: 0,
-        width: 90,
+        p: 0.5,
+        width: "7rem ",
         textTransform: "none",
         background: !isSelected() ? "white" : "#E5FCFF",
         borderColor: !isSelected() && "#C8C8C8",
         color: !isSelected() && "text.muted",
       }}
-      size="small"
       onClick={handleSelected}
     >
       {prop.name}
@@ -476,6 +480,7 @@ const PriceTable = () => {
         "& table": {
           width: "100%",
           whiteSpace: "nowrap",
+          fontSize: "1.1rem",
         },
         "& th": {
           p: 1,

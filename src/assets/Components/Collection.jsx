@@ -71,7 +71,6 @@ const Collection = () => {
       return false;
     }
   };
-  console.log(isDatePickerDisabled());
 
   const IsMenuDisabled = (pastHour) => {
     if (collectionState.collectionTime.date !== null) {
@@ -128,6 +127,7 @@ const Collection = () => {
                 "& .MuiInputBase-input": {
                   pl: 5,
                 },
+                "& .MuiPickersDay-root": { fontSize: "1.5rem" },
               }}
             />
           </div>
@@ -196,6 +196,7 @@ const Collection = () => {
                 "& .MuiInputBase-input": {
                   pl: 5,
                 },
+                "& .MuiPickersDay-root": { fontSize: "1.15rem" },
               }}
             />
           </div>
@@ -252,8 +253,7 @@ const Collection = () => {
       <Stack direction={"row"} justifyContent="space-between">
         <Button
           variant="contained"
-          size="large"
-          sx={{ minWidth: [150, 200], textTransform: "none" }}
+          sx={{ width: "15rem", height: "3.75rem", fontSize: "1.25rem" }}
           onClick={() => {
             navigate("/dashboard/ordernow/service");
           }}
@@ -263,8 +263,7 @@ const Collection = () => {
         </Button>
         <Button
           variant="contained"
-          size="large"
-          sx={{ minWidth: [150, 200], textTransform: "none" }}
+          sx={{ width: "15rem", height: "3.75rem", fontSize: "1.25rem" }}
           onClick={() => {
             dispatch(setActiveStep("contact"));
             navigate("/dashboard/ordernow/contact");

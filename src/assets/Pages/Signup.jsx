@@ -83,7 +83,7 @@ const Signup = () => {
           <Typography variant="body18">
             I already have an account?{" "}
             <Button
-              sx={{ textTransform: "none", fontSize: 18 }}
+              sx={{ textTransform: "none", fontSize: "1.25rem" }}
               size="large"
               onClick={() => {
                 navigate("/login");
@@ -93,7 +93,7 @@ const Signup = () => {
             </Button>
           </Typography>
         </h1>
-        <div className="flex flex-col  items-center justify-center h-[80%]  z-10 relative ">
+        <div className="flex flex-col  items-center justify-center h-[90%]  z-10 relative ">
           <div className="w-full p-4 max-w-[50rem]">
             <div className="flex flex-col gap-8 justify-center items-center w-full  ">
               <div className="text-center flex flex-col gap-2">
