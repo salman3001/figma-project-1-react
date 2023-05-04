@@ -122,13 +122,43 @@ const Collection = () => {
                   dispatch(setCollectionDate(newValue));
                 }
               }}
-              sx={{
-                width: "100%",
-                "& .MuiInputBase-input": {
-                  pl: 5,
+              slotProps={{
+                layout: {
+                  sx: {
+                    "& .MuiPickersCalendarHeader-label": {
+                      fontSize: "1.5rem",
+                    },
+                    "& .MuiTypography-root": {
+                      fontSize: "1.5rem",
+                    },
+                    "& .MuiYearCalendar-root": {
+                      fontSize: "1.5rem",
+                    },
+                  },
                 },
-                "&.MuiPickersDay-root": {
-                  fontSize: "5rem",
+                day: {
+                  sx: {
+                    fontSize: "1.5rem",
+                  },
+                },
+                toolbar: {
+                  sx: {
+                    fontSize: "1.5rem",
+                  },
+                },
+                dialog: {
+                  sx: {
+                    "& .MuiButtonBase-root": {
+                      fontSize: "1.5rem",
+                    },
+                  },
+                },
+                textField: {
+                  sx: {
+                    "& .MuiInputBase-root": {
+                      pl: 3,
+                    },
+                  },
                 },
               }}
             />
@@ -149,7 +179,13 @@ const Collection = () => {
               displayEmpty
               inputProps={{ "aria-label": "Without label" }}
               fullWidth
-              sx={{ pl: 4 }}
+              sx={{
+                pl: 4,
+                fontSize: "2rem",
+                "& .MuiButtonBase-root": {
+                  fontSize: "10rem",
+                },
+              }}
             >
               <MenuItem disabled={IsMenuDisabled(9)} value={"09:00-12:00"}>
                 09:00-12:00
@@ -193,12 +229,44 @@ const Collection = () => {
                   dispatch(setDeliveryDate(newValue));
                 }
               }}
-              sx={{
-                width: "100%",
-                "& .MuiInputBase-input": {
-                  pl: 5,
+              slotProps={{
+                layout: {
+                  sx: {
+                    "& .MuiPickersCalendarHeader-label": {
+                      fontSize: "1.5rem",
+                    },
+                    "& .MuiTypography-root": {
+                      fontSize: "1.5rem",
+                    },
+                    "& .MuiYearCalendar-root": {
+                      fontSize: "1.5rem",
+                    },
+                  },
                 },
-                "& .MuiPickersDay-root": { fontSize: "1.15rem" },
+                day: {
+                  sx: {
+                    fontSize: "1.5rem",
+                  },
+                },
+                toolbar: {
+                  sx: {
+                    fontSize: "1.5rem",
+                  },
+                },
+                dialog: {
+                  sx: {
+                    "& .MuiButtonBase-root": {
+                      fontSize: "1.5rem",
+                    },
+                  },
+                },
+                textField: {
+                  sx: {
+                    "& .MuiInputBase-root": {
+                      pl: 3,
+                    },
+                  },
+                },
               }}
             />
           </div>

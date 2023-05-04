@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 
 const Section6 = () => {
@@ -7,99 +7,66 @@ const Section6 = () => {
   const scrollRef = useRef();
 
   const scrollRight = () => {
+    console.log(scrollRef.current);
     const maxScrollLeft =
       scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
-    const range = maxScrollLeft / 5;
 
-    if (maxScrollLeft - scrollRef.current.scrollLeft > 500) {
-      scrollRef.current.scrollLeft += 400;
+    const rang1 =
+      scrollRef.current.scrollLeft > 0 &&
+      scrollRef.current.scrollLeft < maxScrollLeft / 4;
+    const rang2 =
+      scrollRef.current.scrollLeft > maxScrollLeft / 4 &&
+      scrollRef.current.scrollLeft < (maxScrollLeft / 4) * 2;
+    const rang3 =
+      scrollRef.current.scrollLeft > (maxScrollLeft / 4) * 2 &&
+      scrollRef.current.scrollLeft < (maxScrollLeft / 4) * 3;
+    const rang4 = scrollRef.current.scrollLeft > (maxScrollLeft / 4) * 3;
+    scrollRef.current.scrollLeft += 400;
 
-      if (
-        scrollRef.current.scrollLeft >= 0 &&
-        scrollRef.current.scrollLeft <= range
-      ) {
-        setActiveDot(1);
-      }
-      if (
-        scrollRef.current.scrollLeft >= range &&
-        scrollRef.current.scrollLeft <= range * 2
-      ) {
-        setActiveDot(2);
-      }
-      if (
-        scrollRef.current.scrollLeft >= range * 2 &&
-        scrollRef.current.scrollLeft <= range * 3
-      ) {
-        setActiveDot(3);
-      }
-      if (
-        scrollRef.current.scrollLeft >= range * 3 &&
-        scrollRef.current.scrollLeft <= range * 4
-      ) {
-        setActiveDot(4);
-      }
-      if (
-        scrollRef.current.scrollLeft >= range * 4 &&
-        scrollRef.current.scrollLeft <= range * 5
-      ) {
-        setActiveDot(5);
-      }
-    } else {
-      scrollRef.current.scrollLeft = 0;
+    if (rang1) {
       setActiveDot(1);
+    }
+    if (rang2) {
+      setActiveDot(2);
+    }
+    if (rang3) {
+      setActiveDot(3);
+    }
+    if (rang4) {
+      setActiveDot(4);
     }
   };
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      const maxScrollLeft =
-        scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
+  const scrollLeft = () => {
+    console.log(scrollRef.current);
+    const maxScrollLeft =
+      scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
 
-      const range = maxScrollLeft / 5;
+    const rang1 =
+      scrollRef.current.scrollLeft > 0 &&
+      scrollRef.current.scrollLeft < maxScrollLeft / 4;
+    const rang2 =
+      scrollRef.current.scrollLeft > maxScrollLeft / 4 &&
+      scrollRef.current.scrollLeft < (maxScrollLeft / 4) * 2;
+    const rang3 =
+      scrollRef.current.scrollLeft > (maxScrollLeft / 4) * 2 &&
+      scrollRef.current.scrollLeft < (maxScrollLeft / 4) * 3;
+    const rang4 = scrollRef.current.scrollLeft > (maxScrollLeft / 4) * 3;
+    scrollRef.current.scrollLeft -= 400;
 
-      if (maxScrollLeft - scrollRef.current.scrollLeft > 500) {
-        scrollRef.current.scrollLeft += 400;
-
-        if (
-          scrollRef.current.scrollLeft >= 0 &&
-          scrollRef.current.scrollLeft <= range
-        ) {
-          setActiveDot(1);
-        }
-        if (
-          scrollRef.current.scrollLeft >= range &&
-          scrollRef.current.scrollLeft <= range * 2
-        ) {
-          setActiveDot(2);
-        }
-        if (
-          scrollRef.current.scrollLeft >= range * 2 &&
-          scrollRef.current.scrollLeft <= range * 3
-        ) {
-          setActiveDot(3);
-        }
-        if (
-          scrollRef.current.scrollLeft >= range * 3 &&
-          scrollRef.current.scrollLeft <= range * 4
-        ) {
-          setActiveDot(4);
-        }
-        if (
-          scrollRef.current.scrollLeft >= range * 4 &&
-          scrollRef.current.scrollLeft <= range * 5
-        ) {
-          setActiveDot(5);
-        }
-      } else {
-        scrollRef.current.scrollLeft = 0;
-        setActiveDot(1);
-      }
-    }, 3000);
-
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
+    if (rang1) {
+      setActiveDot(1);
+    }
+    if (rang2) {
+      setActiveDot(2);
+    }
+    if (rang3) {
+      setActiveDot(3);
+    }
+    if (rang4) {
+      setActiveDot(4);
+    }
+  };
 
   return (
     <div className="w-full respnsive-pading-1 respnsive-pading-2 flex flex-col gap-8 md:gap-16 ">
@@ -123,6 +90,9 @@ const Section6 = () => {
         </div>
       </div>
       <div className="flex gap-2 justify-center">
+        <button onClick={scrollLeft}>
+          <AiFillCaretLeft size={25} />
+        </button>
         <button>
           <img
             src={import.meta.env.VITE_BASE_URL + "/images/blackdot.svg"}
@@ -167,17 +137,7 @@ const Section6 = () => {
             alt=""
           />
         </button>
-        <button>
-          <img
-            src={import.meta.env.VITE_BASE_URL + "/images/blackdot.svg"}
-            className={
-              activeDot === 5
-                ? "h-4 transition-all"
-                : "h-2 opacity-50 transition-all"
-            }
-            alt=""
-          />
-        </button>
+
         <button onClick={scrollRight}>
           <AiFillCaretRight size={25} />
         </button>

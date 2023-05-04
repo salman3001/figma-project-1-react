@@ -279,6 +279,7 @@ const WebsiteNavbar = () => {
               onClick={(e) => {
                 e.preventDefault();
                 navigate("/blogs");
+                togelDrawer();
               }}
             >
               <Typography variant="body32">Blogs</Typography>

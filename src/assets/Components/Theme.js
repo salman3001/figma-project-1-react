@@ -53,7 +53,15 @@ const theme = createTheme({
                 variantMapping: {}
             }
         },
+        MuiMenuItem: {
+            styleOverrides: {
+                root: {
+                    fontSize: "1.5rem",
+                    p: 1
+                }
+            }
 
+        },
 
         MuiContainer: {
             defaultProps: {
