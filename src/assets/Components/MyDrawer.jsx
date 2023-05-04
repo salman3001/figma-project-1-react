@@ -120,6 +120,7 @@ const MyDrawer = (prop) => {
             <SideMenuOption
               selected={location.pathname === "/dashboard/myorders"}
               navigateto="/dashboard/myorders"
+              togel={prop.drawerHandler}
               title="My Orders"
               Icon={
                 <HiOutlineClipboard
@@ -136,6 +137,7 @@ const MyDrawer = (prop) => {
               selected={location.pathname === "/dashboard/promotions"}
               navigateto="/dashboard/promotions"
               title="Promotions"
+              togel={prop.drawerHandler}
               Icon={
                 <TfiMedallAlt
                   color={
@@ -151,6 +153,7 @@ const MyDrawer = (prop) => {
               selected={location.pathname === "/dashboard/myaccount"}
               navigateto="/dashboard//myaccount"
               title="My Account"
+              togel={prop.drawerHandler}
               Icon={
                 <BiUser
                   color={

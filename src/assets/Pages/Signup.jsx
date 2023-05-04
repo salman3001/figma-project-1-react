@@ -72,12 +72,12 @@ const Signup = () => {
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/signup-leaf.svg"}
           alt=""
-          className="absolute brightness-50 top-0 left-0 h-72"
+          className="absolute brightness-[.8] top-0 left-0 h-72"
         />
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/signup-leaf.svg"}
           alt=""
-          className="absolute brightness-50 bottom-0 right-0 rotate-180 z-0 h-72"
+          className="absolute brightness-[.8] bottom-0 right-0 rotate-180 z-0 h-72"
         />
         <h1 className="w-full p-2 md:px-16 border-b text-end border-gray-300 border-opacity-20">
           <Typography variant="body18">

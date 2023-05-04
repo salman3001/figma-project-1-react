@@ -23,6 +23,7 @@ const Section9 = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            fontSize: "1.5rem",
             gap: 1,
           }}
           onClick={() => {

@@ -107,7 +107,7 @@ const Collection = () => {
       <Stack direction={["column", "row"]} gap={2} color="text.muted">
         <Stack flexGrow={1} spacing={1}>
           <label htmlFor="delieveryDay">Select Day</label>
-          <div className="flex relative items-center w-full">
+          <div className="flex relative items-center w-full ">
             <FaRegCalendarCheck
               className="absolute left-2"
               color="#00A5BF"
@@ -127,7 +127,9 @@ const Collection = () => {
                 "& .MuiInputBase-input": {
                   pl: 5,
                 },
-                "& .MuiPickersDay-root": { fontSize: "1.5rem" },
+                "&.MuiPickersDay-root": {
+                  fontSize: "5rem",
+                },
               }}
             />
           </div>

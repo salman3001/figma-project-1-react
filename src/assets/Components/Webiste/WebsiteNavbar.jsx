@@ -28,7 +28,7 @@ const WebsiteNavbar = () => {
       sx={{
         overflow: "hidden",
         mb: 1,
-        px: [0, 0, 0, 0, 0, "20px", "138px"],
+        px: ["1.25rem", "2rem", "2.5rem", "3rem", "5rem", "7rem", "138px"],
         justifyContent: "center",
         height: [70, 80],
         bgColor: "#FFFFFF",
@@ -37,7 +37,14 @@ const WebsiteNavbar = () => {
         backgroundColor: "white",
       }}
     >
-      <Toolbar sx={{ justifyContent: "space-between", minHeight: 50 }}>
+      <Toolbar
+        sx={{
+          justifyContent: "space-between",
+          minHeight: 50,
+          px: [0, 0, 0, 0, 0, 0, 0],
+          mx: 0,
+        }}
+      >
         {/* logo */}
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/Launder-logo.svg"}
@@ -61,7 +68,7 @@ const WebsiteNavbar = () => {
             href=""
             onClick={(e) => {
               e.preventDefault();
-              navigate("/home");
+              navigate("/services");
             }}
           >
             <Typography
@@ -77,7 +84,7 @@ const WebsiteNavbar = () => {
             href=""
             onClick={(e) => {
               e.preventDefault();
-              navigate("/services");
+              navigate("/ourservices");
             }}
           >
             <Typography
@@ -230,39 +237,42 @@ const WebsiteNavbar = () => {
             <img
               src={import.meta.env.VITE_BASE_URL + "/images/signup-leaf.svg"}
               alt=""
-              className="absolute brightness-50 top-0 left-0 z-[-1]"
+              className="absolute brightness-[.8] top-0 left-0 z-[-1]"
             />
             <img
               src={import.meta.env.VITE_BASE_URL + "/images/signup-leaf.svg"}
               alt=""
-              className="absolute brightness-50 bottom-0 right-0 rotate-180  z-[-1]"
+              className="absolute brightness-[.8] bottom-0 right-0 rotate-180  z-[-1]"
             />
-            <a
-              href=""
-              onClick={(e) => {
-                e.preventDefault();
-                navigate("/home");
-              }}
-            >
-              <Typography variant="body24">Pricing</Typography>
-            </a>
             <a
               href=""
               onClick={(e) => {
                 e.preventDefault();
                 navigate("/services");
+                togelDrawer();
               }}
             >
-              <Typography variant="body24">Services</Typography>
+              <Typography variant="body32">Pricing</Typography>
+            </a>
+            <a
+              href=""
+              onClick={(e) => {
+                e.preventDefault();
+                navigate("/ourservices");
+                togelDrawer();
+              }}
+            >
+              <Typography variant="body32">Services</Typography>
             </a>
             <a
               href=""
               onClick={(e) => {
                 e.preventDefault();
                 navigate("/home");
+                togelDrawer();
               }}
             >
-              <Typography variant="body24">Business</Typography>
+              <Typography variant="body32">Business</Typography>
             </a>
             <a
               href=""
@@ -271,24 +281,26 @@ const WebsiteNavbar = () => {
                 navigate("/blogs");
               }}
             >
-              <Typography variant="body24">Blogs</Typography>
+              <Typography variant="body32">Blogs</Typography>
             </a>
             <a
               href=""
               onClick={(e) => {
                 e.preventDefault();
                 navigate("/faqs");
+                togelDrawer();
               }}
             >
-              <Typography variant="body24">FAQs</Typography>
+              <Typography variant="body32">FAQs</Typography>
             </a>
             <div
               className="border-2 rounded-full animate-pulse duration-0 p-1 cursor-pointer z-50 top-24 text-xl"
               onClick={() => {
                 navigate("/devs");
+                togelDrawer();
               }}
             >
-              <FiSettings />
+              <FiSettings size={"1.5rem"} />
             </div>
 
             <div className="flex gap-6 flex-wrap justify-center items-center md:gap-6 ">
@@ -298,6 +310,7 @@ const WebsiteNavbar = () => {
                 className="w-32"
                 onClick={(e) => {
                   navigate("/login");
+                  togelDrawer();
                 }}
                 sx={{
                   width: 130,
@@ -317,6 +330,7 @@ const WebsiteNavbar = () => {
                 color="secondary"
                 onClick={(e) => {
                   navigate("/dashboard/ordernow/address");
+                  togelDrawer();
                 }}
                 sx={{
                   width: 140,

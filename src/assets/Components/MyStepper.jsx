@@ -36,6 +36,7 @@ const MyStepper = (prop) => {
         padding: 2,
         borderRadius: 2,
         borderColor: "rgba(0, 0, 0, 0.16) ",
+        "& .MuiStepIcon-text": { fontSize: "1.5rem" },
       }}
     >
       <Step key={1} expanded>

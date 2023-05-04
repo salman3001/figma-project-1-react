@@ -25,6 +25,7 @@ const SideMenuOption = (prop) => {
       }}
       onClick={() => {
         navigate(prop.navigateto);
+        prop.togel();
       }}
     >
       <Box

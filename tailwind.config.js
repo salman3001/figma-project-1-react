@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        "pulse2": "pulse 0.2s "
+      }
     },
     screens: {
       'sm': '600px',

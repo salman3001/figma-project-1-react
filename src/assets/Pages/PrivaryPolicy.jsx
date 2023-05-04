@@ -43,7 +43,7 @@ const Card = () => (
     <Typography variant="subtitle36" color={"#1F1F1F"}>
       What's there in the service
     </Typography>
-    <Typography variant="body36" color={"#1F1F1F"}>
+    <Typography variant="body28" color={"#1F1F1F"}>
       This is a simple service wash service, but laundered-with-love and care -
       ideal for casual clothing. We offer distinct laundry services to all our
       clients as per the requirement. The service includes wash, tumble dry and

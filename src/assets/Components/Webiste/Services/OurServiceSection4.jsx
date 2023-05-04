@@ -11,7 +11,7 @@ const OurServiceSection4 = () => {
     {
       child: (
         <div className="pb-8 text-lg pl-4">
-          <Typography variant="h45" className="h-16">
+          <Typography variant="h45" className="leading-[3.5rem] pb-4">
             Get Ready For Our Laundry Service!
           </Typography>
 

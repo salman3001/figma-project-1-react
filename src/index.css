@@ -14,17 +14,43 @@ html {
   }
 
   html {
-    @apply 3xl:text-[14px] 2xl:text-[11px] xl:text-[11px] lg:text-[10.5px] md:text-[10px] sm:text-[10px] text-[10px];
+    @apply 3xl:text-[14px] 2xl:text-[12.5px] xl:text-[11px] lg:text-[10.5px] md:text-[10px] sm:text-[10px] text-[10px];
   }
 
   body {
     font-family: "inter";
   }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 0.5s;
+    }
+  }
+
+  .fadeOut {
+    animation: fadeOut 0.8s;
+  }
+
+  @keyframes scaleIn {
+    0% {
+      transform: scale(10%);
+    }
+    100% {
+      transform: scale(100%);
+    }
+  }
+
+  .scaleIn {
+    animation: scaleIn 0.5s;
+  }
 }
 
 @layer components {
   .respnsive-pading-1 {
-    @apply px-5 sm:px-8 md:px-10 lg:px-12 xl:px-14 2xl:px-16  3xl:px-[137px];
+    @apply px-5 sm:px-8 md:px-10 lg:px-12 xl:px-20 2xl:px-28  3xl:px-[137px];
   }
 
   .respnsive-pading-2 {
