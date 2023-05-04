@@ -83,7 +83,6 @@ const PaymentForm = () => {
       }}
     >
       <TextField
-        sx={{ height: 65 }}
         size="large"
         fullWidth
         id="cardName"
@@ -104,7 +103,6 @@ const PaymentForm = () => {
       />
       <Stack>
         <TextField
-          sx={{ height: 65 }}
           size="large"
           fullWidth
           id="cardNumber"
@@ -127,7 +125,6 @@ const PaymentForm = () => {
         />
         <Stack direction="row">
           <TextField
-            sx={{ height: 65 }}
             size="large"
             fullWidth
             id="expiry"
@@ -147,7 +144,6 @@ const PaymentForm = () => {
             }}
           />
           <TextField
-            sx={{ height: 65 }}
             size="large"
             fullWidth
             id="cvv"
@@ -172,6 +168,7 @@ const PaymentForm = () => {
       <Stack direction="row" alignItems={"center"}>
         <Checkbox id="tc" />
         <Typography
+          variant="body18"
           component={"label"}
           htmlFor="tc"
           sx={{ cursor: "pointer" }}
@@ -184,7 +181,7 @@ const PaymentForm = () => {
       <Divider />
       <Stack direction="row" alignItems="center" spacing={1}>
         <AiOutlineLock color="#00A5BF" size={25} />
-        <Typography>Secure payment options with:</Typography>
+        <Typography variant="body18">Secure payment options with:</Typography>
         <img
           src={import.meta.env.VITE_BASE_URL + "/images/Stripe.png"}
           alt=""

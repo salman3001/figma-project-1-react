@@ -181,10 +181,6 @@ const Collection = () => {
               fullWidth
               sx={{
                 pl: 4,
-                fontSize: "2rem",
-                "& .MuiButtonBase-root": {
-                  fontSize: "10rem",
-                },
               }}
             >
               <MenuItem disabled={IsMenuDisabled(9)} value={"09:00-12:00"}>
