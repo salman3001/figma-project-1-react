@@ -57,8 +57,13 @@ const ProfileMenu = () => {
           "aria-labelledby": "basic-button",
         }}
         sx={{
+          top: ["2rem", "10px"],
+
           "&>.MuiMenuItem-root": {
             width: "210px",
+          },
+          "& .MuiPaper-root": {
+            minWidth: ["90vw", "auto"],
           },
         }}
       >

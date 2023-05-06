@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   Divider,
+  Grid,
   Stack,
   Tab,
   Tabs,
@@ -67,26 +68,51 @@ const Service = () => {
   return (
     <Stack spacing={2}>
       <Typography variant="subtitle36">Services</Typography>
-      <Stack
-        direction="row"
-        justifyContent={"center"}
-        alignItems={"center"}
-        gap={4}
-        flexWrap={"wrap"}
+      <Grid
+        container
+        sx={{ width: "100%", placeItems: "center", placeContent: "center" }}
       >
-        <ServiceCard name="wash" label="wash" value="wash" />
-        <ServiceCard
-          name="washAndIron"
-          label="Wash & Iron"
-          value="washAndIron"
-        />
-        <ServiceCard name="ironing" label="Ironing" value="ironing" />
-        <ServiceCard
-          name="dryCleaning"
-          label="Dry Cleaning"
-          value="dryCleaning"
-        />
-      </Stack>
+        <Grid
+          item
+          xs={6}
+          md={3}
+          sx={{ display: "flex", justifyContent: "center" }}
+        >
+          <ServiceCard name="wash" label="wash" value="wash" />
+        </Grid>
+        <Grid
+          item
+          xs={6}
+          md={3}
+          sx={{ display: "flex", justifyContent: "center" }}
+        >
+          <ServiceCard
+            name="washAndIron"
+            label="Wash & Iron"
+            value="washAndIron"
+          />
+        </Grid>
+        <Grid
+          item
+          xs={6}
+          md={3}
+          sx={{ display: "flex", justifyContent: "center" }}
+        >
+          <ServiceCard name="ironing" label="Ironing" value="ironing" />
+        </Grid>
+        <Grid
+          item
+          xs={6}
+          md={3}
+          sx={{ display: "flex", justifyContent: "center" }}
+        >
+          <ServiceCard
+            name="dryCleaning"
+            label="Dry Cleaning"
+            value="dryCleaning"
+          />
+        </Grid>
+      </Grid>
       <Stack gap={1}>
         <Typography variant="subtitle32" fontWeight={600}>
           {selectedService === "wash"
@@ -149,7 +175,8 @@ const ServiceCard = (prop) => {
   return (
     <Box
       sx={{
-        maxWidth: "100%",
+        maxWidth: "180px",
+        margin: [1, 2],
       }}
     >
       <Box
@@ -171,8 +198,8 @@ const ServiceCard = (prop) => {
           display: "flex",
           cursor: "pointer",
           flexDirection: "column",
-          padding: [1, 2, 2, 2, 2, 4],
-          borderRadius: 3,
+          padding: 3,
+          borderRadius: 0.5,
           border: 1,
           borderColor:
             selectedService === prop.value ? "#24869B" : "rgba(0, 0, 0, 0.2)",
@@ -234,7 +261,7 @@ function TabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && <Box sx={{ p: [1, 2, 3] }}>{children}</Box>}
+      {value === index && <Box sx={{ py: 1.5 }}>{children}</Box>}
     </div>
   );
 }

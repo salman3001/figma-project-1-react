@@ -19,18 +19,22 @@ import TrackingModal from "./TrackingModal";
 
 const Orders = () => {
   return (
-    <Stack gap={2} pt={2}>
+    <Stack gap={2} pt={2} width={"100%"}>
       <Stack
-        direction={"row"}
+        direction={["column", "row"]}
         gap={2}
-        justifyContent="space-between"
-        alignItems={"center"}
-        flexWrap={"wrap"}
+        justifyContent={["space-between"]}
+        alignItems={"start"}
       >
         <Typography variant="h45" fontWeight={600}>
           My Orders
         </Typography>
-        <Stack direction={"row"} gap={2}>
+        <Stack
+          direction={"row"}
+          justifyContent={["start", "space-between"]}
+          width={["100%", "50%"]}
+          gap={2}
+        >
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
@@ -38,6 +42,7 @@ const Orders = () => {
             size="small"
             sx={{
               height: 40,
+              width: "50%",
             }}
           >
             <MenuItem value="upcomming">Upcomming</MenuItem>
@@ -45,12 +50,45 @@ const Orders = () => {
             <MenuItem value="confirmed">Confirmed</MenuItem>
           </Select>
           <DatePicker
-            sx={{
-              maxWidth: 200,
-              padding: 0,
-              height: 10,
-              "& input": {
-                height: 5,
+            slotProps={{
+              layout: {
+                sx: {
+                  "& .MuiPickersCalendarHeader-label": {
+                    fontSize: "1.5rem",
+                  },
+                  "& .MuiTypography-root": {
+                    fontSize: "1.5rem",
+                  },
+                  "& .MuiYearCalendar-root": {
+                    fontSize: "1.5rem",
+                  },
+                },
+              },
+              day: {
+                sx: {
+                  fontSize: "1.5rem",
+                },
+              },
+              toolbar: {
+                sx: {
+                  fontSize: "1.5rem",
+                },
+              },
+              dialog: {
+                sx: {
+                  "& .MuiButtonBase-root": {
+                    fontSize: "1.5rem",
+                  },
+                },
+              },
+              textField: {
+                sx: {
+                  "& .MuiInputBase-root": {
+                    pl: 1,
+                    height: 40,
+                    width: ["41vw", "100%"],
+                  },
+                },
               },
             }}
           />
@@ -217,6 +255,7 @@ const OrderCard = (prop) => {
         justifyContent="space-between"
         alignItems={"center"}
         padding={2}
+        gap={2}
         flexWrap={"wrap"}
       >
         <Stack color="primary.main" direction="row" gap={1} alignItems="center">
@@ -225,7 +264,14 @@ const OrderCard = (prop) => {
             {prop.address}
           </Typography>
         </Stack>
-        <Stack direction={"row"} gap={2} alignItems="center">
+        <Stack
+          direction={"row"}
+          width={["100%", "auto"]}
+          gap={2}
+          alignItems="center"
+          justifyContent={["space-between", "start"]}
+          alignSelf={"end"}
+        >
           <Typography
             variant="subtitle15"
             fontWeight={650}

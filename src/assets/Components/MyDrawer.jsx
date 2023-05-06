@@ -17,6 +17,7 @@ import { useLocation } from "react-router-dom";
 import { HiOutlineClipboard } from "react-icons/hi";
 import { BiUser } from "react-icons/bi";
 import { TfiMedallAlt } from "react-icons/tfi";
+import { RxCross1 } from "react-icons/rx";
 
 const MyDrawer = (prop) => {
   const theme = useTheme();
@@ -44,7 +45,7 @@ const MyDrawer = (prop) => {
       <Paper
         sx={{
           width: [
-            `${prop.open ? "295px" : "0px"}`,
+            `${prop.open ? "80vw" : "0px"}`,
             `${prop.open ? "295px" : "0px"}`,
             `${prop.open ? "295px" : "0px"}`,
             `${prop.open ? "295px" : "0px"}`,
@@ -75,6 +76,7 @@ const MyDrawer = (prop) => {
           <Stack justifyContent="center" alignItems="center" spacing={2}>
             <Box
               sx={{
+                position: "relative",
                 height: "84px",
                 display: "flex",
                 flexDirection: "column",
@@ -85,6 +87,12 @@ const MyDrawer = (prop) => {
               }}
             >
               <LaundraLogo />
+              <div
+                className="absolute -right-12  bg-[#03444f] p-2 top-1/2 -translate-y-1/2 "
+                onClick={prop.drawerHandler}
+              >
+                <RxCross1 size={20} color="white" />
+              </div>
               <Divider
                 orientation="horizontal"
                 flexItem

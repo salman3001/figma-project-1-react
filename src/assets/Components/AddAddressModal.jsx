@@ -39,15 +39,15 @@ const AddAddressModal = (prop) => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          maxWidth: 600,
-          minHeight: 400,
-          maxHeight: [500, 500, 700],
+          maxWidth: ["95vw", "80vw", "70vw", "50vw", "40vw"],
+          minHeight: "42vh",
+          maxHeight: "90vh",
           width: "100%",
           bgcolor: "background.paper",
           border: "1px solid #000",
           boxShadow: 24,
 
-          p: 6,
+          p: [4, 5, 6],
           borderRadius: 2,
           overflowY: ["scroll", "scroll"],
         }}
@@ -56,6 +56,7 @@ const AddAddressModal = (prop) => {
           <SearchLoactionForm
             setLocationValid={setLocationValid}
             setFormStep={setFormStep}
+            initialValues={prop.initialValues || ""}
           />
         ) : formStep === 1 && locationValid ? (
           <AddressForm
@@ -91,7 +92,7 @@ export default AddAddressModal;
 const SearchLoactionForm = (prop) => {
   const formik = useFormik({
     initialValues: {
-      location: "",
+      location: prop.initialValues || "",
     },
     validationSchema: Yup.object({
       location: Yup.string()
@@ -117,13 +118,13 @@ const SearchLoactionForm = (prop) => {
       textAlign={"center"}
       spacing={2}
       justifyContent="center"
-      maxWidth={"40rem"}
+      maxWidth={["100%", "70%"]}
       marginX={"auto"}
     >
       <Typography variant="subtitle32">Add Address</Typography>
       <Typography
         variant="body22"
-        paddingX={3}
+        paddingX={[0, 2, 3]}
         color="text.muted"
         textAlign={"center"}
       >
@@ -132,7 +133,7 @@ const SearchLoactionForm = (prop) => {
       </Typography>
       <form className="w-full">
         <div className="flex flex-col gap-2">
-          <label className="self-start text-start text-[#111212] opacity-70">
+          <label className="self-start text-start text-lg text-[#111212] opacity-70">
             Search for address or building
           </label>
           <TextField
@@ -147,7 +148,10 @@ const SearchLoactionForm = (prop) => {
           />
         </div>
       </form>
-      <Button size="small" sx={{ alignSelf: "start", display: "flex", gap: 1 }}>
+      <Button
+        size="small"
+        sx={{ alignSelf: "start", display: "flex", gap: 1, fontSize: "1.1rem" }}
+      >
         <GoLocation />
         Postcode search
       </Button>
@@ -200,7 +204,7 @@ const AddressForm = (prop) => {
   });
 
   return (
-    <Stack textAlign={"center"} spacing={1} alignItems={"center"}>
+    <Stack textAlign={"center"} spacing={2} alignItems={"center"}>
       <Typography variant="subtitle32" fontWeight={600}>
         Add Address
       </Typography>
@@ -208,8 +212,8 @@ const AddressForm = (prop) => {
         Please fill in your details below and we will get in touch with you
         shortly.
       </Typography>
-      <Stack component="form" spacing={4} alignItems={"center"}>
-        <Stack direction="row" justifyContent="space-evenly" width="100%">
+      <Stack component="form" spacing={1} alignItems={"center"}>
+        <Stack direction="row" justifyContent="space-between" width="100%">
           <input
             type="radio"
             name="addressType"
@@ -218,6 +222,7 @@ const AddressForm = (prop) => {
             onChange={formik.handleChange}
             style={{
               display: "none",
+              height: "8rem",
             }}
           />
           <Box
@@ -230,8 +235,8 @@ const AddressForm = (prop) => {
               alignItems: "center",
               border: 1,
               gap: 1,
-              borderRadius: 2,
-              minWidth: [80, 100],
+              borderRadius: 1,
+              minWidth: "25%",
               cursor: "pointer",
               background:
                 formik.values.addressType === "home" ? "#E5FCFF" : "none",
@@ -264,8 +269,8 @@ const AddressForm = (prop) => {
               alignItems: "center",
               border: 1,
               gap: 1,
-              borderRadius: 2,
-              minWidth: [80, 100],
+              borderRadius: 1,
+              minWidth: "25%",
               cursor: "pointer",
 
               background:
@@ -302,8 +307,8 @@ const AddressForm = (prop) => {
               justifyContent: "center",
               alignItems: "center",
               border: 1,
-              borderRadius: 2,
-              minWidth: [80, 100],
+              borderRadius: 1,
+              minWidth: "25%",
               gap: 1,
               cursor: "pointer",
               background:
@@ -323,13 +328,14 @@ const AddressForm = (prop) => {
           </Box>
         </Stack>
         <Grid container spacing={1}>
-          <Grid item xs={12} sm={6} md={6}>
+          <Grid xs={6} pr={1} pb={1}>
             <div className="flex flex-col gap-2">
               <label className="self-start text-start text-[#111212] opacity-70">
                 Enter Landmark
               </label>
               <TextField
                 fullWidth
+                size="small"
                 id="landmark"
                 name="landmark"
                 placeholder="Enter LandMark"
@@ -342,13 +348,13 @@ const AddressForm = (prop) => {
               />
             </div>
           </Grid>
-          <Grid item xs={12} sm={6} md={6}>
+          <Grid xs={6} pl={1}>
             <div className="flex flex-col gap-2">
               <label className="self-start text-start text-[#111212] opacity-70">
                 Enter street
               </label>
               <TextField
-                fullWidth
+                size="small"
                 id="street"
                 name="street"
                 placeholder="Enter Street"
@@ -359,13 +365,13 @@ const AddressForm = (prop) => {
               />
             </div>
           </Grid>
-          <Grid item xs={12} sm={6} md={6}>
+          <Grid xs={6} pr={1} pb={1}>
             <div className="flex flex-col gap-2">
               <label className="self-start text-start text-[#111212] opacity-70">
                 Enter city
               </label>
               <TextField
-                fullWidth
+                size="small"
                 id="city"
                 name="city"
                 placeholder="Enter city"
@@ -376,12 +382,13 @@ const AddressForm = (prop) => {
               />
             </div>
           </Grid>
-          <Grid item xs={12} sm={6} md={6}>
+          <Grid xs={6} pl={1}>
             <div className="flex flex-col gap-2">
               <label className="self-start text-start text-[#111212] opacity-70">
                 Enter state
               </label>
               <TextField
+                size="small"
                 fullWidth
                 id="state"
                 name="state"
@@ -393,12 +400,13 @@ const AddressForm = (prop) => {
               />
             </div>
           </Grid>
-          <Grid item xs={12} sm={6} md={6}>
+          <Grid xs={6} pr={1} pb={1}>
             <div className="flex flex-col gap-2">
               <label className="self-start text-start text-[#111212] opacity-70">
                 Enter country
               </label>
               <TextField
+                size="small"
                 fullWidth
                 id="country"
                 name="country"
@@ -410,12 +418,13 @@ const AddressForm = (prop) => {
               />
             </div>
           </Grid>
-          <Grid item xs={12} sm={6} md={6}>
+          <Grid xs={6} pl={1}>
             <div className="flex flex-col gap-2">
               <label className="self-start text-start text-[#111212] opacity-70">
                 Enter zip
               </label>
               <TextField
+                size="small"
                 fullWidth
                 id="zip"
                 name="zip"

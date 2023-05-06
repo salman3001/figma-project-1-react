@@ -49,9 +49,12 @@ const NotificationMenu = (prop) => {
           "aria-labelledby": "basic-button",
         }}
         sx={{
+          top: ["2rem", "10px"],
           "&>.MuiMenuItem-root": {
-            width: "210px",
-            fontSize: "1.5rem",
+            width: "100%",
+          },
+          "& .MuiPaper-root": {
+            minWidth: ["90vw", "auto"],
           },
         }}
       >
@@ -81,6 +84,7 @@ const Notificationcard = (prop) => {
     <Box
       sx={{
         minWidth: 194,
+        width: "100%",
         minHeight: 67,
         bgcolor: "#DDF1F4",
         borderRadius: 2,

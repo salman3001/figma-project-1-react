@@ -105,7 +105,7 @@ const Collection = () => {
         <Typography variant="subtitle32">Pickup Time</Typography>
       </Stack>
       <Stack direction={["column", "row"]} gap={2} color="text.muted">
-        <Stack flexGrow={1} spacing={1}>
+        <Stack flexGrow={1} spacing={1} width={"100%"}>
           <label htmlFor="delieveryDay">Select Day</label>
           <div className="flex relative items-center w-full ">
             <FaRegCalendarCheck
@@ -154,9 +154,18 @@ const Collection = () => {
                   },
                 },
                 textField: {
+                  fullWidth: true,
+
                   sx: {
                     "& .MuiInputBase-root": {
                       pl: 3,
+                    },
+                    input: {
+                      color: "black",
+                      "&::placeholder": {
+                        // <----- Add this.
+                        opacity: 1,
+                      },
                     },
                   },
                 },
@@ -164,7 +173,7 @@ const Collection = () => {
             />
           </div>
         </Stack>
-        <Stack flexGrow={1} spacing={1}>
+        <Stack flexGrow={1} spacing={1} width={"100%"}>
           <label htmlFor="delieveryDay">Select Time</label>
           <div className="flex relative items-center">
             <BiTime className="absolute left-2" color="#00A5BF" size={20} />
@@ -177,7 +186,16 @@ const Collection = () => {
                 dispatch(setCollectionTime(e.target.value));
               }}
               displayEmpty
-              inputProps={{ "aria-label": "Without label" }}
+              inputProps={{
+                "aria-label": "Without label",
+              }}
+              renderValue={(selected) => {
+                if (selected.length === 0) {
+                  return <span className="text-black">Select time</span>;
+                }
+
+                return selected;
+              }}
               fullWidth
               sx={{
                 pl: 4,
@@ -207,7 +225,7 @@ const Collection = () => {
         <Typography variant="subtitle32">Delivery Time</Typography>
       </Stack>
       <Stack direction={["column", "row"]} gap={2} color="text.muted">
-        <Stack flexGrow={1} spacing={1}>
+        <Stack flexGrow={1} spacing={1} width={"100%"}>
           <label htmlFor="delieveryDay">Select Day</label>
           <div className="flex relative items-center w-full">
             <FaRegCalendarCheck
@@ -257,9 +275,18 @@ const Collection = () => {
                   },
                 },
                 textField: {
+                  fullWidth: true,
+
                   sx: {
                     "& .MuiInputBase-root": {
                       pl: 3,
+                    },
+                    input: {
+                      color: "black",
+                      "&::placeholder": {
+                        // <----- Add this.
+                        opacity: 1,
+                      },
                     },
                   },
                 },
@@ -267,16 +294,24 @@ const Collection = () => {
             />
           </div>
         </Stack>
-        <Stack flexGrow={1} spacing={1}>
+        <Stack spacing={1} width={"100%"}>
           <label htmlFor="delieveryDay">Select Time</label>
           <div className="flex relative items-center">
             <BiTime className="absolute left-2" color="#00A5BF" size={20} />
             <Select
+              displayEmpty
               value={collectionState.deliveryTime.timeSlot}
               onChange={(e) => {
                 dispatch(setDeliveryTime(e.target.value));
               }}
               inputProps={{ "aria-label": "Without label" }}
+              renderValue={(selected) => {
+                if (selected.length === 0) {
+                  return <span className="text-black">Select time</span>;
+                }
+
+                return selected;
+              }}
               fullWidth
               sx={{ pl: 4 }}
             >
@@ -310,6 +345,14 @@ const Collection = () => {
             dispatch(setFrequency(e.target.value));
           }}
           inputProps={{ "aria-label": "Without label" }}
+          displayEmpty
+          renderValue={(selected) => {
+            if (selected.length === 0) {
+              return <span className="text-black">Please Select</span>;
+            }
+
+            return selected;
+          }}
           fullWidth
         >
           <MenuItem value={"Once"}>Once</MenuItem>
@@ -410,7 +453,6 @@ const TextareaDeliveryMessage = () => {
   }, [value]);
   return (
     <Stack
-      color="text.muted"
       sx={{
         "& textarea": {
           resize: "none",

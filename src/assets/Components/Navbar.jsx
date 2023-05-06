@@ -76,7 +76,7 @@ const Navbar = (prop) => {
               ],
               top: [70],
               left: [0],
-              width: [280],
+              width: ["90vw", 280],
             }}
           >
             <Search />

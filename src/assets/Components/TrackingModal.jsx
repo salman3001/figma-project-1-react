@@ -16,13 +16,13 @@ const TrackingModal = (prop) => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          maxWidth: 600,
-          height: 400,
+          maxWidth: ["90vw", "80vw", "70vw", "50vw"],
+          height: "60vh",
           width: "100%",
           bgcolor: "background.paper",
           border: "2px solid #000",
           boxShadow: 24,
-          p: 4,
+          p: [1, 2, 4],
           borderRadius: 2,
         }}
       >
@@ -244,8 +244,8 @@ const TrackingModal = (prop) => {
         <div
           style={{
             position: "absolute",
-            top: 12,
-            right: 12,
+            top: 14,
+            right: 14,
             cursor: "pointer",
           }}
           onClick={prop.handleClose}

@@ -27,7 +27,7 @@ const AddressCard = (prop) => {
       gap={2}
       key={prop.id}
     >
-      <Stack>
+      <Stack alignSelf={"start"}>
         <Stack direction="row" spacing={2} alignItems={"center"}>
           <Avatar sx={{ bgcolor: "primary.main", p: 0.5 }}>
             <FiHome size={"1.5rem"} />
@@ -49,6 +49,7 @@ const AddressCard = (prop) => {
         spacing={2}
         justifyContent={"end"}
         alignItems={"end"}
+        alignSelf={"end"}
       >
         <Button
           variant="contained"

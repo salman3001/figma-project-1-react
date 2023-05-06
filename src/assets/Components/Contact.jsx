@@ -451,14 +451,15 @@ const IndividualModalform = (prop) => {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            maxWidth: 600,
+            maxWidth: ["90vw", "80vw", "70vw", "50vw"],
             minHeight: 400,
             maxHeight: 900,
             width: "100%",
             bgcolor: "background.paper",
             border: "1px solid #000",
             boxShadow: 24,
-            p: 6,
+            px: [1.5, 2, 4],
+            py: 6,
             borderRadius: 2,
             overflowY: ["scroll", "scroll"],
           }}
@@ -484,7 +485,7 @@ const IndividualModalform = (prop) => {
               you shortly.
             </Typography>
           </Stack>
-          <div className="grid md:grid-cols-2 gap-4 max-w-[40rem] mx-auto">
+          <div className="grid grid-cols-2 gap-4 max-w-[40rem] mx-auto">
             <div className="flex flex-col gap-2">
               <Label htmlFor="name" titile="Enter name" />
               <TextField
@@ -637,12 +638,13 @@ const CompanyModalform = (prop) => {
             transform: "translate(-50%, -50%)",
             maxWidth: 600,
             minHeight: 400,
-            maxHeight: 600,
+            maxWidth: ["90vw", "80vw", "70vw", "50vw"],
             width: "100%",
             bgcolor: "background.paper",
             border: "1px solid #000",
             boxShadow: 24,
-            p: 6,
+            px: [1.5, 2, 4],
+            py: 6,
             borderRadius: 2,
             overflowY: ["scroll", "scroll"],
           }}
@@ -667,7 +669,7 @@ const CompanyModalform = (prop) => {
               you shortly.
             </Typography>
           </Stack>
-          <div className="grid md:grid-cols-2 gap-4 max-w-[40rem] mx-auto">
+          <div className="grid grid-cols-2 gap-4 max-w-[40rem] mx-auto">
             <div className="flex flex-col gap-2">
               <Label htmlFor="name" titile="Enter name" />
               <TextField
